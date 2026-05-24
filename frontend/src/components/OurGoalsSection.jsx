@@ -62,7 +62,7 @@ const OurGoalsSection = () => {
             ))}
           </div>
 
-          {/* GCT Custom Banner Image */}
+          {/* GCT Custom Banner Image - Full Width No Cropping */}
           <div className="mt-16">
             <a 
               href="https://www.gct.travel/index.php" 
@@ -74,7 +74,7 @@ const OurGoalsSection = () => {
               <img 
                 src="https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/jvzq92lz_Screenshot%202026-05-24%20at%209.26.56%E2%80%AFPM.png" 
                 alt="GCT Booking Made Simple - Sign up for B2B Online Hotel Reservation Portal" 
-                className="w-full max-h-72 object-cover rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-[1.01] animate-pulse-slow"
+                className="w-full h-auto rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-[1.01] animate-pulse-slow"
                 loading="lazy"
               />
             </a>
