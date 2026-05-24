@@ -27,7 +27,7 @@ const Header = () => {
             <Link to="/" className="text-white hover:text-[#ffd700] transition-colors text-sm font-medium">
               Home
             </Link>
-            <Link to="/itineraries" className="text-white hover:text-[#ffd700] transition-colors text-sm font-medium">
+            <Link to="/travel-guide" className="text-white hover:text-[#ffd700] transition-colors text-sm font-medium">
               Travel Guide
             </Link>
             <Link to="/gallery" className="text-white hover:text-[#ffd700] transition-colors text-sm font-medium">
@@ -68,7 +68,7 @@ const Header = () => {
             <Link to="/" className="text-white hover:text-[#ffd700] transition-colors text-sm font-medium">
               Home
             </Link>
-            <Link to="/itineraries" className="text-white hover:text-[#ffd700] transition-colors text-sm font-medium">
+            <Link to="/travel-guide" className="text-white hover:text-[#ffd700] transition-colors text-sm font-medium">
               Travel Guide
             </Link>
             <Link to="/gallery" className="text-white hover:text-[#ffd700] transition-colors text-sm font-medium">
