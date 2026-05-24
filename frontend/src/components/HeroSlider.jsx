@@ -3,19 +3,19 @@ import { ChevronLeft, ChevronRight, Facebook, Instagram } from 'lucide-react';
 
 const slides = [
   {
-    url: 'https://images.unsplash.com/photo-1642278167684-4d8a6bd75def?w=1920&q=85',
-    alt: 'Krakow Market Square Poland - historic Old Town wide panoramic view with St Mary Basilica',
-    title: 'Krakow Old Town'
+    url: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/396axo6y_tomasz-tomal-2lK0291iNHI-unsplash.jpg',
+    alt: 'Krakow Main Square Poland - St Mary Basilica and historic Old Town marketplace',
+    title: 'Discover Krakow'
   },
   {
-    url: 'https://images.unsplash.com/photo-1616530020606-e15459064769?w=1920&q=85',
-    alt: 'Tatra Mountains Zakopane Poland - panoramic mountain landscape and green valleys',
+    url: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/86buqudx_piotr-musiol-P_8N9CJNfIg-unsplash.jpg',
+    alt: 'Tatra Mountains Poland - scenic mountain valleys and traditional Polish countryside',
     title: 'Tatra Mountains'
   },
   {
-    url: 'https://images.unsplash.com/photo-1548620110-57bb51e9d2ef?w=1920&q=85',
-    alt: 'Polish castle aerial view - historic castle surrounded by scenic winter landscape',
-    title: 'Historic Poland'
+    url: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/3agrxhf1_darya-tryfanava-7j58GbOo4II-unsplash.jpg',
+    alt: 'Historic Poland evening cityscape - illuminated waterfront buildings and reflections',
+    title: 'Evening Poland'
   }
 ];
 
@@ -80,10 +80,10 @@ const HeroSlider = () => {
           <img
             src={slide.url}
             alt={slide.alt}
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-center slider-image"
             style={{ objectPosition: 'center 40%' }}
           />
-          <div className="absolute inset-0 bg-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-b from-blue-900/10 via-transparent to-orange-900/10" />
           
           {/* Image Title Overlay */}
           <div className="absolute bottom-24 left-6 bg-white/10 backdrop-blur-md px-6 py-3 rounded-lg">

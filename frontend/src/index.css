@@ -129,4 +129,15 @@ code {
 
 .animate-pulse-slow {
   animation: pulse-slow 2s ease-in-out infinite;
+
+/* Hero Slider Image Color Harmonization */
+.slider-image {
+  filter: saturate(1.1) contrast(1.05) brightness(1.02);
+  transition: filter 0.5s ease;
+}
+
+.slider-image:hover {
+  filter: saturate(1.15) contrast(1.08) brightness(1.05);
+}
+
 }
