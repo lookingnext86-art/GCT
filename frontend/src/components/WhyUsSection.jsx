@@ -14,7 +14,7 @@ const WhyUsSection = () => {
       {/* Decorative Plane */}
       <img 
         src="https://greencontinenttours.com/GCT-asset/airPlane/plane.svg" 
-        alt="" 
+        alt="Travel plane decoration" 
         className="absolute top-10 right-20 w-24 opacity-20"
       />
 
@@ -23,7 +23,7 @@ const WhyUsSection = () => {
           {/* Left Content */}
           <div className="text-white">
             <h1 className="text-3xl md:text-4xl font-bold mb-8">
-              Why us as your Tour Operator in Krakow Poland
+              Why Choose Green Continent Tours as Your Premier Tour Operator in Krakow, Poland
             </h1>
             
             {/* Time to Travel Image */}
@@ -39,19 +39,20 @@ const WhyUsSection = () => {
             </div>
 
             <p className="text-xl mb-8">
-              The biggest adventure you can take is to live the life of your dreams.
+              Discover unforgettable European adventures with Poland's most trusted travel agency. The biggest adventure you can take is to live the life of your dreams.
             </p>
 
             <Link 
               to="/gallery"
               className="inline-block bg-white text-[#0f4f47] px-8 py-3 rounded-full font-semibold hover:bg-[#ffd700] transition-all duration-300"
+              aria-label="View our travel photo gallery"
             >
-              Gallery
+              View Photo Gallery
             </Link>
 
             {/* Decorative Dots */}
             <div className="mt-8">
-              <svg width="120" height="40" viewBox="0 0 120 40" className="opacity-50">
+              <svg width="120" height="40" viewBox="0 0 120 40" className="opacity-50" aria-hidden="true">
                 {[...Array(30)].map((_, i) => (
                   <circle 
                     key={i}
@@ -78,8 +79,9 @@ const WhyUsSection = () => {
                 >
                   <img 
                     src={img} 
-                    alt={`Gallery ${index + 1}`}
+                    alt={`European tour destination ${index + 1} - Krakow and Poland travel experiences`}
                     className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
@@ -87,7 +89,7 @@ const WhyUsSection = () => {
             </div>
 
             {/* Decorative Dotted Line */}
-            <div className="absolute -right-12 top-1/2 -translate-y-1/2 w-64 h-64 border-4 border-dashed border-[#4dd4ac]/30 rounded-full" />
+            <div className="absolute -right-12 top-1/2 -translate-y-1/2 w-64 h-64 border-4 border-dashed border-[#4dd4ac]/30 rounded-full" aria-hidden="true" />
           </div>
         </div>
       </div>

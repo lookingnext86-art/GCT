@@ -67,7 +67,7 @@ const HeroSlider = () => {
         >
           <img
             src={slide}
-            alt={`Slide ${index + 1}`}
+            alt={`European travel destination ${index + 1} - Tours in Krakow and Poland by Green Continent Tours`}
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/20" />
