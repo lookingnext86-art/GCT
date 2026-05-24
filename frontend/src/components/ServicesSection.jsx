@@ -74,45 +74,18 @@ const ServicesSection = () => {
         aria-hidden="true"
       />
 
-      {/* Logo Watermark */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-5" aria-hidden="true">
-        <img 
-          src="https://greencontinenttours.com/GCT-asset/logo.svg" 
-          alt="" 
-          className="w-96 h-96"
-        />
-      </div>
-
       <div className="container mx-auto px-4 relative z-10">
         {/* Title */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-[#0f4f47] mb-6">
-            Complete Krakow Tour Operator Services
+            Our Travel Services
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-4">
-            Your trusted Krakow-based tour operator offering comprehensive travel services for exploring Krakow, Poland, and Europe. From day trips to multi-week adventures, we handle every detail of your Polish journey.
+            Your trusted Krakow-based tour operator offering comprehensive travel services for exploring Poland and Europe.
           </p>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
-            <strong>Popular Tours from Krakow:</strong> Auschwitz-Birkenau Memorial, Wieliczka Salt Mine, Zakopane & Tatra Mountains, Wadowice (Pope John Paul II Hometown), Prague, Vienna, Budapest
+            <strong>Popular Tours:</strong> Auschwitz-Birkenau, Wieliczka Salt Mine, Zakopane & Tatra Mountains, Prague, Vienna, Budapest
           </p>
-          <img 
-            src="https://greencontinenttours.com/GCT-asset/our-services.png" 
-            alt="Green Continent Tours - Complete Krakow tour services" 
-            className="mx-auto max-w-md w-full mb-4"
-            loading="lazy"
-          />
-          <div className="flex items-center justify-center gap-4 mt-8">
-            <img 
-              src="https://greencontinenttours.com/GCT-asset/logo.svg" 
-              alt="Green Continent Tours - Krakow tour operator logo" 
-              className="h-16 w-16"
-            />
-            <img 
-              src="https://greencontinenttours.com/GCT-asset/logoText.svg" 
-              alt="Your unique travel partner in Krakow" 
-              className="h-10"
-            />
-          </div>
         </div>
 
         {/* Services Grid */}
@@ -148,20 +121,8 @@ const ServicesSection = () => {
             Start Your Krakow Adventure Today!
           </p>
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Whether you're visiting Krakow for a day, a week, or planning a comprehensive Poland tour, our local experts are ready to create your perfect itinerary.
+            Whether you're visiting for a day or planning a comprehensive Poland tour, our local experts are ready to help.
           </p>
-          <div className="flex items-center justify-center gap-4">
-            <img 
-              src="https://greencontinenttours.com/GCT-asset/logo.svg" 
-              alt="Green Continent Tours - Book Krakow tours" 
-              className="h-16 w-16"
-            />
-            <img 
-              src="https://greencontinenttours.com/GCT-asset/logoText.svg" 
-              alt="Your unique travel partner in Krakow Poland" 
-              className="h-10"
-            />
-          </div>
         </div>
       </div>
     </section>
