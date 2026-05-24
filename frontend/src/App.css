@@ -1,0 +1,31 @@
+.App {
+  min-height: 100vh;
+}
+
+/* Custom font for "TRAVEL" text */
+.font-cursive {
+  font-family: 'Brush Script MT', cursive;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0f4f47;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1a6b5f;
+}
