@@ -76,16 +76,16 @@ const ServicesSection = () => {
       />
 
       <div className="container mx-auto px-4 relative z-10">
-        {/* Title */}
+        {/* Title - Consistent Font & Centered */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-[#0f4f47] mb-6">
             Our Travel Services
           </h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-4">
+          <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-4">
             Your trusted Krakow-based tour operator offering comprehensive travel services for exploring Poland and Europe.
           </p>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
-            <strong>Popular Tours:</strong> Auschwitz-Birkenau, Wieliczka Salt Mine, Zakopane & Tatra Mountains, Prague, Vienna, Budapest
+          <p className="text-base text-gray-600 max-w-3xl mx-auto">
+            <span className="font-semibold text-[#0f4f47]">Popular Tours:</span> Auschwitz-Birkenau, Wieliczka Salt Mine, Zakopane & Tatra Mountains, Prague, Vienna, Budapest
           </p>
         </div>
 
