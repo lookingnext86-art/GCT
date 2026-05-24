@@ -82,7 +82,7 @@ const ServicesSection = () => {
             Our Travel Services
           </h2>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Your trusted Krakow-based tour operator offering comprehensive travel services for exploring Poland and Europe. Popular tours include Auschwitz-Birkenau, Wieliczka Salt Mine, Zakopane & Tatra Mountains, Prague, Vienna, and Budapest.
+            Premium Krakow-based travel agency offering private tours, small-group journeys, family travel, and fully custom itineraries across Poland. Explore Krakow's culture, Zakopane's mountains, Warsaw's energy — plus Auschwitz-Birkenau, the Wieliczka Salt Mine, and curated extensions to Prague, Vienna, and Budapest.
           </p>
         </div>
 
@@ -118,10 +118,10 @@ const ServicesSection = () => {
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
           <p className="text-2xl font-bold text-[#0f4f47] mb-4">
-            Start Your Krakow Adventure Today!
+            Start Planning Your Premium Poland Journey
           </p>
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Whether you're visiting for a day or planning a comprehensive Poland tour, our local experts are ready to help.
+            Whether you're visiting Krakow for a weekend, planning a family escape to Zakopane, or designing a multi-city Poland itinerary — our local experts are ready to craft it with you.
           </p>
         </div>
       </div>

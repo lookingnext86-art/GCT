@@ -23,7 +23,7 @@ const WhyUsSection = () => {
           {/* Left Content */}
           <div className="text-white">
             <h1 className="text-3xl md:text-4xl font-bold mb-8">
-              Discover Poland & Europe with Krakow's Trusted Tour Operator
+              Premium Poland Travel — Crafted by Krakow Locals, Designed for the World
             </h1>
             
             {/* Time to Travel Image */}
@@ -39,11 +39,11 @@ const WhyUsSection = () => {
             </div>
 
             <p className="text-xl mb-4 leading-relaxed">
-              A trusted Krakow-based travel agency welcoming travelers from across the world. Experience authentic Poland tour packages including Krakow city tours, Zakopane mountain escapes, and Warsaw cultural experiences.
+              A modern Poland travel agency specializing in private tours, small-group journeys, family travel, and fully custom itineraries — from Krakow's historic Old Town to Zakopane's mountains and Warsaw's vibrant culture.
             </p>
             
             <p className="text-lg mb-8 text-gray-200">
-              From Krakow's historic Old Town to Zakopane's Tatra Mountains, Warsaw's modern skyline to the Auschwitz-Birkenau memorial — we craft unforgettable Poland holiday packages for international travelers, with tailored options available for every taste, culture, and budget.
+              Premium hotels, comfortable transport, multilingual expert guides, and thoughtful pacing — so every traveler, from every part of the world, can experience Poland the way it deserves to be seen.
             </p>
 
             <Link 

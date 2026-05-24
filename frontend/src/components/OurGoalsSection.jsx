@@ -3,23 +3,23 @@ import React from 'react';
 const goals = [
   {
     number: 1,
-    title: 'Authentic Poland Tour Packages for the World',
-    description: 'Complete Poland and Europe tour packages welcoming travelers from every continent. Krakow city tours, Zakopane mountain holidays, Warsaw cultural trips, and multi-country European itineraries crafted by local Krakow experts.'
+    title: 'Private Tours, Crafted with Care',
+    description: 'Travel on your own terms with private guides, private vehicles, and itineraries shaped around your interests. From cultural deep-dives in Krakow to wellness escapes in Zakopane, every detail is curated for comfort and intimacy.'
   },
   {
     number: 2,
-    title: 'Multilingual Expert Guides',
-    description: 'Certified, professional guides in English, Polish, Arabic, German, Spanish, and more. Our storytellers bring Poland\'s history, culture, and hidden gems to life for travelers of every background.'
+    title: 'Group Tours That Feel Personal',
+    description: 'Small-group experiences for friends, colleagues, and like-minded travelers. Thoughtfully sized groups, premium hotels, and an unhurried pace let you connect with Poland — and with each other — without ever feeling rushed.'
   },
   {
     number: 3,
-    title: 'Specialized Services for GCC & Saudi Guests',
-    description: 'A dedicated service segment for guests from Saudi Arabia and the GCC — Arabic-speaking guides, halal dining options, prayer-friendly accommodations, and itineraries respectful of family and cultural needs, available on request.'
+    title: 'Family Travel & Custom Itineraries',
+    description: 'Family-friendly journeys built around all generations, with flexible schedules, kid-approved stops, and bespoke itineraries combining Poland\'s culture, nature, and modern comforts — exactly the way your family loves to travel.'
   },
   {
     number: 4,
-    title: '24/7 Direct Support from Krakow',
-    description: 'Around-the-clock multilingual support from our Krakow-based team. From your first booking question to the moment you fly home, we keep your Poland journey seamless.'
+    title: 'Comfort, Culture & Nature in One Journey',
+    description: 'UNESCO heritage, alpine landscapes, lake districts, and vibrant cities — all woven into seamless trips with premium transport, handpicked stays, and multilingual local experts available 24/7 from our Krakow base.'
   }
 ];
 
@@ -31,10 +31,10 @@ const OurGoalsSection = () => {
           {/* Title */}
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-[#0f4f47] mb-6">
-              Our Goals
+              What We Do Best
             </h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              A trusted Krakow tour operator delivering authentic Poland and Europe experiences for travelers from every corner of the world — with specialized care for every segment we serve
+              A premium Poland travel agency for international travelers — private tours, group experiences, family journeys, and fully custom itineraries across Krakow, Zakopane, Warsaw and beyond
             </p>
           </div>
 
