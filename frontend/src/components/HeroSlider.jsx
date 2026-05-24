@@ -13,9 +13,9 @@ const slides = [
     title: 'Tatra Mountains'
   },
   {
-    url: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/3agrxhf1_darya-tryfanava-7j58GbOo4II-unsplash.jpg',
-    alt: 'Historic Poland evening cityscape - illuminated waterfront buildings and reflections',
-    title: 'Evening Poland'
+    url: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/c86qydtt_lidia-stawinska-1bA8SVx0078-unsplash.jpg',
+    alt: 'Gdansk Poland waterfront - colorful historic buildings and riverside promenade',
+    title: 'Historic Gdansk'
   }
 ];
 
@@ -85,9 +85,9 @@ const HeroSlider = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-blue-900/10 via-transparent to-orange-900/10" />
           
-          {/* Image Title Overlay */}
-          <div className="absolute bottom-24 left-6 bg-white/10 backdrop-blur-md px-6 py-3 rounded-lg">
-            <p className="text-white text-2xl font-bold">{slide.title}</p>
+          {/* Image Title Overlay - Smaller Size */}
+          <div className="absolute bottom-24 left-6 bg-white/10 backdrop-blur-md px-4 py-2 rounded-lg">
+            <p className="text-white text-sm font-semibold">{slide.title}</p>
           </div>
         </div>
       ))}
