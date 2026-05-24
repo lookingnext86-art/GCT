@@ -3,19 +3,19 @@ import { ChevronLeft, ChevronRight, Facebook, Instagram } from 'lucide-react';
 
 const slides = [
   {
-    url: 'https://images.unsplash.com/photo-1606992894456-799462dacd65?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTF8MHwxfHNlYXJjaHwxfHxLcmFrb3clMjBNYWluJTIwU3F1YXJlfGVufDB8fHx8MTc3OTY1MDYyOXww&ixlib=rb-4.1.0&q=85',
-    alt: 'Krakow Main Square Old Town Poland - St Mary Basilica and Cloth Hall historic market',
+    url: 'https://images.unsplash.com/photo-1642278167684-4d8a6bd75def?w=1920&q=85',
+    alt: 'Krakow Market Square Poland - historic Old Town wide panoramic view with St Mary Basilica',
     title: 'Krakow Old Town'
   },
   {
-    url: 'https://images.unsplash.com/photo-1629267481334-cd1074045135?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzV8MHwxfHNlYXJjaHwzfHxUYXRyYSUyME1vdW50YWluc3xlbnwwfHx8fDE3Nzk2NTA2Mjl8MA&ixlib=rb-4.1.0&q=85',
-    alt: 'Tatra Mountains Zakopane Poland - scenic mountain peaks and hiking trails',
+    url: 'https://images.unsplash.com/photo-1616530020606-e15459064769?w=1920&q=85',
+    alt: 'Tatra Mountains Zakopane Poland - panoramic mountain landscape and green valleys',
     title: 'Tatra Mountains'
   },
   {
-    url: 'https://images.unsplash.com/photo-1699791913496-cbca52f1c626?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHw0fHxXYXdlbCUyMENhc3RsZXxlbnwwfHx8fDE3Nzk2NTA2Mjl8MA&ixlib=rb-4.1.0&q=85',
-    alt: 'Wawel Castle Krakow Poland - historic royal castle and Vistula River view',
-    title: 'Wawel Castle'
+    url: 'https://images.unsplash.com/photo-1548620110-57bb51e9d2ef?w=1920&q=85',
+    alt: 'Polish castle aerial view - historic castle surrounded by scenic winter landscape',
+    title: 'Historic Poland'
   }
 ];
 
@@ -80,7 +80,8 @@ const HeroSlider = () => {
           <img
             src={slide.url}
             alt={slide.alt}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
+            style={{ objectPosition: 'center 40%' }}
           />
           <div className="absolute inset-0 bg-black/20" />
           
