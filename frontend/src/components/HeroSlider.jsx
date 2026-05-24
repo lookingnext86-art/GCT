@@ -4,17 +4,17 @@ import { ChevronLeft, ChevronRight, Facebook, Instagram } from 'lucide-react';
 const slides = [
   {
     url: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/396axo6y_tomasz-tomal-2lK0291iNHI-unsplash.jpg',
-    alt: 'Krakow Main Square Poland - St Mary Basilica and historic Old Town marketplace',
+    alt: 'krakow-main-square-poland-st-mary-basilica-old-town-tours-aerial-view',
     title: 'Discover Krakow'
   },
   {
     url: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/86buqudx_piotr-musiol-P_8N9CJNfIg-unsplash.jpg',
-    alt: 'Tatra Mountains Poland - scenic mountain valleys and traditional Polish countryside',
+    alt: 'tatra-mountains-zakopane-poland-hiking-tours-scenic-valleys-wooden-hut',
     title: 'Tatra Mountains'
   },
   {
     url: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/c86qydtt_lidia-stawinska-1bA8SVx0078-unsplash.jpg',
-    alt: 'Gdansk Poland waterfront - colorful historic buildings and riverside promenade',
+    alt: 'gdansk-poland-waterfront-colorful-buildings-historic-old-town-tourism',
     title: 'Historic Gdansk'
   }
 ];
