@@ -1,4 +1,5 @@
 import React from 'react';
+import GCTBanner from './GCTBanner';
 
 const goals = [
   {
@@ -62,22 +63,9 @@ const OurGoalsSection = () => {
             ))}
           </div>
 
-          {/* GCT Banner - Full Width, Shorter Height */}
+          {/* Custom GCT Banner */}
           <div className="mt-16">
-            <a 
-              href="https://www.gct.travel/index.php" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              aria-label="Book Krakow and Poland tours online"
-              className="block"
-            >
-              <img 
-                src="https://greencontinenttours.com/GCT-asset/info/GCT.jpg" 
-                alt="Book your Krakow tours online - GCT Travel booking platform" 
-                className="w-full max-h-72 object-contain rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-[1.01] animate-pulse-slow"
-                loading="lazy"
-              />
-            </a>
+            <GCTBanner />
           </div>
         </div>
       </div>
