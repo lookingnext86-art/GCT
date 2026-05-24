@@ -2,64 +2,64 @@ import React from 'react';
 
 const services = [
   {
-    title: 'Group Travel Arrangements & Tour Packages',
+    title: 'Krakow Group Tours & Poland Travel Packages',
     icon: 'https://greencontinenttours.com/GCT-asset/Services/Group%20travel%20arrangement.png',
-    description: 'Custom group tours across Poland and Europe'
+    description: 'Customized group tours in Krakow, Poland & Europe'
   },
   {
-    title: 'Airport Transfer Services in Krakow',
+    title: 'Krakow Airport Transfers & Transportation',
     icon: 'https://greencontinenttours.com/GCT-asset/Services/Airport%20transfers.png',
-    description: 'Professional airport pickup and transfer services'
+    description: 'Professional pickup from Krakow Airport (KRK)'
   },
   {
-    title: 'Conferences & MICE Services Poland',
+    title: 'Krakow MICE & Corporate Event Services',
     icon: 'https://greencontinenttours.com/GCT-asset/Services/Conferences%20and%20MICE.png',
-    description: 'Business travel and corporate event planning'
+    description: 'Business meetings and conferences in Krakow'
   },
   {
-    title: 'City Tours in Krakow & Poland',
+    title: 'Krakow City Tours & Sightseeing',
     icon: 'https://greencontinenttours.com/GCT-asset/Services/City%20tours.png',
-    description: 'Guided city tours and sightseeing experiences'
+    description: 'Old Town, Wawel Castle, Kazimierz guided tours'
   },
   {
-    title: 'Professional Tour Guide Services',
+    title: 'Professional Krakow Tour Guides',
     icon: 'https://greencontinenttours.com/GCT-asset/Services/Tour%20guide%20services.png',
-    description: 'Certified multilingual tour guides in Poland'
+    description: 'Licensed multilingual guides in Krakow & Poland'
   },
   {
-    title: 'School & University Educational Tours',
+    title: 'Educational Tours to Krakow & Auschwitz',
     icon: 'https://greencontinenttours.com/GCT-asset/Services/School%20&%20University%20tours.png',
-    description: 'Educational travel programs for students'
+    description: 'Student tours, Auschwitz-Birkenau educational visits'
   },
   {
-    title: 'Travel Consultation & Planning',
+    title: 'Krakow Travel Consultation & Planning',
     icon: 'https://greencontinenttours.com/GCT-asset/Services/Travel%20Consultation.png',
-    description: 'Expert travel advice and itinerary planning'
+    description: 'Expert advice for visiting Krakow and Poland'
   },
   {
-    title: 'Tailor-Made Special Tours Europe',
+    title: 'Custom Krakow & Poland Private Tours',
     icon: 'https://greencontinenttours.com/GCT-asset/Services/Tailor%20made%20special%20tours.png',
-    description: 'Customized vacation packages and private tours'
+    description: 'Personalized Krakow itineraries and day trips'
   },
   {
-    title: 'Cruise Bookings & River Tours',
+    title: 'European River Cruise Bookings from Poland',
     icon: 'https://greencontinenttours.com/GCT-asset/Services/Cruise%20bookings.png',
-    description: 'European cruise reservations and packages'
+    description: 'Danube, Vistula cruises and European packages'
   },
   {
-    title: 'Hotel & Accommodation Bookings Poland',
+    title: 'Krakow Hotels & Accommodation Bookings',
     icon: 'https://greencontinenttours.com/GCT-asset/Services/Hotel%20&%20accommodation%20bookings.png',
-    description: 'Hotels, hostels, and vacation rentals across Europe'
+    description: 'Best hotels in Krakow Old Town and Poland'
   },
   {
-    title: 'Flight, Bus & Train Ticket Reservations',
+    title: 'Poland Train, Bus & Flight Tickets',
     icon: 'https://greencontinenttours.com/GCT-asset/Services/Air%20tickets,%20bus%20&%20Train%20reservations.png',
-    description: 'Complete transportation booking services'
+    description: 'Transportation booking across Poland & Europe'
   },
   {
-    title: 'Custom European Vacation Packages',
+    title: 'Multi-Day Poland & Central Europe Tours',
     icon: 'https://greencontinenttours.com/GCT-asset/Services/Tailor%20Made%20tours.png',
-    description: 'Personalized multi-country tour packages'
+    description: 'Krakow to Prague, Vienna, Budapest tour packages'
   }
 ];
 
@@ -87,26 +87,29 @@ const ServicesSection = () => {
         {/* Title */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-[#0f4f47] mb-6">
-            Comprehensive Travel Services in Krakow, Poland
+            Complete Krakow Tour Operator Services
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            As a full-service tour operator and travel agency, Green Continent Tours offers complete travel solutions for individuals, groups, and businesses across Poland and Europe.
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-4">
+            Your trusted Krakow-based tour operator offering comprehensive travel services for exploring Krakow, Poland, and Europe. From day trips to multi-week adventures, we handle every detail of your Polish journey.
+          </p>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
+            <strong>Popular Tours from Krakow:</strong> Auschwitz-Birkenau Memorial, Wieliczka Salt Mine, Zakopane & Tatra Mountains, Wadowice (Pope John Paul II Hometown), Prague, Vienna, Budapest
           </p>
           <img 
             src="https://greencontinenttours.com/GCT-asset/our-services.png" 
-            alt="Green Continent Tours - Complete travel and tour services" 
+            alt="Green Continent Tours - Complete Krakow tour services" 
             className="mx-auto max-w-md w-full mb-4"
             loading="lazy"
           />
           <div className="flex items-center justify-center gap-4 mt-8">
             <img 
               src="https://greencontinenttours.com/GCT-asset/logo.svg" 
-              alt="Green Continent Tours logo" 
+              alt="Green Continent Tours - Krakow tour operator logo" 
               className="h-16 w-16"
             />
             <img 
               src="https://greencontinenttours.com/GCT-asset/logoText.svg" 
-              alt="Your unique travel partner tagline" 
+              alt="Your unique travel partner in Krakow" 
               className="h-10"
             />
           </div>
@@ -139,18 +142,26 @@ const ServicesSection = () => {
           ))}
         </div>
 
-        {/* Bottom Decoration */}
-        <div className="flex items-center justify-center gap-4 mt-16">
-          <img 
-            src="https://greencontinenttours.com/GCT-asset/logo.svg" 
-            alt="Green Continent Tours - Tour operator in Krakow" 
-            className="h-16 w-16"
-          />
-          <img 
-            src="https://greencontinenttours.com/GCT-asset/logoText.svg" 
-            alt="Your unique travel partner" 
-            className="h-10"
-          />
+        {/* Bottom CTA */}
+        <div className="mt-16 text-center">
+          <p className="text-2xl font-bold text-[#0f4f47] mb-4">
+            Start Your Krakow Adventure Today!
+          </p>
+          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+            Whether you're visiting Krakow for a day, a week, or planning a comprehensive Poland tour, our local experts are ready to create your perfect itinerary.
+          </p>
+          <div className="flex items-center justify-center gap-4">
+            <img 
+              src="https://greencontinenttours.com/GCT-asset/logo.svg" 
+              alt="Green Continent Tours - Book Krakow tours" 
+              className="h-16 w-16"
+            />
+            <img 
+              src="https://greencontinenttours.com/GCT-asset/logoText.svg" 
+              alt="Your unique travel partner in Krakow Poland" 
+              className="h-10"
+            />
+          </div>
         </div>
       </div>
     </section>

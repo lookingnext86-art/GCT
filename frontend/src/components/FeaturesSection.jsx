@@ -2,28 +2,28 @@ import React from 'react';
 
 const features = [
   {
-    title: 'Affordable European Tour Packages',
-    description: 'Our travel agency offers an extensive selection of budget-friendly hotels, accommodations, and tour packages across Europe. From luxury stays to economical options, we provide competitive pricing on all vacation packages to Poland and throughout Europe. Every tour package includes carefully selected hotels and activities, ensuring exceptional value without compromising quality or experience.',
+    title: 'Best Tours of Krakow & Poland at Affordable Prices',
+    description: 'Explore Krakow\'s Old Town, Wawel Castle, Kazimierz Jewish Quarter, Auschwitz-Birkenau, Wieliczka Salt Mine, and Zakopane at unbeatable prices. Our Krakow-based tour operator offers budget-friendly day trips, multi-day Poland tours, and European vacation packages. From the Tatra Mountains to the Baltic Coast, discover Poland without breaking the bank. We provide quality hotels, professional local guides, and comfortable transportation for all tours departing from Krakow.',
     image: 'https://greencontinenttours.com/GCT-asset/info/first.jpg',
     borderColor: 'border-l-[#4dd4ac]',
     bgColor: 'bg-[#4dd4ac]/10',
-    alt: 'Affordable European vacation packages and budget travel options'
+    alt: 'Affordable Krakow tours and Poland travel packages'
   },
   {
-    title: 'Premium Quality Tour Services',
-    description: 'As a leading tour operator in Krakow, we guarantee top-tier travel services for your European vacation. Our comprehensive packages include premium hotels, professional tour guides, expertly curated activities, and seamless logistics. Experience Poland and Europe with confidence, knowing every detail is managed by experienced travel professionals dedicated to your satisfaction.',
+    title: 'Premium Guided Tours of Krakow & European Destinations',
+    description: 'As Krakow\'s leading tour operator, we deliver exceptional experiences across Poland and Europe. Our certified multilingual guides bring Krakow\'s 1000-year history to life, from medieval Main Square to Schindler\'s Factory. Explore Poland\'s UNESCO sites, charming villages, and natural wonders. Extend your journey to Prague, Vienna, Budapest, Berlin, and beyond. Every tour includes premium accommodations, skip-the-line tickets, authentic Polish cuisine experiences, and expert local insights for an unforgettable Polish adventure.',
     image: 'https://greencontinenttours.com/GCT-asset/info/second.jpg',
     borderColor: 'border-l-[#ff69b4]',
     bgColor: 'bg-[#ff69b4]/10',
-    alt: 'High-quality tour operator services in Krakow Poland'
+    alt: 'Premium guided tours from Krakow tour operator'
   },
   {
-    title: 'Sustainable & Eco-Friendly Tourism',
-    description: 'Green Continent Tours is committed to environmentally responsible travel throughout Poland and Europe. Our sustainable tourism practices minimize environmental impact through low-emission transportation, eco-friendly accommodations, and carbon footprint reduction initiatives. We preserve local heritage, support communities, and promote authentic cultural experiences while protecting natural resources for future generations.',
+    title: 'Eco-Friendly Tours Celebrating Poland\'s Natural Beauty',
+    description: 'Discover Poland responsibly with our sustainable tourism practices. From Krakow, explore the pristine Tatra National Park, Białowieża Forest, Bieszczady Mountains, and Baltic beaches with minimal environmental impact. Our eco-friendly tours use low-emission vehicles, support local Polish communities, preserve cultural heritage, and protect Poland\'s stunning landscapes. Experience authentic Polish traditions, stay in eco-certified accommodations, and travel knowing you\'re helping preserve Poland\'s natural wonders for future generations.',
     image: 'https://greencontinenttours.com/GCT-asset/info/third.jpg',
     borderColor: 'border-l-[#4a9eff]',
     bgColor: 'bg-[#4a9eff]/10',
-    alt: 'Sustainable eco-friendly tourism in Poland and Europe'
+    alt: 'Sustainable eco-tourism in Poland and Krakow'
   }
 ];
 
@@ -31,6 +31,15 @@ const FeaturesSection = () => {
   return (
     <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#0f4f47] mb-4">
+            Why Choose Our Krakow Tour Operator for Your Polish Adventure
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Experience Poland from Krakow with local experts who are passionate about sharing our beautiful country with travelers worldwide
+          </p>
+        </div>
+        
         <div className="max-w-6xl mx-auto space-y-16">
           {features.map((feature, index) => (
             <article 
@@ -67,9 +76,9 @@ const FeaturesSection = () => {
               {/* Content */}
               <div className="lg:w-1/2">
                 <div className={`border-l-8 ${feature.borderColor} ${feature.bgColor} p-8 rounded-r-2xl`}>
-                  <h2 className="text-4xl font-bold mb-6 text-[#0f4f47]">
+                  <h3 className="text-3xl font-bold mb-6 text-[#0f4f47]">
                     {feature.title}
-                  </h2>
+                  </h3>
                   <p className="text-gray-700 text-lg leading-relaxed">
                     {feature.description}
                   </p>

@@ -23,7 +23,7 @@ const WhyUsSection = () => {
           {/* Left Content */}
           <div className="text-white">
             <h1 className="text-3xl md:text-4xl font-bold mb-8">
-              Why Choose Green Continent Tours as Your Premier Tour Operator in Krakow, Poland
+              Discover Krakow & Poland with Your Trusted Local Tour Operator
             </h1>
             
             {/* Time to Travel Image */}
@@ -38,16 +38,20 @@ const WhyUsSection = () => {
               </div>
             </div>
 
-            <p className="text-xl mb-8">
-              Discover unforgettable European adventures with Poland's most trusted travel agency. The biggest adventure you can take is to live the life of your dreams.
+            <p className="text-xl mb-4 leading-relaxed">
+              Experience the magic of Krakow, explore Poland's hidden treasures, and discover Europe's most beautiful destinations with a local tour operator who knows every corner.
+            </p>
+            
+            <p className="text-lg mb-8 text-gray-200">
+              From Krakow's historic Old Town to the Tatra Mountains, Auschwitz-Birkenau, Wieliczka Salt Mine, and stunning European capitals - we create unforgettable journeys across Poland and Europe.
             </p>
 
             <Link 
               to="/gallery"
-              className="inline-block bg-white text-[#0f4f47] px-8 py-3 rounded-full font-semibold hover:bg-[#ffd700] transition-all duration-300"
+              className="inline-block bg-white text-[#0f4f47] px-8 py-3 rounded-full font-semibold hover:bg-[#ffd700] transition-all duration-300 shadow-lg hover:shadow-xl"
               aria-label="View our travel photo gallery"
             >
-              View Photo Gallery
+              Explore Our Tours
             </Link>
 
             {/* Decorative Dots */}
@@ -79,7 +83,7 @@ const WhyUsSection = () => {
                 >
                   <img 
                     src={img} 
-                    alt={`European tour destination ${index + 1} - Krakow and Poland travel experiences`}
+                    alt={`Krakow and Poland tour destinations - Experience ${index + 1}`}
                     className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
                     loading="lazy"
                   />
