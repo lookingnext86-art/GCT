@@ -3,23 +3,23 @@ import React from 'react';
 const goals = [
   {
     number: 1,
-    title: 'One-Stop Travel Solution',
-    description: 'Complete tour packages across Poland and Europe with hotels, transportation, guides, and authentic experiences all handled for you.'
+    title: 'Specialized Poland Travel Agency for GCC',
+    description: 'Complete Poland tour packages from Saudi Arabia and GCC countries. Krakow city tours, Zakopane mountain holidays, Warsaw trips with halal dining, Arabic guides, and Muslim-friendly services.'
   },
   {
     number: 2,
-    title: 'Local Expert Guides',
-    description: 'Passionate local guides with deep knowledge of Polish history, culture, and hidden gems creating personalized, authentic experiences.'
+    title: 'Arabic-Speaking Expert Guides',
+    description: 'Professional Arabic-speaking guides who understand Gulf culture. Experience authentic Poland tours with guides familiar with Saudi and GCC traveler preferences and requirements.'
   },
   {
     number: 3,
-    title: 'Sustainable Tourism',
-    description: 'Environmentally responsible tours that support local communities, preserve cultural heritage, and protect natural beauty.'
+    title: 'Halal-Friendly Poland Packages',
+    description: 'Muslim-friendly Poland holiday packages with halal restaurants, prayer facilities, and accommodations suitable for Saudi families. We understand Gulf cultural needs.'
   },
   {
     number: 4,
-    title: '24/7 Customer Support',
-    description: 'Dedicated multilingual support team monitoring your journey from booking to completion, ensuring smooth, worry-free travel.'
+    title: 'Direct Support from Krakow',
+    description: '24/7 Arabic and English support for GCC tourists. Our Krakow-based team ensures smooth Poland tour experiences from booking through your return home.'
   }
 ];
 
@@ -34,7 +34,7 @@ const OurGoalsSection = () => {
               Our Goals
             </h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              As your trusted tour operator in Krakow, we are committed to delivering exceptional Polish travel experiences through four core principles
+              As your trusted Poland travel agency for Saudi Arabia and GCC tourists, we specialize in creating exceptional Poland tour packages with Arabic support and halal-friendly options
             </p>
           </div>
 
