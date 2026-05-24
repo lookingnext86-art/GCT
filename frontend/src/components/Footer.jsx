@@ -116,13 +116,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* SEO Keywords Footer */}
-          <div className="mt-8 text-center text-white/60 text-sm">
-            <p className="mb-2">
-              Keywords: Tour Operator Krakow | Travel Agency Poland | European Tours | Group Travel Poland | City Tours Krakow | Vacation Packages Europe | Hotel Bookings Poland | MICE Services | Sustainable Tourism
-            </p>
-          </div>
-
           {/* Copyright */}
           <div className="text-center mt-6 text-white/80">
             <p className="text-sm">
