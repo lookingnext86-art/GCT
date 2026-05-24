@@ -62,7 +62,7 @@ const OurGoalsSection = () => {
             ))}
           </div>
 
-          {/* GCT Banner - Full Width, Half Height */}
+          {/* GCT Banner - Full Width, Shorter Height */}
           <div className="mt-16">
             <a 
               href="https://www.gct.travel/index.php" 
@@ -74,7 +74,7 @@ const OurGoalsSection = () => {
               <img 
                 src="https://greencontinenttours.com/GCT-asset/info/GCT.jpg" 
                 alt="Book your Krakow tours online - GCT Travel booking platform" 
-                className="w-full h-48 object-cover rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-[1.01] animate-pulse-slow"
+                className="w-full max-h-72 object-contain rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-[1.01] animate-pulse-slow"
                 loading="lazy"
               />
             </a>
