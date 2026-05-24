@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#4a6b71] py-16">
+    <footer className="bg-[#0f4f47] py-16">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           {/* Title Image */}
