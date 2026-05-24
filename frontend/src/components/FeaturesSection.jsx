@@ -2,28 +2,28 @@ import React from 'react';
 
 const features = [
   {
-    title: 'Affordable Poland Tour Packages from GCC Countries',
-    description: 'Specialized Poland tour packages designed for Saudi Arabia and Gulf travelers at competitive prices. Our travel agency offers budget-friendly Krakow tours, Zakopane mountain trips, and Warsaw city packages from GCC with quality hotels, halal meal options, and comfortable transportation. Direct flights from Riyadh, Jeddah, Dubai, and other Gulf cities make Poland easily accessible for your holiday.',
+    title: 'Affordable Poland Tour Packages for International Travelers',
+    description: 'Discover unbeatable value with our Poland tour packages crafted for travelers from Europe, Asia, the Americas, and the Middle East. Enjoy budget-friendly Krakow city tours, Zakopane mountain escapes, and Warsaw cultural breaks with quality hotels, comfortable transportation, and expert local guides. Direct flights from major hubs make Poland easily accessible for your dream European holiday.',
     image: 'https://greencontinenttours.com/GCT-asset/info/first.jpg',
     borderColor: 'border-l-[#4dd4ac]',
     bgColor: 'bg-[#4dd4ac]/10',
-    alt: 'Affordable Poland tour packages for Saudi tourists'
+    alt: 'Affordable Poland tour packages for international travelers'
   },
   {
-    title: 'Premium Poland Tours with Arabic-Speaking Guides',
-    description: 'As a leading Poland travel agency for GCC tourists, we provide exceptional Krakow tours, Zakopane experiences, and Warsaw packages with Arabic-speaking guides who understand Gulf culture. Our Poland holiday packages include halal restaurants, prayer facilities, and Muslim-friendly accommodations. Every tour is customized for Saudi Arabian and GCC families seeking authentic European experiences.',
+    title: 'Premium Poland Tours with Multilingual Expert Guides',
+    description: 'Our certified multilingual guides bring Poland to life in English, Polish, Arabic, German, Spanish, and more. Experience authentic Krakow tours, Auschwitz-Birkenau visits, Wieliczka Salt Mine, and curated Warsaw experiences. Every itinerary is designed for unforgettable cultural immersion, with attention to detail and storytelling that travelers from around the world genuinely appreciate.',
     image: 'https://greencontinenttours.com/GCT-asset/info/second.jpg',
     borderColor: 'border-l-[#ff69b4]',
     bgColor: 'bg-[#ff69b4]/10',
-    alt: 'Premium Poland tours for GCC tourists with Arabic guides'
+    alt: 'Premium Poland tours with multilingual expert guides'
   },
   {
-    title: 'Custom Poland Holiday Packages for Gulf Families',
-    description: 'Create your perfect Poland vacation with our custom tour packages from Saudi Arabia and GCC. Whether you want Krakow cultural tours, Zakopane ski holidays, Warsaw shopping trips, or multi-city Poland packages - we design itineraries matching Gulf traveler preferences. Halal dining, family-friendly activities, and flexible schedules make our Poland tours ideal for Saudi and GCC families.',
+    title: 'Custom Holiday Packages — Including Specialized Services for GCC & Saudi Guests',
+    description: 'Build your perfect Poland and Europe vacation with fully customized itineraries. Families, couples, students, and corporate groups all find a tour that fits. We also offer a dedicated service segment for guests from Saudi Arabia and the GCC, with Arabic-speaking guides, halal dining options, and Muslim-friendly accommodations available on request — alongside our standard international packages.',
     image: 'https://greencontinenttours.com/GCT-asset/info/third.jpg',
     borderColor: 'border-l-[#4a9eff]',
     bgColor: 'bg-[#4a9eff]/10',
-    alt: 'Custom Poland holiday packages for Saudi families'
+    alt: 'Custom Poland and Europe holiday packages for international travelers'
   }
 ];
 
@@ -33,10 +33,10 @@ const FeaturesSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-[#0f4f47] mb-4">
-            Why Saudi & GCC Tourists Choose Our Poland Travel Agency
+            Why Travelers Worldwide Choose Green Continent Tours
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Specialized Poland tour packages for Saudi Arabia and Gulf travelers with Arabic support, halal options, and cultural understanding
+            A trusted Krakow-based tour operator crafting unforgettable Poland and Europe experiences for travelers from every corner of the globe
           </p>
         </div>
         

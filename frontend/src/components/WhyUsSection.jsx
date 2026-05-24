@@ -23,7 +23,7 @@ const WhyUsSection = () => {
           {/* Left Content */}
           <div className="text-white">
             <h1 className="text-3xl md:text-4xl font-bold mb-8">
-              Poland Tour Packages for Saudi Arabia & GCC Tourists - Your Trusted Travel Agency
+              Discover Poland & Europe with Krakow's Trusted Tour Operator
             </h1>
             
             {/* Time to Travel Image */}
@@ -39,11 +39,11 @@ const WhyUsSection = () => {
             </div>
 
             <p className="text-xl mb-4 leading-relaxed">
-              Specialized Poland travel agency serving Saudi Arabian and GCC tourists. Experience authentic Poland tour packages including Krakow city tours, Zakopane mountain escapes, and Warsaw cultural experiences.
+              A trusted Krakow-based travel agency welcoming travelers from across the world. Experience authentic Poland tour packages including Krakow city tours, Zakopane mountain escapes, and Warsaw cultural experiences.
             </p>
             
             <p className="text-lg mb-8 text-gray-200">
-              From Krakow's historic Old Town to Zakopane's Tatra Mountains, Warsaw's modern skyline to Auschwitz-Birkenau memorial - we create unforgettable Poland holiday packages tailored for Gulf travelers with halal-friendly options.
+              From Krakow's historic Old Town to Zakopane's Tatra Mountains, Warsaw's modern skyline to the Auschwitz-Birkenau memorial — we craft unforgettable Poland holiday packages for international travelers, with tailored options available for every taste, culture, and budget.
             </p>
 
             <Link 
