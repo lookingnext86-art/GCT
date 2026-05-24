@@ -58,48 +58,58 @@ const TravelGuide = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="grid md:grid-cols-2 gap-8">
-                {travelGuides.map((guide, index) => (
-                  <article 
-                    key={index}
-                    className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 cursor-pointer group"
-                  >
-                    <div className="relative overflow-hidden h-64">
-                      <img 
-                        src={guide.image} 
-                        alt={guide.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                      <div className="absolute top-4 left-4">
-                        <span className="bg-[#4dd4ac] text-[#0f4f47] px-4 py-2 rounded-full text-sm font-bold shadow-lg">
-                          {guide.category}
-                        </span>
-                      </div>
-                      <div className="absolute bottom-4 left-4 right-4">
-                        <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-[#4dd4ac] transition-colors">
-                          {guide.title}
-                        </h3>
-                      </div>
-                    </div>
-                    <div className="p-6">
-                      <p className="text-gray-700 mb-4 text-base leading-relaxed">
-                        {guide.description}
-                      </p>
-                      <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                        {guide.content}
-                      </p>
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2 text-sm text-gray-500">
-                          <Clock className="w-4 h-4" />
-                          {guide.readTime}
+                {travelGuides.map((guide, index) => {
+                  const articleLinks = [
+                    '/travel-guide/halal-tourism',
+                    '/travel-guide/hidden-gems',
+                    '/travel-guide/avoid-mistakes',
+                    '/travel-guide/group-tours'
+                  ];
+                  
+                  return (
+                    <Link 
+                      to={articleLinks[index]}
+                      key={index}
+                      className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 cursor-pointer group"
+                    >
+                      <div className="relative overflow-hidden h-64">
+                        <img 
+                          src={guide.image} 
+                          alt={guide.title}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div className="absolute top-4 left-4">
+                          <span className="bg-[#4dd4ac] text-[#0f4f47] px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                            {guide.category}
+                          </span>
                         </div>
-                        <button className="bg-[#0f4f47] text-white px-6 py-2 rounded-full text-sm font-bold hover:bg-[#1a6b5f] transition-colors">
-                          Read Article
-                        </button>
+                        <div className="absolute bottom-4 left-4 right-4">
+                          <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-[#4dd4ac] transition-colors">
+                            {guide.title}
+                          </h3>
+                        </div>
                       </div>
-                    </div>
-                  </article>
-                ))}
+                      <div className="p-6">
+                        <p className="text-gray-700 mb-4 text-base leading-relaxed">
+                          {guide.description}
+                        </p>
+                        <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                          {guide.content}
+                        </p>
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-2 text-sm text-gray-500">
+                            <Clock className="w-4 h-4" />
+                            {guide.readTime}
+                          </div>
+                          <button className="bg-[#0f4f47] text-white px-6 py-2 rounded-full text-sm font-bold hover:bg-[#1a6b5f] transition-colors">
+                            Read Article
+                          </button>
+                        </div>
+                      </div>
+                    </Link>
+                  );
+                })}
               </div>
 
               {/* SEO Content Section */}
