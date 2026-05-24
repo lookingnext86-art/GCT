@@ -2,9 +2,21 @@ import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Facebook, Instagram } from 'lucide-react';
 
 const slides = [
-  'https://greencontinenttours.com/GCT-asset/Slider/Slider-1.jpg',
-  'https://greencontinenttours.com/GCT-asset/Slider/Slider-2.jpg',
-  'https://greencontinenttours.com/GCT-asset/Slider/Slider-4.jpg'
+  {
+    url: 'https://images.unsplash.com/photo-1606992894456-799462dacd65?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTF8MHwxfHNlYXJjaHwxfHxLcmFrb3clMjBNYWluJTIwU3F1YXJlfGVufDB8fHx8MTc3OTY1MDYyOXww&ixlib=rb-4.1.0&q=85',
+    alt: 'Krakow Main Square Old Town Poland - St Mary Basilica and Cloth Hall historic market',
+    title: 'Krakow Old Town'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1629267481334-cd1074045135?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzV8MHwxfHNlYXJjaHwzfHxUYXRyYSUyME1vdW50YWluc3xlbnwwfHx8fDE3Nzk2NTA2Mjl8MA&ixlib=rb-4.1.0&q=85',
+    alt: 'Tatra Mountains Zakopane Poland - scenic mountain peaks and hiking trails',
+    title: 'Tatra Mountains'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1699791913496-cbca52f1c626?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHw0fHxXYXdlbCUyMENhc3RsZXxlbnwwfHx8fDE3Nzk2NTA2Mjl8MA&ixlib=rb-4.1.0&q=85',
+    alt: 'Wawel Castle Krakow Poland - historic royal castle and Vistula River view',
+    title: 'Wawel Castle'
+  }
 ];
 
 const HeroSlider = () => {
@@ -66,11 +78,16 @@ const HeroSlider = () => {
           }`}
         >
           <img
-            src={slide}
-            alt={`European travel destination ${index + 1} - Tours in Krakow and Poland by Green Continent Tours`}
+            src={slide.url}
+            alt={slide.alt}
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/20" />
+          
+          {/* Image Title Overlay */}
+          <div className="absolute bottom-24 left-6 bg-white/10 backdrop-blur-md px-6 py-3 rounded-lg">
+            <p className="text-white text-2xl font-bold">{slide.title}</p>
+          </div>
         </div>
       ))}
 
