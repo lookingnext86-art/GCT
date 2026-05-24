@@ -1,56 +1,64 @@
 import React from 'react';
 
 const goals = [
-  'Your Complete Travel Partner: Based in Krakow, we are your one-stop solution for exploring Poland and Europe. We specialize in city tours, Auschwitz-Birkenau visits, Salt Mine trips, mountain excursions, and multi-day adventures. From historic streets to beautiful beaches, we handle everything: hotels, transportation, guides, and authentic experiences.',
-  'Local Experts Creating Memorable Experiences: Our team of passionate guides are dedicated to showcasing the best of Poland. With deep knowledge of history, culture, and hidden gems, we create personalized itineraries beyond typical tourist attractions. Experience authentic cuisine, explore neighborhoods, and discover countryside villages with our local expertise.',
-  'Sustainable Tourism Preserving Heritage and Nature: We are committed to protecting natural beauty and cultural heritage. Our tours support local businesses, minimize environmental impact, use eco-friendly transportation, and educate travelers about conservation. We ensure treasures remain beautiful for future generations.',
-  'Dedicated Support Throughout Your Journey: From first inquiry to final goodbye, we are with you every step. Our 24/7 customer service provides real-time support in multiple languages. We monitor all logistics to ensure smooth experiences. Whether you need recommendations, help with transportation, or itinerary adjustments, our team is ready to assist.'
+  {
+    number: 1,
+    title: 'One-Stop Travel Solution',
+    description: 'Complete tour packages across Poland and Europe with hotels, transportation, guides, and authentic experiences all handled for you.'
+  },
+  {
+    number: 2,
+    title: 'Local Expert Guides',
+    description: 'Passionate local guides with deep knowledge of Polish history, culture, and hidden gems creating personalized, authentic experiences.'
+  },
+  {
+    number: 3,
+    title: 'Sustainable Tourism',
+    description: 'Environmentally responsible tours that support local communities, preserve cultural heritage, and protect natural beauty.'
+  },
+  {
+    number: 4,
+    title: '24/7 Customer Support',
+    description: 'Dedicated multilingual support team monitoring your journey from booking to completion, ensuring smooth, worry-free travel.'
+  }
 ];
 
 const OurGoalsSection = () => {
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="max-w-5xl mx-auto">
-          {/* Title Image */}
+        <div className="max-w-6xl mx-auto">
+          {/* Title */}
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-[#0f4f47] mb-6">
-              Why Travelers Choose Our Krakow Tour Operator
+              Our Goals
             </h2>
-            <img 
-              src="https://greencontinenttours.com/GCT-asset/Our-Goals-title.png" 
-              alt="Green Continent Tours - Krakow tour operator mission" 
-              className="mx-auto max-w-md w-full"
-              loading="lazy"
-            />
-          </div>
-
-          {/* Main Description */}
-          <div className="text-center mb-16">
-            <p className="text-2xl font-bold text-[#0f4f47] mb-4">
-              Your Gateway to Poland & Europe
-            </p>
-            <p className="text-xl text-gray-700 leading-relaxed">
-              For years, travelers worldwide have trusted us to discover Poland's magic. As a premier tour operator, we don't just show you Poland - we help you experience it like a local. From your first steps in the Main Square to unforgettable journeys through mountains, cities, and countryside, we deliver authentic experiences that turn first-time visitors into lifelong enthusiasts.
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+              As your trusted tour operator in Krakow, we are committed to delivering exceptional Polish travel experiences through four core principles
             </p>
           </div>
 
           {/* Goals Grid */}
-          <div className="grid md:grid-cols-2 gap-8">
-            {goals.map((goal, index) => (
-              <article 
-                key={index}
-                className="bg-gradient-to-br from-[#0f4f47] to-[#1a6b5f] text-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
+            {goals.map((goal) => (
+              <div 
+                key={goal.number}
+                className="bg-gradient-to-br from-[#0f4f47] to-[#1a6b5f] text-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
               >
-                <div className="flex items-start gap-4">
-                  <div className="bg-[#4dd4ac] text-[#0f4f47] w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">
-                    {index + 1}
+                <div className="flex items-start gap-6">
+                  <div className="bg-[#4dd4ac] text-[#0f4f47] w-14 h-14 rounded-full flex items-center justify-center font-bold text-2xl flex-shrink-0">
+                    {goal.number}
                   </div>
-                  <p className="text-base leading-relaxed">
-                    {goal}
-                  </p>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-3">
+                      {goal.title}
+                    </h3>
+                    <p className="text-base leading-relaxed text-gray-100">
+                      {goal.description}
+                    </p>
+                  </div>
                 </div>
-              </article>
+              </div>
             ))}
           </div>
 
