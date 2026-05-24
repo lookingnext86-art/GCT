@@ -28,7 +28,7 @@ const Header = () => {
               Home
             </Link>
             <Link to="/itineraries" className="text-white hover:text-[#ffd700] transition-colors text-sm font-medium">
-              Itineraries
+              Travel Guide
             </Link>
             <Link to="/gallery" className="text-white hover:text-[#ffd700] transition-colors text-sm font-medium">
               Gallery
@@ -69,7 +69,7 @@ const Header = () => {
               Home
             </Link>
             <Link to="/itineraries" className="text-white hover:text-[#ffd700] transition-colors text-sm font-medium">
-              Itineraries
+              Travel Guide
             </Link>
             <Link to="/gallery" className="text-white hover:text-[#ffd700] transition-colors text-sm font-medium">
               Gallery
