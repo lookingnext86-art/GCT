@@ -62,25 +62,7 @@ const OurGoalsSection = () => {
             ))}
           </div>
 
-          {/* Call to Action */}
-          <div className="mt-16 text-center bg-gradient-to-r from-[#0f4f47] to-[#1a6b5f] text-white p-12 rounded-2xl shadow-2xl">
-            <h3 className="text-3xl font-bold mb-4">
-              Ready to Explore Poland?
-            </h3>
-            <p className="text-xl mb-8">
-              Join thousands of satisfied travelers. Book your tour today!
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <button className="bg-[#4dd4ac] text-[#0f4f47] px-8 py-4 rounded-full font-bold text-lg hover:bg-[#ffd700] transition-all duration-300 shadow-lg hover:shadow-xl">
-                Book Tours
-              </button>
-              <button className="bg-white text-[#0f4f47] px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl">
-                Contact Us
-              </button>
-            </div>
-          </div>
-
-          {/* GCT Banner */}
+          {/* GCT Banner - Full Width */}
           <div className="mt-16">
             <a 
               href="https://www.gct.travel/index.php" 
@@ -92,7 +74,7 @@ const OurGoalsSection = () => {
               <img 
                 src="https://greencontinenttours.com/GCT-asset/info/GCT.jpg" 
                 alt="Book your Krakow tours online - GCT Travel booking platform" 
-                className="w-full max-w-2xl mx-auto rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-[1.02] animate-pulse-slow"
+                className="w-full rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-[1.01] animate-pulse-slow"
                 loading="lazy"
               />
             </a>
