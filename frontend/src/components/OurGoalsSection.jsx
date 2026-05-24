@@ -87,11 +87,12 @@ const OurGoalsSection = () => {
               target="_blank" 
               rel="noopener noreferrer"
               aria-label="Book Krakow and Poland tours online"
+              className="block"
             >
               <img 
                 src="https://greencontinenttours.com/GCT-asset/info/GCT.jpg" 
                 alt="Book your Krakow tours online - GCT Travel booking platform" 
-                className="w-full rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-[1.02]"
+                className="w-full max-w-2xl mx-auto rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-[1.02] animate-pulse-slow"
                 loading="lazy"
               />
             </a>

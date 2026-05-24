@@ -113,3 +113,20 @@ code {
         border-bottom-color: inherit;
     }
 }
+
+
+/* Blinking animation for GCT banner */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(0.98);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 2s ease-in-out infinite;
+}
