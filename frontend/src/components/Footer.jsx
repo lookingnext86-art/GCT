@@ -80,8 +80,7 @@ const Footer = () => {
 
               <div className="mt-8 pt-6 border-t border-white/20">
                 <p className="text-sm text-center">
-                  <strong>Business Registration:</strong> NIP 6793123024<br />
-                  Licensed Tour Operator in Poland
+                  <strong>Business Registration:</strong> Registered in Poland under NIP 6793123024
                 </p>
               </div>
             </div>
