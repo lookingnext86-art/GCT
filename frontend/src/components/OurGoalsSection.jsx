@@ -1,5 +1,4 @@
 import React from 'react';
-import GCTBanner from './GCTBanner';
 
 const goals = [
   {
@@ -63,9 +62,22 @@ const OurGoalsSection = () => {
             ))}
           </div>
 
-          {/* Custom GCT Banner */}
+          {/* GCT Custom Banner Image */}
           <div className="mt-16">
-            <GCTBanner />
+            <a 
+              href="https://www.gct.travel/index.php" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Sign up for B2B Online Hotel Reservation Portal"
+              className="block"
+            >
+              <img 
+                src="https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/jvzq92lz_Screenshot%202026-05-24%20at%209.26.56%E2%80%AFPM.png" 
+                alt="GCT Booking Made Simple - Sign up for B2B Online Hotel Reservation Portal" 
+                className="w-full max-h-72 object-cover rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-[1.01] animate-pulse-slow"
+                loading="lazy"
+              />
+            </a>
           </div>
         </div>
       </div>
