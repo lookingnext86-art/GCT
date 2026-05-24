@@ -1,65 +1,66 @@
 import React from 'react';
+import { Users, Plane, Building2, Map, User, GraduationCap, MessageCircle, Sparkles, Ship, Hotel, Ticket, Route } from 'lucide-react';
 
 const services = [
   {
-    title: 'Krakow Group Tours & Poland Travel Packages',
-    icon: 'https://greencontinenttours.com/GCT-asset/Services/Group%20travel%20arrangement.png',
-    description: 'Customized group tours in Krakow, Poland & Europe'
+    title: 'Group Travel Arrangements',
+    description: 'Custom group tours across Poland and Europe',
+    icon: Users
   },
   {
-    title: 'Krakow Airport Transfers & Transportation',
-    icon: 'https://greencontinenttours.com/GCT-asset/Services/Airport%20transfers.png',
-    description: 'Professional pickup from Krakow Airport (KRK)'
+    title: 'Airport Transfers',
+    description: 'Professional airport pickup and transfer services',
+    icon: Plane
   },
   {
-    title: 'Krakow MICE & Corporate Event Services',
-    icon: 'https://greencontinenttours.com/GCT-asset/Services/Conferences%20and%20MICE.png',
-    description: 'Business meetings and conferences in Krakow'
+    title: 'Conferences & MICE Services',
+    description: 'Business travel and corporate event planning',
+    icon: Building2
   },
   {
-    title: 'Krakow City Tours & Sightseeing',
-    icon: 'https://greencontinenttours.com/GCT-asset/Services/City%20tours.png',
-    description: 'Old Town, Wawel Castle, Kazimierz guided tours'
+    title: 'City Tours',
+    description: 'Guided city tours and sightseeing experiences',
+    icon: Map
   },
   {
-    title: 'Professional Krakow Tour Guides',
-    icon: 'https://greencontinenttours.com/GCT-asset/Services/Tour%20guide%20services.png',
-    description: 'Licensed multilingual guides in Krakow & Poland'
+    title: 'Professional Tour Guides',
+    description: 'Certified multilingual tour guides in Poland',
+    icon: User
   },
   {
-    title: 'Educational Tours to Krakow & Auschwitz',
-    icon: 'https://greencontinenttours.com/GCT-asset/Services/School%20&%20University%20tours.png',
-    description: 'Student tours, Auschwitz-Birkenau educational visits'
+    title: 'School & University Tours',
+    description: 'Educational travel programs for students',
+    icon: GraduationCap
   },
   {
-    title: 'Krakow Travel Consultation & Planning',
-    icon: 'https://greencontinenttours.com/GCT-asset/Services/Travel%20Consultation.png',
-    description: 'Expert advice for visiting Krakow and Poland'
+    title: 'Travel Consultation',
+    description: 'Expert travel advice and itinerary planning',
+    icon: MessageCircle
   },
   {
-    title: 'Custom Krakow & Poland Private Tours',
-    icon: 'https://greencontinenttours.com/GCT-asset/Services/Tailor%20made%20special%20tours.png',
-    description: 'Personalized Krakow itineraries and day trips'
+    title: 'Tailor-Made Special Tours',
+    description: 'Customized vacation packages and private tours',
+    icon: Sparkles
   },
   {
-    title: 'European River Cruise Bookings from Poland',
-    icon: 'https://greencontinenttours.com/GCT-asset/Services/Cruise%20bookings.png',
-    description: 'Danube, Vistula cruises and European packages'
+    title: 'Cruise Bookings',
+    description: 'European cruise reservations and packages',
+    icon: Ship
   },
   {
-    title: 'Krakow Hotels & Accommodation Bookings',
-    icon: 'https://greencontinenttours.com/GCT-asset/Services/Hotel%20&%20accommodation%20bookings.png',
-    description: 'Best hotels in Krakow Old Town and Poland'
+    title: 'Hotel Accommodations',
+    description: 'Hotels, hostels, and vacation rentals across Europe',
+    icon: Hotel
   },
   {
-    title: 'Poland Train, Bus & Flight Tickets',
-    icon: 'https://greencontinenttours.com/GCT-asset/Services/Air%20tickets,%20bus%20&%20Train%20reservations.png',
-    description: 'Transportation booking across Poland & Europe'
+    title: 'Transportation Tickets',
+    description: 'Flight, bus, and train ticket reservations',
+    icon: Ticket
   },
   {
-    title: 'Multi-Day Poland & Central Europe Tours',
-    icon: 'https://greencontinenttours.com/GCT-asset/Services/Tailor%20Made%20tours.png',
-    description: 'Krakow to Prague, Vienna, Budapest tour packages'
+    title: 'Custom European Tours',
+    description: 'Personalized multi-country tour packages',
+    icon: Route
   }
 ];
 
@@ -88,31 +89,33 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-          {services.map((service, index) => (
-            <article 
-              key={index}
-              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group cursor-pointer border border-gray-100"
-            >
-              <div className="flex flex-col items-center text-center">
-                <div className="mb-4 w-20 h-20 flex items-center justify-center rounded-full bg-gradient-to-br from-[#0f4f47] to-[#1a6b5f] group-hover:scale-110 transition-transform duration-300">
-                  <img 
-                    src={service.icon} 
-                    alt={service.title}
-                    className="w-12 h-12 object-contain filter brightness-0 invert"
-                    loading="lazy"
-                  />
+        {/* Services Grid - Text Before Icons */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {services.map((service, index) => {
+            const IconComponent = service.icon;
+            return (
+              <div 
+                key={index}
+                className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 group"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-[#0f4f47] mb-2 group-hover:text-[#1a6b5f] transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      {service.description}
+                    </p>
+                  </div>
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#0f4f47] to-[#1a6b5f] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <IconComponent className="w-6 h-6 text-white" />
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-sm font-semibold text-[#0f4f47] leading-tight mb-2">
-                  {service.title}
-                </h3>
-                <p className="text-xs text-gray-600">
-                  {service.description}
-                </p>
               </div>
-            </article>
-          ))}
+            );
+          })}
         </div>
 
         {/* Bottom CTA */}
