@@ -7,7 +7,7 @@ import { Facebook, Instagram } from 'lucide-react';
  */
 const HeroSlider = () => {
   return (
-    <div className="relative h-screen w-full overflow-hidden" data-testid="hero-static">
+    <div className="relative h-screen w-full overflow-hidden pt-20" data-testid="hero-static">
       {/* Social Media Icons - Left Side */}
       <div className="absolute left-6 top-1/2 -translate-y-1/2 z-20 flex flex-col gap-4">
         <a
@@ -45,16 +45,17 @@ const HeroSlider = () => {
       <img
         src="https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/2dbc1o83_ChatGPT%20Image%20May%2025%2C%202026%2C%2002_24_20%20PM.png"
         alt="Discover Poland with Green Continent Tours — Tatra Mountains, Krakow Old Town, and Gdansk waterfront"
-        className="absolute inset-0 w-full h-full object-cover object-center"
+        className="absolute inset-x-0 top-20 bottom-0 w-full h-[calc(100%-5rem)] object-cover object-center"
         loading="eager"
         fetchpriority="high"
       />
 
-      {/* Subtle dark gradient at top so the navbar reads cleanly */}
+      {/* Solid bar behind navbar so it doesn't overlap the image */}
       <div
-        className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#0f4f47]/40 to-transparent pointer-events-none"
+        className="absolute inset-x-0 top-0 h-20 bg-[#0f4f47] pointer-events-none"
         aria-hidden="true"
       />
+
       {/* Subtle dark gradient at bottom for visual transition into next section */}
       <div
         className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0f4f47]/30 to-transparent pointer-events-none"
