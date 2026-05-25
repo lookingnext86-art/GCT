@@ -1,35 +1,33 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Globe2 } from 'lucide-react';
 
 /**
- * Hero / Why Us section.
- * 4 photos in a balanced 2×2 grid. All images share unified CSS filters
- * for a consistent, premium editorial look.
+ * Hero / Why Us section — premium DMC-style editorial layout.
  */
 const imageSlots = [
   {
-    id: 'families',
-    label: 'Families',
+    id: 'private-groups',
+    label: 'Private Groups',
     src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/swpialvc_Private%20group.png',
-    alt: 'Families and private travelers boarding a flight on a Green Continent Tours trip to Poland',
+    alt: 'Private group on a Green Continent Tours travel experience',
   },
   {
-    id: 'group-travel',
-    label: 'Group Travel',
+    id: 'family-journeys',
+    label: 'Family Journeys',
     src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/dld6hlqi_group%20travel.png',
-    alt: 'International travel group enjoying an evening in a historic Krakow courtyard',
+    alt: 'Family travelers enjoying an evening in a historic Krakow courtyard',
   },
   {
-    id: 'poland-destinations',
-    label: 'Poland Destinations',
+    id: 'poland-and-beyond',
+    label: 'Poland & Beyond',
     src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/swa9ivb7_Krakow%20PL.png',
-    alt: 'Tour group at Krakow Main Market Square with St. Mary\'s Basilica and the Cloth Hall',
+    alt: 'Tour group at Krakow Main Market Square with the Cloth Hall and Town Hall Tower',
   },
   {
-    id: 'premium-experiences',
-    label: 'Premium Experiences',
+    id: 'premium-travel',
+    label: 'Premium Travel',
     src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/bs7b1gmm_VIP%20tour.png',
-    alt: 'VIP travelers on a premium tour outside the United Nations in Geneva',
+    alt: 'VIP travelers on a premium Green Continent Tours experience in Geneva',
   },
 ];
 
@@ -37,29 +35,33 @@ const WHATSAPP_NUMBER = '48537482798';
 const WHATSAPP_MESSAGE = 'Hello, I would like to plan a trip to Poland.';
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
+// Unified editorial color grade applied to every hero photo.
+const heroImageFilter =
+  'saturate(0.82) contrast(1.08) brightness(0.88) hue-rotate(-4deg)';
+
 const WhyUsSection = () => {
   return (
     <section
-      className="relative bg-[#0f4f47] py-24 lg:py-32 overflow-hidden"
+      className="relative bg-[#0f4f47] py-20 lg:py-28 overflow-hidden"
       aria-labelledby="why-us-heading"
       data-testid="why-us-section"
     >
       {/* Soft ambient glow */}
       <div
-        className="pointer-events-none absolute -top-32 -right-32 w-[36rem] h-[36rem] rounded-full bg-[#4dd4ac]/10 blur-3xl"
+        className="pointer-events-none absolute -top-32 -right-32 w-[30rem] h-[30rem] rounded-full bg-[#4dd4ac]/10 blur-3xl"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute -bottom-40 -left-40 w-[32rem] h-[32rem] rounded-full bg-[#1a6b5f]/40 blur-3xl"
+        className="pointer-events-none absolute -bottom-40 -left-40 w-[28rem] h-[28rem] rounded-full bg-[#1a6b5f]/40 blur-3xl"
         aria-hidden="true"
       />
 
-      <div className="container mx-auto px-6 lg:px-8 relative">
-        <div className="grid lg:grid-cols-[1.05fr_1fr] gap-14 lg:gap-24 items-center">
+      <div className="container mx-auto px-6 lg:px-10 relative">
+        <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] gap-y-14 gap-x-10 lg:gap-x-16 items-center max-w-7xl mx-auto">
           {/* LEFT — Editorial copy */}
-          <div className="text-white max-w-xl">
+          <div className="text-white max-w-xl lg:pr-4">
             <p
-              className="inline-block text-[11px] font-semibold tracking-[0.3em] uppercase text-[#4dd4ac] mb-8 border border-[#4dd4ac]/40 px-3.5 py-1.5 rounded-full"
+              className="inline-block text-[11px] font-semibold tracking-[0.32em] uppercase text-[#4dd4ac] mb-7 border border-[#4dd4ac]/40 px-3.5 py-1.5 rounded-full"
               data-testid="why-us-eyebrow"
             >
               Based in Krakow · Trusted Worldwide
@@ -67,21 +69,21 @@ const WhyUsSection = () => {
 
             <h1
               id="why-us-heading"
-              className="text-4xl md:text-5xl lg:text-[3.4rem] font-bold mb-8 leading-[1.1] tracking-tight"
+              className="font-bold leading-[1.06] tracking-[-0.02em] mb-7 text-[2.4rem] sm:text-5xl lg:text-[3.4rem] xl:text-[3.6rem]"
             >
-              Private, Group &amp; Family Tours <br className="hidden md:block" />
-              <span className="text-[#4dd4ac]">Across Poland</span>
+              Private, Group &amp; Family Tours{' '}
+              <span className="text-[#4dd4ac] block sm:inline">Across Poland</span>
             </h1>
 
-            <p className="text-lg md:text-xl leading-[1.7] text-gray-100 mb-6 font-light">
+            <p className="text-base md:text-lg leading-[1.75] text-gray-100/95 mb-5 font-light max-w-lg">
               Discover Poland through carefully designed journeys for families,
               private travelers, and organized groups. From Krakow and Zakopane to
-              Warsaw and beyond, we create comfortable travel experiences with
+              Warsaw and beyond, we craft comfortable travel experiences with
               local knowledge, premium transport, and flexible planning.
             </p>
 
             <p
-              className="text-sm md:text-base text-[#4dd4ac]/90 italic mb-12 font-light tracking-wide"
+              className="text-sm md:text-[15px] text-[#4dd4ac]/90 italic mb-10 font-light tracking-wide max-w-md"
               data-testid="why-us-support-line"
             >
               Custom itineraries, trusted local support, and smooth travel across Poland.
@@ -94,7 +96,7 @@ const WhyUsSection = () => {
               rel="noopener noreferrer"
               data-testid="plan-trip-cta"
               aria-label="Plan your Poland trip on WhatsApp"
-              className="group relative inline-flex items-center justify-center gap-3 w-full sm:w-auto bg-[#4dd4ac] text-[#0f4f47] px-8 py-5 sm:py-4 min-h-[56px] rounded-full font-bold text-base tracking-wide shadow-lg shadow-[#4dd4ac]/20 hover:bg-white hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 ease-out overflow-hidden"
+              className="group relative inline-flex items-center justify-center gap-3 w-full sm:w-auto bg-[#4dd4ac] text-[#0f4f47] px-9 py-4 sm:py-[18px] min-h-[56px] rounded-full font-bold text-[15px] tracking-[0.02em] shadow-[0_10px_40px_-10px_rgba(77,212,172,0.6)] hover:bg-white hover:shadow-[0_20px_50px_-10px_rgba(77,212,172,0.5)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 ease-out overflow-hidden"
             >
               <span
                 className="absolute inset-0 rounded-full bg-white/40 opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500 blur-xl"
@@ -102,51 +104,60 @@ const WhyUsSection = () => {
               />
               <span className="relative">Plan Your Poland Trip</span>
               <ArrowRight
-                className="relative w-5 h-5 transition-transform duration-300 group-hover:translate-x-1.5"
+                className="relative w-[18px] h-[18px] transition-transform duration-300 group-hover:translate-x-1.5"
                 aria-hidden="true"
               />
             </a>
+
+            {/* Trust signal */}
+            <div
+              className="flex items-center gap-2.5 mt-6 text-[13px] text-white/65 font-light tracking-wide"
+              data-testid="why-us-trust-signal"
+            >
+              <Globe2 className="w-4 h-4 text-[#4dd4ac]" strokeWidth={1.75} aria-hidden="true" />
+              <span>Trusted by travelers from 20+ countries</span>
+            </div>
           </div>
 
-          {/* RIGHT — Balanced 2×2 photo grid with unified styling */}
-          <div className="relative">
-            <div className="grid grid-cols-2 gap-6 md:gap-8">
+          {/* RIGHT — Balanced 2×2 photo grid with unified color grading */}
+          <div className="relative w-full max-w-xl lg:max-w-none mx-auto">
+            <div className="grid grid-cols-2 gap-4 md:gap-5">
               {imageSlots.map((slot) => (
                 <figure
                   key={slot.id}
                   data-testid={`hero-photo-slot-${slot.id}`}
-                  className="group relative overflow-hidden rounded-2xl aspect-square shadow-xl shadow-black/30 ring-1 ring-white/10 transition-transform duration-500 hover:-translate-y-1 hover:shadow-2xl"
+                  className="group relative overflow-hidden rounded-[18px] aspect-square shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] ring-1 ring-white/10 transition-all duration-500 hover:-translate-y-1.5 hover:ring-[#4dd4ac]/40"
                 >
                   <img
                     src={slot.src}
                     alt={slot.alt}
                     loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    style={{
-                      filter: 'saturate(0.95) contrast(1.05) brightness(0.92)',
-                    }}
+                    className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.06]"
+                    style={{ filter: heroImageFilter }}
                   />
-                  {/* Unified tonal overlay for matching style */}
+
+                  {/* Warm-to-green tonal unification overlay */}
                   <div
-                    className="absolute inset-0 bg-gradient-to-t from-[#0f4f47]/70 via-[#0f4f47]/10 to-transparent mix-blend-multiply"
+                    className="absolute inset-0 bg-gradient-to-br from-[#0f4f47]/30 via-[#0f4f47]/10 to-[#1a6b5f]/35 mix-blend-multiply"
                     aria-hidden="true"
                   />
-                  {/* Subtle green tint to unify all photos */}
+                  {/* Bottom gradient for caption legibility */}
                   <div
-                    className="absolute inset-0 bg-[#0f4f47]/15"
+                    className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-[#0a3a35] via-[#0f4f47]/40 to-transparent"
                     aria-hidden="true"
                   />
-                  {/* Hover bloom */}
+                  {/* Subtle highlight on hover */}
                   <div
-                    className="absolute inset-0 bg-gradient-to-t from-[#4dd4ac]/0 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    className="absolute inset-0 bg-[#4dd4ac]/0 group-hover:bg-[#4dd4ac]/[0.06] transition-colors duration-500"
                     aria-hidden="true"
                   />
+
                   {/* Caption */}
                   <figcaption className="absolute inset-x-0 bottom-0 p-5 z-10">
-                    <span className="block text-[10px] uppercase tracking-[0.25em] text-[#4dd4ac] mb-1.5">
+                    <span className="block text-[9px] uppercase tracking-[0.3em] text-[#4dd4ac] mb-1.5 font-semibold">
                       Green Continent Tours
                     </span>
-                    <span className="block text-white text-base md:text-lg font-semibold tracking-wide drop-shadow-md">
+                    <span className="block text-white text-base md:text-[17px] font-semibold tracking-tight leading-tight drop-shadow-md">
                       {slot.label}
                     </span>
                   </figcaption>

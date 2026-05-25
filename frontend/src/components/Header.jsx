@@ -23,26 +23,26 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
-            <Link to="/" className="text-white hover:text-[#ffd700] transition-colors text-sm font-medium">
+          <nav className="hidden lg:flex items-center gap-10">
+            <Link to="/" className="text-white/90 hover:text-[#4dd4ac] transition-colors text-[13px] font-medium tracking-wide">
               Home
             </Link>
-            <Link to="/travel-guide" className="text-white hover:text-[#ffd700] transition-colors text-sm font-medium">
+            <Link to="/travel-guide" className="text-white/90 hover:text-[#4dd4ac] transition-colors text-[13px] font-medium tracking-wide">
               Travel Guide
             </Link>
-            <Link to="/gallery" className="text-white hover:text-[#ffd700] transition-colors text-sm font-medium">
+            <Link to="/gallery" className="text-white/90 hover:text-[#4dd4ac] transition-colors text-[13px] font-medium tracking-wide">
               Gallery
             </Link>
-            <Link to="/services" className="text-white hover:text-[#ffd700] transition-colors text-sm font-medium">
+            <Link to="/services" className="text-white/90 hover:text-[#4dd4ac] transition-colors text-[13px] font-medium tracking-wide">
               Services
             </Link>
-            <Link to="/contact" className="text-white hover:text-[#ffd700] transition-colors text-sm font-medium">
+            <Link to="/contact" className="text-white/90 hover:text-[#4dd4ac] transition-colors text-[13px] font-medium tracking-wide">
               Contact Us
             </Link>
-            <Link to="/about" className="text-white hover:text-[#ffd700] transition-colors text-sm font-medium">
+            <Link to="/about" className="text-white/90 hover:text-[#4dd4ac] transition-colors text-[13px] font-medium tracking-wide">
               About Us
             </Link>
-            <button className="bg-white text-[#0f4f47] px-6 py-2 rounded-full font-semibold hover:bg-[#ffd700] transition-all duration-300">
+            <button className="ml-2 bg-[#4dd4ac] text-[#0f4f47] px-6 py-2.5 rounded-full text-[13px] font-bold tracking-wide hover:bg-white transition-all duration-300 shadow-md hover:shadow-lg">
               Register
             </button>
           </nav>
