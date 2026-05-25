@@ -2,9 +2,10 @@ import React from 'react';
 import Header from '../components/Header';
 import HeroSlider from '../components/HeroSlider';
 import WhyUsSection from '../components/WhyUsSection';
-import ReviewsSection from '../components/ReviewsSection';
 import OurGoalsSection from '../components/OurGoalsSection';
 import ServicesSection from '../components/ServicesSection';
+import ReviewsSection from '../components/ReviewsSection';
+import TrustedPartners from '../components/TrustedPartners';
 import Footer from '../components/Footer';
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
         <OurGoalsSection />
         <ServicesSection />
         <ReviewsSection />
+        <TrustedPartners />
       </main>
       <Footer />
     </div>
