@@ -154,9 +154,6 @@ const WhyUsSection = () => {
 
                   {/* Caption */}
                   <figcaption className="absolute inset-x-0 bottom-0 p-5 z-10">
-                    <span className="block text-[9px] uppercase tracking-[0.3em] text-[#4dd4ac] mb-1.5 font-semibold">
-                      Green Continent Tours
-                    </span>
                     <span className="block text-white text-base md:text-[17px] font-semibold tracking-tight leading-tight drop-shadow-md">
                       {slot.label}
                     </span>
