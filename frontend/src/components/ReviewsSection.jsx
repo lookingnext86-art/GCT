@@ -59,18 +59,18 @@ const ReviewsSection = () => {
 
   return (
     <section
-      className="relative bg-gradient-to-b from-white via-[#f5faf8] to-white py-24 lg:py-28 overflow-hidden"
+      className="relative bg-gradient-to-b from-white via-[#f5faf8] to-white py-14 lg:py-16 overflow-hidden"
       aria-labelledby="reviews-heading"
       data-testid="reviews-section"
     >
       {/* Decorative quote mark */}
       <Quote
-        className="absolute top-16 left-10 w-32 h-32 text-[#0f4f47]/[0.04] -scale-x-100"
+        className="absolute top-10 left-10 w-20 h-20 text-[#0f4f47]/[0.04] -scale-x-100"
         aria-hidden="true"
         strokeWidth={1}
       />
       <Quote
-        className="absolute bottom-16 right-10 w-40 h-40 text-[#0f4f47]/[0.04]"
+        className="absolute bottom-10 right-10 w-24 h-24 text-[#0f4f47]/[0.04]"
         aria-hidden="true"
         strokeWidth={1}
       />
@@ -79,7 +79,7 @@ const ReviewsSection = () => {
         <div className="max-w-4xl mx-auto text-center">
           {/* Eyebrow */}
           <p
-            className="inline-block text-[11px] font-semibold tracking-[0.3em] uppercase text-[#0f4f47] mb-6 border border-[#0f4f47]/20 px-3.5 py-1.5 rounded-full"
+            className="inline-block text-[10px] font-semibold tracking-[0.3em] uppercase text-[#0f4f47] mb-3 border border-[#0f4f47]/20 px-3 py-1 rounded-full"
             data-testid="reviews-eyebrow"
           >
             Verified Google Reviews
@@ -87,24 +87,24 @@ const ReviewsSection = () => {
 
           <h2
             id="reviews-heading"
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0f4f47] mb-4 tracking-tight leading-[1.15]"
+            className="text-2xl md:text-3xl font-bold text-[#0f4f47] mb-2 tracking-tight leading-tight"
           >
             Travelers&apos; stories from across Poland
           </h2>
 
           {/* Aggregate rating */}
-          <div className="flex items-center justify-center gap-3 mb-14">
+          <div className="flex items-center justify-center gap-2 mb-8">
             <div className="flex" aria-label="5 out of 5 stars">
               {[...Array(5)].map((_, i) => (
                 <Star
                   key={i}
-                  className="w-5 h-5 fill-[#f5b400] text-[#f5b400]"
+                  className="w-3.5 h-3.5 fill-[#f5b400] text-[#f5b400]"
                   aria-hidden="true"
                 />
               ))}
             </div>
-            <span className="text-sm text-gray-600 font-light">
-              <strong className="text-[#0f4f47] font-semibold">5.0</strong> · Based on real traveler reviews
+            <span className="text-xs text-gray-600 font-light">
+              <strong className="text-[#0f4f47] font-semibold">5.0</strong> · Real traveler reviews
             </span>
           </div>
         </div>
@@ -118,36 +118,34 @@ const ReviewsSection = () => {
         >
           <article
             key={current}
-            className="bg-white border border-gray-100 rounded-3xl shadow-[0_30px_80px_-30px_rgba(15,79,71,0.25)] px-8 py-12 md:px-14 md:py-16 text-center animate-review-fade"
+            className="bg-white border border-gray-100 rounded-2xl shadow-[0_20px_50px_-25px_rgba(15,79,71,0.2)] px-6 py-7 md:px-10 md:py-8 text-center animate-review-fade"
             data-testid={`review-card-${current}`}
           >
             {/* Stars */}
-            <div className="flex justify-center mb-7" aria-label={`${active.rating} out of 5 stars`}>
+            <div className="flex justify-center mb-3" aria-label={`${active.rating} out of 5 stars`}>
               {[...Array(active.rating)].map((_, i) => (
                 <Star
                   key={i}
-                  className="w-5 h-5 fill-[#f5b400] text-[#f5b400] mx-0.5"
+                  className="w-3.5 h-3.5 fill-[#f5b400] text-[#f5b400] mx-0.5"
                   aria-hidden="true"
                 />
               ))}
             </div>
 
             {/* Review text */}
-            <blockquote className="text-lg md:text-xl text-gray-700 leading-[1.75] font-light italic mb-8 max-w-2xl mx-auto">
+            <blockquote className="text-sm md:text-base text-gray-700 leading-relaxed font-light italic mb-4 max-w-2xl mx-auto">
               &ldquo;{active.text}&rdquo;
             </blockquote>
 
             {/* Author */}
-            <footer className="flex flex-col items-center">
-              <div className="w-12 h-px bg-[#4dd4ac] mb-4" aria-hidden="true" />
-              <cite className="not-italic">
-                <span className="block text-[#0f4f47] font-semibold text-base tracking-tight">
-                  {active.author}
-                </span>
-                <span className="block text-gray-500 text-sm mt-0.5 tracking-wide">
-                  {active.location}
-                </span>
-              </cite>
+            <footer className="flex items-center justify-center gap-2 text-xs">
+              <span className="text-[#0f4f47] font-semibold tracking-tight">
+                {active.author}
+              </span>
+              <span className="w-1 h-1 rounded-full bg-gray-300" aria-hidden="true" />
+              <span className="text-gray-500 tracking-wide">
+                {active.location}
+              </span>
             </footer>
           </article>
 
@@ -157,70 +155,69 @@ const ReviewsSection = () => {
             onClick={prev}
             aria-label="Previous review"
             data-testid="reviews-prev"
-            className="hidden md:flex absolute -left-6 lg:-left-16 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white border border-gray-200 shadow-md items-center justify-center text-[#0f4f47] hover:bg-[#0f4f47] hover:text-white hover:border-[#0f4f47] transition-all duration-300"
+            className="hidden md:flex absolute -left-4 lg:-left-12 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white border border-gray-200 shadow-md items-center justify-center text-[#0f4f47] hover:bg-[#0f4f47] hover:text-white hover:border-[#0f4f47] transition-all duration-300"
           >
-            <ChevronLeft className="w-5 h-5" />
+            <ChevronLeft className="w-4 h-4" />
           </button>
           <button
             type="button"
             onClick={next}
             aria-label="Next review"
             data-testid="reviews-next"
-            className="hidden md:flex absolute -right-6 lg:-right-16 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white border border-gray-200 shadow-md items-center justify-center text-[#0f4f47] hover:bg-[#0f4f47] hover:text-white hover:border-[#0f4f47] transition-all duration-300"
+            className="hidden md:flex absolute -right-4 lg:-right-12 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white border border-gray-200 shadow-md items-center justify-center text-[#0f4f47] hover:bg-[#0f4f47] hover:text-white hover:border-[#0f4f47] transition-all duration-300"
           >
-            <ChevronRight className="w-5 h-5" />
+            <ChevronRight className="w-4 h-4" />
           </button>
 
           {/* Mobile arrows row */}
-          <div className="flex md:hidden justify-center gap-3 mt-6">
+          <div className="flex md:hidden justify-center gap-3 mt-4">
             <button
               type="button"
               onClick={prev}
               aria-label="Previous review"
-              className="w-11 h-11 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center text-[#0f4f47] active:bg-[#0f4f47] active:text-white transition-all"
+              className="w-9 h-9 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center text-[#0f4f47] active:bg-[#0f4f47] active:text-white transition-all"
             >
-              <ChevronLeft className="w-5 h-5" />
+              <ChevronLeft className="w-4 h-4" />
             </button>
             <button
               type="button"
               onClick={next}
               aria-label="Next review"
-              className="w-11 h-11 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center text-[#0f4f47] active:bg-[#0f4f47] active:text-white transition-all"
+              className="w-9 h-9 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center text-[#0f4f47] active:bg-[#0f4f47] active:text-white transition-all"
             >
-              <ChevronRight className="w-5 h-5" />
+              <ChevronRight className="w-4 h-4" />
             </button>
           </div>
 
-          {/* Dots */}
-          <div className="flex justify-center gap-2 mt-10" role="tablist" aria-label="Review navigation">
-            {reviews.map((_, index) => (
-              <button
-                key={index}
-                type="button"
-                role="tab"
-                aria-selected={index === current}
-                aria-label={`Go to review ${index + 1}`}
-                onClick={() => setCurrent(index)}
-                data-testid={`reviews-dot-${index}`}
-                className={`h-1.5 rounded-full transition-all duration-300 ${
-                  index === current
-                    ? 'w-8 bg-[#0f4f47]'
-                    : 'w-1.5 bg-gray-300 hover:bg-gray-400'
-                }`}
-              />
-            ))}
-          </div>
+          {/* Dots + Google link in one compact row */}
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 mt-5">
+            <div className="flex gap-1.5" role="tablist" aria-label="Review navigation">
+              {reviews.map((_, index) => (
+                <button
+                  key={index}
+                  type="button"
+                  role="tab"
+                  aria-selected={index === current}
+                  aria-label={`Go to review ${index + 1}`}
+                  onClick={() => setCurrent(index)}
+                  data-testid={`reviews-dot-${index}`}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    index === current
+                      ? 'w-6 bg-[#0f4f47]'
+                      : 'w-1.5 bg-gray-300 hover:bg-gray-400'
+                  }`}
+                />
+              ))}
+            </div>
 
-          {/* Read all on Google */}
-          <div className="text-center mt-12">
             <a
               href={GOOGLE_REVIEWS_URL}
               target="_blank"
               rel="noopener noreferrer"
               data-testid="reviews-google-link"
-              className="inline-flex items-center gap-2 text-sm text-[#0f4f47] hover:text-[#1a6b5f] font-semibold tracking-wide transition-colors"
+              className="inline-flex items-center gap-1.5 text-xs text-[#0f4f47] hover:text-[#1a6b5f] font-semibold tracking-wide transition-colors"
             >
-              <svg className="w-4 h-4" viewBox="0 0 24 24" aria-hidden="true">
+              <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   fill="#4285F4"
                   d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
