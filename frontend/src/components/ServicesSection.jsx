@@ -69,7 +69,7 @@ const ServicesSection = () => {
       <div className="relative h-80 md:h-[420px] lg:h-[520px] overflow-hidden">
         {/* Background photo: Wawel Royal Castle, Krakow (UNESCO landmark) */}
         <img
-          src="https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/5okkw764_Zo6mW4qyzVB5-5ywq6sG4Uw4To-XlMN2mXYZcLIr-pqbLPgWxMooE4tSRnu73NO9ppOOn-Uvw8p9zUNVH1Rz8FQbejMTazmoDl85kDml3IMWSaKJ7pDfbqkRZgGhb5Ydubc7eSX_eMJexRUW9ojMReRQJALbGM6x2F6uLUmyw59f-owmBKfWJ6Uw6CXvhT1c.jpeg"
+          src="https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/dklii7oz_wawel-royal-castle-krakow-poland.jpg"
           alt="Wawel Royal Castle Krakow Poland — Green Continent Tours travel services"
           title="Wawel Castle, Krakow — Poland Travel Services by Green Continent Tours"
           className="absolute inset-0 w-full h-full object-cover object-center"
@@ -169,7 +169,7 @@ const ServicesSection = () => {
       >
         {/* Background photo: couple walking in Warsaw Old Town */}
         <img
-          src="https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/vrkkd4wr_jTXM-k3FySg2s-kSEfSK_f0Uv6P9krGWgx8HjFrSfyC17oa_gE5GOhpbTF6wiUsgUbq10CLpeWHw6LY0EADOuiCjkSRmVVCx_rU5GNliKEarZdd2FXWBKGWLdLpU285g6N6RwSfd0u7eVZ29wyuYSvlXHAM6MQbeGovPERAlkEq_qZ1u2uuNXeKSMC6-OLJd.jpeg"
+          src="https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/0y6m5743_warsaw-old-town-poland.jpg..jpeg"
           alt="Couple walking through colorful Warsaw Old Town — premium Polish journey with Green Continent Tours"
           title="Plan your premium Polish journey — Warsaw Old Town"
           className="absolute inset-0 w-full h-full object-cover object-center"
