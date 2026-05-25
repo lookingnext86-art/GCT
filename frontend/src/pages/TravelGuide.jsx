@@ -4,13 +4,7 @@ import {
   Search,
   Clock,
   Calendar,
-  MapPin,
-  Compass,
-  Snowflake,
-  Users,
-  BookOpen,
   ArrowRight,
-  Sparkles,
 } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -20,12 +14,12 @@ const WHATSAPP_MESSAGE = 'Hello, I would like help planning my Poland trip.';
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
 const categories = [
-  { id: 'all', label: 'All Articles', icon: BookOpen },
-  { id: 'krakow', label: 'Krakow', icon: MapPin },
-  { id: 'poland-tips', label: 'Poland Tips', icon: Compass },
-  { id: 'family-travel', label: 'Family Travel', icon: Users },
-  { id: 'itineraries', label: 'Itineraries', icon: BookOpen },
-  { id: 'winter-travel', label: 'Winter Travel', icon: Snowflake },
+  { id: 'all', label: 'All Articles' },
+  { id: 'krakow', label: 'Krakow' },
+  { id: 'family-travel', label: 'Family Travel' },
+  { id: 'poland-tips', label: 'Poland Tips' },
+  { id: 'winter-travel', label: 'Winter Travel' },
+  { id: 'europe', label: 'Europe' },
 ];
 
 const articles = [
@@ -36,8 +30,8 @@ const articles = [
     excerpt: 'Halal restaurants, prayer facilities, and Muslim-friendly hotels for travelers visiting Krakow and Poland.',
     image: 'https://greencontinenttours.com/GCT-asset/Slider/Slider-1.jpg',
     imageAlt: 'Krakow Old Town at sunset — halal tourism guide by Green Continent Tours',
-    category: 'poland-tips',
-    categoryLabel: 'Poland Tips',
+    category: 'krakow',
+    categoryLabel: 'Krakow',
     readTime: '12 min read',
     date: 'May 18, 2026',
     author: 'Green Continent Tours',
@@ -49,8 +43,8 @@ const articles = [
     excerpt: 'Off-the-beaten-path castles, medieval villages, and pristine nature reserves — beyond Krakow and Warsaw.',
     image: 'https://greencontinenttours.com/GCT-asset/Home-Gallery/slider-4.jpg',
     imageAlt: 'Hidden gems in Poland — secret destinations beyond Krakow',
-    category: 'itineraries',
-    categoryLabel: 'Itineraries',
+    category: 'poland-tips',
+    categoryLabel: 'Poland Tips',
     readTime: '15 min read',
     date: 'May 15, 2026',
     author: 'Green Continent Tours',
@@ -104,69 +98,78 @@ const TravelGuide = () => {
     <div className="min-h-screen bg-white">
       <Header />
       <main className="pt-20">
-        {/* ===== HERO ===== */}
+        {/* ===== HERO — full-width Wawel sunrise banner with overlay copy ===== */}
         <section
-          className="relative overflow-hidden bg-gradient-to-br from-[#f5faf8] via-white to-[#f5faf8]"
+          className="relative overflow-hidden"
           aria-labelledby="travel-guide-heading"
           data-testid="travel-guide-hero"
         >
-          <div className="container mx-auto px-6 lg:px-8 py-16 lg:py-20">
-            <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-16 items-center">
-              {/* Left — copy + search */}
-              <div className="max-w-xl">
-                <p
-                  className="text-[15px] md:text-base text-[#0f4f47] mb-3 font-light italic tracking-wide"
-                  style={{ fontFamily: 'Georgia, serif' }}
-                >
-                  Travel Guide
-                </p>
-                <h1
-                  id="travel-guide-heading"
-                  className="text-4xl md:text-5xl lg:text-[3.6rem] font-bold text-[#0f4f47] tracking-tight leading-[1.05] mb-6"
-                >
-                  Explore. Learn. <br />
-                  Travel Better.
-                </h1>
-                <p className="text-base md:text-lg text-gray-500 font-light leading-relaxed mb-8 max-w-lg">
-                  Local insights, practical tips and inspiration to help you explore
-                  Poland and beyond with confidence.
-                </p>
+          {/* Background photo */}
+          <div className="relative h-[440px] md:h-[520px] lg:h-[580px] w-full">
+            <img
+              src="https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/6otte63q_krakow-wawel-castle-sunrise-travel-guide.png"
+              alt="Krakow Wawel Castle at sunrise — Green Continent Tours Travel Guide"
+              title="Travel Guide — Krakow, Wawel Castle at sunrise"
+              width="2400"
+              height="1200"
+              className="absolute inset-0 w-full h-full object-cover object-center"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+            />
 
-                {/* Search */}
-                <div className="relative max-w-md" data-testid="travel-search">
-                  <Search
-                    className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-[#0f4f47]/50"
-                    aria-hidden="true"
-                  />
-                  <input
-                    type="search"
-                    value={query}
-                    onChange={(e) => setQuery(e.target.value)}
-                    placeholder="Search articles..."
-                    aria-label="Search travel articles"
-                    data-testid="travel-search-input"
-                    className="w-full pl-14 pr-5 py-4 rounded-full bg-white border border-gray-100 shadow-[0_10px_30px_-15px_rgba(15,79,71,0.2)] text-[15px] text-[#0f4f47] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#4dd4ac]/40 focus:border-[#4dd4ac]/40 transition-all"
-                  />
-                </div>
-              </div>
+            {/* Premium tinted overlays for text readability + brand match */}
+            <div
+              className="absolute inset-0 bg-gradient-to-r from-[#0f4f47]/85 via-[#0f4f47]/55 to-[#0f4f47]/15"
+              aria-hidden="true"
+            />
+            <div
+              className="absolute inset-y-0 left-0 w-2/3 backdrop-blur-[2px] bg-gradient-to-r from-[#0a3a35]/40 to-transparent"
+              aria-hidden="true"
+            />
+            <div
+              className="absolute inset-0 bg-gradient-to-b from-[#0f4f47]/15 via-transparent to-[#0f4f47]/30"
+              aria-hidden="true"
+            />
 
-              {/* Right — hero image placeholder (banner) */}
-              <div
-                className="relative aspect-[5/4] rounded-3xl overflow-hidden shadow-[0_30px_60px_-25px_rgba(15,79,71,0.3)] border border-gray-100 bg-gradient-to-br from-[#0f4f47]/10 to-[#4dd4ac]/10 flex items-center justify-center"
-                data-testid="travel-hero-image"
-              >
-                <div className="text-center px-8">
-                  <Sparkles
-                    className="w-12 h-12 text-[#4dd4ac] mx-auto mb-4"
-                    strokeWidth={1.4}
-                    aria-hidden="true"
-                  />
-                  <p className="text-[11px] uppercase tracking-[0.25em] text-[#0f4f47]/60 font-semibold">
-                    Banner Image
+            {/* Copy */}
+            <div className="absolute inset-0 flex items-center">
+              <div className="container mx-auto px-6 lg:px-8 w-full">
+                <div className="max-w-2xl text-white">
+                  <p
+                    className="text-[15px] md:text-base text-[#4dd4ac] mb-3 italic tracking-wide drop-shadow"
+                    style={{ fontFamily: 'Georgia, serif' }}
+                  >
+                    Travel Guide
                   </p>
-                  <p className="text-sm text-gray-500 mt-2 italic">
-                    Coming soon — upload your Krakow/Poland hero photo here
+                  <h1
+                    id="travel-guide-heading"
+                    className="text-4xl md:text-5xl lg:text-[3.6rem] font-bold tracking-tight leading-[1.05] mb-5 drop-shadow-lg"
+                  >
+                    Explore. Learn. <br />
+                    Travel Better.
+                  </h1>
+                  <p className="text-base md:text-lg text-gray-100/95 font-light leading-relaxed mb-7 max-w-xl drop-shadow">
+                    Local insights, practical tips and inspiration to help you
+                    explore Poland and beyond with confidence.
                   </p>
+
+                  {/* Search */}
+                  <div className="relative max-w-md" data-testid="travel-search">
+                    <Search
+                      className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-[#0f4f47]/60"
+                      aria-hidden="true"
+                    />
+                    <input
+                      type="search"
+                      value={query}
+                      onChange={(e) => setQuery(e.target.value)}
+                      placeholder="Search articles..."
+                      aria-label="Search travel articles"
+                      data-testid="travel-search-input"
+                      className="w-full pl-14 pr-5 py-3.5 rounded-full bg-white/95 backdrop-blur-sm border border-white/40 shadow-[0_15px_40px_-15px_rgba(0,0,0,0.4)] text-[15px] text-[#0f4f47] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#4dd4ac] focus:bg-white transition-all"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -189,7 +192,6 @@ const TravelGuide = () => {
                   </h2>
                   <div className="flex flex-wrap gap-2.5" data-testid="category-filters">
                     {categories.map((cat) => {
-                      const Icon = cat.icon;
                       const active = activeCategory === cat.id;
                       return (
                         <button
@@ -198,15 +200,12 @@ const TravelGuide = () => {
                           onClick={() => setActiveCategory(cat.id)}
                           data-testid={`filter-${cat.id}`}
                           aria-pressed={active}
-                          className={`group inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 ${
+                          className={`inline-flex items-center px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 ${
                             active
                               ? 'bg-[#0f4f47] text-white shadow-md'
                               : 'bg-white text-[#0f4f47] border border-gray-200 hover:border-[#4dd4ac] hover:text-[#1a6b5f]'
                           }`}
                         >
-                          {cat.id !== 'all' && (
-                            <Icon className="w-4 h-4" strokeWidth={1.6} aria-hidden="true" />
-                          )}
                           {cat.label}
                         </button>
                       );
