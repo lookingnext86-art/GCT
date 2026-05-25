@@ -8,9 +8,11 @@ import React from 'react';
  *   { name: 'Hotelbeds', src: '<url-to-transparent-png>' }
  */
 const partners = [
+  { name: 'Hotelbeds', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/u31s7bch_Hotelbed%20logo.png' },
   { name: 'GIATA', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/y3nhl8vt_Screenshot%202026-05-25%20145138.png' },
   { name: 'Accor', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/bsyy37r8_Screenshot%202026-05-25%20145200.png' },
   { name: 'Didatravel', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/4x8vagw4_Screenshot%202026-05-25%20145212.png' },
+  { name: 'Paximum', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/uefde1ay_Paximum.jpeg' },
   { name: 'TBO.com', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/fxfmoi5j_Screenshot%202026-05-25%20145020.png' },
   { name: 'Travco', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/c85ugs83_Screenshot%202026-05-25%20145032.png' },
   { name: 'Viator', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/xf6hyquf_Screenshot%202026-05-25%20145041.png' },
