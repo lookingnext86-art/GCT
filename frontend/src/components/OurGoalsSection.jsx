@@ -138,32 +138,23 @@ const OurGoalsSection = () => {
             </ol>
           </div>
 
-          {/* GCT B2B promotional banner — compact, branded frame */}
+          {/* GCT B2B promotional banner — long horizontal format */}
           <div className="mt-24 lg:mt-32">
             <a
               href="https://www.gct.travel/index.php"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Sign up for GCT B2B Online Hotel Reservation Portal"
-              className="group block max-w-3xl mx-auto"
+              className="group block max-w-6xl mx-auto"
               data-testid="gct-b2b-banner"
             >
-              <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#0f4f47] to-[#1a6b5f] p-2 shadow-[0_25px_60px_-20px_rgba(15,79,71,0.4)] hover:shadow-[0_35px_70px_-20px_rgba(15,79,71,0.5)] transition-all duration-500 group-hover:-translate-y-1">
-                <div className="relative rounded-2xl overflow-hidden bg-white">
-                  <img
-                    src="https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/8vg8bher_Screenshot%202026-05-25%20140311.png"
-                    alt="GCT Booking Made Simple — Sign up for B2B Online Hotel Reservation Portal"
-                    className="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.015]"
-                    loading="lazy"
-                  />
-                </div>
-                {/* Tiny brand-corner accent */}
-                <span
-                  className="absolute top-4 left-4 text-[10px] font-semibold tracking-[0.25em] uppercase text-[#4dd4ac] bg-[#0f4f47]/80 backdrop-blur-sm px-2.5 py-1 rounded-full z-10"
-                  aria-hidden="true"
-                >
-                  Partners
-                </span>
+              <div className="relative rounded-2xl overflow-hidden shadow-[0_25px_60px_-20px_rgba(15,79,71,0.35)] hover:shadow-[0_35px_70px_-20px_rgba(15,79,71,0.45)] transition-all duration-500 group-hover:-translate-y-1 aspect-[5/2]">
+                <img
+                  src="https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/8vg8bher_Screenshot%202026-05-25%20140311.png"
+                  alt="GCT Booking Made Simple — Sign up for B2B Online Hotel Reservation Portal"
+                  className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.015]"
+                  loading="lazy"
+                />
               </div>
             </a>
           </div>
