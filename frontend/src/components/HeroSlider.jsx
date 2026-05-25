@@ -8,7 +8,7 @@ import { Facebook, Instagram } from 'lucide-react';
 const HeroSlider = () => {
   return (
     <div
-      className="relative w-full overflow-hidden mt-20 h-[calc(100vh-5rem)]"
+      className="relative w-full overflow-hidden mt-20 h-[calc(85vh-5rem)]"
       data-testid="hero-static"
     >
       {/* Social Media Icons - Left Side */}
@@ -44,11 +44,11 @@ const HeroSlider = () => {
         </a>
       </div>
 
-      {/* Single composite hero image: Tatra mountains, Krakow Old Town, Gdansk */}
+      {/* Single composite hero image: Krakow Old Town, Tatra Mountains, Gdansk waterfront */}
       <img
-        src="https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/2dbc1o83_ChatGPT%20Image%20May%2025%2C%202026%2C%2002_24_20%20PM.png"
-        alt="Discover Poland with Green Continent Tours — Tatra Mountains, Krakow Old Town, and Gdansk waterfront premium travel experiences"
-        title="Premium Poland Travel — Tatra Mountains, Krakow Old Town, Gdansk"
+        src="https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/e3tlp9ys_poland-tour-tatra-krakow-gdansk-hero.png"
+        alt="Poland tour highlights — Krakow Old Town, Tatra Mountains, and Gdansk waterfront by Green Continent Tours"
+        title="Premium Poland Travel — Krakow, Tatra Mountains, Gdansk"
         width="1920"
         height="1080"
         className="absolute inset-0 w-full h-full object-cover object-center"
