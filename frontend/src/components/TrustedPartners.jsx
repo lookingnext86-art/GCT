@@ -67,6 +67,7 @@ const TrustedPartners = () => {
                     alt={`${p.name} — official travel partner of Green Continent Tours, Krakow Poland`}
                     title={`${p.name} – Green Continent Tours Partner`}
                     className="h-full w-auto max-h-16 md:max-h-20 object-contain"
+                    style={{ mixBlendMode: 'multiply' }}
                     loading="lazy"
                   />
                 </div>
