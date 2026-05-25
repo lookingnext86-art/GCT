@@ -28,6 +28,16 @@
     <loc>https://greencontinenttours.com/travel-guide</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/6otte63q_krakow-wawel-castle-sunrise-travel-guide.png</image:loc>
+      <image:title>Krakow Wawel Castle at sunrise — Travel Guide</image:title>
+      <image:caption>Local travel insights for Poland and beyond</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/68ghmgtc_morskie-oko-tatra-mountains-poland-hero.jpg</image:loc>
+      <image:title>Morskie Oko lake in the Tatra Mountains during sunrise</image:title>
+      <image:caption>Plan your Polish journey — Tatra National Park</image:caption>
+    </image:image>
   </url>
 
   <url>
