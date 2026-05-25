@@ -13,6 +13,11 @@ const partners = [
   { name: 'Accor', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/bsyy37r8_Screenshot%202026-05-25%20145200.png' },
   { name: 'GIATA', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/4x8vagw4_Screenshot%202026-05-25%20145212.png' },
   { name: 'Paximum', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/letzvqj2_Screenshot%202026-05-25%20145240.png' },
+  { name: 'RezLive', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/fxfmoi5j_Screenshot%202026-05-25%20145020.png' },
+  { name: 'Restel', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/c85ugs83_Screenshot%202026-05-25%20145032.png' },
+  { name: 'Viator', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/xf6hyquf_Screenshot%202026-05-25%20145041.png' },
+  { name: 'Travco', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/1asnpbab_Screenshot%202026-05-25%20145055.png' },
+  { name: 'TBO.com', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/c7fimiuy_Screenshot%202026-05-25%20145100.png' },
 ];
 
 const TrustedPartners = () => {
@@ -21,7 +26,7 @@ const TrustedPartners = () => {
 
   return (
     <section
-      className="bg-gradient-to-r from-[#f3faf8] via-white to-[#f3faf8] py-8"
+      className="bg-white py-8"
       aria-labelledby="trusted-partners-heading"
       data-testid="trusted-partners-section"
     >
@@ -58,7 +63,7 @@ const TrustedPartners = () => {
                   <img
                     src={p.src}
                     alt={`${p.name} — Green Continent Tours partner`}
-                    className="h-full w-auto max-h-10 md:max-h-12 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                    className="h-full w-auto max-h-10 md:max-h-12 object-contain"
                     loading="lazy"
                   />
                 </div>
