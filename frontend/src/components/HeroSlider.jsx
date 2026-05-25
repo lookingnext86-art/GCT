@@ -8,7 +8,7 @@ import { Facebook, Instagram } from 'lucide-react';
 const HeroSlider = () => {
   return (
     <div
-      className="relative w-full overflow-hidden mt-20 h-[calc(85vh-5rem)]"
+      className="relative w-full overflow-hidden mt-20 h-[calc(92vh-5rem)] min-h-[560px] max-h-[820px]"
       data-testid="hero-static"
     >
       {/* Social Media Icons - Left Side */}
