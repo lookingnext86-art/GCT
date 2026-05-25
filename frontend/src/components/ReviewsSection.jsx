@@ -81,7 +81,7 @@ const ReviewsSection = () => {
             id="reviews-heading"
             className="text-2xl md:text-3xl font-bold text-[#0f4f47] mb-2 tracking-tight leading-tight"
           >
-            Travelers&apos; stories from across Poland
+            What Our Travelers Say
           </h2>
 
           {/* Aggregate rating */}

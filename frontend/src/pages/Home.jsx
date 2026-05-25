@@ -14,9 +14,9 @@ const Home = () => {
       <main>
         <HeroSlider />
         <WhyUsSection />
-        <ReviewsSection />
         <OurGoalsSection />
         <ServicesSection />
+        <ReviewsSection />
       </main>
       <Footer />
     </div>
