@@ -47,10 +47,14 @@ const HeroSlider = () => {
       {/* Single composite hero image: Tatra mountains, Krakow Old Town, Gdansk */}
       <img
         src="https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/2dbc1o83_ChatGPT%20Image%20May%2025%2C%202026%2C%2002_24_20%20PM.png"
-        alt="Discover Poland with Green Continent Tours — Tatra Mountains, Krakow Old Town, and Gdansk waterfront"
+        alt="Discover Poland with Green Continent Tours — Tatra Mountains, Krakow Old Town, and Gdansk waterfront premium travel experiences"
+        title="Premium Poland Travel — Tatra Mountains, Krakow Old Town, Gdansk"
+        width="1920"
+        height="1080"
         className="absolute inset-0 w-full h-full object-cover object-center"
         loading="eager"
         fetchpriority="high"
+        decoding="async"
       />
 
       {/* Subtle dark gradient at bottom for visual transition into next section */}
