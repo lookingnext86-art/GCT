@@ -31,8 +31,21 @@ const Gallery = () => {
         </section>
 
         {/* Gallery Grid */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-gray-50" aria-labelledby="gallery-grid-heading">
           <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto mb-12 text-center">
+              <h2
+                id="gallery-grid-heading"
+                className="text-3xl md:text-4xl font-bold text-[#0f4f47] mb-4"
+              >
+                Featured Destinations Across Poland &amp; Europe
+              </h2>
+              <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                A curated look at the places, faces, and moments that make Green Continent Tours
+                Krakow's trusted travel partner.
+              </p>
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {galleryImages.map((image, index) => (
                 <div 

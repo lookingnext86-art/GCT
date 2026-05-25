@@ -40,6 +40,10 @@ const HiddenGems = () => {
                 Beyond the well-known attractions of Krakow and Warsaw lies a Poland filled with medieval towns, pristine nature, and authentic villages that most tourists never discover. Here are 15 hidden gems you must visit.
               </p>
 
+              <h2 className="text-3xl font-bold text-[#0f4f47] mb-6 mt-4">
+                Top 4 Hidden Gems Worth the Detour
+              </h2>
+
               <div className="grid md:grid-cols-2 gap-8 mb-12">
                 <div className="bg-gradient-to-br from-[#0f4f47] to-[#1a6b5f] text-white p-6 rounded-xl">
                   <div className="flex items-center gap-3 mb-3">

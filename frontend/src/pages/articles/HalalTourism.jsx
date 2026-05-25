@@ -40,11 +40,12 @@ const HalalTourism = () => {
                 Krakow, Poland's cultural capital, is becoming increasingly welcoming to Muslim travelers. This comprehensive guide covers everything you need to know about halal tourism in Krakow, from halal restaurants to prayer facilities.
               </p>
 
+              <h2 className="text-3xl font-bold text-[#0f4f47] mb-4 mt-4">Halal Restaurants in Krakow</h2>
               <div className="bg-[#4dd4ac]/10 border-l-4 border-[#4dd4ac] p-6 rounded-r-lg mb-8">
-                <h3 className="text-2xl font-bold text-[#0f4f47] mb-3 flex items-center gap-2">
+                <p className="text-2xl font-bold text-[#0f4f47] mb-3 flex items-center gap-2">
                   <Utensils className="w-6 h-6" />
-                  Halal Restaurants in Krakow
-                </h3>
+                  Recommended Halal Spots
+                </p>
                 <ul className="space-y-3 text-gray-700">
                   <li><strong>Manzil Restaurant</strong> - ul. Miodowa 9, Old Town. Authentic Middle Eastern cuisine with halal certification.</li>
                   <li><strong>Istanbul Kebab</strong> - ul. Starowiślna 38. Turkish restaurant serving 100% halal meat.</li>

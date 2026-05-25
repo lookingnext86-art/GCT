@@ -40,6 +40,8 @@ const GroupTours = () => {
                 Planning a group trip to Poland? Whether for corporate team building, school education, or family reunion, we offer specialized group tour packages for 10-50+ people with professional coordination and group discounts.
               </p>
 
+              <h2 className="text-3xl font-bold text-[#0f4f47] mb-6 mt-4">Who Books Group Tours With Us</h2>
+
               <div className="grid md:grid-cols-2 gap-6 mb-12">
                 <div className="bg-gradient-to-br from-[#0f4f47] to-[#1a6b5f] text-white p-6 rounded-xl">
                   <Building2 className="w-10 h-10 text-[#4dd4ac] mb-3" />

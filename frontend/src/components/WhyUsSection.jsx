@@ -26,15 +26,15 @@ const WhyUsSection = () => {
               Premium Poland Travel — Crafted by Krakow Locals, Designed for the World
             </h1>
             
-            {/* Time to Travel Image */}
-            <div className="relative mb-8">
+            {/* Decorative Tagline (not a heading) */}
+            <div className="relative mb-8" aria-hidden="true">
               <div className="absolute -left-12 top-1/2 -translate-y-1/2 w-64 h-64 border-4 border-dashed border-white/30 rounded-full" />
               <div className="text-center py-12">
-                <h2 className="text-5xl md:text-6xl font-bold mb-4">
+                <p className="text-5xl md:text-6xl font-bold mb-4 leading-tight">
                   <span className="text-[#ffd700]">IT'S TIME TO</span>
                   <br />
                   <span className="font-cursive text-6xl md:text-7xl">TRAVEL</span>
-                </h2>
+                </p>
               </div>
             </div>
 

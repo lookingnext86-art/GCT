@@ -32,9 +32,9 @@ const GCTBanner = () => {
           {/* Left Side - Text Content */}
           <div className="flex-1 z-10">
             <div className="mb-4">
-              <h2 className="text-6xl font-extrabold text-white drop-shadow-lg mb-2">
+              <p className="text-6xl font-extrabold text-white drop-shadow-lg mb-2 leading-none">
                 GCT
-              </h2>
+              </p>
               <div className="flex items-center gap-2 text-white">
                 <MapPin className="w-5 h-5" />
                 <span className="text-lg font-semibold">Green Continent Tours</span>

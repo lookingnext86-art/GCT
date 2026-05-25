@@ -55,9 +55,22 @@ const TravelGuide = () => {
         </section>
 
         {/* Travel Guides Grid */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-gray-50" aria-labelledby="travel-articles-heading">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
+              <div className="mb-12 text-center">
+                <h2
+                  id="travel-articles-heading"
+                  className="text-3xl md:text-4xl font-bold text-[#0f4f47] mb-4"
+                >
+                  Latest Travel Articles &amp; Insider Tips
+                </h2>
+                <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                  Local stories, planning checklists, and honest advice for travelers heading to
+                  Krakow, Zakopane, Warsaw, and beyond.
+                </p>
+              </div>
+
               <div className="grid md:grid-cols-2 gap-8">
                 {travelGuides.map((guide, index) => {
                   const articleLinks = [
@@ -85,8 +98,9 @@ const TravelGuide = () => {
                             {guide.category}
                           </span>
                         </div>
+              {/* Article Card title becomes h3 under the article-grid h2 */}
                         <div className="absolute bottom-4 left-4 right-4">
-                          <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-[#4dd4ac] transition-colors">
+                          <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-[#4dd4ac] transition-colors leading-snug">
                             {guide.title}
                           </h3>
                         </div>
