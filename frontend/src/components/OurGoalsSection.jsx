@@ -138,21 +138,21 @@ const OurGoalsSection = () => {
             </ol>
           </div>
 
-          {/* GCT B2B promotional banner — long horizontal format */}
-          <div className="mt-24 lg:mt-32">
+          {/* GCT B2B partner banner — slim ribbon-style */}
+          <div className="mt-16 lg:mt-20">
             <a
               href="https://www.gct.travel/index.php"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Sign up for GCT B2B Online Hotel Reservation Portal"
-              className="group block max-w-6xl mx-auto"
+              className="group flex items-center justify-center"
               data-testid="gct-b2b-banner"
             >
-              <div className="relative rounded-2xl overflow-hidden shadow-[0_25px_60px_-20px_rgba(15,79,71,0.35)] hover:shadow-[0_35px_70px_-20px_rgba(15,79,71,0.45)] transition-all duration-500 group-hover:-translate-y-1 aspect-[5/2]">
+              <div className="relative rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 group-hover:-translate-y-0.5 w-full max-w-2xl aspect-[7/2]">
                 <img
                   src="https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/8vg8bher_Screenshot%202026-05-25%20140311.png"
                   alt="GCT Booking Made Simple — Sign up for B2B Online Hotel Reservation Portal"
-                  className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.015]"
+                  className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]"
                   loading="lazy"
                 />
               </div>
