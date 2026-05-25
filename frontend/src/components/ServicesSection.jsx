@@ -169,7 +169,7 @@ const ServicesSection = () => {
       >
         {/* Background photo: couple walking in Warsaw Old Town */}
         <img
-          src="https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/0y6m5743_warsaw-old-town-poland.jpg..jpeg"
+          src="https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/b8jiae77_warsaw-old-town-poland.jpg"
           alt="Couple walking through colorful Warsaw Old Town — premium Polish journey with Green Continent Tours"
           title="Plan your premium Polish journey — Warsaw Old Town"
           className="absolute inset-0 w-full h-full object-cover object-center"
