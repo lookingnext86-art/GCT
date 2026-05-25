@@ -34,8 +34,8 @@ const reviews = [
   },
 ];
 
-// Replace with your actual Google Business Profile URL once available
-const GOOGLE_REVIEWS_URL = 'https://www.google.com/search?q=Green+Continent+Tours+Krakow';
+// User's Google Business Profile share URL
+const GOOGLE_REVIEWS_URL = 'https://share.google/eIMbn0PH99lK7K6qi';
 
 const ReviewsSection = () => {
   const [current, setCurrent] = useState(0);
@@ -77,14 +77,6 @@ const ReviewsSection = () => {
 
       <div className="container mx-auto px-6 lg:px-8 relative">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Eyebrow */}
-          <p
-            className="inline-block text-[10px] font-semibold tracking-[0.3em] uppercase text-[#0f4f47] mb-3 border border-[#0f4f47]/20 px-3 py-1 rounded-full"
-            data-testid="reviews-eyebrow"
-          >
-            Verified Google Reviews
-          </p>
-
           <h2
             id="reviews-heading"
             className="text-2xl md:text-3xl font-bold text-[#0f4f47] mb-2 tracking-tight leading-tight"
@@ -215,6 +207,8 @@ const ReviewsSection = () => {
               target="_blank"
               rel="noopener noreferrer"
               data-testid="reviews-google-link"
+              aria-label="Read all Green Continent Tours reviews on our Google Business Profile"
+              title="Read all Green Continent Tours reviews on Google"
               className="inline-flex items-center gap-1.5 text-xs text-[#0f4f47] hover:text-[#1a6b5f] font-semibold tracking-wide transition-colors"
             >
               <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" aria-hidden="true">
