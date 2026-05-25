@@ -68,7 +68,7 @@ const ServicesSection = () => {
       data-testid="services-section"
     >
       {/* Poland-inspired photo banner header */}
-      <div className="relative h-72 md:h-96 lg:h-[460px] overflow-hidden">
+      <div className="relative h-80 md:h-[420px] lg:h-[520px] overflow-hidden">
         {/* Background photo: Wawel Royal Castle, Krakow (UNESCO landmark) */}
         <img
           src="https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/5okkw764_Zo6mW4qyzVB5-5ywq6sG4Uw4To-XlMN2mXYZcLIr-pqbLPgWxMooE4tSRnu73NO9ppOOn-Uvw8p9zUNVH1Rz8FQbejMTazmoDl85kDml3IMWSaKJ7pDfbqkRZgGhb5Ydubc7eSX_eMJexRUW9ojMReRQJALbGM6x2F6uLUmyw59f-owmBKfWJ6Uw6CXvhT1c.jpeg"
@@ -77,40 +77,44 @@ const ServicesSection = () => {
           className="absolute inset-0 w-full h-full object-cover object-center"
           loading="lazy"
         />
-        {/* Soft misty white overlay (matching the attached design) */}
+        {/* Dark green gradient overlay for premium brand-matched look */}
         <div
-          className="absolute inset-0 bg-gradient-to-b from-white/85 via-white/70 to-white"
+          className="absolute inset-0 bg-gradient-to-b from-[#0f4f47]/55 via-[#0f4f47]/40 to-[#0f4f47]/70"
           aria-hidden="true"
         />
+        {/* Subtle vignette to focus text */}
         <div
-          className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.35),rgba(255,255,255,0.95))]"
+          className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(15,79,71,0.1),rgba(15,79,71,0.55))]"
           aria-hidden="true"
         />
 
         {/* Heading on top of banner */}
         <div className="relative h-full flex flex-col items-center justify-center text-center px-6">
+          <p className="inline-block text-[11px] font-semibold tracking-[0.3em] uppercase text-[#4dd4ac] mb-5 border border-[#4dd4ac]/40 bg-[#0f4f47]/30 backdrop-blur-sm px-3.5 py-1.5 rounded-full">
+            Our Services
+          </p>
           <h2
             id="services-heading"
-            className="text-3xl md:text-5xl lg:text-[3.5rem] font-bold text-[#0f4f47] mb-5 tracking-tight leading-[1.1] drop-shadow-sm"
+            className="text-3xl md:text-5xl lg:text-[3.5rem] font-bold text-white mb-5 tracking-tight leading-[1.1] drop-shadow-md"
           >
             Our Travel Services
           </h2>
-          <p className="text-base md:text-lg text-[#0f4f47]/85 font-light leading-relaxed max-w-3xl mx-auto">
+          <p className="text-base md:text-lg text-white/95 font-light leading-relaxed max-w-3xl mx-auto drop-shadow">
             Premium Krakow-based travel agency offering private tours, family travel, MICE services, and custom itineraries
             across Poland — plus Auschwitz-Birkenau, the Wieliczka Salt Mine, and curated extensions to Prague, Vienna, and Budapest.
           </p>
 
           {/* Decorative divider */}
           <div className="flex items-center gap-2 mt-7" aria-hidden="true">
-            <span className="h-px w-12 bg-[#0f4f47]/30" />
+            <span className="h-px w-12 bg-[#4dd4ac]/60" />
             <span className="w-2 h-2 rounded-full bg-[#4dd4ac]" />
-            <span className="h-px w-12 bg-[#0f4f47]/30" />
+            <span className="h-px w-12 bg-[#4dd4ac]/60" />
           </div>
         </div>
       </div>
 
       {/* Services grid */}
-      <div className="container mx-auto px-6 lg:px-8 -mt-8 lg:-mt-12 pb-24 lg:pb-28 relative z-10">
+      <div className="container mx-auto px-6 lg:px-8 -mt-10 lg:-mt-16 pb-24 lg:pb-28 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7 lg:gap-8">
             {services.map((service, index) => {
