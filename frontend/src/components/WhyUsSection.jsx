@@ -1,11 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { ImageIcon, ArrowRight } from 'lucide-react';
 
 /**
  * Hero / Why Us section.
- * Image grid uses clean placeholders only.
- * The user will upload real photos later for each of the 4 slots below.
+ * Image grid uses clean placeholders only — user uploads photos later.
  */
 const imageSlots = [
   { id: 'families', label: 'Families' },
@@ -13,6 +11,10 @@ const imageSlots = [
   { id: 'poland-destinations', label: 'Poland Destinations' },
   { id: 'premium-experiences', label: 'Premium Experiences' },
 ];
+
+const WHATSAPP_NUMBER = '48537482798';
+const WHATSAPP_MESSAGE = 'Hello, I would like to plan a trip to Poland.';
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
 const WhyUsSection = () => {
   return (
@@ -32,7 +34,7 @@ const WhyUsSection = () => {
       />
 
       <div className="container mx-auto px-6 lg:px-8 relative">
-        <div className="grid lg:grid-cols-[1.05fr_1fr] gap-14 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-[1.05fr_1fr] gap-14 lg:gap-24 items-center">
           {/* LEFT — Editorial copy */}
           <div className="text-white max-w-xl">
             <p
@@ -64,30 +66,40 @@ const WhyUsSection = () => {
               Custom itineraries, trusted local support, and smooth travel across Poland.
             </p>
 
-            <Link
-              to="/contact"
+            {/* Single primary CTA — opens WhatsApp directly */}
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               data-testid="plan-trip-cta"
-              className="group inline-flex items-center gap-3 bg-[#4dd4ac] text-[#0f4f47] px-8 py-4 rounded-full font-bold tracking-wide hover:bg-white hover:shadow-2xl transition-all duration-300"
+              aria-label="Plan your Poland trip on WhatsApp"
+              className="group relative inline-flex items-center justify-center gap-3 w-full sm:w-auto bg-[#4dd4ac] text-[#0f4f47] px-8 py-5 sm:py-4 min-h-[56px] rounded-full font-bold text-base tracking-wide shadow-lg shadow-[#4dd4ac]/20 hover:bg-white hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 ease-out overflow-hidden"
             >
-              Plan Your Poland Trip
-              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-            </Link>
+              <span
+                className="absolute inset-0 rounded-full bg-white/40 opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500 blur-xl"
+                aria-hidden="true"
+              />
+              <span className="relative">Plan Your Poland Trip</span>
+              <ArrowRight
+                className="relative w-5 h-5 transition-transform duration-300 group-hover:translate-x-1.5"
+                aria-hidden="true"
+              />
+            </a>
           </div>
 
-          {/* RIGHT — Clean photo placeholder grid (4 slots, staggered) */}
+          {/* RIGHT — Clean, balanced 2×2 photo placeholders */}
           <div className="relative">
-            <div className="grid grid-cols-2 gap-5">
-              {imageSlots.map((slot, index) => (
+            <div className="grid grid-cols-2 gap-6 md:gap-8">
+              {imageSlots.map((slot) => (
                 <figure
                   key={slot.id}
                   data-testid={`hero-photo-slot-${slot.id}`}
-                  className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm aspect-[3/4] flex flex-col items-center justify-center transition-all duration-500 hover:border-[#4dd4ac]/40 hover:bg-white/[0.07]"
-                  style={{ marginTop: index % 2 === 0 ? '0' : '2.5rem' }}
+                  className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm aspect-square flex flex-col items-center justify-center transition-all duration-500 hover:border-[#4dd4ac]/40 hover:bg-white/[0.07]"
                 >
                   <div className="flex flex-col items-center text-center px-6">
-                    <div className="w-14 h-14 rounded-full bg-[#4dd4ac]/10 border border-[#4dd4ac]/30 flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-110">
+                    <div className="w-12 h-12 rounded-full bg-[#4dd4ac]/10 border border-[#4dd4ac]/30 flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-110">
                       <ImageIcon
-                        className="w-6 h-6 text-[#4dd4ac]"
+                        className="w-5 h-5 text-[#4dd4ac]"
                         strokeWidth={1.5}
                         aria-hidden="true"
                       />
@@ -95,19 +107,13 @@ const WhyUsSection = () => {
                     <figcaption className="text-white/90 text-sm md:text-base font-medium tracking-wide">
                       {slot.label}
                     </figcaption>
-                    <span className="text-[10px] uppercase tracking-[0.2em] text-white/40 mt-2">
+                    <span className="text-[10px] uppercase tracking-[0.25em] text-white/40 mt-2">
                       Photo coming soon
                     </span>
                   </div>
                 </figure>
               ))}
             </div>
-
-            {/* Subtle decorative ring */}
-            <div
-              className="absolute -right-10 top-1/2 -translate-y-1/2 w-72 h-72 border border-dashed border-[#4dd4ac]/20 rounded-full pointer-events-none"
-              aria-hidden="true"
-            />
           </div>
         </div>
       </div>
