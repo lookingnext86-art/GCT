@@ -1,99 +1,133 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Star, MapPin, Languages } from 'lucide-react';
 
+// Placeholder gallery images — user will upload new photos for this section.
 const galleryImages = [
   'https://greencontinenttours.com/GCT-asset/Home-Gallery/slider-1.jpg',
   'https://greencontinenttours.com/GCT-asset/Home-Gallery/slider-2.jpg',
   'https://greencontinenttours.com/GCT-asset/Home-Gallery/slider-3.jpg',
-  'https://greencontinenttours.com/GCT-asset/Home-Gallery/slider-4.jpg'
+  'https://greencontinenttours.com/GCT-asset/Home-Gallery/slider-4.jpg',
+];
+
+const stats = [
+  { icon: MapPin, value: '15+', label: 'Years guiding Poland' },
+  { icon: Star, value: '4.9', label: 'Average traveler rating' },
+  { icon: Languages, value: '6', label: 'Languages spoken in-house' },
 ];
 
 const WhyUsSection = () => {
   return (
-    <section className="relative bg-[#0f4f47] py-20 overflow-hidden">
-      {/* Decorative Plane */}
-      <img 
-        src="https://greencontinenttours.com/GCT-asset/airPlane/plane.svg" 
-        alt="Travel plane decoration" 
-        className="absolute top-10 right-20 w-24 opacity-20"
+    <section
+      className="relative bg-[#0f4f47] py-24 overflow-hidden"
+      aria-labelledby="why-us-heading"
+    >
+      {/* Subtle decorative plane */}
+      <img
+        src="https://greencontinenttours.com/GCT-asset/airPlane/plane.svg"
+        alt=""
+        aria-hidden="true"
+        className="absolute top-10 right-20 w-24 opacity-15"
       />
 
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="text-white">
-            <h1 className="text-3xl md:text-4xl font-bold mb-8">
-              Premium Poland Travel — Crafted by Krakow Locals, Designed for the World
-            </h1>
-            
-            {/* Decorative Tagline (not a heading) */}
-            <div className="relative mb-8" aria-hidden="true">
-              <div className="absolute -left-12 top-1/2 -translate-y-1/2 w-64 h-64 border-4 border-dashed border-white/30 rounded-full" />
-              <div className="text-center py-12">
-                <p className="text-5xl md:text-6xl font-bold mb-4 leading-tight">
-                  <span className="text-[#ffd700]">IT'S TIME TO</span>
-                  <br />
-                  <span className="font-cursive text-6xl md:text-7xl">TRAVEL</span>
-                </p>
-              </div>
-            </div>
-
-            <p className="text-xl mb-4 leading-relaxed">
-              A modern Poland travel agency specializing in private tours, small-group journeys, family travel, and fully custom itineraries — from Krakow's historic Old Town to Zakopane's mountains and Warsaw's vibrant culture.
-            </p>
-            
-            <p className="text-lg mb-8 text-gray-200">
-              Premium hotels, comfortable transport, multilingual expert guides, and thoughtful pacing — so every traveler, from every part of the world, can experience Poland the way it deserves to be seen.
-            </p>
-
-            <Link 
-              to="/gallery"
-              className="inline-block bg-white text-[#0f4f47] px-8 py-3 rounded-full font-semibold hover:bg-[#ffd700] transition-all duration-300 shadow-lg hover:shadow-xl"
-              aria-label="View our travel photo gallery"
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left — Editorial copy */}
+          <div className="text-white max-w-xl">
+            {/* Eyebrow */}
+            <p
+              className="inline-block text-xs font-semibold tracking-[0.25em] uppercase text-[#4dd4ac] mb-5 border border-[#4dd4ac]/40 px-3 py-1.5 rounded-full"
+              data-testid="why-us-eyebrow"
             >
-              Explore Our Tours
-            </Link>
+              Based in Krakow · Trusted Worldwide
+            </p>
 
-            {/* Decorative Dots */}
-            <div className="mt-8">
-              <svg width="120" height="40" viewBox="0 0 120 40" className="opacity-50" aria-hidden="true">
-                {[...Array(30)].map((_, i) => (
-                  <circle 
-                    key={i}
-                    cx={(i % 10) * 12 + 6} 
-                    cy={Math.floor(i / 10) * 12 + 6} 
-                    r="2" 
-                    fill="#ff69b4"
-                  />
-                ))}
-              </svg>
+            <h1
+              id="why-us-heading"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-[1.15]"
+            >
+              Real Poland, planned by people who actually live here.
+            </h1>
+
+            <p className="text-lg md:text-xl leading-relaxed text-gray-100 mb-5">
+              We're a small Krakow team designing private tours, small-group journeys,
+              and family trips for travelers who'd rather skip the 50-seat coach and the
+              microphone. Think sunrise in the Tatras before the crowds, the right
+              pierogi spot in Kazimierz, and the corners of Warsaw most tour buses
+              never bother with.
+            </p>
+
+            <p className="text-base md:text-lg leading-relaxed text-gray-300 mb-10">
+              One real human plans your trip from start to finish — paired with
+              hand-picked guides, premium stays, and the kind of insider tips you'd
+              only get over coffee with a local.
+            </p>
+
+            {/* Trust signals */}
+            <ul
+              className="grid grid-cols-3 gap-4 mb-10 border-t border-white/15 pt-6"
+              data-testid="why-us-stats"
+            >
+              {stats.map((s) => {
+                const Icon = s.icon;
+                return (
+                  <li key={s.label} className="flex flex-col">
+                    <Icon className="w-5 h-5 text-[#4dd4ac] mb-2" aria-hidden="true" />
+                    <span className="text-2xl font-bold leading-none mb-1">
+                      {s.value}
+                    </span>
+                    <span className="text-xs text-gray-300 leading-snug">
+                      {s.label}
+                    </span>
+                  </li>
+                );
+              })}
+            </ul>
+
+            <div className="flex flex-wrap gap-4">
+              <Link
+                to="/services"
+                data-testid="why-us-services-cta"
+                className="inline-block bg-[#4dd4ac] text-[#0f4f47] px-7 py-3 rounded-full font-bold hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                See How We Plan Trips
+              </Link>
+              <Link
+                to="/contact"
+                data-testid="why-us-contact-cta"
+                className="inline-block border border-white/40 text-white px-7 py-3 rounded-full font-semibold hover:bg-white hover:text-[#0f4f47] transition-all duration-300"
+              >
+                Talk to a Local Planner
+              </Link>
             </div>
           </div>
 
-          {/* Right Gallery Grid */}
+          {/* Right — Photo collage (user will upload new images here) */}
           <div className="relative">
             <div className="grid grid-cols-2 gap-4">
               {galleryImages.map((img, index) => (
-                <div 
+                <figure
                   key={index}
                   className="relative overflow-hidden rounded-2xl shadow-2xl group cursor-pointer"
-                  style={{
-                    marginTop: index % 2 === 0 ? '0' : '2rem'
-                  }}
+                  style={{ marginTop: index % 2 === 0 ? '0' : '2.5rem' }}
+                  data-testid={`why-us-photo-${index}`}
                 >
-                  <img 
-                    src={img} 
-                    alt={`Krakow and Poland tour destinations - Experience ${index + 1}`}
-                    className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                  <img
+                    src={img}
+                    alt={`Green Continent Tours travelers exploring Poland and Europe — photo ${index + 1}`}
+                    className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
+                </figure>
               ))}
             </div>
 
-            {/* Decorative Dotted Line */}
-            <div className="absolute -right-12 top-1/2 -translate-y-1/2 w-64 h-64 border-4 border-dashed border-[#4dd4ac]/30 rounded-full" aria-hidden="true" />
+            {/* Decorative ring */}
+            <div
+              className="absolute -right-12 top-1/2 -translate-y-1/2 w-64 h-64 border-4 border-dashed border-[#4dd4ac]/30 rounded-full pointer-events-none"
+              aria-hidden="true"
+            />
           </div>
         </div>
       </div>
