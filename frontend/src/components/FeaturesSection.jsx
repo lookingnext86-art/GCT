@@ -31,15 +31,6 @@ const FeaturesSection = () => {
   return (
     <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#0f4f47] mb-4">
-            Premium Poland Travel, Tailored to You
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            A modern Krakow-based travel agency crafting private tours, group experiences, and family journeys across Poland — for travelers from every corner of the world
-          </p>
-        </div>
-        
         <div className="max-w-6xl mx-auto space-y-16">
           {features.map((feature, index) => (
             <article 
