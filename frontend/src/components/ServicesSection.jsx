@@ -69,12 +69,12 @@ const ServicesSection = () => {
     >
       {/* Poland-inspired photo banner header */}
       <div className="relative h-72 md:h-96 lg:h-[460px] overflow-hidden">
-        {/* Background photo (Krakow Old Town panorama) */}
+        {/* Background photo: Wawel Royal Castle, Krakow (UNESCO landmark) */}
         <img
-          src="https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/swa9ivb7_Krakow%20PL.png"
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover"
+          src="https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/5okkw764_Zo6mW4qyzVB5-5ywq6sG4Uw4To-XlMN2mXYZcLIr-pqbLPgWxMooE4tSRnu73NO9ppOOn-Uvw8p9zUNVH1Rz8FQbejMTazmoDl85kDml3IMWSaKJ7pDfbqkRZgGhb5Ydubc7eSX_eMJexRUW9ojMReRQJALbGM6x2F6uLUmyw59f-owmBKfWJ6Uw6CXvhT1c.jpeg"
+          alt="Wawel Royal Castle Krakow Poland — Green Continent Tours travel services"
+          title="Wawel Castle, Krakow — Poland Travel Services by Green Continent Tours"
+          className="absolute inset-0 w-full h-full object-cover object-center"
           loading="lazy"
         />
         {/* Soft misty white overlay (matching the attached design) */}
@@ -83,7 +83,7 @@ const ServicesSection = () => {
           aria-hidden="true"
         />
         <div
-          className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.4),rgba(255,255,255,0.95))]"
+          className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.35),rgba(255,255,255,0.95))]"
           aria-hidden="true"
         />
 
@@ -172,48 +172,35 @@ const ServicesSection = () => {
       </div>
 
       {/* Decorative Poland skyline strip + CTA */}
-      <div className="relative bg-gradient-to-b from-[#f5faf8] to-white pt-16 pb-20 lg:pb-24 overflow-hidden">
-        {/* Faint Krakow / Poland skyline outline at the bottom */}
-        <svg
-          viewBox="0 0 1440 140"
-          xmlns="http://www.w3.org/2000/svg"
-          className="absolute bottom-0 left-0 w-full h-32 opacity-[0.08] pointer-events-none"
-          preserveAspectRatio="xMidYMax slice"
+      <div className="relative pt-20 lg:pt-24 pb-24 lg:pb-28 overflow-hidden">
+        {/* Background photo: couple walking in Warsaw Old Town */}
+        <img
+          src="https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/vrkkd4wr_jTXM-k3FySg2s-kSEfSK_f0Uv6P9krGWgx8HjFrSfyC17oa_gE5GOhpbTF6wiUsgUbq10CLpeWHw6LY0EADOuiCjkSRmVVCx_rU5GNliKEarZdd2FXWBKGWLdLpU285g6N6RwSfd0u7eVZ29wyuYSvlXHAM6MQbeGovPERAlkEq_qZ1u2uuNXeKSMC6-OLJd.jpeg"
+          alt="Couple walking through colorful Warsaw Old Town — premium Polish journey with Green Continent Tours"
+          title="Plan your premium Polish journey — Warsaw Old Town"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          loading="lazy"
+        />
+        {/* Dark green gradient overlay for readability and brand match */}
+        <div
+          className="absolute inset-0 bg-gradient-to-br from-[#0f4f47]/92 via-[#0f4f47]/85 to-[#1a6b5f]/90"
           aria-hidden="true"
-        >
-          <g fill="#0f4f47">
-            {/* Mountains */}
-            <polygon points="0,140 120,90 220,120 320,70 420,110 520,80 620,120 720,140 0,140" />
-            {/* Cathedral */}
-            <rect x="780" y="60" width="20" height="80" />
-            <polygon points="780,60 790,30 800,60" />
-            <rect x="820" y="50" width="26" height="90" />
-            <polygon points="820,50 833,15 846,50" />
-            <rect x="870" y="70" width="18" height="70" />
-            <polygon points="870,70 879,45 888,70" />
-            {/* Buildings */}
-            <rect x="920" y="90" width="40" height="50" />
-            <rect x="980" y="80" width="60" height="60" />
-            <rect x="1060" y="85" width="50" height="55" />
-            {/* Pin */}
-            <circle cx="1280" cy="80" r="8" />
-            <polygon points="1272,80 1288,80 1280,100" />
-            {/* Dotted route */}
-            <circle cx="1140" cy="120" r="2" />
-            <circle cx="1170" cy="115" r="2" />
-            <circle cx="1200" cy="110" r="2" />
-            <circle cx="1230" cy="100" r="2" />
-            <circle cx="1260" cy="90" r="2" />
-          </g>
-        </svg>
+        />
+        <div
+          className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(15,79,71,0.4),rgba(15,79,71,0.9))]"
+          aria-hidden="true"
+        />
 
         <div className="container mx-auto px-6 lg:px-8 relative">
           <div className="max-w-3xl mx-auto text-center" data-testid="services-cta">
-            <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0f4f47] mb-5 tracking-tight leading-tight">
-              Start Planning Your Premium Poland Journey
+            <p className="inline-block text-[11px] font-semibold tracking-[0.3em] uppercase text-[#4dd4ac] mb-5 border border-[#4dd4ac]/40 px-3.5 py-1.5 rounded-full">
+              Ready When You Are
+            </p>
+            <h3 className="text-2xl md:text-3xl lg:text-[2.75rem] font-bold text-white mb-5 tracking-tight leading-tight">
+              Start Planning Your Premium Polish Journey
             </h3>
-            <p className="text-base md:text-lg text-gray-500 font-light leading-relaxed mb-10 max-w-2xl mx-auto">
-              Whether you&apos;re visiting Krakow for a weekend, planning a family escape to Zakopane, or designing a multi-city Poland itinerary — our local experts are ready to craft it with you.
+            <p className="text-base md:text-lg text-gray-100/90 font-light leading-relaxed mb-10 max-w-2xl mx-auto">
+              Whether you&apos;re visiting Krakow for a weekend, planning a family escape to Zakopane, or designing a multi-city Polish itinerary — our local experts are ready to craft it with you.
             </p>
 
             <a
@@ -222,7 +209,7 @@ const ServicesSection = () => {
               rel="noopener noreferrer"
               data-testid="services-whatsapp-cta"
               aria-label="Plan your trip on WhatsApp"
-              className="group inline-flex items-center justify-center gap-3 bg-[#0f4f47] text-white px-9 py-4 min-h-[56px] rounded-full font-bold text-[15px] tracking-wide shadow-[0_10px_40px_-10px_rgba(15,79,71,0.5)] hover:bg-[#1a6b5f] hover:shadow-[0_20px_50px_-10px_rgba(15,79,71,0.55)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 ease-out"
+              className="group inline-flex items-center justify-center gap-3 bg-[#4dd4ac] text-[#0f4f47] px-9 py-4 min-h-[56px] rounded-full font-bold text-[15px] tracking-wide shadow-[0_10px_40px_-10px_rgba(77,212,172,0.6)] hover:bg-white hover:shadow-[0_20px_50px_-10px_rgba(77,212,172,0.55)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 ease-out"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
