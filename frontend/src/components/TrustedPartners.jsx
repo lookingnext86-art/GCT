@@ -8,9 +8,11 @@ import React from 'react';
  *   { name: 'Hotelbeds', src: '<url-to-transparent-png>' }
  */
 const partners = [
-  // Logos will be added here one by one as the user uploads them.
-  // Example:
-  // { name: 'Hotelbeds', src: 'https://customer-assets.emergentagent.com/.../hotelbeds.png' },
+  { name: 'Hotelbeds', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/iqnhp902_Screenshot%202026-05-25%20145114.png' },
+  { name: 'Didatravel', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/y3nhl8vt_Screenshot%202026-05-25%20145138.png' },
+  { name: 'Accor', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/bsyy37r8_Screenshot%202026-05-25%20145200.png' },
+  { name: 'GIATA', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/4x8vagw4_Screenshot%202026-05-25%20145212.png' },
+  { name: 'Paximum', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/letzvqj2_Screenshot%202026-05-25%20145240.png' },
 ];
 
 const TrustedPartners = () => {
