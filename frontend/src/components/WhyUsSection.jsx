@@ -1,15 +1,36 @@
 import React from 'react';
-import { ImageIcon, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 /**
  * Hero / Why Us section.
- * Image grid uses clean placeholders only — user uploads photos later.
+ * 4 photos in a balanced 2×2 grid. All images share unified CSS filters
+ * for a consistent, premium editorial look.
  */
 const imageSlots = [
-  { id: 'families', label: 'Families' },
-  { id: 'group-travel', label: 'Group Travel' },
-  { id: 'poland-destinations', label: 'Poland Destinations' },
-  { id: 'premium-experiences', label: 'Premium Experiences' },
+  {
+    id: 'families',
+    label: 'Families',
+    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/swpialvc_Private%20group.png',
+    alt: 'Families and private travelers boarding a flight on a Green Continent Tours trip to Poland',
+  },
+  {
+    id: 'group-travel',
+    label: 'Group Travel',
+    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/dld6hlqi_group%20travel.png',
+    alt: 'International travel group enjoying an evening in a historic Krakow courtyard',
+  },
+  {
+    id: 'poland-destinations',
+    label: 'Poland Destinations',
+    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/swa9ivb7_Krakow%20PL.png',
+    alt: 'Tour group at Krakow Main Market Square with St. Mary\'s Basilica and the Cloth Hall',
+  },
+  {
+    id: 'premium-experiences',
+    label: 'Premium Experiences',
+    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/bs7b1gmm_VIP%20tour.png',
+    alt: 'VIP travelers on a premium tour outside the United Nations in Geneva',
+  },
 ];
 
 const WHATSAPP_NUMBER = '48537482798';
@@ -87,30 +108,48 @@ const WhyUsSection = () => {
             </a>
           </div>
 
-          {/* RIGHT — Clean, balanced 2×2 photo placeholders */}
+          {/* RIGHT — Balanced 2×2 photo grid with unified styling */}
           <div className="relative">
             <div className="grid grid-cols-2 gap-6 md:gap-8">
               {imageSlots.map((slot) => (
                 <figure
                   key={slot.id}
                   data-testid={`hero-photo-slot-${slot.id}`}
-                  className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm aspect-square flex flex-col items-center justify-center transition-all duration-500 hover:border-[#4dd4ac]/40 hover:bg-white/[0.07]"
+                  className="group relative overflow-hidden rounded-2xl aspect-square shadow-xl shadow-black/30 ring-1 ring-white/10 transition-transform duration-500 hover:-translate-y-1 hover:shadow-2xl"
                 >
-                  <div className="flex flex-col items-center text-center px-6">
-                    <div className="w-12 h-12 rounded-full bg-[#4dd4ac]/10 border border-[#4dd4ac]/30 flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-110">
-                      <ImageIcon
-                        className="w-5 h-5 text-[#4dd4ac]"
-                        strokeWidth={1.5}
-                        aria-hidden="true"
-                      />
-                    </div>
-                    <figcaption className="text-white/90 text-sm md:text-base font-medium tracking-wide">
-                      {slot.label}
-                    </figcaption>
-                    <span className="text-[10px] uppercase tracking-[0.25em] text-white/40 mt-2">
-                      Photo coming soon
+                  <img
+                    src={slot.src}
+                    alt={slot.alt}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    style={{
+                      filter: 'saturate(0.95) contrast(1.05) brightness(0.92)',
+                    }}
+                  />
+                  {/* Unified tonal overlay for matching style */}
+                  <div
+                    className="absolute inset-0 bg-gradient-to-t from-[#0f4f47]/70 via-[#0f4f47]/10 to-transparent mix-blend-multiply"
+                    aria-hidden="true"
+                  />
+                  {/* Subtle green tint to unify all photos */}
+                  <div
+                    className="absolute inset-0 bg-[#0f4f47]/15"
+                    aria-hidden="true"
+                  />
+                  {/* Hover bloom */}
+                  <div
+                    className="absolute inset-0 bg-gradient-to-t from-[#4dd4ac]/0 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    aria-hidden="true"
+                  />
+                  {/* Caption */}
+                  <figcaption className="absolute inset-x-0 bottom-0 p-5 z-10">
+                    <span className="block text-[10px] uppercase tracking-[0.25em] text-[#4dd4ac] mb-1.5">
+                      Green Continent Tours
                     </span>
-                  </div>
+                    <span className="block text-white text-base md:text-lg font-semibold tracking-wide drop-shadow-md">
+                      {slot.label}
+                    </span>
+                  </figcaption>
                 </figure>
               ))}
             </div>
