@@ -8,7 +8,7 @@ import React from 'react';
  *   { name: 'Hotelbeds', src: '<url-to-transparent-png>' }
  */
 const partners = [
-  { name: 'Hotelbeds', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/iqnhp902_Screenshot%202026-05-25%20145114.png' },
+  { name: 'Hotelbeds', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/bmj7tx4k_Screenshot%202026-05-25%20172205.png' },
   { name: 'Didatravel', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/y3nhl8vt_Screenshot%202026-05-25%20145138.png' },
   { name: 'Accor', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/bsyy37r8_Screenshot%202026-05-25%20145200.png' },
   { name: 'GIATA', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/4x8vagw4_Screenshot%202026-05-25%20145212.png' },
@@ -18,6 +18,8 @@ const partners = [
   { name: 'Viator', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/xf6hyquf_Screenshot%202026-05-25%20145041.png' },
   { name: 'Travco', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/1asnpbab_Screenshot%202026-05-25%20145055.png' },
   { name: 'TBO.com', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/c7fimiuy_Screenshot%202026-05-25%20145100.png' },
+  { name: 'GCT Booking', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/2yw9a58m_Screenshot%202026-05-25%20171458.png' },
+  { name: 'RateHawk', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/nesly3hw_Screenshot%202026-05-25%20171529.png' },
 ];
 
 const TrustedPartners = () => {
@@ -26,7 +28,7 @@ const TrustedPartners = () => {
 
   return (
     <section
-      className="bg-white py-8"
+      className="bg-white py-12"
       aria-labelledby="trusted-partners-heading"
       data-testid="trusted-partners-section"
     >
@@ -53,17 +55,18 @@ const TrustedPartners = () => {
               Logos will appear here once added.
             </div>
           ) : (
-            <div className="flex items-center marquee-track gap-16">
+            <div className="flex items-center marquee-track gap-20">
               {loop.map((p, i) => (
                 <div
                   key={`${p.name}-${i}`}
-                  className="shrink-0 flex items-center justify-center h-10 md:h-12"
+                  className="shrink-0 flex items-center justify-center h-16 md:h-20"
                   data-testid={`partner-logo-${p.name.toLowerCase().replace(/\s+/g, '-')}`}
                 >
                   <img
                     src={p.src}
-                    alt={`${p.name} — Green Continent Tours partner`}
-                    className="h-full w-auto max-h-10 md:max-h-12 object-contain"
+                    alt={`${p.name} — official travel partner of Green Continent Tours, Krakow Poland`}
+                    title={`${p.name} – Green Continent Tours Partner`}
+                    className="h-full w-auto max-h-16 md:max-h-20 object-contain"
                     loading="lazy"
                   />
                 </div>
