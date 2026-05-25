@@ -12,11 +12,13 @@ import HiddenGems from './pages/articles/HiddenGems';
 import AvoidMistakes from './pages/articles/AvoidMistakes';
 import GroupTours from './pages/articles/GroupTours';
 import WhatsAppButton from './components/WhatsAppButton';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/gallery" element={<Gallery />} />
