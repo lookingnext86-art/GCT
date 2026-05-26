@@ -205,21 +205,25 @@ const AvoidMistakes = () => {
                 aria-hidden="true"
               />
 
-              <div className="absolute inset-0 flex items-end pb-12 md:pb-16 lg:pb-20">
+              <div className="absolute inset-0 flex items-end pb-20 md:pb-24 lg:pb-28">
                 <div className="container mx-auto px-5 md:px-6 lg:px-8 w-full">
                   <div className="max-w-3xl text-white">
-                    <Link
-                      to="/travel-guide"
-                      className="inline-flex items-center gap-2 text-[12px] tracking-[0.2em] uppercase text-white/85 hover:text-[#4dd4ac] mb-8 md:mb-9 transition-colors"
-                      data-testid="back-to-travel-guide"
-                    >
-                      <ArrowLeft className="w-4 h-4" aria-hidden="true" />
-                      Travel Guide
-                    </Link>
+                    <div>
+                      <Link
+                        to="/travel-guide"
+                        className="inline-flex items-center gap-2 text-[12px] tracking-[0.2em] uppercase text-white/85 hover:text-[#4dd4ac] transition-colors"
+                        data-testid="back-to-travel-guide"
+                      >
+                        <ArrowLeft className="w-4 h-4" aria-hidden="true" />
+                        Travel Guide
+                      </Link>
+                    </div>
 
-                    <span className="inline-block bg-[#0f4f47] text-[#4dd4ac] text-[10px] font-bold tracking-[0.25em] uppercase px-3 py-1.5 rounded-full mb-5">
-                      Poland Tips
-                    </span>
+                    <div className="mt-7 md:mt-8">
+                      <span className="inline-block bg-[#0f4f47] text-[#4dd4ac] text-[10px] font-bold tracking-[0.25em] uppercase px-3 py-1.5 rounded-full">
+                        Poland Tips
+                      </span>
+                    </div>
 
                     <h1
                       id="article-heading"
