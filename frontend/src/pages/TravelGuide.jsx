@@ -52,8 +52,8 @@ const articles = [
   {
     slug: 'avoid-mistakes',
     href: '/travel-guide/avoid-mistakes',
-    title: '10 Tourist Mistakes & Scams to Avoid in Poland',
-    excerpt: 'Taxi scams, overpriced restaurants, and traps to skip — travel safer.',
+    title: 'What to Avoid in Poland: 10 Common Tourist Mistakes & Scams',
+    excerpt: 'Taxi scams, money exchange traps, pickpocketing, and smart tips — travel Poland with confidence.',
     image: 'https://greencontinenttours.com/GCT-asset/Slider/Slider-2.jpg',
     imageAlt: 'Krakow travel tips — avoid tourist mistakes and scams',
     category: 'poland-tips',
