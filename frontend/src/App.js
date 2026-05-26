@@ -11,6 +11,7 @@ import HalalTourism from './pages/articles/HalalTourism';
 import HiddenGems from './pages/articles/HiddenGems';
 import AvoidMistakes from './pages/articles/AvoidMistakes';
 import GroupTours from './pages/articles/GroupTours';
+import FamilySummerItinerary from './pages/articles/FamilySummerItinerary';
 import WhatsAppButton from './components/WhatsAppButton';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -30,6 +31,7 @@ function App() {
           <Route path="/travel-guide/hidden-gems" element={<HiddenGems />} />
           <Route path="/travel-guide/avoid-mistakes" element={<AvoidMistakes />} />
           <Route path="/travel-guide/group-tours" element={<GroupTours />} />
+          <Route path="/travel-guide/family-summer-poland-itinerary" element={<FamilySummerItinerary />} />
         </Routes>
         {/* WhatsApp button visible on all pages */}
         <WhatsAppButton />

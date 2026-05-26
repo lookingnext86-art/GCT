@@ -65,6 +65,17 @@
   </url>
 
   <url>
+    <loc>https://greencontinenttours.com/travel-guide/family-summer-poland-itinerary</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1607427293702-036933bbf746?auto=format&amp;fit=crop&amp;w=2400&amp;q=80</image:loc>
+      <image:title>Family Summer in Poland — Tatra Mountains</image:title>
+      <image:caption>Relaxed 10-day family itinerary through Krakow, Zakopane and Warsaw</image:caption>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://greencontinenttours.com/gallery</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
