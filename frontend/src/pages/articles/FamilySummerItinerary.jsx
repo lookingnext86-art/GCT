@@ -299,11 +299,11 @@ const FamilySummerItinerary = () => {
                         alt="Family hiking at Morskie Oko lake in Zakopane Tatra Mountains Poland — premium family summer travel itinerary"
                         title="Family at Morskie Oko, Zakopane"
                         width="2000"
-                        height="1100"
-                        className="w-full h-auto block"
+                        height="900"
+                        className="w-full h-[280px] md:h-[380px] lg:h-[460px] object-cover block"
                         loading="lazy"
                         decoding="async"
-                        style={{ filter: 'saturate(0.95) contrast(1.04)' }}
+                        style={{ filter: 'saturate(0.95) contrast(1.04)', objectPosition: 'center 62%' }}
                       />
                     </div>
                     <figcaption className="mt-3 text-[12.5px] text-gray-400 italic text-center">
