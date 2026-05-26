@@ -22,9 +22,9 @@ const WHATSAPP_MESSAGE =
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
 const HERO_IMAGE =
-  'https://images.unsplash.com/photo-1607427293702-036933bbf746?auto=format&fit=crop&w=2400&q=80';
+  'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/u0wnicix_File%20name-%20wawel-castle-krakow-poland-sunset-view.jpg';
 const MID_IMAGE =
-  'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/dklii7oz_wawel-royal-castle-krakow-poland.jpg';
+  'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/8ydh4muo_family-at-morski-oko-zakopane-poland-summer.jpg';
 
 const overviewItems = [
   { label: 'Duration', value: '10 Days', icon: CalendarDays },
@@ -134,8 +134,8 @@ const FamilySummerItinerary = () => {
             <div className="relative h-[460px] md:h-[560px] lg:h-[640px] w-full">
               <img
                 src={HERO_IMAGE}
-                alt="Family overlooking the Tatra Mountains in Zakopane Poland during summer — Green Continent Tours"
-                title="Family Summer in Poland — Tatra Mountains"
+                alt="Wawel Royal Castle at sunset over the Vistula River in Krakow Poland — family summer 10-day travel itinerary — Green Continent Tours"
+                title="Wawel Castle Sunset — Family Summer in Poland"
                 width="2400"
                 height="1300"
                 className="absolute inset-0 w-full h-full object-cover object-center"
@@ -296,18 +296,18 @@ const FamilySummerItinerary = () => {
                     <div className="relative overflow-hidden rounded-2xl shadow-[0_25px_60px_-25px_rgba(15,79,71,0.3)]">
                       <img
                         src={MID_IMAGE}
-                        alt="Wawel Royal Castle in Krakow Poland — premium family travel itinerary"
-                        title="Wawel Castle, Krakow"
+                        alt="Family hiking at Morskie Oko lake in Zakopane Tatra Mountains Poland — premium family summer travel itinerary"
+                        title="Family at Morskie Oko, Zakopane"
                         width="2000"
                         height="1100"
                         className="w-full h-auto block"
                         loading="lazy"
                         decoding="async"
-                        style={{ filter: 'saturate(0.92) contrast(1.03)' }}
+                        style={{ filter: 'saturate(0.95) contrast(1.04)' }}
                       />
                     </div>
                     <figcaption className="mt-3 text-[12.5px] text-gray-400 italic text-center">
-                      Wawel Royal Castle, Krakow — a highlight of the Polish family itinerary.
+                      Morskie Oko Lake, Tatra Mountains — a family favourite stop in the Polish summer itinerary.
                     </figcaption>
                   </figure>
 
