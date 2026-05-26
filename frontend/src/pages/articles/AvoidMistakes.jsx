@@ -210,14 +210,14 @@ const AvoidMistakes = () => {
                   <div className="max-w-3xl text-white">
                     <Link
                       to="/travel-guide"
-                      className="inline-flex items-center gap-2 text-[12px] tracking-[0.2em] uppercase text-white/85 hover:text-[#4dd4ac] mb-5 transition-colors"
+                      className="inline-flex items-center gap-2 text-[12px] tracking-[0.2em] uppercase text-white/85 hover:text-[#4dd4ac] mb-8 md:mb-9 transition-colors"
                       data-testid="back-to-travel-guide"
                     >
                       <ArrowLeft className="w-4 h-4" aria-hidden="true" />
                       Travel Guide
                     </Link>
 
-                    <span className="inline-block bg-[#0f4f47] text-[#4dd4ac] text-[10px] font-bold tracking-[0.25em] uppercase px-3 py-1.5 rounded-full mb-4">
+                    <span className="inline-block bg-[#0f4f47] text-[#4dd4ac] text-[10px] font-bold tracking-[0.25em] uppercase px-3 py-1.5 rounded-full mb-5">
                       Poland Tips
                     </span>
 
@@ -233,16 +233,16 @@ const AvoidMistakes = () => {
                       Warsaw, Zakopane, and beyond — without overpaying or wasting time.
                     </p>
 
-                    <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[12.5px] text-white/80">
-                      <span className="inline-flex items-center gap-1.5">
+                    <div className="flex flex-wrap items-center gap-x-8 md:gap-x-10 gap-y-2.5 text-[12.5px] text-white/80">
+                      <span className="inline-flex items-center gap-2">
                         <Calendar className="w-3.5 h-3.5" aria-hidden="true" />
                         <time dateTime="2026-05-10">May 10, 2026</time>
                       </span>
-                      <span className="inline-flex items-center gap-1.5">
+                      <span className="inline-flex items-center gap-2">
                         <Clock className="w-3.5 h-3.5" aria-hidden="true" />
                         10 min read
                       </span>
-                      <span className="inline-flex items-center gap-1.5">
+                      <span className="inline-flex items-center gap-2">
                         <User className="w-3.5 h-3.5" aria-hidden="true" />
                         Green Continent Tours
                       </span>
