@@ -23,9 +23,9 @@ const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent
 
 // ⬇️ Replace these two image URLs when you upload the new SEO-friendly photos.
 const HERO_IMAGE =
-  'https://greencontinenttours.com/GCT-asset/Slider/Slider-2.jpg';
+  'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/e2klid1u_avoid-tourist-scams-in-poland.jpg';
 const MID_IMAGE =
-  'https://greencontinenttours.com/GCT-asset/Slider/Slider-2.jpg';
+  'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/tx0j5hj2_krakow-currency-exchange-tourist-scam-warning.jpg';
 
 const overviewItems = [
   { label: 'Topic', value: 'Travel Safety', icon: ShieldCheck },
@@ -187,8 +187,8 @@ const AvoidMistakes = () => {
             <div className="relative h-[460px] md:h-[560px] lg:h-[640px] w-full">
               <img
                 src={HERO_IMAGE}
-                alt="Krakow Old Town and Poland travel safety guide — avoid common tourist mistakes and scams — Green Continent Tours"
-                title="What to Avoid in Poland — Common Tourist Mistakes & Scams"
+                alt="Colorful Polish Old Town market square with town hall and cobbled streets at sunrise — Poland travel safety guide by Green Continent Tours"
+                title="Polish Old Town — Avoid Tourist Mistakes & Scams"
                 width="2400"
                 height="1300"
                 className="absolute inset-0 w-full h-full object-cover object-center"
@@ -354,18 +354,18 @@ const AvoidMistakes = () => {
                     <div className="relative overflow-hidden rounded-2xl shadow-[0_25px_60px_-25px_rgba(15,79,71,0.3)]">
                       <img
                         src={MID_IMAGE}
-                        alt="Travelers exploring Krakow Old Town in Poland — safe and smart travel tips by Green Continent Tours"
-                        title="Travel smart in Poland — Krakow Old Town"
+                        alt="Tourist standing in front of a Kantor currency exchange office in Krakow Poland — warning about bad exchange rate scams for travelers"
+                        title="Krakow Kantor currency exchange — tourist scam warning"
                         width="2000"
                         height="900"
                         className="w-full h-[280px] md:h-[380px] lg:h-[460px] object-cover block"
                         loading="lazy"
                         decoding="async"
-                        style={{ filter: 'saturate(0.95) contrast(1.04)', objectPosition: 'center center' }}
+                        style={{ filter: 'saturate(0.95) contrast(1.04)', objectPosition: 'center 18%' }}
                       />
                     </div>
                     <figcaption className="mt-3 text-[12.5px] text-gray-400 italic text-center">
-                      Travel with confidence across Poland — from Krakow’s Old Town to Zakopane’s mountains.
+                      Always compare “Kantor” exchange rates carefully — a common tourist mistake in Krakow and across Poland.
                     </figcaption>
                   </figure>
 
