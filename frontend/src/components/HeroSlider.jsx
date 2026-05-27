@@ -2,9 +2,37 @@ import React from 'react';
 import { Facebook, Instagram } from 'lucide-react';
 
 /**
- * Static hero — single composite image showcasing
- * Zakopane mountains, Krakow Old Town, and Gdansk waterfront.
+ * Hero triptych — 3 real photos:
+ *  1) Krakow Main Market Square (St. Mary's Basilica)
+ *  2) Tatra Mountains (Zakopane)
+ *  3) Gdansk Old Town waterfront on the Motława River
+ *
+ * To swap any panel later, just replace its URL/alt in HERO_PANELS below.
  */
+const HERO_PANELS = [
+  {
+    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/xu0cw9ep_Krakow%20main%20market%20squer.jpg',
+    alt:
+      'Krakow Main Market Square with St. Mary’s Basilica and horse carriages — historic Old Town Poland tours by Green Continent Tours',
+    title: 'Krakow Old Town — Main Market Square',
+    objectPosition: 'center 35%',
+  },
+  {
+    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/zqu24s2s_Zakopane.jpg',
+    alt:
+      'Tatra Mountains landscape near Zakopane Poland — hiking trails and rocky peaks for premium mountain tours by Green Continent Tours',
+    title: 'Tatra Mountains — Zakopane, Poland',
+    objectPosition: 'center 45%',
+  },
+  {
+    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/vravremq_gdanks%20port.jpg',
+    alt:
+      'Gdansk Old Town waterfront on the Motława River with colorful Hanseatic houses — Baltic Poland city tours by Green Continent Tours',
+    title: 'Gdansk Old Town — Motława River Waterfront',
+    objectPosition: 'center 40%',
+  },
+];
+
 const HeroSlider = () => {
   return (
     <div
@@ -44,22 +72,45 @@ const HeroSlider = () => {
         </a>
       </div>
 
-      {/* Single composite hero image: Krakow Old Town, Tatra Mountains, Gdansk waterfront */}
-      <img
-        src="https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/e3tlp9ys_poland-tour-tatra-krakow-gdansk-hero.png"
-        alt="Poland tour highlights — Krakow Old Town, Tatra Mountains, and Gdansk waterfront by Green Continent Tours"
-        title="Premium Poland Travel — Krakow, Tatra Mountains, Gdansk"
-        width="1920"
-        height="1080"
-        className="absolute inset-0 w-full h-full object-cover object-center"
-        loading="eager"
-        fetchpriority="high"
-        decoding="async"
-      />
+      {/* Triptych: 3 real photos side-by-side */}
+      <div className="absolute inset-0 grid grid-cols-3">
+        {HERO_PANELS.map((panel, idx) => (
+          <div
+            key={panel.title}
+            className="relative overflow-hidden"
+            data-testid={`hero-panel-${idx + 1}`}
+          >
+            <img
+              src={panel.src}
+              alt={panel.alt}
+              title={panel.title}
+              width="1280"
+              height="1600"
+              className="absolute inset-0 w-full h-full object-cover"
+              style={{ objectPosition: panel.objectPosition }}
+              loading={idx === 0 ? 'eager' : 'lazy'}
+              fetchpriority={idx === 0 ? 'high' : 'auto'}
+              decoding="async"
+            />
+            {/* Subtle warm tonal overlay to harmonise the 3 photos */}
+            <div
+              className="absolute inset-0 bg-gradient-to-b from-[#0a3a35]/10 via-transparent to-[#0a3a35]/25 pointer-events-none"
+              aria-hidden="true"
+            />
+            {/* Vertical divider between panels (skip on the last) */}
+            {idx < HERO_PANELS.length - 1 && (
+              <div
+                className="absolute top-0 right-0 h-full w-px bg-white/35 pointer-events-none"
+                aria-hidden="true"
+              />
+            )}
+          </div>
+        ))}
+      </div>
 
       {/* Subtle dark gradient at bottom for visual transition into next section */}
       <div
-        className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0f4f47]/30 to-transparent pointer-events-none"
+        className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0f4f47]/40 to-transparent pointer-events-none z-10"
         aria-hidden="true"
       />
     </div>
