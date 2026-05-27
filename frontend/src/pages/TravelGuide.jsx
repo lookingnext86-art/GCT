@@ -39,8 +39,8 @@ const articles = [
   {
     slug: 'hidden-gems',
     href: '/travel-guide/hidden-gems',
-    title: '15 Hidden Gems in Poland Most Tourists Miss',
-    excerpt: 'Off-the-beaten-path castles, villages, and nature beyond Krakow and Warsaw.',
+    title: 'Hidden Gems in Poland: 15 Secret Places Tourists Miss',
+    excerpt: 'Forgotten castles, painted villages, mysterious forests — discover Poland off the beaten path.',
     image: 'https://greencontinenttours.com/GCT-asset/Home-Gallery/slider-4.jpg',
     imageAlt: 'Hidden gems in Poland — secret destinations beyond Krakow',
     category: 'poland-tips',
