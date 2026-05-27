@@ -25,11 +25,11 @@ const HERO_PANELS = [
     objectPosition: 'center 45%',
   },
   {
-    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/vravremq_gdanks%20port.jpg',
+    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/fjtf6qaj_Warsaw%20Old%20Town.png',
     alt:
-      'Gdansk Old Town waterfront on the Motława River with colorful Hanseatic houses — Baltic Poland city tours by Green Continent Tours',
-    title: 'Gdansk Old Town — Motława River Waterfront',
-    objectPosition: 'center 40%',
+      'Warsaw Old Town Castle Square with colorful tenement houses and dramatic sky — historic Poland capital city tours by Green Continent Tours',
+    title: 'Warsaw Old Town — Castle Square',
+    objectPosition: 'center 55%',
   },
 ];
 
@@ -90,24 +90,37 @@ const HeroSlider = () => {
               style={{
                 objectPosition: panel.objectPosition,
                 filter:
-                  'saturate(0.85) contrast(1.05) brightness(0.92) hue-rotate(-6deg)',
+                  'saturate(1.18) contrast(1.18) brightness(0.92)',
               }}
               loading={idx === 0 ? 'eager' : 'lazy'}
               fetchpriority={idx === 0 ? 'high' : 'auto'}
               decoding="async"
             />
-            {/* Brand teal/green tonal wash to harmonise all 3 photos with the website theme */}
+            {/* Cinematic vignette — dark top + bottom for that premium magazine feel */}
             <div
-              className="absolute inset-0 pointer-events-none mix-blend-multiply"
+              className="absolute inset-0 pointer-events-none"
               style={{
                 background:
-                  'linear-gradient(180deg, rgba(15,79,71,0.18) 0%, rgba(15,79,71,0.10) 40%, rgba(10,58,53,0.30) 100%)',
+                  'linear-gradient(180deg, rgba(8,28,26,0.45) 0%, rgba(8,28,26,0.0) 28%, rgba(8,28,26,0.0) 60%, rgba(8,28,26,0.55) 100%)',
               }}
               aria-hidden="true"
             />
+            {/* Whisper of brand teal in the shadows only — keeps natural color but ties to theme */}
             <div
-              className="absolute inset-0 pointer-events-none mix-blend-soft-light"
-              style={{ background: 'rgba(77,212,172,0.22)' }}
+              className="absolute inset-0 pointer-events-none mix-blend-multiply opacity-40"
+              style={{
+                background:
+                  'linear-gradient(180deg, rgba(15,79,71,0.0) 0%, rgba(15,79,71,0.0) 65%, rgba(15,79,71,0.35) 100%)',
+              }}
+              aria-hidden="true"
+            />
+            {/* Side edge darkening for cinematic frame */}
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background:
+                  'radial-gradient(ellipse 110% 95% at center, transparent 55%, rgba(8,28,26,0.40) 100%)',
+              }}
               aria-hidden="true"
             />
           </div>
