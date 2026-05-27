@@ -73,7 +73,7 @@ const HeroSlider = () => {
       </div>
 
       {/* Triptych: 3 real photos side-by-side */}
-      <div className="absolute inset-0 grid grid-cols-3">
+      <div className="absolute inset-0 grid grid-cols-3 gap-[6px] bg-white">
         {HERO_PANELS.map((panel, idx) => (
           <div
             key={panel.title}
@@ -87,23 +87,29 @@ const HeroSlider = () => {
               width="1280"
               height="1600"
               className="absolute inset-0 w-full h-full object-cover"
-              style={{ objectPosition: panel.objectPosition }}
+              style={{
+                objectPosition: panel.objectPosition,
+                filter:
+                  'saturate(0.85) contrast(1.05) brightness(0.92) hue-rotate(-6deg)',
+              }}
               loading={idx === 0 ? 'eager' : 'lazy'}
               fetchpriority={idx === 0 ? 'high' : 'auto'}
               decoding="async"
             />
-            {/* Subtle warm tonal overlay to harmonise the 3 photos */}
+            {/* Brand teal/green tonal wash to harmonise all 3 photos with the website theme */}
             <div
-              className="absolute inset-0 bg-gradient-to-b from-[#0a3a35]/10 via-transparent to-[#0a3a35]/25 pointer-events-none"
+              className="absolute inset-0 pointer-events-none mix-blend-multiply"
+              style={{
+                background:
+                  'linear-gradient(180deg, rgba(15,79,71,0.18) 0%, rgba(15,79,71,0.10) 40%, rgba(10,58,53,0.30) 100%)',
+              }}
               aria-hidden="true"
             />
-            {/* Vertical divider between panels (skip on the last) */}
-            {idx < HERO_PANELS.length - 1 && (
-              <div
-                className="absolute top-0 right-0 h-full w-px bg-white/35 pointer-events-none"
-                aria-hidden="true"
-              />
-            )}
+            <div
+              className="absolute inset-0 pointer-events-none mix-blend-soft-light"
+              style={{ background: 'rgba(77,212,172,0.22)' }}
+              aria-hidden="true"
+            />
           </div>
         ))}
       </div>
