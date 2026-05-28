@@ -23,7 +23,7 @@ const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent
 
 // ⬇️ Replace these two image URLs when you upload the new SEO-friendly photos.
 const HERO_IMAGE =
-  'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/e2klid1u_avoid-tourist-scams-in-poland.jpg';
+  'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/gj6l8ol7_premium-poland-travel-agency-euro-banner.png';
 const MID_IMAGE =
   'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/tx0j5hj2_krakow-currency-exchange-tourist-scam-warning.jpg';
 
@@ -187,8 +187,8 @@ const AvoidMistakes = () => {
             <div className="relative h-[460px] md:h-[560px] lg:h-[640px] w-full">
               <img
                 src={HERO_IMAGE}
-                alt="Colorful Polish Old Town market square with town hall and cobbled streets at sunrise — Poland travel safety guide by Green Continent Tours"
-                title="Polish Old Town — Avoid Tourist Mistakes & Scams"
+                alt="Euro banknotes — 50, 100 and 200 Euros — on marble surface representing money exchange and tourist scams to avoid in Poland — Green Continent Tours travel safety guide"
+                title="Euro money exchange — Avoid Tourist Mistakes & Scams in Poland"
                 width="2400"
                 height="1300"
                 className="absolute inset-0 w-full h-full object-cover object-center"
