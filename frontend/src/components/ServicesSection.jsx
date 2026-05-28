@@ -12,94 +12,116 @@ const WHATSAPP_NUMBER = '48537482798';
 const WHATSAPP_MESSAGE = 'Hello, I would like to plan a premium Poland journey.';
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
-// 6 most distinctive operational services (no overlap with hero / What We Do Best)
+// ====================================================================
+// SERVICES — each card has a SEO-friendly photo at the top.
+// Premium curated stock photography matched to each service.
+// ====================================================================
 const services = [
   {
     title: 'Luxury Airport Transfers',
-    description: 'Professional airport pickup and door-to-door transfer services across Krakow, Warsaw, and all major Polish airports.',
+    description:
+      'Professional airport pickup and door-to-door transfer services across Krakow, Warsaw, and all major Polish airports.',
     icon: PlaneTakeoff,
-    href: '/services',
-    keywords: 'Krakow airport transfer',
+    image:
+      'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80',
+    alt: 'Luxury black Mercedes chauffeur car — premium airport transfer service in Krakow and Warsaw Poland by Green Continent Tours',
   },
   {
     title: 'Conferences & MICE Services',
-    description: 'Business travel, incentives, conferences, and corporate event planning tailored to your professional needs.',
+    description:
+      'Business travel, incentives, conferences, and corporate event planning tailored to your professional needs.',
     icon: Briefcase,
-    href: '/services',
-    keywords: 'MICE travel Poland',
+    image:
+      'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80',
+    alt: 'Premium business conference and MICE event in Krakow Poland — corporate travel by Green Continent Tours',
   },
   {
     title: 'City Tours',
-    description: 'Guided sightseeing experiences in Krakow, Warsaw, Wroclaw, and Gdansk — Old Towns, castles, and cultural landmarks.',
+    description:
+      'Guided sightseeing experiences in Krakow, Warsaw, Wroclaw, and Gdansk — Old Towns, castles, and cultural landmarks.',
     icon: Landmark,
-    href: '/services',
-    keywords: 'Krakow city tours',
+    image:
+      'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/xu0cw9ep_Krakow%20main%20market%20squer.jpg',
+    alt: 'Krakow Main Market Square with St. Mary’s Basilica — premium guided city tours in Poland by Green Continent Tours',
   },
   {
     title: 'Professional Tour Guides',
-    description: 'Certified multilingual guides in English, Polish, Arabic, Spanish, and German — storytellers who bring Poland to life.',
+    description:
+      'Certified multilingual guides in English, Polish, Arabic, Spanish, and German — storytellers who bring Poland to life.',
     icon: BadgeCheck,
-    href: '/services',
-    keywords: 'multilingual tour guides Poland',
+    image:
+      'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/qgck4voh_krakow-old-town-tour-02.jpg',
+    alt: 'Tour group with a professional multilingual guide in Krakow Old Town Poland — Green Continent Tours',
   },
   {
     title: 'School & University Tours',
-    description: 'Educational travel programs and curated learning trips for students, schools, and academic groups across Europe.',
+    description:
+      'Educational travel programs and curated learning trips for students, schools, and academic groups across Europe.',
     icon: GraduationCap,
-    href: '/services',
-    keywords: 'educational travel Poland',
+    image:
+      'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80',
+    alt: 'University students on an educational tour in Poland — academic group travel by Green Continent Tours',
   },
   {
     title: 'Transportation Tickets',
-    description: 'Flight, bus, and train reservations across Europe — the best routes, the right schedule, the best price.',
+    description:
+      'Flight, bus, and train reservations across Europe — the best routes, the right schedule, the best price.',
     icon: Ticket,
-    href: '/services',
-    keywords: 'Europe transportation booking',
+    image:
+      'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/2iwinora_poland-travel-guide-10.jpg',
+    alt: 'Premium river cruise ship on the Danube in Vienna — flight, train, bus, and cruise tickets across Europe by Green Continent Tours',
   },
 ];
 
-const ServicesSection = () => {
+const ServicesSection = ({ useH1 = false }) => {
+  const HeadingTag = useH1 ? 'h1' : 'h2';
   return (
     <section
       className="relative overflow-hidden bg-white"
       aria-labelledby="services-heading"
       data-testid="services-section"
     >
-      {/* Poland-inspired photo banner header */}
-      <div className="relative h-80 md:h-[420px] lg:h-[520px] overflow-hidden">
-        {/* Background photo: Wawel Royal Castle, Krakow (UNESCO landmark) */}
+      {/* ===== HEADER BANNER ===== */}
+      <div className="relative h-[420px] md:h-[520px] lg:h-[600px] overflow-hidden">
+        {/* Background: family looking at Krakow Main Market Square */}
         <img
-          src="https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/dklii7oz_wawel-royal-castle-krakow-poland.jpg"
-          alt="Wawel Royal Castle Krakow Poland — Green Continent Tours travel services"
-          title="Wawel Castle, Krakow — Poland Travel Services by Green Continent Tours"
+          src="https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/dub0geqa_krakow-family-travel-main-square.jpg"
+          alt="Family travelers looking at Krakow Main Market Square with St. Mary’s Basilica and Cloth Hall — premium Poland travel services by Green Continent Tours"
+          title="Krakow Main Market Square — Premium Poland Travel Services"
+          width="2400"
+          height="1300"
           className="absolute inset-0 w-full h-full object-cover object-center"
-          loading="lazy"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
         />
-        {/* Dark green gradient overlay for premium brand-matched look */}
+        {/* Cinematic overlay */}
         <div
-          className="absolute inset-0 bg-gradient-to-b from-[#0f4f47]/55 via-[#0f4f47]/40 to-[#0f4f47]/70"
+          className="absolute inset-0 bg-gradient-to-b from-[#0a3a35]/55 via-[#0a3a35]/40 to-[#0a3a35]/82"
           aria-hidden="true"
         />
-        {/* Subtle vignette to focus text */}
         <div
-          className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(15,79,71,0.1),rgba(15,79,71,0.55))]"
+          className="absolute inset-0 bg-gradient-to-r from-[#0a3a35]/55 via-transparent to-transparent"
           aria-hidden="true"
         />
 
-        {/* Heading on top of banner */}
+        {/* Heading */}
         <div className="relative h-full flex flex-col items-center justify-center text-center px-6">
           <p className="inline-block text-[11px] font-semibold tracking-[0.3em] uppercase text-[#4dd4ac] mb-5 border border-[#4dd4ac]/40 bg-[#0f4f47]/30 backdrop-blur-sm px-3.5 py-1.5 rounded-full">
             Our Services
           </p>
-          <h2
+          <HeadingTag
             id="services-heading"
-            className="text-3xl md:text-5xl lg:text-[3.5rem] font-bold text-white mb-5 tracking-tight leading-[1.1] drop-shadow-md"
+            className="text-3xl md:text-5xl lg:text-[3.5rem] font-bold text-white mb-5 tracking-tight leading-[1.1] drop-shadow-lg max-w-4xl"
           >
-            Our Travel Services
-          </h2>
+            Premium Travel Services in Poland — Krakow Private Tours, Family
+            Trips, MICE &amp; Transfers
+          </HeadingTag>
           <p className="text-base md:text-lg text-white/95 font-light leading-relaxed max-w-3xl mx-auto drop-shadow">
-            Premium Krakow-based travel agency offering private tours, family travel, MICE services, and custom itineraries
-            across Poland — plus Auschwitz-Birkenau, the Wieliczka Salt Mine, and curated extensions to Prague, Vienna, and Budapest.
+            A Krakow-based premium travel agency offering airport transfers, guided
+            city tours, family travel, MICE services, multilingual guides, and
+            tailor-made itineraries across Poland, Auschwitz-Birkenau, Wieliczka
+            Salt Mine, and curated extensions to Prague, Vienna, and Budapest.
           </p>
 
           {/* Decorative divider */}
@@ -111,8 +133,8 @@ const ServicesSection = () => {
         </div>
       </div>
 
-      {/* Services grid */}
-      <div className="container mx-auto px-6 lg:px-8 -mt-10 lg:-mt-16 pb-24 lg:pb-28 relative z-10">
+      {/* ===== SERVICES GRID ===== */}
+      <div className="container mx-auto px-6 lg:px-8 -mt-14 lg:-mt-20 pb-24 lg:pb-28 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7 lg:gap-8">
             {services.map((service, index) => {
@@ -121,40 +143,54 @@ const ServicesSection = () => {
                 <article
                   key={index}
                   data-testid={`service-card-${index}`}
-                  className="group relative bg-white border border-gray-100 rounded-2xl p-8 lg:p-10 shadow-[0_4px_20px_-8px_rgba(15,79,71,0.06)] hover:shadow-[0_25px_50px_-20px_rgba(15,79,71,0.22)] hover:-translate-y-1.5 hover:border-[#4dd4ac]/30 transition-all duration-500 ease-out overflow-hidden flex flex-col items-center text-center"
+                  className="group relative bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-[0_4px_20px_-8px_rgba(15,79,71,0.08)] hover:shadow-[0_30px_60px_-25px_rgba(15,79,71,0.28)] hover:-translate-y-1.5 hover:border-[#4dd4ac]/30 transition-all duration-500 ease-out flex flex-col"
                 >
-                  {/* Hover bloom */}
-                  <div
-                    className="absolute -top-16 -right-16 w-40 h-40 rounded-full bg-[#4dd4ac]/0 group-hover:bg-[#4dd4ac]/[0.1] blur-3xl transition-all duration-700"
-                    aria-hidden="true"
-                  />
+                  {/* Service photo */}
+                  <div className="relative h-52 lg:h-56 overflow-hidden">
+                    <img
+                      src={service.image}
+                      alt={service.alt}
+                      width="1200"
+                      height="900"
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.06] transition-transform duration-[700ms] ease-out"
+                      loading="lazy"
+                      decoding="async"
+                      style={{ filter: 'saturate(0.95) contrast(1.04)' }}
+                    />
+                    {/* Subtle bottom-fade so the title area reads cleanly */}
+                    <div
+                      className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0a3a35]/15"
+                      aria-hidden="true"
+                    />
 
-                  {/* Icon circle */}
-                  <div className="relative mb-6">
-                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#4dd4ac]/10 border border-[#4dd4ac]/25 group-hover:bg-[#4dd4ac]/20 group-hover:scale-105 transition-all duration-500">
-                      <Icon
-                        className="w-7 h-7 text-[#0f4f47]"
-                        strokeWidth={1.5}
-                        aria-hidden="true"
-                      />
+                    {/* Floating icon badge — bottom-left, overlapping photo & card */}
+                    <div className="absolute -bottom-7 left-7">
+                      <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#0f4f47] shadow-[0_10px_25px_-8px_rgba(15,79,71,0.45)] ring-4 ring-white group-hover:scale-105 group-hover:bg-[#1a6b5f] transition-all duration-500">
+                        <Icon
+                          className="w-6 h-6 text-[#4dd4ac]"
+                          strokeWidth={1.7}
+                          aria-hidden="true"
+                        />
+                      </div>
                     </div>
                   </div>
 
-                  {/* Title */}
-                  <h3 className="text-xl md:text-[22px] font-bold text-[#0f4f47] mb-3 tracking-tight leading-snug">
-                    {service.title}
-                  </h3>
+                  {/* Card body */}
+                  <div className="p-7 lg:p-8 pt-12 flex flex-col flex-grow">
+                    <h3 className="text-xl md:text-[22px] font-bold text-[#0f4f47] mb-3 tracking-tight leading-snug">
+                      {service.title}
+                    </h3>
 
-                  {/* Subtle accent line */}
-                  <span
-                    className="w-8 h-px bg-[#4dd4ac]/60 mb-4 group-hover:w-14 transition-all duration-500"
-                    aria-hidden="true"
-                  />
+                    {/* Accent line */}
+                    <span
+                      className="w-8 h-px bg-[#4dd4ac]/60 mb-4 group-hover:w-14 transition-all duration-500"
+                      aria-hidden="true"
+                    />
 
-                  {/* Description */}
-                  <p className="text-[15px] text-gray-500 font-light leading-relaxed">
-                    {service.description}
-                  </p>
+                    <p className="text-[15px] text-gray-500 font-light leading-relaxed">
+                      {service.description}
+                    </p>
+                  </div>
                 </article>
               );
             })}
@@ -162,12 +198,11 @@ const ServicesSection = () => {
         </div>
       </div>
 
-      {/* Compact CTA strip over Warsaw Old Town photo */}
+      {/* ===== COMPACT WHATSAPP CTA STRIP ===== */}
       <div
         className="relative py-12 lg:py-14 overflow-hidden"
         data-testid="services-cta"
       >
-        {/* Background photo: couple walking in Warsaw Old Town */}
         <img
           src="https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/b8jiae77_warsaw-old-town-poland.jpg"
           alt="Couple walking through colorful Warsaw Old Town — premium Polish journey with Green Continent Tours"
@@ -175,7 +210,6 @@ const ServicesSection = () => {
           className="absolute inset-0 w-full h-full object-cover object-center"
           loading="lazy"
         />
-        {/* Lighter green tint so the photo stays the hero */}
         <div
           className="absolute inset-0 bg-gradient-to-r from-[#0f4f47]/70 via-[#0f4f47]/45 to-[#0f4f47]/70"
           aria-hidden="true"
