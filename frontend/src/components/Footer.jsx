@@ -1,96 +1,124 @@
 import React from 'react';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Mail, Phone, MapPin, Facebook, Instagram } from 'lucide-react';
 
 const Footer = () => {
-  const address = "Nowohucka 46, Kraków 31-580, Poland";
-  const googleMapsUrl = "https://www.google.com/maps/search/?api=1&query=Nowohucka+46+Kraków+31-580+Poland";
-  
-  return (
-    <footer className="bg-[#0f4f47] py-16">
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          {/* Title Image */}
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">
-              Visit Our Krakow Office - Your Gateway to Polish Adventures
-            </h2>
-            <img 
-              src="https://greencontinenttours.com/GCT-asset/location-header.png" 
-              alt="Contact our tour operator office in Krakow, Poland" 
-              className="mx-auto max-w-xs w-full"
-              loading="lazy"
-            />
-          </div>
+  const address = 'Nowohucka 46, Kraków 31-580, Poland';
+  const googleMapsUrl =
+    'https://www.google.com/maps/search/?api=1&query=Nowohucka+46+Kraków+31-580+Poland';
+  const year = new Date().getFullYear();
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Contact Info */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-white">
-              <h3 className="text-3xl font-bold mb-6 text-center">
+  return (
+    <footer className="bg-[#0f4f47] text-white" data-testid="site-footer">
+      <div className="container mx-auto px-5 md:px-6 lg:px-8 py-10 lg:py-12">
+        <div className="max-w-6xl mx-auto">
+          {/* MAIN GRID: brand | contact | map */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10">
+            {/* Brand + About */}
+            <div className="md:col-span-4">
+              <h3 className="text-xl font-bold tracking-tight mb-2">
                 Green Continent Tours
               </h3>
-              <p className="text-center text-lg mb-6">
-                Professional Tour Operator & Travel Agency in Krakow, Poland
+              <p className="text-[13.5px] text-white/75 font-light leading-[1.7] mb-5">
+                Tour operator &amp; travel agency based in Kraków — crafting premium
+                private tours across Poland and Central Europe.
               </p>
-              
-              <div className="space-y-4">
-                <div className="flex items-start gap-4">
-                  <MapPin className="w-6 h-6 text-[#4dd4ac] flex-shrink-0 mt-1" aria-hidden="true" />
-                  <div>
-                    <strong>Office Address:</strong><br />
-                    <a 
-                      href={googleMapsUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-[#4dd4ac] transition-colors underline"
-                    >
-                      {address}
-                    </a>
-                    <p className="text-sm mt-1 text-gray-300">Click to open in Google Maps</p>
-                  </div>
-                </div>
 
-                <div className="flex items-center gap-4">
-                  <Mail className="w-6 h-6 text-[#4dd4ac] flex-shrink-0" aria-hidden="true" />
-                  <div>
-                    <strong>Email:</strong><br />
-                    <a 
-                      href="mailto:info@greencontinenttours.com"
-                      className="text-lg hover:text-[#4dd4ac] transition-colors"
-                      aria-label="Send email to Green Continent Tours"
-                    >
-                      info@greencontinenttours.com
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4">
-                  <Phone className="w-6 h-6 text-[#4dd4ac] flex-shrink-0" aria-hidden="true" />
-                  <div>
-                    <strong>Phone / WhatsApp:</strong><br />
-                    <a 
-                      href="tel:+48537482798"
-                      className="text-lg hover:text-[#4dd4ac] transition-colors"
-                      aria-label="Call Green Continent Tours"
-                    >
-                      +48 537 482 798
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-8 pt-6 border-t border-white/20">
-                <p className="text-sm text-center">
-                  Registered in Poland under NIP 6793123024
-                </p>
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://www.facebook.com/GreenContinentTours"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visit our Facebook page"
+                  className="w-9 h-9 inline-flex items-center justify-center rounded-full bg-white/10 hover:bg-[#4dd4ac] hover:text-[#0f4f47] transition-colors"
+                  data-testid="footer-facebook"
+                >
+                  <Facebook className="w-4 h-4" />
+                </a>
+                <a
+                  href="https://www.instagram.com/green_continent_tours"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Follow us on Instagram"
+                  className="w-9 h-9 inline-flex items-center justify-center rounded-full bg-white/10 hover:bg-[#4dd4ac] hover:text-[#0f4f47] transition-colors"
+                  data-testid="footer-instagram"
+                >
+                  <Instagram className="w-4 h-4" />
+                </a>
+                <a
+                  href="https://wa.me/48537482798"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Chat with us on WhatsApp"
+                  className="w-9 h-9 inline-flex items-center justify-center rounded-full bg-white/10 hover:bg-[#4dd4ac] hover:text-[#0f4f47] transition-colors"
+                  data-testid="footer-whatsapp"
+                >
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                  </svg>
+                </a>
               </div>
             </div>
 
-            {/* Google Maps */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 overflow-hidden">
-              <h3 className="text-white text-xl font-bold mb-4 text-center">
-                Find Us in Krakow
-              </h3>
-              <div className="relative w-full h-[400px] rounded-xl overflow-hidden shadow-2xl">
+            {/* Contact */}
+            <div className="md:col-span-4">
+              <p className="text-[10.5px] font-semibold tracking-[0.25em] uppercase text-[#4dd4ac] mb-4">
+                Contact
+              </p>
+              <ul className="space-y-3 text-[13.5px] text-white/85">
+                <li className="flex items-start gap-2.5">
+                  <MapPin className="w-4 h-4 text-[#4dd4ac] mt-0.5 shrink-0" aria-hidden="true" />
+                  <a
+                    href={googleMapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-[#4dd4ac] transition-colors leading-[1.55]"
+                    data-testid="footer-address"
+                  >
+                    {address}
+                  </a>
+                </li>
+                <li className="flex items-center gap-2.5">
+                  <Mail className="w-4 h-4 text-[#4dd4ac] shrink-0" aria-hidden="true" />
+                  <a
+                    href="mailto:info@greencontinenttours.com"
+                    className="hover:text-[#4dd4ac] transition-colors"
+                    data-testid="footer-email"
+                  >
+                    info@greencontinenttours.com
+                  </a>
+                </li>
+                <li className="flex items-center gap-2.5">
+                  <Phone className="w-4 h-4 text-[#4dd4ac] shrink-0" aria-hidden="true" />
+                  <a
+                    href="tel:+48537482798"
+                    className="hover:text-[#4dd4ac] transition-colors"
+                    data-testid="footer-phone"
+                  >
+                    +48 537 482 798
+                  </a>
+                </li>
+              </ul>
+
+              <p className="text-[10.5px] font-semibold tracking-[0.25em] uppercase text-[#4dd4ac] mt-7 mb-3">
+                Explore
+              </p>
+              <ul className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-[13px] text-white/80">
+                <li><Link to="/" className="hover:text-[#4dd4ac] transition-colors">Home</Link></li>
+                <li><Link to="/services" className="hover:text-[#4dd4ac] transition-colors">Services</Link></li>
+                <li><Link to="/travel-guide" className="hover:text-[#4dd4ac] transition-colors">Travel Guide</Link></li>
+                <li><Link to="/gallery" className="hover:text-[#4dd4ac] transition-colors">Gallery</Link></li>
+                <li><Link to="/about" className="hover:text-[#4dd4ac] transition-colors">About Us</Link></li>
+                <li><Link to="/contact" className="hover:text-[#4dd4ac] transition-colors">Contact</Link></li>
+              </ul>
+            </div>
+
+            {/* Mini map */}
+            <div className="md:col-span-4">
+              <p className="text-[10.5px] font-semibold tracking-[0.25em] uppercase text-[#4dd4ac] mb-3">
+                Find Us in Kraków
+              </p>
+              <div className="rounded-xl overflow-hidden ring-1 ring-white/10 h-[180px]">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2562.547839667!2d20.0276!3d50.0694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165b6d0e0e0e0d%3A0x0!2sNowohucka%2046%2C%2031-580%20Krak%C3%B3w%2C%20Poland!5e0!3m2!1sen!2sus!4v1234567890"
                   width="100%"
@@ -100,33 +128,27 @@ const Footer = () => {
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   title="Green Continent Tours Office Location in Krakow"
-                  className="rounded-lg"
-                ></iframe>
+                />
               </div>
-              <div className="mt-4 text-center">
-                <a
-                  href={googleMapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block bg-[#4dd4ac] text-[#0f4f47] px-6 py-3 rounded-full font-bold hover:bg-white transition-all duration-300 shadow-lg"
-                >
-                  Open in Google Maps
-                </a>
-              </div>
+              <a
+                href={googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-flex items-center gap-1.5 text-[12px] font-semibold text-[#4dd4ac] hover:text-white transition-colors"
+                data-testid="footer-open-map"
+              >
+                Open in Google Maps →
+              </a>
             </div>
           </div>
 
-          {/* SEO Tags - No Label */}
-          <div className="mt-8 text-center text-white/60 text-sm">
-            <p className="mb-2">
-              Tour Operator Krakow | Travel Agency Poland | European Tours | Group Travel Poland | City Tours Krakow | Vacation Packages Europe | Hotel Bookings Poland | MICE Services | Sustainable Tourism
+          {/* Bottom strip */}
+          <div className="mt-10 pt-5 border-t border-white/10 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-[12px] text-white/55">
+            <p>
+              © {year} Green Continent Tours · Tour operator &amp; travel agency in Kraków, Poland · NIP 6793123024
             </p>
-          </div>
-
-          {/* Copyright */}
-          <div className="text-center mt-6 text-white/80">
-            <p className="text-sm">
-              © {new Date().getFullYear()} Green Continent Tours - Premier Tour Operator & Travel Agency in Krakow, Poland. All rights reserved.
+            <p className="md:text-right">
+              Kraków tours · Poland trips · Family travel · MICE · Group travel · Hotel bookings
             </p>
           </div>
         </div>
