@@ -85,12 +85,12 @@ const ServicesSection = ({ useH1 = false }) => {
       <div className="relative h-[420px] md:h-[520px] lg:h-[600px] overflow-hidden">
         {/* Background: family looking at Krakow Main Market Square */}
         <img
-          src="https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/dub0geqa_krakow-family-travel-main-square.jpg"
-          alt="Family travelers looking at Krakow Main Market Square with St. Mary’s Basilica and Cloth Hall — premium Poland travel services by Green Continent Tours"
+          src="https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/tyuxlyn9_krakow-family-travel-main-square.jpg"
+          alt="Family travelers admiring Krakow Main Market Square with St. Mary's Basilica and Cloth Hall — premium Poland travel services by Green Continent Tours"
           title="Krakow Main Market Square — Premium Poland Travel Services"
           width="2400"
           height="1300"
-          className="absolute inset-0 w-full h-full object-cover object-center"
+          className="absolute inset-0 w-full h-full object-cover object-[70%_center] md:object-center"
           loading="eager"
           fetchpriority="high"
           decoding="async"
@@ -163,12 +163,12 @@ const ServicesSection = ({ useH1 = false }) => {
                       aria-hidden="true"
                     />
 
-                    {/* Floating icon badge — bottom-left, overlapping photo & card */}
-                    <div className="absolute -bottom-7 left-7">
-                      <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#0f4f47] shadow-[0_10px_25px_-8px_rgba(15,79,71,0.45)] ring-4 ring-white group-hover:scale-105 group-hover:bg-[#1a6b5f] transition-all duration-500">
+                    {/* Floating icon badge — top-right, fully visible over photo */}
+                    <div className="absolute top-5 right-5">
+                      <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#0f4f47] shadow-[0_10px_25px_-8px_rgba(15,79,71,0.55)] ring-2 ring-white/90 group-hover:scale-110 group-hover:bg-[#1a6b5f] transition-all duration-500">
                         <Icon
-                          className="w-6 h-6 text-[#4dd4ac]"
-                          strokeWidth={1.7}
+                          className="w-5 h-5 text-[#4dd4ac]"
+                          strokeWidth={1.8}
                           aria-hidden="true"
                         />
                       </div>
@@ -176,7 +176,7 @@ const ServicesSection = ({ useH1 = false }) => {
                   </div>
 
                   {/* Card body */}
-                  <div className="p-7 lg:p-8 pt-12 flex flex-col flex-grow">
+                  <div className="p-7 lg:p-8 flex flex-col flex-grow">
                     <h3 className="text-xl md:text-[22px] font-bold text-[#0f4f47] mb-3 tracking-tight leading-snug">
                       {service.title}
                     </h3>
