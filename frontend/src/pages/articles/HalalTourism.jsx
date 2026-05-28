@@ -420,20 +420,17 @@ const HalalTourism = () => {
 
                   {/* Mid-article image */}
                   <figure className="my-14 lg:my-16">
-                    <div
-                      className="relative overflow-hidden rounded-2xl shadow-[0_25px_60px_-25px_rgba(15,79,71,0.3)]"
-                      style={{ background: 'linear-gradient(135deg, #0f4f47 0%, #1a6b5f 100%)' }}
-                    >
+                    <div className="relative overflow-hidden rounded-2xl shadow-[0_25px_60px_-25px_rgba(15,79,71,0.3)]">
                       <img
                         src={MID_IMAGE}
                         alt="Freshly grilled halal chicken shawarma wrap in front of a HALAL certified Krakow restaurant — best halal food in Krakow Muslim-friendly guide by Green Continent Tours"
                         title="Halal chicken shawarma wrap — Krakow, Poland"
                         width="2000"
                         height="900"
-                        className="w-full h-[280px] md:h-[380px] lg:h-[460px] object-contain block mx-auto"
+                        className="w-full h-[320px] md:h-[460px] lg:h-[560px] object-cover block"
                         loading="lazy"
                         decoding="async"
-                        style={{ filter: 'saturate(0.95) contrast(1.04)' }}
+                        style={{ filter: 'saturate(0.95) contrast(1.04)', objectPosition: 'center 50%' }}
                       />
                     </div>
                     <figcaption className="mt-3 text-[12.5px] text-gray-400 italic text-center">
