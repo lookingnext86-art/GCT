@@ -28,7 +28,7 @@ const steps = [
 const OurGoalsSection = () => {
   return (
     <section
-      className="py-28 lg:py-40 bg-gradient-to-b from-white to-[#f5faf8] relative overflow-hidden"
+      className="pt-24 pb-16 lg:pt-32 lg:pb-20 bg-gradient-to-b from-white to-[#f5faf8] relative overflow-hidden"
       aria-labelledby="how-we-plan-heading"
     >
       {/* Ambient glows */}
@@ -139,20 +139,20 @@ const OurGoalsSection = () => {
           </div>
 
           {/* GCT B2B partner banner — slim ribbon-style */}
-          <div className="mt-16 lg:mt-20">
+          <div className="mt-8 lg:mt-10">
             <a
               href="https://www.gct.travel/index.php"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Sign up for GCT B2B Online Hotel Reservation Portal"
-              className="group flex items-center justify-center"
+              className="group block"
               data-testid="gct-b2b-banner"
             >
-              <div className="relative rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 group-hover:-translate-y-0.5 w-full max-w-2xl aspect-[7/2]">
+              <div className="relative rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 group-hover:-translate-y-0.5 w-full max-w-4xl mx-auto">
                 <img
                   src="https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/8vg8bher_Screenshot%202026-05-25%20140311.png"
-                  alt="GCT Booking Made Simple — Sign up for B2B Online Hotel Reservation Portal"
-                  className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]"
+                  alt="GCT Booking Made Simple — Sign up for B2B Online Hotel Reservation Portal — partner with Green Continent Tours"
+                  className="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.02]"
                   loading="lazy"
                 />
               </div>
