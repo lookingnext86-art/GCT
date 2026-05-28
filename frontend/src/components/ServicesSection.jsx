@@ -50,8 +50,8 @@ const services = [
       'Certified multilingual guides in English, Polish, Arabic, Spanish, and German — storytellers who bring Poland to life.',
     icon: BadgeCheck,
     image:
-      'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/2g4mhycc_private-tour-guide-poland-travel-experience.png',
-    alt: 'Professional multilingual private tour guide pointing at St. Mary’s Basilica in Krakow Main Market Square — premium Poland travel experience by Green Continent Tours',
+      'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/px33mhl5_private-tour-guide-poland-travel-experience.png',
+    alt: 'Certified multilingual private tour guide with lanyard explaining historic Polish landmark to travelers — premium guided Poland tour experience by Green Continent Tours',
   },
   {
     title: 'School & University Tours',
@@ -59,8 +59,8 @@ const services = [
       'Educational travel programs and curated learning trips for students, schools, and academic groups across Europe.',
     icon: GraduationCap,
     image:
-      'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80',
-    alt: 'University students on an educational tour in Poland — academic group travel by Green Continent Tours',
+      'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/zvud3vkg_student-group-tour-poland-university-travel.png',
+    alt: 'Student group with a Polish university guide outside a Krakow university building with Polish national emblem — educational school and university tours in Poland by Green Continent Tours',
   },
   {
     title: 'Transportation Tickets',
@@ -114,14 +114,13 @@ const ServicesSection = ({ useH1 = false }) => {
             id="services-heading"
             className="text-3xl md:text-5xl lg:text-[3.5rem] font-bold text-white mb-5 tracking-tight leading-[1.1] drop-shadow-lg max-w-4xl"
           >
-            Premium Travel Services in Poland — Krakow Private Tours, Family
-            Trips, MICE &amp; Transfers
+            Private Tours, Family Travel &amp; Premium Experiences Across Poland
+            and Europe
           </HeadingTag>
           <p className="text-base md:text-lg text-white/95 font-light leading-relaxed max-w-3xl mx-auto drop-shadow">
-            A Krakow-based premium travel agency offering airport transfers, guided
-            city tours, family travel, MICE services, multilingual guides, and
-            tailor-made itineraries across Poland, Auschwitz-Birkenau, Wieliczka
-            Salt Mine, and curated extensions to Prague, Vienna, and Budapest.
+            From Kraków airport transfers to tailor-made Poland itineraries —
+            multilingual guides, premium transport, MICE services, and
+            unforgettable family journeys.
           </p>
 
           {/* Decorative divider */}
