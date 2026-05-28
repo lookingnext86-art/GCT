@@ -23,8 +23,8 @@ const services = [
       'Professional airport pickup and door-to-door transfer services across Krakow, Warsaw, and all major Polish airports.',
     icon: PlaneTakeoff,
     image:
-      'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80',
-    alt: 'Luxury black Mercedes chauffeur car — premium airport transfer service in Krakow and Warsaw Poland by Green Continent Tours',
+      'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/4p2sctbm_luxury-airport-transfer-poland.png',
+    alt: 'Luxury black Mercedes V-Class chauffeur van at a Polish airport at sunset — premium airport transfer service in Krakow and Warsaw by Green Continent Tours',
   },
   {
     title: 'Conferences & MICE Services',
@@ -32,8 +32,8 @@ const services = [
       'Business travel, incentives, conferences, and corporate event planning tailored to your professional needs.',
     icon: Briefcase,
     image:
-      'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80',
-    alt: 'Premium business conference and MICE event in Krakow Poland — corporate travel by Green Continent Tours',
+      'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/rpqrxxvo_mice-conference-services-poland-business-event.png',
+    alt: 'Premium corporate conference and MICE business event in Krakow Poland with executives — meetings, incentives, conferences, and events by Green Continent Tours',
   },
   {
     title: 'City Tours',
@@ -41,8 +41,8 @@ const services = [
       'Guided sightseeing experiences in Krakow, Warsaw, Wroclaw, and Gdansk — Old Towns, castles, and cultural landmarks.',
     icon: Landmark,
     image:
-      'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/xu0cw9ep_Krakow%20main%20market%20squer.jpg',
-    alt: 'Krakow Main Market Square with St. Mary’s Basilica — premium guided city tours in Poland by Green Continent Tours',
+      'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/7o4fjp3r_krakow-city-tour-travelers-old-town.png',
+    alt: 'Tour group disembarking from a coach in Warsaw Old Town with the Royal Castle — premium guided city tours in Poland by Green Continent Tours',
   },
   {
     title: 'Professional Tour Guides',
@@ -50,8 +50,8 @@ const services = [
       'Certified multilingual guides in English, Polish, Arabic, Spanish, and German — storytellers who bring Poland to life.',
     icon: BadgeCheck,
     image:
-      'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/qgck4voh_krakow-old-town-tour-02.jpg',
-    alt: 'Tour group with a professional multilingual guide in Krakow Old Town Poland — Green Continent Tours',
+      'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/2g4mhycc_private-tour-guide-poland-travel-experience.png',
+    alt: 'Professional multilingual private tour guide pointing at St. Mary’s Basilica in Krakow Main Market Square — premium Poland travel experience by Green Continent Tours',
   },
   {
     title: 'School & University Tours',
@@ -68,8 +68,8 @@ const services = [
       'Flight, bus, and train reservations across Europe — the best routes, the right schedule, the best price.',
     icon: Ticket,
     image:
-      'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/2iwinora_poland-travel-guide-10.jpg',
-    alt: 'Premium river cruise ship on the Danube in Vienna — flight, train, bus, and cruise tickets across Europe by Green Continent Tours',
+      'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/6r3596or_europe-train-travel-transportation-tickets.png',
+    alt: 'PKP Intercity Pendolino high-speed train at Zakopane station with Tatra Mountains backdrop — flight, train, and bus tickets across Europe by Green Continent Tours',
   },
 ];
 
