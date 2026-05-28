@@ -119,10 +119,8 @@ const ServicesSection = ({ useH1 = false }) => {
           <p className="text-base md:text-[17px] text-white font-medium italic leading-relaxed max-w-2xl mx-auto drop-shadow mb-4">
             We design and operate complete travel services, not only single tours.
           </p>
-          <p className="text-sm md:text-base text-white/85 font-light leading-relaxed max-w-3xl mx-auto drop-shadow">
-            Premium transport, guided tours, airport transfers, business travel,
-            school trips, and custom group travel — focused in Poland, available
-            across Europe.
+          <p className="text-sm md:text-[15px] text-white/85 font-light leading-relaxed max-w-[1100px] mx-auto drop-shadow lg:whitespace-nowrap">
+            Premium transport, guided tours, airport transfers, business travel, school trips, and custom group travel — focused in Poland, available across Europe.
           </p>
 
           {/* Decorative divider */}
