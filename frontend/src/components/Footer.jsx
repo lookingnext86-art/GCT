@@ -142,23 +142,61 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* SEO keyword zone — grouped by category, compact but comprehensive */}
-          <div className="mt-10 pt-6 border-t border-white/10 space-y-2 text-[11.5px] text-white/55 leading-[1.7]">
+          {/* SEO keyword zone — three clean inline rows, premium magazine style */}
+          <div className="mt-10 pt-6 border-t border-white/10 space-y-3 text-[11.5px] text-white/55 leading-[1.75]">
             <p>
-              <span className="text-[#4dd4ac] font-semibold tracking-wider uppercase mr-2">Cities:</span>
-              Krakow tours · Warsaw tours · Gdansk tours · Wroclaw tours · Zakopane tours · Poznan tours · Lublin tours · Katowice tours · Auschwitz tours from Krakow · Wieliczka Salt Mine tours · Tatra Mountains tours
+              <span className="text-[#4dd4ac] font-semibold tracking-[0.18em] uppercase mr-2">Popular Destinations:</span>
+              <span className="text-white/55 hover:[&_a]:text-[#4dd4ac]">
+                <a href="/services" className="hover:text-[#4dd4ac] transition-colors">Krakow Tours</a>
+                {' · '}
+                <a href="/services" className="hover:text-[#4dd4ac] transition-colors">Warsaw Tours</a>
+                {' · '}
+                <a href="/services" className="hover:text-[#4dd4ac] transition-colors">Gdansk Tours</a>
+                {' · '}
+                <a href="/services" className="hover:text-[#4dd4ac] transition-colors">Wroclaw Tours</a>
+                {' · '}
+                <a href="/services" className="hover:text-[#4dd4ac] transition-colors">Zakopane Tours</a>
+                {' · '}
+                <a href="/services" className="hover:text-[#4dd4ac] transition-colors">Auschwitz Tours</a>
+                {' · '}
+                <a href="/services" className="hover:text-[#4dd4ac] transition-colors">Wieliczka Salt Mine</a>
+                {' · '}
+                <a href="/services" className="hover:text-[#4dd4ac] transition-colors">Tatra Mountains Tours</a>
+              </span>
             </p>
             <p>
-              <span className="text-[#4dd4ac] font-semibold tracking-wider uppercase mr-2">Tours:</span>
-              Private tours Poland · Group tours Poland · Family tours Poland · Multi-day Poland tours · Day trips from Krakow · Krakow city tours · Castle tours Poland · Jewish heritage tours Poland · Pilgrimage tours Poland · Polish cuisine tours · Honeymoon tours Poland · Halal tours Poland · Muslim-friendly tours · Custom Poland itinerary
+              <span className="text-[#4dd4ac] font-semibold tracking-[0.18em] uppercase mr-2">Travel Styles:</span>
+              <a href="/services" className="hover:text-[#4dd4ac] transition-colors">Private Tours Poland</a>
+              {' · '}
+              <a href="/services" className="hover:text-[#4dd4ac] transition-colors">Group Tours Poland</a>
+              {' · '}
+              <a href="/services" className="hover:text-[#4dd4ac] transition-colors">Family Tours Poland</a>
+              {' · '}
+              <a href="/services" className="hover:text-[#4dd4ac] transition-colors">Luxury Travel Poland</a>
+              {' · '}
+              <a href="/services" className="hover:text-[#4dd4ac] transition-colors">Multi-Day Poland Trips</a>
+              {' · '}
+              <a href="/travel-guide/halal-tourism" className="hover:text-[#4dd4ac] transition-colors">Muslim-Friendly Tours</a>
+              {' · '}
+              <a href="/contact" className="hover:text-[#4dd4ac] transition-colors">Custom Poland Itineraries</a>
             </p>
             <p>
-              <span className="text-[#4dd4ac] font-semibold tracking-wider uppercase mr-2">Services:</span>
-              Tour operator Krakow · Travel agency Poland · MICE services Poland · Corporate travel Poland · Hotel bookings Poland · Vacation packages Europe · Airport transfers Krakow · Visa support · Sustainable tourism Poland · European tours · Central Europe tours
-            </p>
-            <p>
-              <span className="text-[#4dd4ac] font-semibold tracking-wider uppercase mr-2">Audience:</span>
-              English-speaking tour guide Krakow · Arabic tour guide Poland · Polish DMC · Tour operator for travel agents · Inbound travel Poland · Luxury travel Poland
+              <span className="text-[#4dd4ac] font-semibold tracking-[0.18em] uppercase mr-2">Our Services:</span>
+              <a href="/services" className="hover:text-[#4dd4ac] transition-colors">Airport Transfers Krakow</a>
+              {' · '}
+              <a href="/services" className="hover:text-[#4dd4ac] transition-colors">City Tours</a>
+              {' · '}
+              <a href="/services" className="hover:text-[#4dd4ac] transition-colors">Professional Tour Guides</a>
+              {' · '}
+              <a href="/services" className="hover:text-[#4dd4ac] transition-colors">MICE Services Poland</a>
+              {' · '}
+              <a href="/services" className="hover:text-[#4dd4ac] transition-colors">Hotel Bookings Poland</a>
+              {' · '}
+              <a href="/services" className="hover:text-[#4dd4ac] transition-colors">Transportation Tickets</a>
+              {' · '}
+              <a href="/contact" className="hover:text-[#4dd4ac] transition-colors">Visa Support</a>
+              {' · '}
+              <a href="/services" className="hover:text-[#4dd4ac] transition-colors">Central Europe Tours</a>
             </p>
           </div>
 
