@@ -5,68 +5,91 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 // ===================================================================
-// HERO BANNER — Malbork Castle (Poland)
+// HERO BANNER — Malbork Castle, Poland
 // ===================================================================
 const HERO_IMAGE =
   'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/3itykgjh_Malbork%20castle%20Poland.jpg';
 
 // ===================================================================
-// PHOTO COLLAGES
-// Each collage is a 3-photo triptych: [main (left, tall), top-right, bottom-right]
-// Replace these with real photos when ready.
+// EDITORIAL MASONRY GRID — 15 photos
+// Each photo has a chosen `aspect` class so the masonry feels editorial
+// (mix of tall, square, and landscape tiles). No labels are rendered.
 // ===================================================================
-const collages = [
+const photos = [
   {
-    id: 'collage-1',
-    images: [
-      'https://greencontinenttours.com/GCT-asset/Home-Gallery/slider-1.jpg',
-      'https://greencontinenttours.com/GCT-asset/Home-Gallery/slider-2.jpg',
-      'https://greencontinenttours.com/GCT-asset/Home-Gallery/slider-3.jpg',
-    ],
-    imageAlts: [
-      'Family group photo on a Krakow Poland private tour with Green Continent Tours',
-      'Travelers in Krakow Main Market Square during a premium Poland tour',
-      'Group of guests enjoying a guided Krakow city walking tour',
-    ],
+    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/cprhrwla_Krakow%20PL.png',
+    alt: 'International tour group at Krakow Main Market Square with Town Hall Tower and Cloth Hall — premium Poland city tours by Green Continent Tours',
+    aspect: 'aspect-square',
   },
   {
-    id: 'collage-2',
-    images: [
-      'https://greencontinenttours.com/GCT-asset/Home-Gallery/slider-4.jpg',
-      'https://greencontinenttours.com/GCT-asset/Slider/Slider-1.jpg',
-      'https://greencontinenttours.com/GCT-asset/Slider/Slider-2.jpg',
-    ],
-    imageAlts: [
-      'Friends group on a Zakopane mountain tour in Poland by Green Continent Tours',
-      'Travelers exploring the Tatra Mountains near Zakopane Poland',
-      'Group of friends at a scenic mountain viewpoint in Poland',
-    ],
+    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/qgck4voh_krakow-old-town-tour-02.jpg',
+    alt: 'Premium Poland tour group at Wawel Royal Castle in Krakow — historic Old Town walking tour by Green Continent Tours',
+    aspect: 'aspect-[4/5]',
   },
   {
-    id: 'collage-3',
-    images: [
-      'https://greencontinenttours.com/GCT-asset/Slider/Slider-4.jpg',
-      'https://greencontinenttours.com/GCT-asset/info/first.jpg',
-      'https://greencontinenttours.com/GCT-asset/info/second.jpg',
-    ],
-    imageAlts: [
-      'International family discovering historic Krakow with a private guide',
-      'Travelers visiting Wawel Royal Castle in Krakow Poland',
-      'Family enjoying a traditional Polish dinner in a Krakow restaurant',
-    ],
+    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/iwhav0fg_poland-premium-travel-01.jpg',
+    alt: 'Premium Europe tour group at Saint Pierre Cathedral in Geneva Switzerland — luxury multi-country journey by Green Continent Tours',
+    aspect: 'aspect-square',
   },
   {
-    id: 'collage-4',
-    images: [
-      'https://greencontinenttours.com/GCT-asset/info/third.jpg',
-      'https://greencontinenttours.com/GCT-asset/Home-Gallery/slider-1.jpg',
-      'https://greencontinenttours.com/GCT-asset/Slider/Slider-1.jpg',
-    ],
-    imageAlts: [
-      'Private Poland journey with luxury vehicle and scenic Polish countryside',
-      'Premium private tour guests in an elegant Krakow setting',
-      'Private travel group enjoying a historic Polish street tour',
-    ],
+    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/bncl0foi_krakow-city-experience-06.jpg',
+    alt: 'Large family tour group at the Rhine Falls in Switzerland — multi-day Europe and Poland travel experience by Green Continent Tours',
+    aspect: 'aspect-square',
+  },
+  {
+    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/59bb8fuj_poland-family-vacation-15.jpg',
+    alt: 'Travelers at Warsaw Old Town Castle Square at sunset with Sigismund Column — premium Poland family vacation by Green Continent Tours',
+    aspect: 'aspect-square',
+  },
+  {
+    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/eb14ybk4_krakow-historic-center-09.jpg',
+    alt: 'Family tour group at Schönbrunn Palace in Vienna Austria — premium Central Europe travel experience by Green Continent Tours',
+    aspect: 'aspect-[4/5]',
+  },
+  {
+    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/rqo4b5lu_krakow-city-experience-16.jpg',
+    alt: 'Travelers at the Hungarian Parliament building in Budapest — premium Poland and Central Europe tour by Green Continent Tours',
+    aspect: 'aspect-square',
+  },
+  {
+    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/cvmp4f11_krakow-old-town-tour-12.jpg',
+    alt: 'Scenic view of Lisbon Alfama district with red rooftops from a Portuguese miradouro — Poland and Europe travel experience by Green Continent Tours',
+    aspect: 'aspect-square',
+  },
+  {
+    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/3naoktxo_zakopane-mountain-trip-13.jpg',
+    alt: 'Cheerful tour group at Lauterbrunnen valley waterfall in the Swiss Alps — Zakopane and mountain tours extension by Green Continent Tours',
+    aspect: 'aspect-square',
+  },
+  {
+    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/vkigqzos_poland-family-vacation-05.jpg',
+    alt: 'Multi-generational family group at the Venice waterfront with gondolas — premium Poland and Italy family vacation by Green Continent Tours',
+    aspect: 'aspect-[4/5]',
+  },
+  {
+    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/88y72qrk_luxury-poland-tour-08.jpg',
+    alt: 'Luxury tour group at the Dolder Grand Hotel in Zürich Switzerland — premium Poland and Europe travel experience by Green Continent Tours',
+    aspect: 'aspect-square',
+  },
+  {
+    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/2iwinora_poland-travel-guide-10.jpg',
+    alt: 'River cruise ship on the Danube in Vienna with St. Francis of Assisi Church — Poland and Central Europe travel guide by Green Continent Tours',
+    aspect: 'aspect-square',
+  },
+  {
+    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/b0tf48hx_wawel-castle-view-04.jpg',
+    alt: 'Travel group at an elegant evening venue with Mediterranean arches during a premium Poland and Europe tour by Green Continent Tours',
+    aspect: 'aspect-square',
+  },
+  {
+    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/a15jhw24_zakopane-mountain-trip-03.jpg',
+    alt: 'Tour group at the historic Düsseldorf Rathaus town hall with red flower boxes — premium Europe and Poland tours by Green Continent Tours',
+    aspect: 'aspect-square',
+  },
+  {
+    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/rrfs0od3_wawel-castle-view-14.jpg',
+    alt: 'Lively travel group in a lush green botanical garden during a premium Poland and Europe nature tour by Green Continent Tours',
+    aspect: 'aspect-square',
   },
 ];
 
@@ -90,7 +113,7 @@ const Gallery = () => {
     };
     setMeta(
       'description',
-      'Real journeys, real moments — travel gallery of premium private and group tours across Poland, Kraków, Zakopane, and beyond by Green Continent Tours.'
+      'Real journeys, real moments — editorial travel gallery of premium private and group tours across Poland, Kraków, Zakopane, Warsaw, and beyond by Green Continent Tours.'
     );
     setMeta('og:title', 'Real Journeys. Real Moments. — Travel Gallery', 'property');
     setMeta(
@@ -109,11 +132,8 @@ const Gallery = () => {
       <Header />
 
       <main>
-        {/* ===== HERO (compact) ===== */}
-        <section
-          className="relative overflow-hidden"
-          aria-labelledby="gallery-heading"
-        >
+        {/* ===== HERO ===== */}
+        <section className="relative overflow-hidden" aria-labelledby="gallery-heading">
           <div className="relative h-[320px] md:h-[380px] lg:h-[440px] w-full">
             <img
               src={HERO_IMAGE}
@@ -159,56 +179,37 @@ const Gallery = () => {
           </div>
         </section>
 
-        {/* ===== COLLAGES (pure visual, no labels) ===== */}
+        {/* ===== EDITORIAL MASONRY ===== */}
         <section
           className="bg-[#0a3a35] py-12 lg:py-16"
-          aria-label="Travel photo collages"
+          aria-label="Editorial travel gallery"
         >
           <div className="container mx-auto px-5 md:px-6 lg:px-8">
-            <div className="max-w-6xl mx-auto space-y-5 lg:space-y-6">
-              {collages.map((collage) => (
-                <div
-                  key={collage.id}
-                  className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10 rounded-2xl overflow-hidden ring-1 ring-white/10 hover:ring-[#4dd4ac]/40 transition-all duration-300"
-                  data-testid={collage.id}
-                >
-                  {/* LEFT: main tall photo */}
-                  <div className="relative aspect-[4/3] md:aspect-auto md:min-h-[340px] overflow-hidden bg-[#0a3a35] group">
+            <div className="max-w-7xl mx-auto">
+              <div
+                className="columns-1 sm:columns-2 lg:columns-3 gap-4 lg:gap-5 [column-fill:_balance]"
+                data-testid="masonry-grid"
+              >
+                {photos.map((photo, idx) => (
+                  <figure
+                    key={idx}
+                    className={`mb-4 lg:mb-5 break-inside-avoid rounded-2xl overflow-hidden ring-1 ring-white/10 hover:ring-[#4dd4ac]/40 shadow-[0_15px_35px_-20px_rgba(0,0,0,0.6)] hover:shadow-[0_25px_50px_-20px_rgba(77,212,172,0.25)] transition-all duration-500 group ${photo.aspect}`}
+                    data-testid={`masonry-photo-${idx + 1}`}
+                  >
                     <img
-                      src={collage.images[0]}
-                      alt={collage.imageAlts[0]}
-                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-700"
-                      loading="lazy"
+                      src={photo.src}
+                      alt={photo.alt}
+                      className="w-full h-full object-cover group-hover:scale-[1.05] transition-transform duration-[800ms] ease-out"
+                      loading={idx < 3 ? 'eager' : 'lazy'}
                       decoding="async"
-                      style={{ filter: 'saturate(0.92) contrast(1.04)' }}
+                      style={{
+                        filter:
+                          'saturate(0.88) contrast(1.06) brightness(0.95)',
+                      }}
                     />
-                  </div>
-
-                  {/* RIGHT: two stacked photos */}
-                  <div className="grid grid-rows-2 gap-px bg-white/10">
-                    <div className="relative overflow-hidden bg-[#0a3a35] group">
-                      <img
-                        src={collage.images[1]}
-                        alt={collage.imageAlts[1]}
-                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-700"
-                        loading="lazy"
-                        decoding="async"
-                        style={{ filter: 'saturate(0.92) contrast(1.04)' }}
-                      />
-                    </div>
-                    <div className="relative overflow-hidden bg-[#0a3a35] group">
-                      <img
-                        src={collage.images[2]}
-                        alt={collage.imageAlts[2]}
-                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-700"
-                        loading="lazy"
-                        decoding="async"
-                        style={{ filter: 'saturate(0.92) contrast(1.04)' }}
-                      />
-                    </div>
-                  </div>
-                </div>
-              ))}
+                  </figure>
+                ))}
+              </div>
             </div>
           </div>
         </section>
