@@ -142,13 +142,33 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Bottom strip */}
-          <div className="mt-10 pt-5 border-t border-white/10 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-[12px] text-white/55">
+          {/* SEO keyword zone — grouped by category, compact but comprehensive */}
+          <div className="mt-10 pt-6 border-t border-white/10 space-y-2 text-[11.5px] text-white/55 leading-[1.7]">
             <p>
-              © {year} Green Continent Tours · Tour operator &amp; travel agency in Kraków, Poland · NIP 6793123024
+              <span className="text-[#4dd4ac] font-semibold tracking-wider uppercase mr-2">Cities:</span>
+              Krakow tours · Warsaw tours · Gdansk tours · Wroclaw tours · Zakopane tours · Poznan tours · Lublin tours · Katowice tours · Auschwitz tours from Krakow · Wieliczka Salt Mine tours · Tatra Mountains tours
+            </p>
+            <p>
+              <span className="text-[#4dd4ac] font-semibold tracking-wider uppercase mr-2">Tours:</span>
+              Private tours Poland · Group tours Poland · Family tours Poland · Multi-day Poland tours · Day trips from Krakow · Krakow city tours · Castle tours Poland · Jewish heritage tours Poland · Pilgrimage tours Poland · Polish cuisine tours · Honeymoon tours Poland · Halal tours Poland · Muslim-friendly tours · Custom Poland itinerary
+            </p>
+            <p>
+              <span className="text-[#4dd4ac] font-semibold tracking-wider uppercase mr-2">Services:</span>
+              Tour operator Krakow · Travel agency Poland · MICE services Poland · Corporate travel Poland · Hotel bookings Poland · Vacation packages Europe · Airport transfers Krakow · Visa support · Sustainable tourism Poland · European tours · Central Europe tours
+            </p>
+            <p>
+              <span className="text-[#4dd4ac] font-semibold tracking-wider uppercase mr-2">Audience:</span>
+              English-speaking tour guide Krakow · Arabic tour guide Poland · Polish DMC · Tour operator for travel agents · Inbound travel Poland · Luxury travel Poland
+            </p>
+          </div>
+
+          {/* Bottom strip */}
+          <div className="mt-6 pt-5 border-t border-white/10 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-[12px] text-white/55">
+            <p>
+              © {year} Green Continent Tours · Premier tour operator &amp; travel agency in Kraków, Poland · NIP 6793123024 · All rights reserved
             </p>
             <p className="md:text-right">
-              Kraków tours · Poland trips · Family travel · MICE · Group travel · Hotel bookings
+              Based in Kraków · Trusted worldwide
             </p>
           </div>
         </div>
