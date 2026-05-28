@@ -114,13 +114,15 @@ const ServicesSection = ({ useH1 = false }) => {
             id="services-heading"
             className="text-3xl md:text-5xl lg:text-[3.5rem] font-bold text-white mb-5 tracking-tight leading-[1.1] drop-shadow-lg max-w-4xl"
           >
-            Private Tours, Family Travel &amp; Premium Experiences Across Poland
-            and Europe
+            Private Tours &amp; Travel Services in Poland and Across Europe
           </HeadingTag>
-          <p className="text-base md:text-lg text-white/95 font-light leading-relaxed max-w-3xl mx-auto drop-shadow">
-            From Kraków airport transfers to tailor-made Poland itineraries —
-            multilingual guides, premium transport, MICE services, and
-            unforgettable family journeys.
+          <p className="text-base md:text-[17px] text-white font-medium italic leading-relaxed max-w-2xl mx-auto drop-shadow mb-4">
+            We design and operate complete travel services, not only single tours.
+          </p>
+          <p className="text-sm md:text-base text-white/85 font-light leading-relaxed max-w-3xl mx-auto drop-shadow">
+            Premium transport, guided tours, airport transfers, business travel,
+            school trips, and custom group travel — focused in Poland, available
+            across Europe.
           </p>
 
           {/* Decorative divider */}
@@ -154,11 +156,46 @@ const ServicesSection = ({ useH1 = false }) => {
                       className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.06] transition-transform duration-[700ms] ease-out"
                       loading="lazy"
                       decoding="async"
-                      style={{ filter: 'saturate(0.95) contrast(1.04)' }}
+                      style={{
+                        filter:
+                          'saturate(0.82) contrast(1.10) brightness(0.94) sepia(0.08)',
+                      }}
                     />
-                    {/* Subtle bottom-fade so the title area reads cleanly */}
+
+                    {/* Film grain noise — breaks the "AI smoothness" */}
                     <div
-                      className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0a3a35]/15"
+                      className="absolute inset-0 pointer-events-none opacity-[0.18] mix-blend-overlay"
+                      aria-hidden="true"
+                      style={{
+                        backgroundImage:
+                          "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='2' seed='5'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>\")",
+                        backgroundSize: '240px 240px',
+                      }}
+                    />
+
+                    {/* Warm filmic tonal wash — subtle teal/amber split-tone */}
+                    <div
+                      className="absolute inset-0 pointer-events-none mix-blend-soft-light opacity-60"
+                      aria-hidden="true"
+                      style={{
+                        background:
+                          'linear-gradient(180deg, rgba(255,210,160,0.18) 0%, rgba(255,210,160,0) 45%, rgba(15,79,71,0) 55%, rgba(15,79,71,0.30) 100%)',
+                      }}
+                    />
+
+                    {/* Cinematic vignette */}
+                    <div
+                      className="absolute inset-0 pointer-events-none"
+                      aria-hidden="true"
+                      style={{
+                        background:
+                          'radial-gradient(ellipse 100% 80% at center, transparent 50%, rgba(8,28,26,0.45) 100%)',
+                      }}
+                    />
+
+                    {/* Soft bottom darkening for icon contrast */}
+                    <div
+                      className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0a3a35]/15 pointer-events-none"
                       aria-hidden="true"
                     />
 
