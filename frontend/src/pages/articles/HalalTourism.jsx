@@ -26,7 +26,7 @@ const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent
 const HERO_IMAGE =
   'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/o22h5kh9_Hala%20Food%20Krakow%20travel.jpg';
 const MID_IMAGE =
-  'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/jy248jf2_Halal%20Krakow%20Poland.jpg';
+  'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/o0eh0ibr_Halal%20food%20Krakow%20Poland.png';
 
 const overviewItems = [
   { label: 'Topic', value: 'Halal Food Guide', icon: Utensils },
@@ -426,8 +426,8 @@ const HalalTourism = () => {
                     >
                       <img
                         src={MID_IMAGE}
-                        alt="Halal certified burger restaurant in Krakow Poland with Arabic halal sign — Muslim-friendly food guide by Green Continent Tours"
-                        title="Halal-certified restaurant in Krakow, Poland"
+                        alt="Freshly grilled halal chicken shawarma wrap in front of a HALAL certified Krakow restaurant — best halal food in Krakow Muslim-friendly guide by Green Continent Tours"
+                        title="Halal chicken shawarma wrap — Krakow, Poland"
                         width="2000"
                         height="900"
                         className="w-full h-[280px] md:h-[380px] lg:h-[460px] object-contain block mx-auto"
@@ -437,7 +437,7 @@ const HalalTourism = () => {
                       />
                     </div>
                     <figcaption className="mt-3 text-[12.5px] text-gray-400 italic text-center">
-                      Halal-certified eateries in Krakow now span burgers, kebabs, curries, and Middle Eastern grills.
+                      Authentic halal chicken shawarma wraps are a Krakow favourite — easy to find around Kazimierz and Old Town.
                     </figcaption>
                   </figure>
 
