@@ -5,6 +5,12 @@
     <link rel="icon" href="https://greencontinenttours.com/GCT-asset/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#0f4f47" />
+    <!-- Preconnect to image & font CDNs for faster LCP -->
+    <link rel="preconnect" href="https://customer-assets.emergentagent.com" crossorigin />
+    <link rel="dns-prefetch" href="https://customer-assets.emergentagent.com" />
+    <link rel="preconnect" href="https://greencontinenttours.com" crossorigin />
+    <link rel="dns-prefetch" href="https://greencontinenttours.com" />
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
@@ -193,6 +199,144 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="root">
+      <!--
+        SEO fallback content — visible to search engine crawlers (Google, Bing,
+        ChatGPT, social scrapers) and to users without JavaScript.
+        React hydrates over this content on load with zero visual flicker.
+      -->
+      <header style="position:absolute;left:-99999px;width:1px;height:1px;overflow:hidden">
+        <nav aria-label="Primary">
+          <a href="/">Home</a>
+          <a href="/about">About Us</a>
+          <a href="/gallery">Gallery</a>
+          <a href="/travel-guide">Travel Guide</a>
+          <a href="/services">Services</a>
+          <a href="/contact">Contact Us</a>
+        </nav>
+      </header>
+
+      <main style="position:absolute;left:-99999px;width:1px;height:1px;overflow:hidden">
+        <h1>Green Continent Tours — Private Tours &amp; Travel Services in Poland and Across Europe</h1>
+        <p>
+          A Krakow-based premium agency designing and operating group travel,
+          family tours, school trips, MICE and corporate travel, airport
+          transfers, licensed multilingual guides, hotel reservations, and
+          custom itineraries across Poland and Europe.
+        </p>
+
+        <h2>Our Services</h2>
+        <ul>
+          <li>
+            <strong>Group Tours in Poland &amp; Europe</strong> — Complete
+            programs for families, private groups, tour operators, and
+            international visitors.
+          </li>
+          <li>
+            <strong>Airport Transfers &amp; Private Transport</strong> —
+            Comfortable cars, minibuses, and coaches for airport transfers,
+            tours, and group travel.
+          </li>
+          <li>
+            <strong>School Trips &amp; Educational Travel</strong> — Safe,
+            organized programs for schools, students, and educational groups.
+          </li>
+          <li>
+            <strong>Corporate Travel &amp; MICE</strong> — Business travel,
+            meetings, incentives, conferences, and company event logistics.
+          </li>
+          <li>
+            <strong>Flight, Train &amp; Bus Ticketing</strong> — Flight tickets,
+            train reservations, bus tickets, and travel connections for groups,
+            families, and corporate clients.
+          </li>
+          <li>
+            <strong>Hotel Reservations</strong> — Hotel bookings, group
+            accommodation, carefully selected properties, and complete stay
+            arrangements.
+          </li>
+        </ul>
+
+        <h2>Popular Destinations We Cover</h2>
+        <ul>
+          <li><a href="/services">Krakow Tours</a></li>
+          <li><a href="/services">Warsaw Tours</a></li>
+          <li><a href="/services">Gdansk Tours</a></li>
+          <li><a href="/services">Wroclaw Tours</a></li>
+          <li><a href="/services">Zakopane &amp; Tatra Mountains Tours</a></li>
+          <li><a href="/services">Auschwitz-Birkenau Memorial</a></li>
+          <li><a href="/services">Wieliczka Salt Mine</a></li>
+          <li><a href="/services">Multi-Day Central Europe Extensions</a></li>
+        </ul>
+
+        <h2>Travel Guide</h2>
+        <ul>
+          <li>
+            <a href="/travel-guide/halal-tourism">
+              Discover the Best Halal Food in Krakow — Muslim-Friendly Food Guide
+            </a>
+          </li>
+          <li>
+            <a href="/travel-guide/hidden-gems">
+              Hidden Gems in Poland — 15 Secret Places Tourists Miss
+            </a>
+          </li>
+          <li>
+            <a href="/travel-guide/avoid-mistakes">
+              What to Avoid in Poland — 10 Common Tourist Mistakes &amp; Scams
+            </a>
+          </li>
+          <li>
+            <a href="/travel-guide/family-summer-poland-itinerary">
+              Family Summer in Poland — A Relaxed 10-Day Travel Itinerary
+            </a>
+          </li>
+        </ul>
+
+        <h2>About Green Continent Tours</h2>
+        <p>
+          Green Continent Tours began with a simple idea — helping visitors
+          experience Poland with comfort, confidence, and local knowledge. Based
+          in Krakow, our team handles private transport, licensed guides, hotel
+          reservations, entrance tickets, bus and train bookings, and custom
+          itinerary planning for families, school groups, corporate clients,
+          and international partners.
+        </p>
+
+        <h2>Contact Us</h2>
+        <address>
+          <p>Office: Nowohucka 46, Kraków 31-580, Poland</p>
+          <p>Phone / WhatsApp: <a href="tel:+48537482798">+48 537 482 798</a></p>
+          <p>
+            Email:
+            <a href="mailto:info@greencontinenttours.com">info@greencontinenttours.com</a>
+          </p>
+        </address>
+
+        <p>
+          Languages spoken: English, Polish, Arabic, Spanish, German. Service
+          areas: Poland and across Central &amp; Western Europe — including
+          Krakow, Warsaw, Gdansk, Wroclaw, Zakopane, Auschwitz, Vienna, Prague,
+          and Budapest.
+        </p>
+      </main>
+    </div>
+
+    <!-- Structured data: BreadcrumbList & SiteNavigationElement -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Green Continent Tours — Site Navigation",
+      "itemListElement": [
+        { "@type": "SiteNavigationElement", "position": 1, "name": "Home", "url": "https://greencontinenttours.com/" },
+        { "@type": "SiteNavigationElement", "position": 2, "name": "About Us", "url": "https://greencontinenttours.com/about" },
+        { "@type": "SiteNavigationElement", "position": 3, "name": "Gallery", "url": "https://greencontinenttours.com/gallery" },
+        { "@type": "SiteNavigationElement", "position": 4, "name": "Travel Guide", "url": "https://greencontinenttours.com/travel-guide" },
+        { "@type": "SiteNavigationElement", "position": 5, "name": "Services", "url": "https://greencontinenttours.com/services" },
+        { "@type": "SiteNavigationElement", "position": 6, "name": "Contact Us", "url": "https://greencontinenttours.com/contact" }
+      ]
+    }
+    </script>
   </body>
 </html>

@@ -263,7 +263,10 @@ const TravelGuide = () => {
                             src={article.image}
                             alt={article.imageAlt}
                             title={article.title}
+                            width="1600"
+                            height="1000"
                             loading="lazy"
+                            decoding="async"
                             className="w-full h-full object-cover transition-transform duration-[800ms] ease-out group-hover:scale-110"
                             style={{ filter: 'saturate(0.85) contrast(1.02)' }}
                           />
@@ -366,7 +369,10 @@ const TravelGuide = () => {
                           <img
                             src={a.image}
                             alt={a.imageAlt}
+                            width="56"
+                            height="56"
                             loading="lazy"
+                            decoding="async"
                             className="w-14 h-14 rounded-lg object-cover flex-shrink-0"
                             style={{ filter: 'saturate(0.85)' }}
                           />

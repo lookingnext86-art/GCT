@@ -20,7 +20,7 @@ const Services = () => {
     };
     setMeta(
       'description',
-      'Premium travel services from Krakow: group tours, airport transfers, school trips, corporate travel & MICE, flight/train/bus ticketing, hotel reservations, and custom itineraries across Poland and Europe.'
+      'Premium journeys from Krakow: private group programs, airport transfers, school trips, MICE & corporate events, flight/train/bus ticketing, hotel reservations, and custom itineraries across Poland and Europe.'
     );
     setMeta(
       'og:title',

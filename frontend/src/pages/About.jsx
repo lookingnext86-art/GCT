@@ -38,12 +38,12 @@ const About = () => {
     };
     setMeta(
       'description',
-      'Green Continent Tours is a Krakow-based travel company offering group travel, family tours, school trips, corporate travel, transport, guides, hotels, tickets, and custom itineraries across Poland and Europe.'
+      'Green Continent Tours is a Krakow-based company designing group, family, school, and corporate journeys across Poland and Europe — transport, licensed guides, hotels, tickets, and custom itineraries.'
     );
     setMeta('og:title', 'About Green Continent Tours | Krakow Travel Company', 'property');
     setMeta(
       'og:description',
-      'Krakow-based travel company offering group tours, family tours, school trips, corporate travel, and custom itineraries across Poland and Europe.',
+      'Krakow-based premium agency for group, family, school, and corporate journeys across Poland and Europe.',
       'property'
     );
     setMeta('og:image', HERO_IMAGE, 'property');
@@ -65,7 +65,7 @@ const About = () => {
           <div className="relative h-[420px] md:h-[520px] lg:h-[580px] overflow-hidden">
             <img
               src={HERO_IMAGE}
-              alt="Krakow travel company offering group tours and travel services in Poland and Europe — Wawel Royal Castle and the Vistula River, Krakow"
+              alt="Krakow-based agency for group, family, school, and corporate journeys across Poland and Europe — Wawel Royal Castle and the Vistula River, Krakow"
               title="Wawel Royal Castle — About Green Continent Tours"
               width="2400"
               height="1300"
@@ -123,9 +123,8 @@ const About = () => {
                 About Green Continent Tours
               </h1>
               <p className="text-base md:text-[17px] text-white/95 font-light leading-relaxed max-w-3xl mx-auto drop-shadow">
-                Green Continent Tours is a Krakow-based travel company creating
-                unforgettable journeys for groups, families, schools, and
-                corporate travelers across Poland and Europe.
+                A Krakow-based team crafting unforgettable journeys for groups,
+                families, schools, and corporate visitors across Poland and Europe.
               </p>
 
               <div className="flex items-center gap-2 mt-7" aria-hidden="true">
@@ -156,24 +155,24 @@ const About = () => {
 
               <div className="space-y-4 text-[15.5px] md:text-base text-gray-600 leading-[1.85] font-light">
                 <p>
-                  Green Continent Tours began with a simple idea: to help
+                  Green Continent Tours began with a simple idea — helping
                   visitors experience Poland with comfort, confidence, and local
-                  knowledge. Based in Krakow, we provide professional travel
-                  services across Poland and Europe for families, school groups,
-                  corporate clients, and international travel partners.
+                  knowledge. Based in Krakow, our team designs and operates
+                  premium journeys across Poland and Europe for families, school
+                  groups, corporate clients, and international partners.
                 </p>
                 <p>
-                  Our services include private transport, licensed guides, hotel
-                  reservations, entrance tickets, bus and train tickets, and
-                  custom itinerary planning. Whether our clients need group
-                  travel in Poland, family tours, school trips, corporate
-                  travel, or complete Europe travel planning, we take care of
-                  the details from arrival to departure.
+                  We handle private transport, licensed guides, hotel
+                  reservations, entrance tickets, bus and train bookings, and
+                  custom itinerary planning. Whether you are arriving as a
+                  family, a school group, a corporate delegation, or a private
+                  party exploring Europe, we take care of every detail from
+                  arrival to departure.
                 </p>
                 <p>
-                  We believe travel is about more than reaching a destination.
-                  It is about discovering culture, creating meaningful
-                  experiences, and making memories that last.
+                  We believe a great journey is about more than reaching a
+                  destination. It is about discovering culture, creating
+                  meaningful experiences, and making memories that last.
                 </p>
               </div>
             </div>

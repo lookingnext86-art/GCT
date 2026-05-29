@@ -199,6 +199,8 @@ const Gallery = () => {
                     <img
                       src={photo.src}
                       alt={photo.alt}
+                      width="1200"
+                      height="1200"
                       className="w-full h-full object-cover group-hover:scale-[1.05] transition-transform duration-[800ms] ease-out"
                       loading={idx < 3 ? 'eager' : 'lazy'}
                       decoding="async"
