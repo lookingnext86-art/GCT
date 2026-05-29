@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
 import Gallery from './pages/Gallery';
 import Services from './pages/Services';
@@ -10,7 +10,6 @@ import TravelGuide from './pages/TravelGuide';
 import HalalTourism from './pages/articles/HalalTourism';
 import HiddenGems from './pages/articles/HiddenGems';
 import AvoidMistakes from './pages/articles/AvoidMistakes';
-import GroupTours from './pages/articles/GroupTours';
 import FamilySummerItinerary from './pages/articles/FamilySummerItinerary';
 import WhatsAppButton from './components/WhatsAppButton';
 import ScrollToTop from './components/ScrollToTop';
@@ -30,8 +29,11 @@ function App() {
           <Route path="/travel-guide/halal-tourism" element={<HalalTourism />} />
           <Route path="/travel-guide/hidden-gems" element={<HiddenGems />} />
           <Route path="/travel-guide/avoid-mistakes" element={<AvoidMistakes />} />
-          <Route path="/travel-guide/group-tours" element={<GroupTours />} />
           <Route path="/travel-guide/family-summer-poland-itinerary" element={<FamilySummerItinerary />} />
+          {/* Deleted article redirect */}
+          <Route path="/travel-guide/group-tours" element={<Navigate to="/services" replace />} />
+          {/* Catch-all: redirect any unknown URL home */}
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         {/* WhatsApp button visible on all pages */}
         <WhatsAppButton />

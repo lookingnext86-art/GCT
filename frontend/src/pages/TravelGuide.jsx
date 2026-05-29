@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Search,
@@ -80,6 +80,39 @@ const articles = [
 const TravelGuide = () => {
   const [activeCategory, setActiveCategory] = useState('all');
   const [query, setQuery] = useState('');
+
+  useEffect(() => {
+    const prevTitle = document.title;
+    document.title =
+      'Poland Travel Guide | Krakow, Halal Food, Hidden Gems & Family Itineraries — Green Continent Tours';
+    const setMeta = (name, content, attr = 'name') => {
+      let el = document.querySelector(`meta[${attr}="${name}"]`);
+      if (!el) {
+        el = document.createElement('meta');
+        el.setAttribute(attr, name);
+        document.head.appendChild(el);
+      }
+      el.setAttribute('content', content);
+      return el;
+    };
+    setMeta(
+      'description',
+      'Editorial Poland travel guide — halal food in Krakow, hidden gems most tourists miss, common tourist mistakes to avoid, and family-friendly summer itineraries by Green Continent Tours.'
+    );
+    setMeta(
+      'og:title',
+      'Poland Travel Guide — Green Continent Tours',
+      'property'
+    );
+    setMeta(
+      'og:description',
+      'Premium Poland travel articles: halal food in Krakow, hidden gems, scams to avoid, and family itineraries.',
+      'property'
+    );
+    return () => {
+      document.title = prevTitle;
+    };
+  }, []);
 
   const filteredArticles = useMemo(() => {
     const lower = query.trim().toLowerCase();

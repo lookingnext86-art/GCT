@@ -59,18 +59,12 @@
   </url>
 
   <url>
-    <loc>https://greencontinenttours.com/travel-guide/group-tours</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
     <loc>https://greencontinenttours.com/travel-guide/family-summer-poland-itinerary</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1607427293702-036933bbf746?auto=format&amp;fit=crop&amp;w=2400&amp;q=80</image:loc>
-      <image:title>Family Summer in Poland — Tatra Mountains</image:title>
+      <image:loc>https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/u0wnicix_File%20name-%20wawel-castle-krakow-poland-sunset-view.jpg</image:loc>
+      <image:title>Family Summer in Poland — Wawel Castle Sunset</image:title>
       <image:caption>Relaxed 10-day family itinerary through Krakow, Zakopane and Warsaw</image:caption>
     </image:image>
   </url>
