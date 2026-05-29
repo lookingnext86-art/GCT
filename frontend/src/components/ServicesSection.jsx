@@ -8,10 +8,6 @@ import {
   BedDouble,
 } from 'lucide-react';
 
-const WHATSAPP_NUMBER = '48537482798';
-const WHATSAPP_MESSAGE = 'Hello, I would like to plan a premium Poland journey.';
-const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
-
 // ====================================================================
 // SERVICES — graphic-only cards (no photos), each with its own
 // SEO-friendly title + supporting description.
@@ -66,8 +62,8 @@ const ServicesSection = ({ useH1 = false }) => {
       {/* ===== HEADER BANNER ===== */}
       <div className="relative h-[440px] md:h-[520px] lg:h-[600px] overflow-hidden">
         <img
-          src="https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/tyuxlyn9_krakow-family-travel-main-square.jpg"
-          alt="Family travelers admiring Krakow Main Market Square with St. Mary's Basilica and Cloth Hall — premium Poland travel services by Green Continent Tours"
+          src="https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/2rpatioz_krakow-family-travel-main-square.png"
+          alt="Family travelers admiring Krakow Main Market Square with St. Mary's Basilica, Cloth Hall and horse carriage — premium Poland travel services by Green Continent Tours"
           title="Krakow Main Market Square — Premium Poland Travel Services"
           width="2400"
           height="1300"
@@ -75,7 +71,40 @@ const ServicesSection = ({ useH1 = false }) => {
           loading="eager"
           fetchpriority="high"
           decoding="async"
+          style={{
+            filter:
+              'saturate(0.82) contrast(1.12) brightness(0.92) sepia(0.06)',
+          }}
         />
+        {/* Film grain to break the AI-smoothness */}
+        <div
+          className="absolute inset-0 pointer-events-none opacity-[0.16] mix-blend-overlay"
+          aria-hidden="true"
+          style={{
+            backgroundImage:
+              "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='2' seed='9'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>\")",
+            backgroundSize: '240px 240px',
+          }}
+        />
+        {/* Filmic warm highlights + teal shadows split-tone */}
+        <div
+          className="absolute inset-0 pointer-events-none mix-blend-soft-light opacity-60"
+          aria-hidden="true"
+          style={{
+            background:
+              'linear-gradient(180deg, rgba(255,210,160,0.18) 0%, rgba(255,210,160,0) 45%, rgba(15,79,71,0) 55%, rgba(15,79,71,0.30) 100%)',
+          }}
+        />
+        {/* Cinematic vignette */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          aria-hidden="true"
+          style={{
+            background:
+              'radial-gradient(ellipse 100% 75% at center, transparent 50%, rgba(8,28,26,0.55) 100%)',
+          }}
+        />
+        {/* Brand overlays — keeps the heading legible */}
         <div
           className="absolute inset-0 bg-gradient-to-b from-[#0a3a35]/55 via-[#0a3a35]/40 to-[#0a3a35]/82"
           aria-hidden="true"
@@ -192,51 +221,6 @@ const ServicesSection = ({ useH1 = false }) => {
                 </article>
               );
             })}
-          </div>
-        </div>
-      </div>
-
-      {/* ===== COMPACT WHATSAPP CTA STRIP ===== */}
-      <div
-        className="relative py-12 lg:py-14 overflow-hidden"
-        data-testid="services-cta"
-      >
-        <img
-          src="https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/b8jiae77_warsaw-old-town-poland.jpg"
-          alt="Couple walking through colorful Warsaw Old Town — premium Polish journey with Green Continent Tours"
-          title="Plan your premium Polish journey — Warsaw Old Town"
-          className="absolute inset-0 w-full h-full object-cover object-center"
-          loading="lazy"
-        />
-        <div
-          className="absolute inset-0 bg-gradient-to-r from-[#0f4f47]/70 via-[#0f4f47]/45 to-[#0f4f47]/70"
-          aria-hidden="true"
-        />
-
-        <div className="container mx-auto px-6 lg:px-8 relative">
-          <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-            <div className="md:flex-1">
-              <h3 className="text-2xl md:text-[30px] font-bold text-white tracking-tight leading-tight drop-shadow-md">
-                Start Planning Your Premium Polish Journey
-              </h3>
-              <p className="text-sm md:text-[15px] text-white/85 font-light mt-1.5 drop-shadow">
-                Built with you, by a local Krakow team.
-              </p>
-            </div>
-
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-testid="services-whatsapp-cta"
-              aria-label="Plan your trip on WhatsApp"
-              className="group inline-flex items-center justify-center gap-2.5 bg-[#4dd4ac] text-[#0f4f47] px-7 py-3.5 min-h-[52px] rounded-full font-bold text-[14px] tracking-wide shadow-[0_10px_30px_-10px_rgba(77,212,172,0.7)] hover:bg-white hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 ease-out whitespace-nowrap"
-            >
-              <svg className="w-[18px] h-[18px]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-              </svg>
-              Plan on WhatsApp
-            </a>
           </div>
         </div>
       </div>
