@@ -12,7 +12,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const HERO_IMAGE =
-  'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/4mpjs0y1_Wawel%20Castle%20Krakow%20Poland.jpg';
+  'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/gugyxbts_Wawel%20Castle%20Krakow%20Poland.jpg';
 
 const stats = [
   { value: '12+', label: 'Years of Experience', icon: Award },
@@ -69,7 +69,7 @@ const About = () => {
               title="Wawel Royal Castle — About Green Continent Tours"
               width="2400"
               height="1300"
-              className="absolute inset-0 w-full h-full object-cover object-center"
+              className="absolute inset-0 w-full h-full object-cover object-[60%_center]"
               loading="eager"
               fetchpriority="high"
               decoding="async"
@@ -138,23 +138,23 @@ const About = () => {
         </section>
 
         {/* ===== WHO WE ARE ===== */}
-        <section className="bg-white py-20 lg:py-24" aria-label="Who we are">
+        <section className="bg-white py-14 lg:py-16" aria-label="Who we are">
           <div className="container mx-auto px-5 md:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-12 lg:mb-14">
+              <div className="text-center mb-10 lg:mb-12">
                 <p className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#4dd4ac] mb-4">
                   Who We Are
                 </p>
-                <h2 className="text-3xl md:text-4xl lg:text-[2.6rem] font-bold text-[#0f4f47] tracking-tight leading-tight">
+                <h2 className="text-3xl md:text-4xl lg:text-[2.4rem] font-bold text-[#0f4f47] tracking-tight leading-tight">
                   Your Trusted Travel Company in Krakow
                 </h2>
                 <span
-                  className="block w-14 h-0.5 bg-[#4dd4ac] mx-auto mt-6 rounded-full"
+                  className="block w-14 h-0.5 bg-[#4dd4ac] mx-auto mt-5 rounded-full"
                   aria-hidden="true"
                 />
               </div>
 
-              <div className="space-y-5 text-[15.5px] md:text-base text-gray-600 leading-[1.9] font-light">
+              <div className="space-y-4 text-[15.5px] md:text-base text-gray-600 leading-[1.85] font-light">
                 <p>
                   Green Continent Tours began with a simple idea: to help
                   visitors experience Poland with comfort, confidence, and local
@@ -181,54 +181,78 @@ const About = () => {
         </section>
 
         {/* ===== MISSION & VISION ===== */}
-        <section className="bg-[#f5faf8] py-16 lg:py-20" aria-label="Our mission and vision">
+        <section className="bg-white py-10 lg:py-12" aria-label="Our mission and vision">
           <div className="container mx-auto px-5 md:px-6 lg:px-8">
             <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-6 lg:gap-7">
               {/* Mission */}
-              <article className="relative bg-white border border-gray-100 rounded-2xl p-8 lg:p-10 shadow-[0_10px_30px_-15px_rgba(15,79,71,0.15)] hover:shadow-[0_25px_50px_-20px_rgba(15,79,71,0.25)] hover:-translate-y-1 transition-all duration-500 overflow-hidden">
+              <article className="relative bg-gradient-to-br from-[#0f4f47] to-[#0a3a35] text-white rounded-2xl p-8 lg:p-10 shadow-[0_20px_40px_-20px_rgba(15,79,71,0.4)] hover:shadow-[0_30px_55px_-20px_rgba(15,79,71,0.55)] hover:-translate-y-1 transition-all duration-500 overflow-hidden border border-[#4dd4ac]/15">
+                {/* Soft mint glow */}
                 <div
-                  className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-[#4dd4ac]/8 blur-2xl pointer-events-none"
+                  className="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-[#4dd4ac]/15 blur-2xl pointer-events-none"
                   aria-hidden="true"
                 />
-                <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#0f4f47] mb-5">
-                  <Compass className="w-5 h-5 text-[#4dd4ac]" strokeWidth={1.7} aria-hidden="true" />
-                </span>
-                <h3 className="text-[22px] md:text-[24px] font-bold text-[#0f4f47] tracking-tight mb-4">
-                  Our Mission
-                </h3>
-                <span
-                  className="block w-10 h-px bg-[#4dd4ac]/60 mb-5"
+                {/* Dot pattern */}
+                <div
+                  className="absolute inset-0 opacity-[0.06] pointer-events-none"
                   aria-hidden="true"
+                  style={{
+                    backgroundImage:
+                      'radial-gradient(circle, #4dd4ac 1px, transparent 1.2px)',
+                    backgroundSize: '24px 24px',
+                  }}
                 />
-                <p className="text-[15.5px] text-gray-600 leading-[1.85] font-light">
-                  To provide reliable, well-organized, and memorable travel
-                  services in Poland and Europe, helping every guest enjoy a
-                  smooth, authentic, and meaningful journey.
-                </p>
+                <div className="relative">
+                  <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#4dd4ac] mb-5 shadow-md">
+                    <Compass className="w-5 h-5 text-[#0f4f47]" strokeWidth={1.9} aria-hidden="true" />
+                  </span>
+                  <h3 className="text-[22px] md:text-[24px] font-bold text-white tracking-tight mb-4">
+                    Our Mission
+                  </h3>
+                  <span
+                    className="block w-10 h-px bg-[#4dd4ac] mb-5"
+                    aria-hidden="true"
+                  />
+                  <p className="text-[15.5px] text-white/85 leading-[1.85] font-light">
+                    To provide reliable, well-organized, and memorable travel
+                    services in Poland and Europe, helping every guest enjoy a
+                    smooth, authentic, and meaningful journey.
+                  </p>
+                </div>
               </article>
 
               {/* Vision */}
-              <article className="relative bg-white border border-gray-100 rounded-2xl p-8 lg:p-10 shadow-[0_10px_30px_-15px_rgba(15,79,71,0.15)] hover:shadow-[0_25px_50px_-20px_rgba(15,79,71,0.25)] hover:-translate-y-1 transition-all duration-500 overflow-hidden">
+              <article className="relative bg-gradient-to-br from-[#0f4f47] to-[#0a3a35] text-white rounded-2xl p-8 lg:p-10 shadow-[0_20px_40px_-20px_rgba(15,79,71,0.4)] hover:shadow-[0_30px_55px_-20px_rgba(15,79,71,0.55)] hover:-translate-y-1 transition-all duration-500 overflow-hidden border border-[#4dd4ac]/15">
                 <div
-                  className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-[#4dd4ac]/8 blur-2xl pointer-events-none"
+                  className="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-[#4dd4ac]/15 blur-2xl pointer-events-none"
                   aria-hidden="true"
                 />
-                <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#0f4f47] mb-5">
-                  <Sparkles className="w-5 h-5 text-[#4dd4ac]" strokeWidth={1.7} aria-hidden="true" />
-                </span>
-                <h3 className="text-[22px] md:text-[24px] font-bold text-[#0f4f47] tracking-tight mb-4">
-                  Our Vision
-                </h3>
-                <span
-                  className="block w-10 h-px bg-[#4dd4ac]/60 mb-5"
+                <div
+                  className="absolute inset-0 opacity-[0.06] pointer-events-none"
                   aria-hidden="true"
+                  style={{
+                    backgroundImage:
+                      'radial-gradient(circle, #4dd4ac 1px, transparent 1.2px)',
+                    backgroundSize: '24px 24px',
+                  }}
                 />
-                <p className="text-[15.5px] text-gray-600 leading-[1.85] font-light">
-                  To be a trusted Krakow travel company known for local
-                  expertise, warm hospitality, and professional service for
-                  groups, families, schools, corporate clients, and travel
-                  partners.
-                </p>
+                <div className="relative">
+                  <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#4dd4ac] mb-5 shadow-md">
+                    <Sparkles className="w-5 h-5 text-[#0f4f47]" strokeWidth={1.9} aria-hidden="true" />
+                  </span>
+                  <h3 className="text-[22px] md:text-[24px] font-bold text-white tracking-tight mb-4">
+                    Our Vision
+                  </h3>
+                  <span
+                    className="block w-10 h-px bg-[#4dd4ac] mb-5"
+                    aria-hidden="true"
+                  />
+                  <p className="text-[15.5px] text-white/85 leading-[1.85] font-light">
+                    To be a trusted Krakow travel company known for local
+                    expertise, warm hospitality, and professional service for
+                    groups, families, schools, corporate clients, and travel
+                    partners.
+                  </p>
+                </div>
               </article>
             </div>
           </div>
@@ -236,13 +260,13 @@ const About = () => {
 
         {/* ===== TRUST / STATISTICS ===== */}
         <section
-          className="bg-gradient-to-b from-[#f5faf8] to-white py-16 lg:py-20"
+          className="bg-[#f5faf8] py-14 lg:py-16"
           aria-label="Why travel partners choose us"
         >
           <div className="container mx-auto px-5 md:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-12 lg:mb-14">
-                <h2 className="text-2xl md:text-[32px] font-bold text-[#0f4f47] tracking-tight leading-tight">
+              <div className="text-center mb-10 lg:mb-12">
+                <h2 className="text-2xl md:text-[30px] font-bold text-[#0f4f47] tracking-tight leading-tight">
                   Why Travel Partners Choose Us
                 </h2>
                 <span
