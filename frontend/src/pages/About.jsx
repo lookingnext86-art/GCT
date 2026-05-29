@@ -1,63 +1,290 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import {
+  Award,
+  MapPin,
+  Users,
+  Handshake,
+  Clock,
+  Compass,
+  Sparkles,
+} from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import OurGoalsSection from '../components/OurGoalsSection';
+
+const HERO_IMAGE =
+  'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/4mpjs0y1_Wawel%20Castle%20Krakow%20Poland.jpg';
+
+const stats = [
+  { value: '12+', label: 'Years of Experience', icon: Award },
+  { value: '50+', label: 'Destinations', icon: MapPin },
+  { value: '160+', label: 'Groups Served', icon: Users },
+  { value: '50+', label: 'Trusted Partners', icon: Handshake },
+  { value: '24/7', label: 'Local Support', icon: Clock },
+];
 
 const About = () => {
+  useEffect(() => {
+    const prevTitle = document.title;
+    document.title = 'About Green Continent Tours | Krakow Travel Company';
+    const setMeta = (name, content, attr = 'name') => {
+      let el = document.querySelector(`meta[${attr}="${name}"]`);
+      if (!el) {
+        el = document.createElement('meta');
+        el.setAttribute(attr, name);
+        document.head.appendChild(el);
+      }
+      el.setAttribute('content', content);
+      return el;
+    };
+    setMeta(
+      'description',
+      'Green Continent Tours is a Krakow-based travel company offering group travel, family tours, school trips, corporate travel, transport, guides, hotels, tickets, and custom itineraries across Poland and Europe.'
+    );
+    setMeta('og:title', 'About Green Continent Tours | Krakow Travel Company', 'property');
+    setMeta(
+      'og:description',
+      'Krakow-based travel company offering group tours, family tours, school trips, corporate travel, and custom itineraries across Poland and Europe.',
+      'property'
+    );
+    setMeta('og:image', HERO_IMAGE, 'property');
+    return () => {
+      document.title = prevTitle;
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <Header />
+
       <main className="pt-20">
-        {/* Hero Section */}
-        <section className="bg-gradient-to-r from-[#0f4f47] to-[#1a6b5f] py-20 text-white">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-5xl font-bold mb-6">About Green Continent Tours</h1>
-            <p className="text-xl max-w-3xl mx-auto">
-              Your trusted tour operator in Krakow, dedicated to creating unforgettable Polish and European adventures
-            </p>
-          </div>
-        </section>
+        {/* ===== HERO ===== */}
+        <section
+          className="relative overflow-hidden"
+          aria-labelledby="about-heading"
+        >
+          <div className="relative h-[420px] md:h-[520px] lg:h-[580px] overflow-hidden">
+            <img
+              src={HERO_IMAGE}
+              alt="Krakow travel company offering group tours and travel services in Poland and Europe — Wawel Royal Castle and the Vistula River, Krakow"
+              title="Wawel Royal Castle — About Green Continent Tours"
+              width="2400"
+              height="1300"
+              className="absolute inset-0 w-full h-full object-cover object-center"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+              style={{
+                filter:
+                  'saturate(0.85) contrast(1.10) brightness(0.92) sepia(0.06)',
+              }}
+            />
+            {/* Film grain */}
+            <div
+              className="absolute inset-0 pointer-events-none opacity-[0.16] mix-blend-overlay"
+              aria-hidden="true"
+              style={{
+                backgroundImage:
+                  "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='2' seed='12'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>\")",
+                backgroundSize: '240px 240px',
+              }}
+            />
+            {/* Cinematic warm split-tone */}
+            <div
+              className="absolute inset-0 pointer-events-none mix-blend-soft-light opacity-60"
+              aria-hidden="true"
+              style={{
+                background:
+                  'linear-gradient(180deg, rgba(255,210,160,0.18) 0%, rgba(255,210,160,0) 45%, rgba(15,79,71,0) 55%, rgba(15,79,71,0.30) 100%)',
+              }}
+            />
+            {/* Radial vignette */}
+            <div
+              className="absolute inset-0 pointer-events-none"
+              aria-hidden="true"
+              style={{
+                background:
+                  'radial-gradient(ellipse 100% 75% at center, transparent 50%, rgba(8,28,26,0.55) 100%)',
+              }}
+            />
+            {/* Brand overlay for heading legibility */}
+            <div
+              className="absolute inset-0 bg-gradient-to-b from-[#0a3a35]/55 via-[#0a3a35]/40 to-[#0a3a35]/85"
+              aria-hidden="true"
+            />
 
-        {/* About Content */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-16">
-                <img 
-                  src="https://greencontinenttours.com/GCT-asset/logo.svg" 
-                  alt="Green Continent Tours" 
-                  className="w-32 h-32 mx-auto mb-8"
-                />
-                <h2 className="text-4xl font-bold text-[#0f4f47] mb-6">Who We Are</h2>
-                <p className="text-xl text-gray-700 leading-relaxed mb-6">
-                  Green Continent Tours is a premier tour operator based in the heart of Krakow, Poland. We specialize in creating authentic, memorable travel experiences across Poland and Europe.
-                </p>
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  With years of experience and deep local knowledge, our passionate team of travel experts and certified guides help thousands of visitors each year discover the magic of Krakow, the beauty of Poland, and the wonders of European destinations.
-                </p>
-              </div>
+            <div className="relative h-full flex flex-col items-center justify-center text-center px-6">
+              <p className="inline-block text-[11px] font-semibold tracking-[0.3em] uppercase text-[#4dd4ac] mb-5 border border-[#4dd4ac]/40 bg-[#0f4f47]/30 backdrop-blur-sm px-3.5 py-1.5 rounded-full">
+                About Us
+              </p>
+              <h1
+                id="about-heading"
+                className="text-3xl md:text-5xl lg:text-[3.4rem] font-bold text-white mb-5 tracking-tight leading-[1.1] drop-shadow-lg max-w-4xl"
+              >
+                About Green Continent Tours
+              </h1>
+              <p className="text-base md:text-[17px] text-white/95 font-light leading-relaxed max-w-3xl mx-auto drop-shadow">
+                Green Continent Tours is a Krakow-based travel company creating
+                unforgettable journeys for groups, families, schools, and
+                corporate travelers across Poland and Europe.
+              </p>
 
-              <div className="grid md:grid-cols-2 gap-8 mb-16">
-                <div className="bg-gradient-to-br from-[#0f4f47] to-[#1a6b5f] p-8 rounded-2xl text-white">
-                  <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
-                  <p>
-                    To provide exceptional travel experiences that showcase Poland's rich history, stunning landscapes, and vibrant culture while maintaining sustainable and responsible tourism practices.
-                  </p>
-                </div>
-                <div className="bg-gradient-to-br from-[#4dd4ac] to-[#3bb896] p-8 rounded-2xl text-[#0f4f47]">
-                  <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
-                  <p>
-                    To be the leading tour operator in Krakow, known for authentic experiences, exceptional service, and commitment to sustainable tourism that benefits both travelers and local communities.
-                  </p>
-                </div>
+              <div className="flex items-center gap-2 mt-7" aria-hidden="true">
+                <span className="h-px w-12 bg-[#4dd4ac]/60" />
+                <span className="w-2 h-2 rounded-full bg-[#4dd4ac]" />
+                <span className="h-px w-12 bg-[#4dd4ac]/60" />
               </div>
             </div>
           </div>
         </section>
 
-        {/* Goals Section */}
-        <OurGoalsSection />
+        {/* ===== WHO WE ARE ===== */}
+        <section className="bg-white py-20 lg:py-24" aria-label="Who we are">
+          <div className="container mx-auto px-5 md:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-12 lg:mb-14">
+                <p className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#4dd4ac] mb-4">
+                  Who We Are
+                </p>
+                <h2 className="text-3xl md:text-4xl lg:text-[2.6rem] font-bold text-[#0f4f47] tracking-tight leading-tight">
+                  Your Trusted Travel Company in Krakow
+                </h2>
+                <span
+                  className="block w-14 h-0.5 bg-[#4dd4ac] mx-auto mt-6 rounded-full"
+                  aria-hidden="true"
+                />
+              </div>
+
+              <div className="space-y-5 text-[15.5px] md:text-base text-gray-600 leading-[1.9] font-light">
+                <p>
+                  Green Continent Tours began with a simple idea: to help
+                  visitors experience Poland with comfort, confidence, and local
+                  knowledge. Based in Krakow, we provide professional travel
+                  services across Poland and Europe for families, school groups,
+                  corporate clients, and international travel partners.
+                </p>
+                <p>
+                  Our services include private transport, licensed guides, hotel
+                  reservations, entrance tickets, bus and train tickets, and
+                  custom itinerary planning. Whether our clients need group
+                  travel in Poland, family tours, school trips, corporate
+                  travel, or complete Europe travel planning, we take care of
+                  the details from arrival to departure.
+                </p>
+                <p>
+                  We believe travel is about more than reaching a destination.
+                  It is about discovering culture, creating meaningful
+                  experiences, and making memories that last.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ===== MISSION & VISION ===== */}
+        <section className="bg-[#f5faf8] py-16 lg:py-20" aria-label="Our mission and vision">
+          <div className="container mx-auto px-5 md:px-6 lg:px-8">
+            <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-6 lg:gap-7">
+              {/* Mission */}
+              <article className="relative bg-white border border-gray-100 rounded-2xl p-8 lg:p-10 shadow-[0_10px_30px_-15px_rgba(15,79,71,0.15)] hover:shadow-[0_25px_50px_-20px_rgba(15,79,71,0.25)] hover:-translate-y-1 transition-all duration-500 overflow-hidden">
+                <div
+                  className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-[#4dd4ac]/8 blur-2xl pointer-events-none"
+                  aria-hidden="true"
+                />
+                <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#0f4f47] mb-5">
+                  <Compass className="w-5 h-5 text-[#4dd4ac]" strokeWidth={1.7} aria-hidden="true" />
+                </span>
+                <h3 className="text-[22px] md:text-[24px] font-bold text-[#0f4f47] tracking-tight mb-4">
+                  Our Mission
+                </h3>
+                <span
+                  className="block w-10 h-px bg-[#4dd4ac]/60 mb-5"
+                  aria-hidden="true"
+                />
+                <p className="text-[15.5px] text-gray-600 leading-[1.85] font-light">
+                  To provide reliable, well-organized, and memorable travel
+                  services in Poland and Europe, helping every guest enjoy a
+                  smooth, authentic, and meaningful journey.
+                </p>
+              </article>
+
+              {/* Vision */}
+              <article className="relative bg-white border border-gray-100 rounded-2xl p-8 lg:p-10 shadow-[0_10px_30px_-15px_rgba(15,79,71,0.15)] hover:shadow-[0_25px_50px_-20px_rgba(15,79,71,0.25)] hover:-translate-y-1 transition-all duration-500 overflow-hidden">
+                <div
+                  className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-[#4dd4ac]/8 blur-2xl pointer-events-none"
+                  aria-hidden="true"
+                />
+                <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#0f4f47] mb-5">
+                  <Sparkles className="w-5 h-5 text-[#4dd4ac]" strokeWidth={1.7} aria-hidden="true" />
+                </span>
+                <h3 className="text-[22px] md:text-[24px] font-bold text-[#0f4f47] tracking-tight mb-4">
+                  Our Vision
+                </h3>
+                <span
+                  className="block w-10 h-px bg-[#4dd4ac]/60 mb-5"
+                  aria-hidden="true"
+                />
+                <p className="text-[15.5px] text-gray-600 leading-[1.85] font-light">
+                  To be a trusted Krakow travel company known for local
+                  expertise, warm hospitality, and professional service for
+                  groups, families, schools, corporate clients, and travel
+                  partners.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        {/* ===== TRUST / STATISTICS ===== */}
+        <section
+          className="bg-gradient-to-b from-[#f5faf8] to-white py-16 lg:py-20"
+          aria-label="Why travel partners choose us"
+        >
+          <div className="container mx-auto px-5 md:px-6 lg:px-8">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12 lg:mb-14">
+                <h2 className="text-2xl md:text-[32px] font-bold text-[#0f4f47] tracking-tight leading-tight">
+                  Why Travel Partners Choose Us
+                </h2>
+                <span
+                  className="block w-12 h-0.5 bg-[#4dd4ac] mx-auto mt-5 rounded-full"
+                  aria-hidden="true"
+                />
+              </div>
+
+              {/* Stats row */}
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-10 gap-x-2 lg:gap-x-0 relative">
+                {stats.map((stat, idx) => {
+                  const Icon = stat.icon;
+                  return (
+                    <div
+                      key={stat.label}
+                      data-testid={`stat-${idx}`}
+                      className={[
+                        'relative flex flex-col items-center text-center px-3',
+                        // Vertical dividers on desktop only (between items)
+                        idx < stats.length - 1
+                          ? 'lg:after:content-[""] lg:after:absolute lg:after:top-2 lg:after:bottom-2 lg:after:right-0 lg:after:w-px lg:after:bg-[#0f4f47]/12'
+                          : '',
+                      ].join(' ')}
+                    >
+                      <span className="inline-flex items-center justify-center w-10 h-10 rounded-full border border-[#0f4f47]/15 text-[#0f4f47] mb-4">
+                        <Icon className="w-[18px] h-[18px]" strokeWidth={1.6} aria-hidden="true" />
+                      </span>
+                      <p className="text-[32px] md:text-[38px] font-bold text-[#0f4f47] leading-none tracking-tight">
+                        {stat.value}
+                      </p>
+                      <p className="text-[12px] md:text-[12.5px] tracking-[0.18em] uppercase text-gray-500 font-medium mt-3">
+                        {stat.label}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
+
       <Footer />
     </div>
   );
