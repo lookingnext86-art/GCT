@@ -1,11 +1,11 @@
 import React from 'react';
 import {
-  PlaneTakeoff,
-  Briefcase,
-  Landmark,
-  BadgeCheck,
+  Users,
+  Car,
   GraduationCap,
-  Ticket,
+  Briefcase,
+  TicketsPlane,
+  BedDouble,
 } from 'lucide-react';
 
 const WHATSAPP_NUMBER = '48537482798';
@@ -13,63 +13,45 @@ const WHATSAPP_MESSAGE = 'Hello, I would like to plan a premium Poland journey.'
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
 // ====================================================================
-// SERVICES — each card has a SEO-friendly photo at the top.
-// Premium curated stock photography matched to each service.
+// SERVICES — graphic-only cards (no photos), each with its own
+// SEO-friendly title + supporting description.
 // ====================================================================
 const services = [
   {
-    title: 'Luxury Airport Transfers',
+    title: 'Group Tours in Poland & Europe',
     description:
-      'Professional airport pickup and door-to-door transfer services across Krakow, Warsaw, and all major Polish airports.',
-    icon: PlaneTakeoff,
-    image:
-      'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/4p2sctbm_luxury-airport-transfer-poland.png',
-    alt: 'Luxury black Mercedes V-Class chauffeur van at a Polish airport at sunset — premium airport transfer service in Krakow and Warsaw by Green Continent Tours',
+      'Complete travel programs for families, private groups, tour operators and international visitors.',
+    icon: Users,
   },
   {
-    title: 'Conferences & MICE Services',
+    title: 'Airport Transfers & Private Transport',
     description:
-      'Business travel, incentives, conferences, and corporate event planning tailored to your professional needs.',
-    icon: Briefcase,
-    image:
-      'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/rpqrxxvo_mice-conference-services-poland-business-event.png',
-    alt: 'Premium corporate conference and MICE business event in Krakow Poland with executives — meetings, incentives, conferences, and events by Green Continent Tours',
+      'Comfortable cars, minibuses and coaches for airport transfers, tours and group travel.',
+    icon: Car,
   },
   {
-    title: 'City Tours',
+    title: 'School Trips & Educational Travel',
     description:
-      'Guided sightseeing experiences in Krakow, Warsaw, Wroclaw, and Gdansk — Old Towns, castles, and cultural landmarks.',
-    icon: Landmark,
-    image:
-      'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/7o4fjp3r_krakow-city-tour-travelers-old-town.png',
-    alt: 'Tour group disembarking from a coach in Warsaw Old Town with the Royal Castle — premium guided city tours in Poland by Green Continent Tours',
-  },
-  {
-    title: 'Professional Tour Guides',
-    description:
-      'Certified multilingual guides in English, Polish, Arabic, Spanish, and German — storytellers who bring Poland to life.',
-    icon: BadgeCheck,
-    image:
-      'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/px33mhl5_private-tour-guide-poland-travel-experience.png',
-    alt: 'Certified multilingual private tour guide with lanyard explaining historic Polish landmark to travelers — premium guided Poland tour experience by Green Continent Tours',
-  },
-  {
-    title: 'School & University Tours',
-    description:
-      'Educational travel programs and curated learning trips for students, schools, and academic groups across Europe.',
+      'Safe, organized travel services for schools, students and educational groups.',
     icon: GraduationCap,
-    image:
-      'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/zvud3vkg_student-group-tour-poland-university-travel.png',
-    alt: 'Student group with a Polish university guide outside a Krakow university building with Polish national emblem — educational school and university tours in Poland by Green Continent Tours',
   },
   {
-    title: 'Transportation Tickets',
+    title: 'Corporate Travel & MICE',
     description:
-      'Flight, bus, and train reservations across Europe — the best routes, the right schedule, the best price.',
-    icon: Ticket,
-    image:
-      'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/6r3596or_europe-train-travel-transportation-tickets.png',
-    alt: 'PKP Intercity Pendolino high-speed train at Zakopane station with Tatra Mountains backdrop — flight, train, and bus tickets across Europe by Green Continent Tours',
+      'Business travel, meetings, incentives, conferences and company event logistics.',
+    icon: Briefcase,
+  },
+  {
+    title: 'Flight, Train & Bus Ticketing',
+    description:
+      'Flight tickets, train reservations, bus tickets and travel connections for groups, families and corporate clients.',
+    icon: TicketsPlane,
+  },
+  {
+    title: 'Hotel Reservations',
+    description:
+      'Hotel bookings, group accommodation, carefully selected properties and complete stay arrangements.',
+    icon: BedDouble,
   },
 ];
 
@@ -82,8 +64,7 @@ const ServicesSection = ({ useH1 = false }) => {
       data-testid="services-section"
     >
       {/* ===== HEADER BANNER ===== */}
-      <div className="relative h-[420px] md:h-[520px] lg:h-[600px] overflow-hidden">
-        {/* Background: family looking at Krakow Main Market Square */}
+      <div className="relative h-[440px] md:h-[520px] lg:h-[600px] overflow-hidden">
         <img
           src="https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/tyuxlyn9_krakow-family-travel-main-square.jpg"
           alt="Family travelers admiring Krakow Main Market Square with St. Mary's Basilica and Cloth Hall — premium Poland travel services by Green Continent Tours"
@@ -95,7 +76,6 @@ const ServicesSection = ({ useH1 = false }) => {
           fetchpriority="high"
           decoding="async"
         />
-        {/* Cinematic overlay */}
         <div
           className="absolute inset-0 bg-gradient-to-b from-[#0a3a35]/55 via-[#0a3a35]/40 to-[#0a3a35]/82"
           aria-hidden="true"
@@ -105,25 +85,22 @@ const ServicesSection = ({ useH1 = false }) => {
           aria-hidden="true"
         />
 
-        {/* Heading */}
         <div className="relative h-full flex flex-col items-center justify-center text-center px-6">
           <p className="inline-block text-[11px] font-semibold tracking-[0.3em] uppercase text-[#4dd4ac] mb-5 border border-[#4dd4ac]/40 bg-[#0f4f47]/30 backdrop-blur-sm px-3.5 py-1.5 rounded-full">
             Our Services
           </p>
           <HeadingTag
             id="services-heading"
-            className="text-3xl md:text-5xl lg:text-[3.5rem] font-bold text-white mb-5 tracking-tight leading-[1.1] drop-shadow-lg max-w-4xl"
+            className="text-3xl md:text-[2.6rem] lg:text-[3.1rem] font-bold text-white mb-5 tracking-tight leading-[1.12] drop-shadow-lg max-w-5xl"
           >
-            Private Tours &amp; Travel Services in Poland and Across Europe
+            Premium Travel Solutions for Groups, Families, Schools &amp;
+            Corporate Clients Across Poland &amp; Europe.
           </HeadingTag>
-          <p className="text-base md:text-[17px] text-white font-medium italic leading-relaxed max-w-2xl mx-auto drop-shadow mb-4">
-            We design and operate complete travel services, not only single tours.
-          </p>
-          <p className="text-sm md:text-[15px] text-white/85 font-light leading-relaxed max-w-[1100px] mx-auto drop-shadow lg:whitespace-nowrap">
-            Premium transport, guided tours, airport transfers, business travel, school trips, and custom group travel, focused in Poland, available across Europe.
+          <p className="text-base md:text-[17px] text-white/95 font-light italic leading-relaxed max-w-3xl mx-auto drop-shadow">
+            From first arrival to final departure, we handle every detail with
+            care, precision and local expertise.
           </p>
 
-          {/* Decorative divider */}
           <div className="flex items-center gap-2 mt-7" aria-hidden="true">
             <span className="h-px w-12 bg-[#4dd4ac]/60" />
             <span className="w-2 h-2 rounded-full bg-[#4dd4ac]" />
@@ -132,10 +109,10 @@ const ServicesSection = ({ useH1 = false }) => {
         </div>
       </div>
 
-      {/* ===== SERVICES GRID ===== */}
+      {/* ===== SERVICES GRID (graphic cards, no photos) ===== */}
       <div className="container mx-auto px-6 lg:px-8 -mt-14 lg:-mt-20 pb-24 lg:pb-28 relative z-10">
         <div className="max-w-7xl mx-auto">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7 lg:gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
@@ -144,68 +121,56 @@ const ServicesSection = ({ useH1 = false }) => {
                   data-testid={`service-card-${index}`}
                   className="group relative bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-[0_4px_20px_-8px_rgba(15,79,71,0.08)] hover:shadow-[0_30px_60px_-25px_rgba(15,79,71,0.28)] hover:-translate-y-1.5 hover:border-[#4dd4ac]/30 transition-all duration-500 ease-out flex flex-col"
                 >
-                  {/* Service photo */}
-                  <div className="relative h-52 lg:h-56 overflow-hidden">
-                    <img
-                      src={service.image}
-                      alt={service.alt}
-                      width="1200"
-                      height="900"
-                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.06] transition-transform duration-[700ms] ease-out"
-                      loading="lazy"
-                      decoding="async"
-                      style={{
-                        filter:
-                          'saturate(0.82) contrast(1.10) brightness(0.94) sepia(0.08)',
-                      }}
-                    />
-
-                    {/* Film grain noise — breaks the "AI smoothness" */}
+                  {/* Decorative graphic header */}
+                  <div className="relative h-44 lg:h-48 overflow-hidden bg-gradient-to-br from-[#0f4f47] via-[#134d44] to-[#0a3a35]">
+                    {/* Dot pattern */}
                     <div
-                      className="absolute inset-0 pointer-events-none opacity-[0.18] mix-blend-overlay"
+                      className="absolute inset-0 opacity-[0.18] pointer-events-none"
                       aria-hidden="true"
                       style={{
                         backgroundImage:
-                          "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='2' seed='5'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>\")",
-                        backgroundSize: '240px 240px',
+                          'radial-gradient(circle, #4dd4ac 1px, transparent 1.2px)',
+                        backgroundSize: '22px 22px',
                       }}
                     />
 
-                    {/* Warm filmic tonal wash — subtle teal/amber split-tone */}
+                    {/* Soft mint glow blob — top-left */}
                     <div
-                      className="absolute inset-0 pointer-events-none mix-blend-soft-light opacity-60"
+                      className="absolute -top-12 -left-12 w-44 h-44 rounded-full opacity-30 blur-3xl pointer-events-none"
+                      style={{ background: '#4dd4ac' }}
                       aria-hidden="true"
-                      style={{
-                        background:
-                          'linear-gradient(180deg, rgba(255,210,160,0.18) 0%, rgba(255,210,160,0) 45%, rgba(15,79,71,0) 55%, rgba(15,79,71,0.30) 100%)',
-                      }}
                     />
-
-                    {/* Cinematic vignette */}
+                    {/* Soft glow — bottom-right */}
                     <div
-                      className="absolute inset-0 pointer-events-none"
-                      aria-hidden="true"
-                      style={{
-                        background:
-                          'radial-gradient(ellipse 100% 80% at center, transparent 50%, rgba(8,28,26,0.45) 100%)',
-                      }}
-                    />
-
-                    {/* Soft bottom darkening for icon contrast */}
-                    <div
-                      className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0a3a35]/15 pointer-events-none"
+                      className="absolute -bottom-16 -right-10 w-52 h-52 rounded-full opacity-20 blur-3xl pointer-events-none"
+                      style={{ background: '#4dd4ac' }}
                       aria-hidden="true"
                     />
 
-                    {/* Floating icon badge — top-right, fully visible over photo */}
-                    <div className="absolute top-5 right-5">
-                      <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#0f4f47] shadow-[0_10px_25px_-8px_rgba(15,79,71,0.55)] ring-2 ring-white/90 group-hover:scale-110 group-hover:bg-[#1a6b5f] transition-all duration-500">
+                    {/* Decorative concentric ring behind icon */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div
+                        className="absolute w-44 h-44 rounded-full border border-[#4dd4ac]/15 group-hover:scale-110 transition-transform duration-700"
+                        aria-hidden="true"
+                      />
+                      <div
+                        className="absolute w-32 h-32 rounded-full border border-[#4dd4ac]/25 group-hover:scale-110 transition-transform duration-700 delay-75"
+                        aria-hidden="true"
+                      />
+
+                      {/* Main icon */}
+                      <div className="relative inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#0a3a35] ring-1 ring-[#4dd4ac]/40 shadow-[0_15px_40px_-10px_rgba(77,212,172,0.35)] group-hover:bg-[#0f4f47] group-hover:scale-105 transition-all duration-500">
                         <Icon
-                          className="w-5 h-5 text-[#4dd4ac]"
-                          strokeWidth={1.8}
+                          className="w-9 h-9 text-[#4dd4ac]"
+                          strokeWidth={1.5}
                           aria-hidden="true"
                         />
                       </div>
+                    </div>
+
+                    {/* Number badge — top-right corner */}
+                    <div className="absolute top-4 right-5 text-[60px] leading-none font-bold text-white/[0.06] select-none">
+                      {String(index + 1).padStart(2, '0')}
                     </div>
                   </div>
 
@@ -215,7 +180,6 @@ const ServicesSection = ({ useH1 = false }) => {
                       {service.title}
                     </h3>
 
-                    {/* Accent line */}
                     <span
                       className="w-8 h-px bg-[#4dd4ac]/60 mb-4 group-hover:w-14 transition-all duration-500"
                       aria-hidden="true"
