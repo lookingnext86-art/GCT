@@ -16,6 +16,12 @@ const Contact = () => {
     message: '',
   });
 
+  // 2. Form processing & security states
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [statusMessage, setStatusMessage] = useState('');
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  // SEO & Meta-tag automation engine
   useEffect(() => {
     const prevTitle = document.title;
     document.title =
@@ -50,10 +56,43 @@ const Contact = () => {
     };
   }, []);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert('Thank you for contacting us! We will get back to you soon.');
-  };
+  const handleSubmit = async (e) => {
+      e.preventDefault();
+      
+      // SPAM CATCH: If a background bot triggers the hidden checkbox, block it silently
+      const submissionData = new FormData(e.target);
+      if (submissionData.get('botcheck') === 'on' || submissionData.get('botcheck') === 'true') {
+        return;
+      }
+
+      setIsSubmitting(true);
+      setStatusMessage('Sending your inquiry...');
+      setIsSuccess(false);
+
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: submissionData
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          setIsSuccess(true);
+          setStatusMessage('Thank you! Your message has been sent successfully to our team.');
+          // Reset the inputs smoothly
+          setFormData({ name: '', email: '', phone: '', message: '' });
+        } else {
+          setIsSuccess(false);
+          setStatusMessage(data.message || 'Something went wrong. Please check inputs and try again.');
+        }
+      } catch (error) {
+        setIsSuccess(false);
+        setStatusMessage('Network error. Please check your internet connection or try again later.');
+      } finally {
+        setIsSubmitting(false);
+      }
+    };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -161,6 +200,11 @@ const Contact = () => {
                 </p>
 
                 <form onSubmit={handleSubmit} className="space-y-5" data-testid="contact-form">
+                
+                  <input type="hidden" name="access_key" value="7ad9491f-74c2-4199-8f2b-acc66677deaa" />
+                
+                  <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
+
                   <div>
                     <label className="block text-[12px] font-semibold tracking-[0.15em] uppercase text-gray-600 mb-2">
                       Your Name
@@ -227,6 +271,11 @@ const Contact = () => {
                     Send Message
                   </button>
                 </form>
+                {statusMessage && (
+                  <div className={isSuccess ? "mt-2 text-green-600" : "mt-2 text-red-600"}>
+                    {statusMessage}
+                  </div>
+                )}
               </div>
 
               {/* === Info column === */}
