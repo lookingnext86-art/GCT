@@ -21,10 +21,8 @@ const WHATSAPP_MESSAGE =
   'Hello, I would like to plan a family summer trip to Poland (10-day itinerary).';
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
-const HERO_IMAGE =
-  'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/u0wnicix_File%20name-%20wawel-castle-krakow-poland-sunset-view.jpg';
-const MID_IMAGE =
-  'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/8ydh4muo_family-at-morski-oko-zakopane-poland-summer.jpg';
+const HERO_IMAGE = '/images/articles/family-summer-poland-itinerary/family-hero.webp';
+const MID_IMAGE = '/images/articles/family-summer-poland-itinerary/family-mid.webp';
 
 const overviewItems = [
   { label: 'Duration', value: '10 Days', icon: CalendarDays },
@@ -140,7 +138,7 @@ const FamilySummerItinerary = () => {
                 height="1300"
                 className="absolute inset-0 w-full h-full object-cover object-center"
                 loading="eager"
-                fetchpriority="high"
+                fetchPriority="high"
                 decoding="async"
               />
               {/* Cinematic dark overlays */}

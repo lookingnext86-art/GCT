@@ -11,21 +11,21 @@ import { Facebook, Instagram } from 'lucide-react';
  */
 const HERO_PANELS = [
   {
-    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/xu0cw9ep_Krakow%20main%20market%20squer.jpg',
+    src: '/images/hero/krakow-market.webp',
     alt:
       'Krakow Main Market Square with St. Mary’s Basilica and horse carriages — historic Old Town Poland tours by Green Continent Tours',
     title: 'Krakow Old Town — Main Market Square',
     objectPosition: 'center 35%',
   },
   {
-    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/zqu24s2s_Zakopane.jpg',
+    src: '/images/hero/zakopane.jpg',
     alt:
       'Tatra Mountains landscape near Zakopane Poland — hiking trails and rocky peaks for premium mountain tours by Green Continent Tours',
     title: 'Tatra Mountains — Zakopane, Poland',
     objectPosition: 'center 45%',
   },
   {
-    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/fjtf6qaj_Warsaw%20Old%20Town.png',
+    src: '/images/hero/warsaw-old-town.webp',
     alt:
       'Warsaw Old Town Castle Square with colorful tenement houses and dramatic sky — historic Poland capital city tours by Green Continent Tours',
     title: 'Warsaw Old Town — Castle Square',
@@ -93,7 +93,7 @@ const HeroSlider = () => {
                   'saturate(1.18) contrast(1.18) brightness(0.92)',
               }}
               loading={idx === 0 ? 'eager' : 'lazy'}
-              fetchpriority={idx === 0 ? 'high' : 'auto'}
+              fetchPriority={idx === 0 ? 'high' : 'auto'}
               decoding="async"
             />
             {/* Cinematic vignette — dark top + bottom for that premium magazine feel */}

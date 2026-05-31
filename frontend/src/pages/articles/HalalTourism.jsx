@@ -23,10 +23,8 @@ const WHATSAPP_MESSAGE =
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
 // ⬇️ Swap these two URLs when uploading new SEO-friendly photos.
-const HERO_IMAGE =
-  'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/o22h5kh9_Hala%20Food%20Krakow%20travel.jpg';
-const MID_IMAGE =
-  'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/o0eh0ibr_Halal%20food%20Krakow%20Poland.png';
+const HERO_IMAGE = '/images/articles/halal-food/halal-hero.webp';
+const MID_IMAGE = '/images/articles/halal-food/halal-mid.webp';
 
 const overviewItems = [
   { label: 'Topic', value: 'Halal Food Guide', icon: Utensils },
@@ -260,7 +258,7 @@ const HalalTourism = () => {
                 height="1300"
                 className="absolute inset-0 w-full h-full object-cover object-center"
                 loading="eager"
-                fetchpriority="high"
+                fetchPriority="high"
                 decoding="async"
               />
               <div

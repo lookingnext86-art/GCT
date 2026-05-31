@@ -1,0 +1,66 @@
+# Green Continent Tours — PRD
+
+## Original Problem Statement
+Build a pixel-perfect replica of `https://greencontinenttours.com` — preserve structure, copy the original logo, dark-green theme (`#0f4f47`) with mint accent (`#4dd4ac`). Optimize copy for SEO to attract travelers to Krakow, Poland, and Europe.
+
+## Design Philosophy (USER-MANDATED)
+- "Editorial / Cinematic / Premium Magazine" styling. NO "AI-looking" content.
+- Use real photos with CSS filmic grading or custom CSS graphics — never AI-generated imagery.
+- Never overwrite or rephrase the user's exact copy under the guise of "grammar passes."
+- Colors: dark green `#0f4f47`, mint `#4dd4ac`.
+
+## Architecture
+- **Frontend**: React SPA (CRA), React Router DOM with lazy-loaded routes, Tailwind CSS, lucide-react icons.
+- **Backend**: FastAPI scaffolded but not wired (no endpoints yet).
+- **DB**: MongoDB available, not yet used.
+- **Routes**: Home, About, Services, Gallery, Travel Guide (4 articles), Contact.
+
+## What's Implemented
+- 3-panel CSS triptych hero (real photos, cinematic grading)
+- 4 premium articles: FamilySummerItinerary, AvoidMistakes, HiddenGems, HalalTourism — each with cinematic design + WhatsApp CTA pills
+- Editorial Masonry Gallery (15 real photos, no filters/tags)
+- Services page with custom CSS dark-green graphic card headers + mint icons
+- About page: Mission/Vision cards + stats section
+- Contact page: premium dark-green hero (form is mocked — uses `alert()`)
+- Footer: 50% shorter, premium inline SEO keyword links
+- React.lazy for all routes
+- Static SEO HTML fallback injected into `public/index.html` (full crawlability without JS)
+- Explicit `width`/`height` on all images (no CLS)
+- **2026-05-31**: Synced compressed image set + matching source from user's GitHub branch `1-reduce-image-qulity` (lookingnext86-art/GCT). 50 local images now live in `/app/frontend/public/{images,GCT-asset}`; 38 source refs use local paths; 13 remaining CDN refs preserved (branch state).
+- **2026-05-31**: Minimal `.htaccess` (4 lines) restored for one.com Apache deep-link routing — no caching/gzip modules.
+
+## Files of Reference
+- `/app/frontend/public/.htaccess` — minimal React Router fallback for one.com Apache
+- `/app/frontend/public/_redirects` — Netlify fallback
+- `/app/frontend/public/vercel.json` — Vercel fallback
+- `/app/frontend/public/index.html` — branch version (local /images og:image, no CDN preloads)
+- `/app/frontend/public/images/` + `/app/frontend/public/GCT-asset/` — 50 resized local images
+- `/app/frontend/src/App.js` — lazy routes
+
+## 3rd-Party Integrations
+- Google Maps — frontend iframe (active)
+- Resend — pending user API key for `/api/contact` lead capture
+- WhatsApp — floating button + article CTAs (active, no API)
+
+## Roadmap (Prioritized)
+
+### P0 — Active / Blocked on user
+- Confirm minimal `.htaccess` (4 lines) works on one.com Apache; if still 500, switch to `FallbackResource /index.html` or `ErrorDocument 404`.
+
+### P1 — Next
+- Wire Contact Form → FastAPI `/api/contact` → MongoDB + Resend email to `info@greencontinenttours.com`. Requires user Resend API key.
+- Migrate the 13 remaining CDN image refs to local resized versions if user supplies them.
+
+### P2 — Backlog
+- Move articles/gallery/services data from hardcoded JSX → MongoDB-backed APIs.
+- Admin panel: manage articles + view contact leads.
+- Newsletter signup (Resend audiences).
+- Multilingual support (PL/EN).
+
+## Health
+- Broken: none currently (deployment fix shipped, awaiting user retest on live host).
+- Mocked: Contact form (`alert()`), all content data (hardcoded in JSX).
+- Tests: none yet.
+
+## Credentials
+None. No auth implemented.

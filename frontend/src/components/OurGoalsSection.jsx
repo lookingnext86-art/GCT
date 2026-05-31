@@ -150,7 +150,7 @@ const OurGoalsSection = () => {
             >
               <div className="relative rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 group-hover:-translate-y-0.5 w-full max-w-4xl mx-auto">
                 <img
-                  src="https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/8vg8bher_Screenshot%202026-05-25%20140311.png"
+                  src="/images/krakow-travel-hero.webp"
                   alt="GCT Booking Made Simple — Sign up for B2B Online Hotel Reservation Portal — partner with Green Continent Tours"
                   className="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.02]"
                   loading="lazy"

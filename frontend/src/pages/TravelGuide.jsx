@@ -28,7 +28,7 @@ const articles = [
     href: '/travel-guide/halal-tourism',
     title: 'Discover the Best Halal Food in Krakow',
     excerpt: 'Top halal restaurants, Turkish kebabs, Syrian shawarma, Pakistani curries, and trusted halal meat shops in Krakow.',
-    image: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/o22h5kh9_Hala%20Food%20Krakow%20travel.jpg',
+    image: '/images/articles/halal-food-krakow.webp',
     imageAlt: 'Premium halal food platter in Krakow Poland with grilled kebab and saffron rice — Muslim-friendly food guide',
     category: 'krakow',
     categoryLabel: 'Krakow',
@@ -54,7 +54,7 @@ const articles = [
     href: '/travel-guide/avoid-mistakes',
     title: 'What to Avoid in Poland: 10 Common Tourist Mistakes & Scams',
     excerpt: 'Taxi scams, money exchange traps, pickpocketing, and smart tips — travel Poland with confidence.',
-    image: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/gj6l8ol7_premium-poland-travel-agency-euro-banner.png',
+    image: '/images/articles/avoid-mistakes/scams-hero.webp',
     imageAlt: 'Euro banknotes on marble — money exchange tips and tourist scams to avoid in Poland travel guide',
     category: 'poland-tips',
     categoryLabel: 'Poland Tips',
@@ -67,7 +67,7 @@ const articles = [
     href: '/travel-guide/family-summer-poland-itinerary',
     title: 'Family Summer in Poland: A Relaxed 10-Day Travel Itinerary',
     excerpt: 'A practical family-friendly route through Krakow, Zakopane, and Poland\u2019s best summer highlights.',
-    image: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/u0wnicix_File%20name-%20wawel-castle-krakow-poland-sunset-view.jpg',
+    image: '/images/articles/family-summer-poland-itinerary/family-hero.webp',
     imageAlt: 'Wawel Royal Castle at sunset over the Vistula River in Krakow Poland — family summer 10-day travel itinerary',
     category: 'family-travel',
     categoryLabel: 'Family Travel',
@@ -140,14 +140,14 @@ const TravelGuide = () => {
           {/* Background photo */}
           <div className="relative h-[380px] md:h-[440px] lg:h-[500px] w-full">
             <img
-              src="https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/6otte63q_krakow-wawel-castle-sunrise-travel-guide.png"
+              src="/images/travel-guide/wawel-castle-sunrise.webp"
               alt="Krakow Wawel Castle at sunrise — Green Continent Tours Travel Guide"
               title="Travel Guide — Krakow, Wawel Castle at sunrise"
               width="2400"
               height="1200"
               className="absolute inset-0 w-full h-full object-cover object-center"
               loading="eager"
-              fetchpriority="high"
+              fetchPriority="high"
               decoding="async"
             />
 

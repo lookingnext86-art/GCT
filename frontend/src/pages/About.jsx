@@ -12,7 +12,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const HERO_IMAGE =
-  'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/gugyxbts_Wawel%20Castle%20Krakow%20Poland.jpg';
+  '/images/about-us/wawel-castle.webp';
 
 const stats = [
   { value: '12+', label: 'Years of Experience', icon: Award },
@@ -71,7 +71,7 @@ const About = () => {
               height="1300"
               className="absolute inset-0 w-full h-full object-cover object-[60%_center]"
               loading="eager"
-              fetchpriority="high"
+              fetchPriority="high"
               decoding="async"
               style={{
                 filter:
