@@ -62,14 +62,14 @@ const ServicesSection = ({ useH1 = false }) => {
       {/* ===== HEADER BANNER ===== */}
       <div className="relative h-[440px] md:h-[520px] lg:h-[600px] overflow-hidden">
         <img
-          src="https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/2rpatioz_krakow-family-travel-main-square.png"
+          src="/images/contact/krakow-family-travel.webp"
           alt="Family travelers admiring Krakow Main Market Square with St. Mary's Basilica, Cloth Hall and horse carriage — premium Poland travel services by Green Continent Tours"
           title="Krakow Main Market Square — Premium Poland Travel Services"
           width="2400"
           height="1300"
           className="absolute inset-0 w-full h-full object-cover object-[70%_center] md:object-center"
           loading="eager"
-          fetchpriority="high"
+          fetchPriority="high"
           decoding="async"
           style={{
             filter:

@@ -8,7 +8,7 @@ import Footer from '../components/Footer';
 // HERO BANNER — Malbork Castle, Poland
 // ===================================================================
 const HERO_IMAGE =
-  'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/3itykgjh_Malbork%20castle%20Poland.jpg';
+  'images/gallery/hero/malbork-castle.webp';
 
 // ===================================================================
 // EDITORIAL MASONRY GRID — 15 photos
@@ -17,77 +17,77 @@ const HERO_IMAGE =
 // ===================================================================
 const photos = [
   {
-    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/cprhrwla_Krakow%20PL.png',
+    src: '/images/gallery/krakow_pl.png',
     alt: 'International tour group at Krakow Main Market Square with Town Hall Tower and Cloth Hall — premium Poland city tours by Green Continent Tours',
     aspect: 'aspect-square',
   },
   {
-    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/qgck4voh_krakow-old-town-tour-02.jpg',
+    src: '/images/gallery/krakow-old-town-tour-02.jpg',
     alt: 'Premium Poland tour group at Wawel Royal Castle in Krakow — historic Old Town walking tour by Green Continent Tours',
     aspect: 'aspect-[4/5]',
   },
   {
-    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/iwhav0fg_poland-premium-travel-01.jpg',
+    src: '/images/gallery/poland-premium-travel-01.jpg',
     alt: 'Premium Europe tour group at Saint Pierre Cathedral in Geneva Switzerland — luxury multi-country journey by Green Continent Tours',
     aspect: 'aspect-square',
   },
   {
-    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/bncl0foi_krakow-city-experience-06.jpg',
+    src: '/images/gallery/krakow-city-experience-06.jpg',
     alt: 'Large family tour group at the Rhine Falls in Switzerland — multi-day Europe and Poland travel experience by Green Continent Tours',
     aspect: 'aspect-square',
   },
   {
-    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/59bb8fuj_poland-family-vacation-15.jpg',
+    src: '/images/gallery/poland-family-vacation-15.jpg',
     alt: 'Travelers at Warsaw Old Town Castle Square at sunset with Sigismund Column — premium Poland family vacation by Green Continent Tours',
     aspect: 'aspect-square',
   },
   {
-    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/eb14ybk4_krakow-historic-center-09.jpg',
+    src: '/images/gallery/krakow-historic-center-09.jpg',
     alt: 'Family tour group at Schönbrunn Palace in Vienna Austria — premium Central Europe travel experience by Green Continent Tours',
     aspect: 'aspect-[4/5]',
   },
   {
-    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/rqo4b5lu_krakow-city-experience-16.jpg',
+    src: '/images/gallery/krakow-city-experience-16.jpg',
     alt: 'Travelers at the Hungarian Parliament building in Budapest — premium Poland and Central Europe tour by Green Continent Tours',
     aspect: 'aspect-square',
   },
   {
-    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/cvmp4f11_krakow-old-town-tour-12.jpg',
+    src: '/images/gallery/krakow-old-town-tour-12.jpg',
     alt: 'Scenic view of Lisbon Alfama district with red rooftops from a Portuguese miradouro — Poland and Europe travel experience by Green Continent Tours',
     aspect: 'aspect-square',
   },
   {
-    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/3naoktxo_zakopane-mountain-trip-13.jpg',
+    src: '/images/gallery/zakopane-mountain-trip-13.jpg',
     alt: 'Cheerful tour group at Lauterbrunnen valley waterfall in the Swiss Alps — Zakopane and mountain tours extension by Green Continent Tours',
     aspect: 'aspect-square',
   },
   {
-    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/vkigqzos_poland-family-vacation-05.jpg',
+    src: '/images/gallery/poland-family-vacation-05.jpg',
     alt: 'Multi-generational family group at the Venice waterfront with gondolas — premium Poland and Italy family vacation by Green Continent Tours',
     aspect: 'aspect-[4/5]',
   },
   {
-    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/88y72qrk_luxury-poland-tour-08.jpg',
+    src: '/images/gallery/luxury-poland-tour-08.jpg',
     alt: 'Luxury tour group at the Dolder Grand Hotel in Zürich Switzerland — premium Poland and Europe travel experience by Green Continent Tours',
     aspect: 'aspect-square',
   },
   {
-    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/2iwinora_poland-travel-guide-10.jpg',
+    src: '/images/gallery/poland-travel-guide-10.jpg',
     alt: 'River cruise ship on the Danube in Vienna with St. Francis of Assisi Church — Poland and Central Europe travel guide by Green Continent Tours',
     aspect: 'aspect-square',
   },
   {
-    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/b0tf48hx_wawel-castle-view-04.jpg',
+    src: '/images/gallery/wawel-castle-view-04.jpg',
     alt: 'Travel group at an elegant evening venue with Mediterranean arches during a premium Poland and Europe tour by Green Continent Tours',
     aspect: 'aspect-square',
   },
   {
-    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/a15jhw24_zakopane-mountain-trip-03.jpg',
+    src: '/images/gallery/zakopane-mountain-trip-03.jpg',
     alt: 'Tour group at the historic Düsseldorf Rathaus town hall with red flower boxes — premium Europe and Poland tours by Green Continent Tours',
     aspect: 'aspect-square',
   },
   {
-    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/rrfs0od3_wawel-castle-view-14.jpg',
+    src: '/images/gallery/wawel-castle-view-14.jpg',
     alt: 'Lively travel group in a lush green botanical garden during a premium Poland and Europe nature tour by Green Continent Tours',
     aspect: 'aspect-square',
   },
@@ -143,7 +143,7 @@ const Gallery = () => {
               height="1300"
               className="absolute inset-0 w-full h-full object-cover object-center"
               loading="eager"
-              fetchpriority="high"
+              fetchPriority="high"
               decoding="async"
               style={{ filter: 'saturate(0.95) contrast(1.05) brightness(0.85)' }}
             />

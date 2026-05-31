@@ -1,0 +1,26 @@
+{
+  "short_name": "Poland Tours",
+  "name": "Green Continent Tours — Krakow, Poland",
+  "description": "Discover the rich history of Poland with Green Continent Tours. We offer the best guided tours, day trips, and personalized travel experiences in Krakow and across Poland.",
+  "lang": "en-US",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#0f4f47",
+  "background_color": "#ffffff",
+  "categories": ["travel", "tours", "poland", "krakow"],
+  "icons": [
+    {
+      "src": "/GCT-asset/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/GCT-asset/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

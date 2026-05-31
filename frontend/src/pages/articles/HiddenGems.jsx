@@ -22,10 +22,8 @@ const WHATSAPP_MESSAGE =
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
 // ⬇️ Swap these two URLs when uploading new SEO-friendly photos.
-const HERO_IMAGE =
-  'https://greencontinenttours.com/GCT-asset/Home-Gallery/slider-4.jpg';
-const MID_IMAGE =
-  'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/ggw7uuzs_hidden%20gems%20in%20Poland.jpg';
+const HERO_IMAGE = '/images/articles/hidden-gems/hidden-gems-main.webp';
+const MID_IMAGE = '/images/articles/hidden-gems/hidden-gems-alt.webp';
 
 const overviewItems = [
   { label: 'Topic', value: 'Off-the-Beaten-Path', icon: Compass },
@@ -210,7 +208,7 @@ const HiddenGems = () => {
                 height="1300"
                 className="absolute inset-0 w-full h-full object-cover object-center"
                 loading="eager"
-                fetchpriority="high"
+                fetchPriority="high"
                 decoding="async"
               />
               <div

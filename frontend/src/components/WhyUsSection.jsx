@@ -8,25 +8,25 @@ const imageSlots = [
   {
     id: 'private-groups',
     label: 'Private Groups',
-    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/swpialvc_Private%20group.png',
+    src: '/images/slots/private-groups.webp',
     alt: 'Private group on a Green Continent Tours travel experience',
   },
   {
     id: 'family-journeys',
     label: 'Family Journeys',
-    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/dld6hlqi_group%20travel.png',
+    src: '/images/slots/family-journeys.webp',
     alt: 'Family travelers enjoying an evening in a historic Krakow courtyard',
   },
   {
     id: 'poland-and-beyond',
     label: 'Poland & Beyond',
-    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/swa9ivb7_Krakow%20PL.png',
+    src: '/images/slots/poland-and-beyond.webp',
     alt: 'Tour group at Krakow Main Market Square with the Cloth Hall and Town Hall Tower',
   },
   {
     id: 'premium-travel',
     label: 'Premium Travel',
-    src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/bs7b1gmm_VIP%20tour.png',
+    src: '/images/slots/premium-travel.webp',
     alt: 'VIP travelers on a premium Green Continent Tours experience in Geneva',
   },
 ];

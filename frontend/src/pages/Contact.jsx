@@ -3,8 +3,7 @@ import { Mail, Phone, MapPin, Send, MessageCircle } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-const HERO_IMAGE =
-  'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/3itykgjh_Malbork%20castle%20Poland.jpg';
+const HERO_IMAGE = '/images/gallery/hero/malbork-castle.webp';
 const WHATSAPP_URL =
   'https://wa.me/48537482798?text=' +
   encodeURIComponent('Hello, I would like to plan a trip to Poland with Green Continent Tours.');
@@ -79,7 +78,7 @@ const Contact = () => {
               height="1300"
               className="absolute inset-0 w-full h-full object-cover object-center"
               loading="eager"
-              fetchpriority="high"
+              fetchPriority="high"
               decoding="async"
               style={{
                 filter:
