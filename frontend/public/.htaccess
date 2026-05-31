@@ -1,0 +1,33 @@
+# SPA fallback for Apache (cPanel, shared hosting, Hostinger, GoDaddy, etc.)
+# Required so React Router can handle deep URLs like /about, /services, /contact.
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # If the request is a real file or directory, serve it as-is.
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Otherwise, hand off to index.html so React Router can render the route.
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# Cache static assets aggressively (CSS/JS/images/fonts hash-named by CRA build).
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png  "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType text/css   "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType text/html  "access plus 1 hour"
+</IfModule>
+
+# Enable gzip/brotli compression on text assets.
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json text/xml application/xml image/svg+xml
+</IfModule>

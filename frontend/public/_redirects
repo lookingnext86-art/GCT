@@ -1,0 +1,3 @@
+# SPA fallback — required so React Router can handle deep URLs.
+# Works on: Netlify, Cloudflare Pages, Render.
+/*    /index.html   200
