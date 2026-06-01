@@ -16,7 +16,7 @@ const Contact = () => {
     message: '',
   });
 
-  // 2. Form processing & security states
+  // Form processing & security states
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [statusMessage, setStatusMessage] = useState('');
   const [isSuccess, setIsSuccess] = useState(false);
@@ -70,10 +70,13 @@ const Contact = () => {
       setIsSuccess(false);
 
       try {
-        const response = await fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          body: submissionData
-        });
+      const response = await fetch('/send-email.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      });
 
         const data = await response.json();
 
@@ -200,8 +203,6 @@ const Contact = () => {
                 </p>
 
                 <form onSubmit={handleSubmit} className="space-y-5" data-testid="contact-form">
-                
-                  <input type="hidden" name="access_key" value="7ad9491f-74c2-4199-8f2b-acc66677deaa" />
                 
                   <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
 

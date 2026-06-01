@@ -1,0 +1,25 @@
+# 1. NEVER CACHE THE ENTRY POINT (Ensures users always see new updates)
+<FilesMatch "\.(html|htm)$">
+    <IfModule mod_headers.c>
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires 0
+    </IfModule>
+</FilesMatch>
+
+# 2. AGGRESSIVELY CACHE ASSETS (Makes pages load instantly on repeat visits)
+<FilesMatch "\.(js|css|jpg|jpeg|png|gif|svg|ico|webp)$">
+    <IfModule mod_headers.c>
+        Header set Cache-Control "max-age=31536000, public"
+    </IfModule>
+</FilesMatch>
+
+# 3. ROUTE ALL SUBPAGES INTO REACT (Fixes the 404 refresh error)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteRule ^index\.html$ - [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /index.html [L]
+</IfModule>
