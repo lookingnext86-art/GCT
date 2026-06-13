@@ -120,10 +120,11 @@ const ServicesSection = ({ useH1 = false }) => {
           </p>
           <HeadingTag
             id="services-heading"
-            className="text-3xl md:text-[2.2rem] lg:text-[2.55rem] font-bold text-white mb-5 tracking-tight leading-[1.15] drop-shadow-lg max-w-[1500px]"
+            className="text-3xl md:text-[2.2rem] lg:text-[2.7rem] font-bold text-white mb-5 tracking-tight leading-[1.15] drop-shadow-lg max-w-[1200px]"
           >
-            Tailored Travel for Groups, Families, Schools and Corporate
-            Clients Across Poland and Europe.
+            Tailored Travel Across Poland and Europe{' '}
+            <br className="hidden md:block" />
+            for Groups, Families and Corporate Clients.
           </HeadingTag>
           <p className="text-base md:text-[17px] text-white/95 font-light italic leading-relaxed max-w-3xl mx-auto drop-shadow">
             From first arrival to final departure, we handle every detail with
