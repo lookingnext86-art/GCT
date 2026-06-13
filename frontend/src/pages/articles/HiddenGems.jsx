@@ -23,8 +23,8 @@ const WHATSAPP_MESSAGE =
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
 // ⬇️ Swap these two URLs when uploading new SEO-friendly photos.
-const HERO_IMAGE = '/images/articles/hidden-gems/hidden-gems-main.webp';
-const MID_IMAGE = '/images/articles/hidden-gems/hidden-gems-alt.webp';
+const HERO_IMAGE = '/images/articles/hidden-gems/poland-hidden-gems-secret-castles.webp';
+const MID_IMAGE = '/images/articles/hidden-gems/off-the-beaten-path-poland-travel.webp';
 
 const overviewItems = [
   { label: 'Topic', value: 'Off-the-Beaten-Path', icon: Compass },

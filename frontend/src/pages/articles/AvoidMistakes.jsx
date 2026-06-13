@@ -23,8 +23,8 @@ const WHATSAPP_MESSAGE =
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
 // ⬇️ Replace these two image URLs when you upload the new SEO-friendly photos.
-const HERO_IMAGE = '/images/articles/avoid-mistakes/scams-hero.webp';
-const MID_IMAGE = '/images/articles/avoid-mistakes/scams-mid.webp';
+const HERO_IMAGE = '/images/articles/avoid-mistakes/poland-tourist-scams-warning.webp';
+const MID_IMAGE = '/images/articles/avoid-mistakes/krakow-currency-exchange-tips.webp';
 
 const overviewItems = [
   { label: 'Topic', value: 'Travel Safety', icon: ShieldCheck },

@@ -22,8 +22,8 @@ const WHATSAPP_MESSAGE =
   'Hello, I would like to plan a family summer trip to Poland (10-day itinerary).';
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
-const HERO_IMAGE = '/images/articles/family-summer-poland-itinerary/family-hero.webp';
-const MID_IMAGE = '/images/articles/family-summer-poland-itinerary/family-mid.webp';
+const HERO_IMAGE = '/images/articles/family-summer-poland-itinerary/family-summer-vacation-krakow-poland.webp';
+const MID_IMAGE = '/images/articles/family-summer-poland-itinerary/family-trip-zakopane-tatra-mountains.webp';
 
 const overviewItems = [
   { label: 'Duration', value: '10 Days', icon: CalendarDays },

@@ -4,7 +4,7 @@ const features = [
   {
     title: 'Private & Group Tours Across Poland',
     description: 'Choose the way you want to experience Poland — intimate private tours for couples and families, or small-group experiences for friends and travel companions. From Krakow\'s Old Town to Zakopane\'s Tatra peaks and Warsaw\'s elegant boulevards, every journey is led by expert local guides, with premium hotels, comfortable transport, and unhurried pacing built in.',
-    image: 'https://greencontinenttours.com/GCT-asset/info/first.jpg',
+    image: '/GCT-asset/info/private-tours-poland-small-groups.jpg',
     borderColor: 'border-l-[#4dd4ac]',
     bgColor: 'bg-[#4dd4ac]/10',
     alt: 'Private and group tours in Poland with Green Continent Tours'
@@ -12,7 +12,7 @@ const features = [
   {
     title: 'Family Travel Designed Around You',
     description: 'Travel with kids, parents, and grandparents in mind. Our family-friendly itineraries balance Krakow\'s history, Zakopane\'s mountain adventures, and Warsaw\'s parks and museums — with flexible schedules, child-friendly stops, and accommodations chosen for comfort, safety, and space. Memorable moments without the logistics stress.',
-    image: 'https://greencontinenttours.com/GCT-asset/info/second.jpg',
+    image: '/GCT-asset/info/family-travel-poland-krakow-zakopane.jpg',
     borderColor: 'border-l-[#ff69b4]',
     bgColor: 'bg-[#ff69b4]/10',
     alt: 'Family travel and family-friendly Poland tours'
@@ -20,7 +20,7 @@ const features = [
   {
     title: 'Custom Itineraries — Culture, Nature & Comfort',
     description: 'Tell us how you love to travel, and we\'ll build it. Cultural deep-dives through UNESCO sites and Polish history, outdoor escapes in the Tatra Mountains and lake districts, or a relaxed mix of both. Each custom itinerary blends authentic experiences with premium comfort — and includes specialized services on request, including options for GCC and Saudi guests.',
-    image: 'https://greencontinenttours.com/GCT-asset/info/third.jpg',
+    image: '/GCT-asset/info/custom-poland-travel-itineraries.jpg',
     borderColor: 'border-l-[#4a9eff]',
     bgColor: 'bg-[#4a9eff]/10',
     alt: 'Custom Poland travel itineraries combining culture, nature and comfort'

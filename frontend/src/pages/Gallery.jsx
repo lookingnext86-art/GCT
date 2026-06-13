@@ -18,7 +18,7 @@ const HERO_IMAGE =
 // ===================================================================
 const photos = [
   {
-    src: '/images/gallery/krakow_pl.png',
+    src: '/images/gallery/krakow_pl.jpg',
     alt: 'International tour group at Krakow Main Market Square with Town Hall Tower and Cloth Hall — premium Poland city tours by Green Continent Tours',
     aspect: 'aspect-square',
   },

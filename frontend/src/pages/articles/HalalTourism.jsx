@@ -24,8 +24,8 @@ const WHATSAPP_MESSAGE =
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
 // ⬇️ Swap these two URLs when uploading new SEO-friendly photos.
-const HERO_IMAGE = '/images/articles/halal-food/halal-hero.webp';
-const MID_IMAGE = '/images/articles/halal-food/halal-mid.webp';
+const HERO_IMAGE = '/images/articles/halal-food/halal-food-krakow-restaurant.webp';
+const MID_IMAGE = '/images/articles/halal-food/muslim-friendly-dining-krakow.webp';
 
 const overviewItems = [
   { label: 'Topic', value: 'Halal Food Guide', icon: Utensils },
