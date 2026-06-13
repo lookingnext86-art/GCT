@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, Camera } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 
 // ===================================================================
 // HERO BANNER — Malbork Castle, Poland
@@ -97,38 +98,13 @@ const photos = [
 // COMPONENT
 // ===================================================================
 const Gallery = () => {
-  useEffect(() => {
-    const prevTitle = document.title;
-    document.title =
-      'Real Journeys. Real Moments. — Travel Gallery | Green Continent Tours';
-    const setMeta = (name, content, attr = 'name') => {
-      let el = document.querySelector(`meta[${attr}="${name}"]`);
-      if (!el) {
-        el = document.createElement('meta');
-        el.setAttribute(attr, name);
-        document.head.appendChild(el);
-      }
-      el.setAttribute('content', content);
-      return el;
-    };
-    setMeta(
-      'description',
-      'Real journeys, real moments — editorial travel gallery of premium private and group tours across Poland, Kraków, Zakopane, Warsaw, and beyond by Green Continent Tours.'
-    );
-    setMeta('og:title', 'Real Journeys. Real Moments. — Travel Gallery', 'property');
-    setMeta(
-      'og:description',
-      'Memories from our amazing guests who traveled with us across Poland & beyond.',
-      'property'
-    );
-    setMeta('og:image', HERO_IMAGE, 'property');
-    return () => {
-      document.title = prevTitle;
-    };
-  }, []);
-
   return (
     <div className="min-h-screen bg-[#0a3a35]" data-testid="gallery-page">
+      <SEO
+        path="/gallery"
+        title="Gallery – Poland Tours & Travel Moments | Green Continent Tours"
+        description="Editorial photo gallery of our Poland tours — Krakow Old Town, Wawel Castle, Zakopane mountains and family travel moments captured across Poland."
+      />
       <Header />
 
       <main>

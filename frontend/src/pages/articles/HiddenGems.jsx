@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   Clock,
@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import SEO from '../../components/SEO';
 
 const WHATSAPP_NUMBER = '48537482798';
 const WHATSAPP_MESSAGE =
@@ -153,42 +154,13 @@ const whyHiddenReasons = [
 ];
 
 const HiddenGems = () => {
-  useEffect(() => {
-    const prevTitle = document.title;
-    document.title =
-      'Hidden Gems in Poland: 15 Secret Places Most Tourists Miss | Green Continent Tours';
-    const setMeta = (name, content, attr = 'name') => {
-      let el = document.querySelector(`meta[${attr}="${name}"]`);
-      if (!el) {
-        el = document.createElement('meta');
-        el.setAttribute(attr, name);
-        document.head.appendChild(el);
-      }
-      el.setAttribute('content', content);
-      return el;
-    };
-    setMeta(
-      'description',
-      'Discover 15 hidden gems in Poland — secret castles, painted villages, mysterious forests, and off-the-beaten-path destinations far from Kraków and Warsaw.'
-    );
-    setMeta(
-      'og:title',
-      'Hidden Gems in Poland: 15 Secret Places Most Tourists Miss',
-      'property'
-    );
-    setMeta(
-      'og:description',
-      'Explore Poland beyond the usual tourist routes — fairy-tale castles, hidden villages, and untouched nature curated by Green Continent Tours.',
-      'property'
-    );
-    setMeta('og:image', HERO_IMAGE, 'property');
-    return () => {
-      document.title = prevTitle;
-    };
-  }, []);
-
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        path="/travel-guide/hidden-gems"
+        title="Hidden Gems in Poland – 15 Secret Places Tourists Often Miss"
+        description="A local's list of 15 hidden gems in Poland — castles, lakes, small towns and off-the-beaten-path spots most international tourists never see."
+      />
       <Header />
 
       <main>

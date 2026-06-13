@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
   Award,
   MapPin,
@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 
 const HERO_IMAGE =
   '/images/about-us/wawel-castle.webp';
@@ -23,37 +24,13 @@ const stats = [
 ];
 
 const About = () => {
-  useEffect(() => {
-    const prevTitle = document.title;
-    document.title = 'About Green Continent Tours | Krakow Travel Company';
-    const setMeta = (name, content, attr = 'name') => {
-      let el = document.querySelector(`meta[${attr}="${name}"]`);
-      if (!el) {
-        el = document.createElement('meta');
-        el.setAttribute(attr, name);
-        document.head.appendChild(el);
-      }
-      el.setAttribute('content', content);
-      return el;
-    };
-    setMeta(
-      'description',
-      'Green Continent Tours is a Krakow-based company designing group, family, school, and corporate journeys across Poland and Europe — transport, licensed guides, hotels, tickets, and custom itineraries.'
-    );
-    setMeta('og:title', 'About Green Continent Tours | Krakow Travel Company', 'property');
-    setMeta(
-      'og:description',
-      'Krakow-based premium agency for group, family, school, and corporate journeys across Poland and Europe.',
-      'property'
-    );
-    setMeta('og:image', HERO_IMAGE, 'property');
-    return () => {
-      document.title = prevTitle;
-    };
-  }, []);
-
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        path="/about"
+        title="About Green Continent Tours – Krakow Travel Agency in Poland"
+        description="Learn about Green Continent Tours — a Krakow travel agency with 12+ years designing private, family and group tours across Poland and Europe."
+      />
       <Header />
 
       <main className="pt-20">

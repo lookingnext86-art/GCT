@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, MessageCircle } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 
 const HERO_IMAGE = '/images/gallery/hero/malbork-castle.webp';
 const WHATSAPP_URL =
@@ -22,40 +23,6 @@ const Contact = () => {
   const [isSuccess, setIsSuccess] = useState(false);
 
   // SEO & Meta-tag automation engine
-  useEffect(() => {
-    const prevTitle = document.title;
-    document.title =
-      'Contact Green Continent Tours | Krakow Travel Company in Poland';
-    const setMeta = (name, content, attr = 'name') => {
-      let el = document.querySelector(`meta[${attr}="${name}"]`);
-      if (!el) {
-        el = document.createElement('meta');
-        el.setAttribute(attr, name);
-        document.head.appendChild(el);
-      }
-      el.setAttribute('content', content);
-      return el;
-    };
-    setMeta(
-      'description',
-      'Contact our Krakow-based travel team for private tours, family travel, school trips, corporate travel, transport, hotels, and custom Poland itineraries across Europe.'
-    );
-    setMeta(
-      'og:title',
-      'Contact Green Continent Tours | Krakow Travel Company',
-      'property'
-    );
-    setMeta(
-      'og:description',
-      'Reach our local Krakow team to plan group tours, family trips, school trips, MICE travel, transfers, and custom itineraries across Poland and Europe.',
-      'property'
-    );
-    setMeta('og:image', HERO_IMAGE, 'property');
-    return () => {
-      document.title = prevTitle;
-    };
-  }, []);
-
   const handleSubmit = async (e) => {
       e.preventDefault();
       
@@ -100,6 +67,11 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-white" data-testid="contact-page">
+      <SEO
+        path="/contact"
+        title="Contact Green Continent Tours – Plan Your Krakow & Poland Trip"
+        description="Contact Green Continent Tours in Krakow — call, WhatsApp or email to plan your Poland trip. Private tours, transfers, group travel and custom itineraries."
+      />
       <Header />
 
       <main className="pt-20">

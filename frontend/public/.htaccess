@@ -1,4 +1,22 @@
+# Green Continent Tours — Apache config (one.com compatible)
+# Uses ONLY mod_rewrite (no mod_expires / mod_deflate to avoid 500/503 errors)
+
+Options -MultiViews
 RewriteEngine On
+
+# 1. Force HTTPS (covers http://example.com and http://www.example.com)
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://www.greencontinenttours.com/$1 [R=301,L]
+
+# 2. Force www (covers https://example.com -> https://www.example.com)
+RewriteCond %{HTTP_HOST} ^greencontinenttours\.com$ [NC]
+RewriteRule ^(.*)$ https://www.greencontinenttours.com/$1 [R=301,L]
+
+# 3. Strip .html extensions (e.g. /contact.html -> /contact)
+RewriteCond %{THE_REQUEST} \s/([^?\s]+)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# 4. SPA fallback — anything not an existing file/dir goes to index.html
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ index.html [L]

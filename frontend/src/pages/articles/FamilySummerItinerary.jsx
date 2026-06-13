@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   Clock,
@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import SEO from '../../components/SEO';
 
 const WHATSAPP_NUMBER = '48537482798';
 const WHATSAPP_MESSAGE =
@@ -84,41 +85,13 @@ const familyReasons = [
 
 const FamilySummerItinerary = () => {
   // SEO meta tags: update document head on mount
-  useEffect(() => {
-    const prevTitle = document.title;
-    document.title = 'Family Summer in Poland: Relaxed 10-Day Itinerary | Green Continent Tours';
-    const setMeta = (name, content, attr = 'name') => {
-      let el = document.querySelector(`meta[${attr}="${name}"]`);
-      if (!el) {
-        el = document.createElement('meta');
-        el.setAttribute(attr, name);
-        document.head.appendChild(el);
-      }
-      el.setAttribute('content', content);
-      return el;
-    };
-    const meta1 = setMeta(
-      'description',
-      'Discover a relaxed 10-day family itinerary through Poland including Krakow, Zakopane, Warsaw, and the Tatra Mountains with Green Continent Tours.'
-    );
-    const meta2 = setMeta(
-      'og:title',
-      'Family Summer in Poland: Relaxed 10-Day Itinerary',
-      'property'
-    );
-    const meta3 = setMeta(
-      'og:description',
-      'A practical family-friendly route through Krakow, Zakopane, and Poland’s best summer highlights — designed by Green Continent Tours.',
-      'property'
-    );
-    const meta4 = setMeta('og:image', HERO_IMAGE, 'property');
-    return () => {
-      document.title = prevTitle;
-    };
-  }, []);
-
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        path="/travel-guide/family-summer-poland-itinerary"
+        title="Family Summer in Poland – Relaxed 10-Day Travel Itinerary"
+        description="A relaxed 10-day family summer itinerary through Krakow, Zakopane and Warsaw — family hotels, easy pace, kid-friendly stops and practical tips."
+      />
       <Header />
 
       <main>

@@ -1,11 +1,3 @@
 User-agent: *
-Allow: /
-
-# Block junk paths if any
-Disallow: /static/
-
-# Sitemap
-Sitemap: https://greencontinenttours.com/sitemap.xml
-
-# Crawl-delay for politeness
-Crawl-delay: 1
+Disallow:
+Sitemap: https://www.greencontinenttours.com/sitemap.xml

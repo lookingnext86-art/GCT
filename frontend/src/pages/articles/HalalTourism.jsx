@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   Clock,
@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import SEO from '../../components/SEO';
 
 const WHATSAPP_NUMBER = '48537482798';
 const WHATSAPP_MESSAGE =
@@ -203,42 +204,13 @@ const Section = ({ id, title, items }) => (
 );
 
 const HalalTourism = () => {
-  useEffect(() => {
-    const prevTitle = document.title;
-    document.title =
-      'Discover the Best Halal Food in Krakow | Green Continent Tours';
-    const setMeta = (name, content, attr = 'name') => {
-      let el = document.querySelector(`meta[${attr}="${name}"]`);
-      if (!el) {
-        el = document.createElement('meta');
-        el.setAttribute(attr, name);
-        document.head.appendChild(el);
-      }
-      el.setAttribute('content', content);
-      return el;
-    };
-    setMeta(
-      'description',
-      'A complete Muslim-friendly food guide to Krakow — best halal restaurants (Turkish, Syrian, Pakistani, Indian), halal meat shops, and travel tips for visitors to Poland.'
-    );
-    setMeta(
-      'og:title',
-      'Discover the Best Halal Food in Krakow',
-      'property'
-    );
-    setMeta(
-      'og:description',
-      'Discover the best halal restaurants and Muslim-friendly food spots in Krakow, Poland — curated by Green Continent Tours.',
-      'property'
-    );
-    setMeta('og:image', HERO_IMAGE, 'property');
-    return () => {
-      document.title = prevTitle;
-    };
-  }, []);
-
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        path="/travel-guide/halal-tourism"
+        title="Halal Food in Krakow – Muslim-Friendly Travel Guide to Poland"
+        description="Discover the best halal restaurants in Krakow and Muslim-friendly travel tips for Poland — prayer spots, family dining, and trusted local recommendations."
+      />
       <Header />
 
       <main>

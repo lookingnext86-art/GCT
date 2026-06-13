@@ -28,6 +28,14 @@ Build a pixel-perfect replica of `https://greencontinenttours.com` — preserve 
 - Explicit `width`/`height` on all images (no CLS)
 - **2026-05-31**: Synced compressed image set + matching source from user's GitHub branch `1-reduce-image-qulity` (lookingnext86-art/GCT). 50 local images now live in `/app/frontend/public/{images,GCT-asset}`; 38 source refs use local paths; 13 remaining CDN refs preserved (branch state).
 - **2026-05-31**: Minimal `.htaccess` (4 lines) restored for one.com Apache deep-link routing — no caching/gzip modules.
+- **2026-06-13**: Comprehensive SEO fix — Google Search Console errors addressed:
+  - `.htaccess` hardened: forces `https://www.` canonical host + strips `.html` + SPA fallback (mod_rewrite only, no modules that triggered prior 503)
+  - `sitemap.xml` rewritten to `https://www.` URLs, `lastmod` added, typo fixed
+  - `robots.txt` simplified to exactly the user-specified format
+  - Installed `react-helmet-async` + built `/src/components/SEO.jsx` — every page now emits unique self-referencing canonical + unique title + unique description (120–155 chars) + matching og:url/twitter:url
+  - Removed static `<title>`, `<meta name="description">`, `<link rel="canonical">`, `og:url`, `twitter:url` from `index.html` (Helmet is single source of truth; eliminates duplicate-canonical "Google chose different canonical" reports)
+  - Homepage title set to user-specified: "Green Continent Tours – Travel Agency & Tour Operator in Krakow, Poland"
+  - Verified runtime: all 10 pages show exactly 1 of each meta tag, 10/10 unique canonicals + titles + descriptions
 
 ## Files of Reference
 - `/app/frontend/public/.htaccess` — minimal React Router fallback for one.com Apache

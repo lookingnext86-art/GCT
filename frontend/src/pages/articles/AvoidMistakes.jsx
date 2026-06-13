@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   Clock,
@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import SEO from '../../components/SEO';
 
 const WHATSAPP_NUMBER = '48537482798';
 const WHATSAPP_MESSAGE =
@@ -136,42 +137,13 @@ const confidenceReasons = [
 ];
 
 const AvoidMistakes = () => {
-  useEffect(() => {
-    const prevTitle = document.title;
-    document.title =
-      'What to Avoid in Poland: 10 Common Tourist Mistakes & Scams | Green Continent Tours';
-    const setMeta = (name, content, attr = 'name') => {
-      let el = document.querySelector(`meta[${attr}="${name}"]`);
-      if (!el) {
-        el = document.createElement('meta');
-        el.setAttribute(attr, name);
-        document.head.appendChild(el);
-      }
-      el.setAttribute('content', content);
-      return el;
-    };
-    setMeta(
-      'description',
-      'Avoid common tourist mistakes and scams in Poland — taxi traps, money exchange tips, pickpocketing, and smart travel advice for Krakow, Warsaw, and Zakopane.'
-    );
-    setMeta(
-      'og:title',
-      'What to Avoid in Poland: 10 Common Tourist Mistakes & Scams',
-      'property'
-    );
-    setMeta(
-      'og:description',
-      'A practical safety guide for travelers visiting Poland — avoid overpaying, save time, and travel with confidence across Krakow, Warsaw, and Zakopane.',
-      'property'
-    );
-    setMeta('og:image', HERO_IMAGE, 'property');
-    return () => {
-      document.title = prevTitle;
-    };
-  }, []);
-
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        path="/travel-guide/avoid-mistakes"
+        title="What to Avoid in Poland – 10 Tourist Mistakes & Scams to Skip"
+        description="Avoid the 10 most common tourist mistakes and scams in Poland — currency exchange traps, taxi tricks, and how to travel Krakow safely with confidence."
+      />
       <Header />
 
       <main>
