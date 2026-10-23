@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Search,
@@ -23,7 +23,7 @@ const categories = [
   { id: 'europe', label: 'Europe' },
 ];
 
-const articles = [
+const staticArticles = [
   {
     slug: 'halal-tourism',
     href: '/travel-guide/halal-tourism',
@@ -81,6 +81,14 @@ const articles = [
 const TravelGuide = () => {
   const [activeCategory, setActiveCategory] = useState('all');
   const [query, setQuery] = useState('');
+  const [articles, setArticles] = useState(staticArticles);
+
+  useEffect(() => {
+    fetch('/blog-data/index.json', { cache: 'no-cache' })
+      .then((r) => (r.ok ? r.json() : Promise.reject()))
+      .then((d) => Array.isArray(d.articles) && setArticles([...d.articles, ...staticArticles]))
+      .catch(() => {});
+  }, []);
 
   const filteredArticles = useMemo(() => {
     const lower = query.trim().toLowerCase();
@@ -93,7 +101,7 @@ const TravelGuide = () => {
         a.categoryLabel.toLowerCase().includes(lower);
       return matchesCategory && matchesQuery;
     });
-  }, [activeCategory, query]);
+  }, [activeCategory, query, articles]);
 
   return (
     <div className="min-h-screen bg-white">

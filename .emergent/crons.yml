@@ -1,0 +1,8 @@
+crons:
+  - name: biweekly-article
+    description: "Writes a new Travel Guide article draft on the 1st and 15th of each month and emails the admin"
+    cron: "0 8 1,15 * *"
+    endpoint: "{{BASE_URL}}/api/cron/generate-article"
+    method: POST
+    # Cron endpoints must ack 2xx immediately; enqueue/background the actual work.
+    enabled: true

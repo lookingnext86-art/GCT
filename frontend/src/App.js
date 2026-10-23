@@ -19,6 +19,10 @@ const AvoidMistakes = lazy(() => import('./pages/articles/AvoidMistakes'));
 const FamilySummerItinerary = lazy(() =>
   import('./pages/articles/FamilySummerItinerary')
 );
+const GuideArticle = lazy(() => import('./pages/GuideArticle'));
+const AdminLayout = lazy(() => import('./pages/admin/AdminLayout'));
+const AdminDashboard = lazy(() => import('./pages/admin/AdminDashboard'));
+const ArticleEditor = lazy(() => import('./pages/admin/ArticleEditor'));
 
 // Minimal full-screen loader — keeps brand feel during chunk fetch (≤200ms)
 const RouteLoader = () => (
@@ -53,6 +57,11 @@ function App() {
               path="/travel-guide/family-summer-poland-itinerary"
               element={<FamilySummerItinerary />}
             />
+            <Route path="/travel-guide/:slug" element={<GuideArticle />} />
+            <Route path="/admin" element={<AdminLayout />}>
+              <Route index element={<AdminDashboard />} />
+              <Route path="articles/:id" element={<ArticleEditor />} />
+            </Route>
             {/* Deleted article redirect */}
             <Route
               path="/travel-guide/group-tours"

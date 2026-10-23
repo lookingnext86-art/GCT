@@ -92,4 +92,15 @@
     <priority>0.6</priority>
   </url>
 
+  <url>
+    <loc>https://www.greencontinenttours.com/travel-guide/wieliczka-salt-mine-day-trip-from-krakow-a-practical-guide</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.greencontinenttours.com/images/blog/wieliczka-salt-mine-day-trip-from-krakow-a-practical-guide.webp</image:loc>
+      <image:title>Wieliczka Salt Mine Day Trip from Krakow: A Practical Guide</image:title>
+    </image:image>
+  </url>
+
 </urlset>

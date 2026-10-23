@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { MessageCircle, X } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 
 const WhatsAppButton = () => {
   const [showTooltip, setShowTooltip] = useState(true);
+  const { pathname } = useLocation();
   const phoneNumber = '48537482798'; // Your WhatsApp number
   const message = 'Hello! I would like to inquire about Krakow tours and Poland travel packages.';
   
@@ -10,6 +12,8 @@ const WhatsAppButton = () => {
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
+
+  if (pathname.startsWith('/admin')) return null;
 
   return (
     <>

@@ -1,0 +1,71 @@
+.guide-prose {
+  color: #4b5563;
+  font-size: 16px;
+  line-height: 1.85;
+  font-weight: 300;
+}
+.guide-prose > p:first-child {
+  font-size: 1.2rem;
+  color: #0f4f47;
+  line-height: 1.7;
+}
+.guide-prose p { margin: 0 0 1.25rem; }
+.guide-prose h2 {
+  color: #0f4f47;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin: 3rem 0 1rem;
+  scroll-margin-top: 110px;
+}
+.guide-prose h3 {
+  color: #0f4f47;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 2rem 0 0.6rem;
+}
+.guide-prose ul, .guide-prose ol { margin: 0 0 1.5rem; padding-left: 0; list-style: none; }
+.guide-prose ol { counter-reset: gp; }
+.guide-prose li { position: relative; padding-left: 1.6rem; margin-bottom: 0.6rem; }
+.guide-prose ul > li::before {
+  content: '';
+  position: absolute;
+  left: 0.2rem;
+  top: 0.75em;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #4dd4ac;
+}
+.guide-prose ol > li { counter-increment: gp; }
+.guide-prose ol > li::before {
+  content: counter(gp) '.';
+  position: absolute;
+  left: 0;
+  color: #0f4f47;
+  font-weight: 700;
+}
+.guide-prose strong { color: #0f4f47; font-weight: 600; }
+.guide-prose a {
+  color: #0f4f47;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: #4dd4ac;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+.guide-prose a:hover { color: #1a6b5f; }
+.guide-prose blockquote {
+  border-left: 3px solid #4dd4ac;
+  background: #f4f7f6;
+  padding: 1rem 1.25rem;
+  border-radius: 0 12px 12px 0;
+  margin: 0 0 1.5rem;
+  color: #0f4f47;
+}
+@media (max-width: 640px) {
+  .guide-prose { font-size: 15px; }
+  .guide-prose h2 { font-size: 1.45rem; margin-top: 2.4rem; }
+}
