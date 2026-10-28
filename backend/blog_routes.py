@@ -8,7 +8,7 @@ from datetime import datetime, timezone
 from typing import Literal, Optional
 
 from fastapi import APIRouter, BackgroundTasks, Depends, File, HTTPException, Request, UploadFile
-from fastapi.responses import Response
+from fastapi.responses import JSONResponse, Response
 from PIL import Image
 from pydantic import BaseModel
 from pymongo.errors import DuplicateKeyError
@@ -23,6 +23,7 @@ from generator import CATEGORIES, STATIC_ARTICLES, generate_article, model_label
 logger = logging.getLogger(__name__)
 admin = APIRouter(prefix="/api/admin", dependencies=[Depends(get_current_admin)])
 cron = APIRouter(prefix="/api/cron")
+public = APIRouter(prefix="/api/public")
 
 DEFAULT_SETTINGS = {"default_model": "claude", "auto_generate": True}
 EMAIL_RE = re.compile(r"^[^@\s]+@[^@\s]+\.[a-z]{2,}$", re.I)
@@ -198,19 +199,9 @@ async def publish(article_id: str):
         raise HTTPException(status_code=400, detail="Only drafts can be published")
     if not a.get("cover_image_path"):
         raise HTTPException(status_code=400, detail="Add a cover photo before publishing")
-    if not publisher.targets():
-        raise HTTPException(status_code=400, detail="Website connection is not set up yet")
-    a = {**a, "status": "published", "published_at": a.get("published_at") or now_iso(), "updated_at": now_iso()}
-    others = [p for p in await published_articles() if p["id"] != article_id]
-    files = {publisher.image_path(a["slug"]): storage.get_object(a["cover_image_path"]), **publisher.article_file(a), **publisher.site_files(others + [a])}
-    try:
-        pushed = await publisher.push(files)
-    except Exception as e:
-        logger.exception("Publish failed")
-        raise HTTPException(status_code=502, detail=f"Could not upload to your website: {e}")
     await db.articles.update_one({"id": article_id}, {"$set": {
-        "status": "published", "published_at": a["published_at"], "updated_at": a["updated_at"],
-        "live_url": f"{os.environ['SITE_URL'].rstrip('/')}/travel-guide/{a['slug']}", "pushed_to": pushed,
+        "status": "published", "published_at": a.get("published_at") or now_iso(), "updated_at": now_iso(),
+        "live_url": f"{os.environ['SITE_URL'].rstrip('/')}/travel-guide/{a['slug']}",
     }})
     return await get_article(article_id)
 
@@ -220,11 +211,6 @@ async def unpublish(article_id: str):
     a = await get_article_or_404(article_id)
     if a["status"] != "published":
         raise HTTPException(status_code=400, detail="Article is not published")
-    remaining = [p for p in await published_articles() if p["id"] != article_id]
-    try:
-        await publisher.push(publisher.site_files(remaining), [f"blog-data/articles/{a['slug']}.json", publisher.image_path(a["slug"])])
-    except Exception as e:
-        raise HTTPException(status_code=502, detail=f"Could not update your website: {e}")
     await db.articles.update_one({"id": article_id}, {"$set": {"status": "draft", "updated_at": now_iso()}, "$unset": {"live_url": ""}})
     return await get_article(article_id)
 
@@ -249,8 +235,7 @@ async def restore(article_id: str):
 
 @admin.get("/settings")
 async def read_settings():
-    return {**await get_settings(), "targets": publisher.targets(), "sftp_configured": publisher.sftp_configured(),
-            "site_url": os.environ["SITE_URL"]}
+    return {**await get_settings(), "site_url": os.environ["SITE_URL"]}
 
 
 @admin.put("/settings")
@@ -272,28 +257,34 @@ async def test_email():
     return {"ok": bool(email_id), "message": f"Test email sent to {to}" if email_id else f"Could not deliver to {to}: {err}"}
 
 
-@admin.post("/site/test")
-async def test_site():
-    try:
-        return {"ok": True, "message": await publisher.test_connection()}
-    except Exception as e:
-        return {"ok": False, "message": f"Connection failed: {e}"}
+PUBLIC_CACHE = {"Cache-Control": "public, max-age=300"}
 
 
-@admin.post("/site/resync")
-async def resync():
-    published = await published_articles()
-    if not publisher.targets():
-        raise HTTPException(status_code=400, detail="Website connection is not set up yet")
-    files = publisher.site_files(published)
-    for a in published:
-        files.update(publisher.article_file(a))
-        files[publisher.image_path(a["slug"])] = storage.get_object(a["cover_image_path"])
-    try:
-        pushed = await publisher.push(files)
-    except Exception as e:
-        raise HTTPException(status_code=502, detail=f"Could not upload to your website: {e}")
-    return {"ok": True, "files": len(files), "pushed_to": pushed}
+@public.get("/articles")
+async def public_articles():
+    return JSONResponse(publisher.index_payload(await published_articles()), headers=PUBLIC_CACHE)
+
+
+@public.get("/articles/{slug}")
+async def public_article(slug: str):
+    a = await db.articles.find_one({"slug": slug, "status": "published"}, {"_id": 0})
+    if not a:
+        raise HTTPException(status_code=404, detail="Article not found")
+    return JSONResponse(publisher.article_payload(a), headers=PUBLIC_CACHE)
+
+
+@public.get("/images/{slug}.webp")
+async def public_image(slug: str):
+    a = await db.articles.find_one({"slug": slug, "status": "published"}, {"cover_image_path": 1})
+    if not a or not a.get("cover_image_path"):
+        raise HTTPException(status_code=404, detail="Image not found")
+    return Response(content=storage.get_object(a["cover_image_path"]), media_type="image/webp",
+                    headers={"Cache-Control": "public, max-age=86400"})
+
+
+@public.get("/sitemap-articles.xml")
+async def public_sitemap():
+    return Response(content=publisher.sitemap_xml(await published_articles()), media_type="application/xml", headers=PUBLIC_CACHE)
 
 
 @cron.post("/generate-article")

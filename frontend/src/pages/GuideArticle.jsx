@@ -7,6 +7,7 @@ import SEO from '../components/SEO';
 import '../styles/guide-prose.css';
 
 const SITE = 'https://www.greencontinenttours.com';
+const API = process.env.REACT_APP_BACKEND_URL;
 const WHATSAPP_URL = `https://wa.me/48537482798?text=${encodeURIComponent('Hello, I would like help planning my Poland trip.')}`;
 
 const ArticleHero = ({ a }) => (
@@ -57,9 +58,9 @@ const GuideArticle = () => {
 
   useEffect(() => {
     setA(null);
-    fetch(`/blog-data/articles/${slug}.json`, { cache: 'no-cache' })
+    fetch(`${API}/api/public/articles/${encodeURIComponent(slug)}`)
       .then((r) => (r.ok ? r.json() : Promise.reject()))
-      .then(setA)
+      .then((d) => setA({ ...d, image: `${API}${d.image}` }))
       .catch(() => setA(false));
   }, [slug]);
 
@@ -68,7 +69,7 @@ const GuideArticle = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <SEO path={a.href} title={a.metaTitle} description={a.metaDescription} image={`${SITE}${a.image}`} />
+      <SEO path={a.href} title={a.metaTitle} description={a.metaDescription} image={a.image} />
       <Header />
       <main>
         <article data-testid="guide-article">
@@ -100,7 +101,7 @@ const GuideArticle = () => {
           '@type': 'Article',
           headline: a.title,
           description: a.metaDescription,
-          image: `${SITE}${a.image}`,
+          image: a.image,
           datePublished: a.dateISO,
           dateModified: a.updatedISO,
           keywords: (a.keywords || []).join(', '),

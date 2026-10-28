@@ -78,11 +78,6 @@ webpackConfig.devServer = (devServerConfig) => {
     };
   }
 
-  // Published blog files are written into public/ by the backend; don't live-reload on them
-  if (devServerConfig.static && !Array.isArray(devServerConfig.static)) {
-    devServerConfig.static = { ...devServerConfig.static, watch: false };
-  }
-
   return devServerConfig;
 };
 

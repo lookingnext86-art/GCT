@@ -79,7 +79,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://www.greencontinenttours.com/images/articles/family-summer-poland-itinerary/family-summer-vacation-krakow-poland.webp</image:loc>
+      <image:loc>/images/articles/family-summer-poland-itinerary/family-summer-vacation-krakow-poland.webp</image:loc>
       <image:title>Family Summer in Poland — Wawel Castle Sunset</image:title>
       <image:caption>Relaxed 10-day family itinerary through Krakow, Zakopane and Warsaw</image:caption>
     </image:image>
@@ -91,6 +91,5 @@
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
-
 
 </urlset>

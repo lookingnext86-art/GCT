@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { toast } from 'sonner';
-import { Sparkles, RefreshCw, PlugZap, CalendarClock, Mail } from 'lucide-react';
+import { Sparkles, CalendarClock, Mail } from 'lucide-react';
 import { Switch } from '../../components/ui/switch';
 import { api, errorText, MODEL_OPTIONS } from '../../lib/adminApi';
 
@@ -73,8 +73,6 @@ export const SettingsCard = ({ settings, onChange }) => {
     }
   };
 
-  const connected = settings.sftp_configured;
-
   return (
     <div className={`${card} space-y-5`} data-testid="settings-card">
       <div>
@@ -102,26 +100,6 @@ export const SettingsCard = ({ settings, onChange }) => {
         <button type="button" disabled={!!busy} onClick={() => run('email', '/admin/settings/test-email', () => 'Sent')} data-testid="test-email-btn" className="mt-2 text-xs font-semibold text-[#0f4f47] underline decoration-[#4dd4ac] underline-offset-2 disabled:opacity-60">
           {busy === 'email' ? 'Sending…' : 'Send a test alert'}
         </button>
-      </div>
-      <div className="border-t border-gray-100 pt-4">
-        <div className="flex items-center gap-2 mb-1.5">
-          <PlugZap className="w-4 h-4 text-[#4dd4ac]" />
-          <h3 className="text-sm font-bold text-[#0f4f47]">Website connection</h3>
-          <span data-testid="site-connection-status" className={`ml-auto text-[10px] font-bold tracking-[0.15em] uppercase px-2.5 py-1 rounded-full ${connected ? 'bg-[#4dd4ac]/20 text-[#0f4f47]' : 'bg-amber-100 text-amber-700'}`}>
-            {connected ? 'Connected' : 'Not set up'}
-          </span>
-        </div>
-        <p className="text-[13px] text-gray-500 mb-3">
-          {connected ? `Approved articles upload straight to ${settings.site_url}.` : 'Add your one.com SFTP details so approved articles upload to your live site automatically.'}
-        </p>
-        <div className="flex flex-wrap gap-2">
-          <button type="button" disabled={!!busy} onClick={() => run('test', '/admin/site/test', () => 'Connected')} data-testid="test-connection-btn" className="rounded-full border border-gray-200 px-4 py-2 text-xs font-semibold text-[#0f4f47] hover:border-[#4dd4ac] disabled:opacity-60">
-            {busy === 'test' ? 'Testing…' : 'Test connection'}
-          </button>
-          <button type="button" disabled={!!busy} onClick={() => run('sync', '/admin/site/resync', (d) => `Re-uploaded ${d.files} files`)} data-testid="resync-site-btn" className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 px-4 py-2 text-xs font-semibold text-[#0f4f47] hover:border-[#4dd4ac] disabled:opacity-60">
-            <RefreshCw className={`w-3.5 h-3.5 ${busy === 'sync' ? 'animate-spin' : ''}`} /> Re-sync website
-          </button>
-        </div>
       </div>
     </div>
   );

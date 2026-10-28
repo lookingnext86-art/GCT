@@ -84,9 +84,10 @@ const TravelGuide = () => {
   const [articles, setArticles] = useState(staticArticles);
 
   useEffect(() => {
-    fetch('/blog-data/index.json', { cache: 'no-cache' })
+    const api = process.env.REACT_APP_BACKEND_URL;
+    fetch(`${api}/api/public/articles`)
       .then((r) => (r.ok ? r.json() : Promise.reject()))
-      .then((d) => Array.isArray(d.articles) && setArticles([...d.articles, ...staticArticles]))
+      .then((d) => Array.isArray(d.articles) && setArticles([...d.articles.map((a) => ({ ...a, image: `${api}${a.image}` })), ...staticArticles]))
       .catch(() => {});
   }, []);
 

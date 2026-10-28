@@ -6,7 +6,7 @@ from starlette.middleware.cors import CORSMiddleware
 
 from db import client
 from auth import router as auth_router, seed_admin
-from blog_routes import admin, cron, mark_interrupted
+from blog_routes import admin, cron, public, mark_interrupted
 import storage
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -25,6 +25,7 @@ app.include_router(api_router)
 app.include_router(auth_router)
 app.include_router(admin)
 app.include_router(cron)
+app.include_router(public)
 
 app.add_middleware(
     CORSMiddleware,

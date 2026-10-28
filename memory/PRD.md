@@ -46,6 +46,9 @@ Build a pixel-perfect replica of `https://greencontinenttours.com` — preserve 
 
 - **2026-06**: Google tag (GA4 G-N32XZMRBL1) added to public/index.html head; verified page_view hits on load + SPA navigation. Note: craco static watch is off → restart frontend after editing public/index.html in preview.
 
+- **2026-06**: one.com plan has no SFTP → switched to LIVE LOADING. Removed SFTP/local publishing (paramiko uninstalled, craco watch tweak reverted, public/blog-data removed, sitemap.xml restored). Publish = status change only. Public API (no auth, CORS *): GET /api/public/articles, /api/public/articles/{slug}, /api/public/images/{slug}.webp (from object storage), /api/public/sitemap-articles.xml. TravelGuide.jsx + GuideArticle.jsx fetch from REACT_APP_BACKEND_URL. ADMIN_PANEL_URL = https://www.greencontinenttours.com/admin.
+  - TODO at final ZIP build: build with REACT_APP_BACKEND_URL = deployed Emergent URL and add `Sitemap: <deployed>/api/public/sitemap-articles.xml` to public/robots.txt; submit it in Search Console.
+
 ## Files of Reference
 - `/app/frontend/public/.htaccess` — minimal React Router fallback for one.com Apache
 - `/app/frontend/public/_redirects` — Netlify fallback
@@ -65,7 +68,6 @@ Build a pixel-perfect replica of `https://greencontinenttours.com` — preserve 
 - Confirm minimal `.htaccess` (4 lines) works on one.com Apache; if still 500, switch to `FallbackResource /index.html` or `ErrorDocument 404`.
 
 ### P0 — Travel Guide Studio go-live
-- User adds one.com SFTP details (SFTP_HOST, SFTP_PORT, SFTP_USERNAME, SFTP_PASSWORD, SFTP_REMOTE_ROOT) → test connection → resync.
 - Deploy backend on Emergent (cron + admin must run 24/7); set ADMIN_PANEL_URL to deployed URL; rebuild ZIP with REACT_APP_BACKEND_URL = deployed URL and upload once to one.com.
 - Set a deliverable alert email in admin settings.
 
