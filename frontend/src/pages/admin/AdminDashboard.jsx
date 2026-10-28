@@ -33,6 +33,7 @@ const ArticleRow = ({ a }) => {
         </div>
         <p className="font-semibold text-[#0f4f47] truncate">{a.title}</p>
         {a.status === 'failed' && <p className="text-xs text-red-600 mt-1 truncate">{a.error}</p>}
+        {a.status === 'draft' && a.alert_sent === false && <p className="text-xs text-amber-700 mt-1" data-testid={`alert-failed-${a.id}`}>Email alert was not delivered{a.alert_to ? ` to ${a.alert_to}` : ''} — check the alert email in settings.</p>}
         {a.excerpt && a.status !== 'failed' && <p className="text-[13px] text-gray-500 truncate mt-0.5">{a.excerpt}</p>}
       </div>
       {a.status !== 'generating' && <ArrowRight className="w-4 h-4 text-[#4dd4ac] shrink-0" />}

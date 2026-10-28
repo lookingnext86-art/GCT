@@ -1,0 +1,48 @@
+{
+  "summary": "Full E2E test of the Travel Guide Studio (admin auth, dashboard, settings, generate, editor, cover upload, publish/unpublish to local target, reject/restore, cron webhook) and public site regression. Backend: 26/26 pytest pass (one real cron-triggered Claude generation finished in about 1 min -> '3 Days in Krakow' draft). Frontend: every requested flow works end-to-end. UI generate button was checked with a mocked network route to save credits; the real generation was checked through cron + dashboard polling. Main problems: draft-ready email alerts are failing (Resend 422 'Undeliverable recipient'), and in preview every publish/unpublish/resync does a full page reload, so the success toast is lost.",
+  "backend_issues": {
+    "critical": [
+      {"endpoint": "run_generation -> email_service.send_draft_ready_alert", "issue": "The last 2 draft alerts (Zakopane scheduled draft, and '3 Days in Krakow' from my cron test) failed with 422 {error:'Undeliverable recipient', code:'undeliverable_recipient'} for info@greencontinenttours.com. alert_sent=false on both. The earlier 2 articles have alert_sent=true, so it is intermittent or newly blocked. The user gets no email when a draft is ready, which is a core requirement. The failure is only logged as a warning and not shown in the UI.", "priority": "HIGH"}
+    ],
+    "minor": [
+      {"endpoint": "publisher.index_payload", "issue": "Sorted by dateISO (day only). Two articles published the same day keep DB order, so the newly published Auschwitz article showed 2nd, under Wieliczka, not at the top. Sort by the full published_at timestamp instead."},
+      {"endpoint": "POST /api/admin/articles/{id}/unpublish", "issue": "Removes the article JSON but leaves images/blog/{slug}.webp behind as an orphan (seen in /app/frontend/public/images/blog and it would also stay on the SFTP target)."},
+      {"endpoint": "POST /api/auth/login", "issue": "Brute-force key uses the client-supplied X-Forwarded-For first value, so an attacker can rotate the header to get around the 5-try lockout. My test proved the lockout works with a fixed IP, and also that the header is trusted as sent."},
+      {"endpoint": "auth design", "issue": "Uses a Bearer JWT in localStorage, not httpOnly cookies (the playbook item for httpOnly cookies does not apply). bcrypt $2b$ OK, seed_admin re-hashes when the password changes OK, 5-fail lockout -> 429 OK."}
+    ]
+  },
+  "frontend_issues": {
+    "ui_bugs": [
+      {"component": "ArticleEditor publish/unpublish + SettingsCard resync (preview only)", "issue": "The backend writes into /app/frontend/public (PUBLISH_LOCAL_DIR), and the CRA dev server watches public/, so the admin page fully reloads right after the action. The success toasts ('Approved and published…', 'Article removed from website', 'Re-uploaded N files') never show, and the cover preview briefly shows 'Upload photo (required to publish)' after publish. Data is correct after the reload. This will not happen on production one.com, but it looks broken in preview.", "selector": "[data-testid=editor-publish-btn], [data-testid=editor-unpublish-btn], [data-testid=resync-site-btn]", "priority": "MEDIUM"},
+      {"component": "GenerateCard", "issue": "The model select uses useState(defaultModel) only at first render, so changing the 'Scheduled writer' does not update the manual generate select until reload (minor).", "selector": "[data-testid=generate-model-select]", "priority": "LOW"},
+      {"component": "AdminLayout", "issue": "The useEffect returns early when there is no token, before adding the 'gct-admin-logout' listener. If the admin logs in during that page session, a later 401 (expired token) clears the token but the UI is not sent back to the login screen.", "selector": "[data-testid=admin-shell]", "priority": "LOW"}
+    ],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "Mobile GuideArticle (390px)", "issues": ["With long titles, the back link and category chip at the top of the hero are cut off under the fixed header", "The floating WhatsApp button overlaps the sticky bottom 'Chat on WhatsApp - Book Your Krakow Tour!' bar"]},
+      {"screen": "Console", "issues": ["React warning: <span> cannot be a child of <option> in default-model-select. This comes from the visual-edit wrapper on the dynamic {m.label} inside <option>; use a template string label to avoid it"]}
+    ]
+  },
+  "test_report_links": ["/app/backend/tests/test_blog_admin.py", "/app/test_reports/pytest/pytest_results.xml"],
+  "action_items": [
+    "Fix or handle draft-ready email failures (Resend 422 undeliverable_recipient for info@greencontinenttours.com): check sender/recipient setup, retry, and show alert_sent=false in the dashboard",
+    "Stop the full page reload in preview after publish: point PUBLISH_LOCAL_DIR somewhere outside the dev server's watched public/ and serve it another way, or exclude blog-data/images/sitemap from watching",
+    "Sort index.json by the full published_at timestamp so the newest article is always first",
+    "Delete images/blog/{slug}.webp on unpublish",
+    "Sync GenerateCard model with settings.default_model; register the logout listener in AdminLayout even when no token at mount",
+    "Mobile article hero: add top padding so the back link and chip are not under the header; fix the floating WhatsApp button overlapping the sticky WA bar"
+  ],
+  "critical_code_review_comments": [
+    "render_markdown escapes every '<', which stops raw HTML/XSS (good), but it also breaks markdown autolinks <https://...>",
+    "Cron stores run_id before the auto_generate check. That is fine for idempotency, but a retried webhook after auto_generate is turned back on will report duplicate",
+    "The JSON-LD script is rendered in the body by React (not via Helmet). It is valid for Google but would sit better inside Helmet"
+  ],
+  "updated_files": ["/app/backend/tests/test_blog_admin.py"],
+  "success_rate": {"backend": "100% (26/26 API tests); email alert integration failing", "frontend": "~92% (all flows work; toasts lost due to preview reload)"},
+  "test_credentials": "Admin info@greencontinenttours.com / GCT-iMyf-aKP51zV51Kb (from /app/memory/test_credentials.md) - working",
+  "seed_data_creation": "One real scheduled generation via cron test -> draft '3 Days in Krakow: A Realistic Itinerary for First-Timers' (id 7a05d5fb-cdb7-4a76-b071-afc0573efdd3, slug 3-days-in-krakow-itinerary). Auschwitz draft was published, unpublished, published again, unpublished, rejected and restored. It is now 'draft' WITH a test cover (plain green JPG). An orphan /app/frontend/public/images/blog/auschwitz-day-trip-from-krakow-tickets-transport-tips.webp remains. Settings restored to claude/auto_generate=true.",
+  "retest_needed": true,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Run: RUN_REAL_CRON=1 pytest /app/backend/tests/test_blog_admin.py (leave out RUN_REAL_CRON to avoid LLM credits). The Auschwitz id is 15ddf3d3-2413-4082-ba8b-00806f420553. Toasts after publish/unpublish/resync can't be checked in preview because of the dev-server reload. To check the page reloaded, set a window marker and confirm it is cleared. The UI generate button was checked with page.route mocking.",
+  "rca of the issue": "Preview reload: publisher._local_sync writes to PUBLISH_LOCAL_DIR=/app/frontend/public -> webpack-dev-server static watch picks up the change -> live reload of every open tab -> sonner Toaster unmounts before the toast shows. Email: Emergent email (Resend) returns 422 undeliverable_recipient; see backend.err.log 08:04:42 and 08:07:47."
+}

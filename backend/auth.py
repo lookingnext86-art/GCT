@@ -70,8 +70,7 @@ async def seed_admin():
 @router.post("/login")
 async def login(data: LoginInput, request: Request):
     email = data.email.strip().lower()
-    ip = request.headers.get("x-forwarded-for", request.client.host if request.client else "unknown").split(",")[0].strip()
-    identifier = f"{ip}:{email}"
+    identifier = email
     now = datetime.now(timezone.utc)
     attempt = await db.login_attempts.find_one({"identifier": identifier})
     if attempt and attempt.get("locked_until") and datetime.fromisoformat(attempt["locked_until"]) > now:

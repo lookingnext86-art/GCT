@@ -1,4 +1,5 @@
 import hmac
+import re
 import io
 import logging
 import os
@@ -24,6 +25,7 @@ admin = APIRouter(prefix="/api/admin", dependencies=[Depends(get_current_admin)]
 cron = APIRouter(prefix="/api/cron")
 
 DEFAULT_SETTINGS = {"default_model": "claude", "auto_generate": True}
+EMAIL_RE = re.compile(r"^[^@\s]+@[^@\s]+\.[a-z]{2,}$", re.I)
 LIST_FIELDS = {"_id": 0, "body_md": 0}
 
 
@@ -51,11 +53,12 @@ class ArticleUpdate(BaseModel):
 class SettingsInput(BaseModel):
     default_model: Literal["claude", "gpt"]
     auto_generate: bool
+    alert_email: Optional[str] = None
 
 
 async def get_settings() -> dict:
     doc = await db.settings.find_one({"key": "blog"}, {"_id": 0, "key": 0})
-    return {**DEFAULT_SETTINGS, **(doc or {})}
+    return {**DEFAULT_SETTINGS, "alert_email": os.environ["ADMIN_ALERT_EMAIL"], **(doc or {})}
 
 
 async def get_article_or_404(article_id: str) -> dict:
@@ -84,11 +87,12 @@ async def run_generation(article_id: str, model_key: str, topic: str | None):
         data["read_time"] = read_time(data["body_md"])
         await db.articles.update_one({"id": article_id}, {"$set": {**data, "status": "draft", "updated_at": now_iso()}})
         article = await db.articles.find_one({"id": article_id}, {"_id": 0})
+        to = (await get_settings())["alert_email"]
         try:
-            email_id = await send_draft_ready_alert(article)
-            await db.articles.update_one({"id": article_id}, {"$set": {"alert_sent": bool(email_id)}})
+            email_id, err = await send_draft_ready_alert(article, to)
         except Exception as e:
-            logger.warning(f"Draft alert email failed: {e}")
+            email_id, err = None, str(e)
+        await db.articles.update_one({"id": article_id}, {"$set": {"alert_sent": bool(email_id), "alert_error": err, "alert_to": to}})
     except Exception as e:
         logger.exception("Article generation failed")
         await db.articles.update_one({"id": article_id}, {"$set": {"status": "failed", "error": str(e)[:300], "updated_at": now_iso()}})
@@ -218,7 +222,7 @@ async def unpublish(article_id: str):
         raise HTTPException(status_code=400, detail="Article is not published")
     remaining = [p for p in await published_articles() if p["id"] != article_id]
     try:
-        await publisher.push(publisher.site_files(remaining), [f"blog-data/articles/{a['slug']}.json"])
+        await publisher.push(publisher.site_files(remaining), [f"blog-data/articles/{a['slug']}.json", publisher.image_path(a["slug"])])
     except Exception as e:
         raise HTTPException(status_code=502, detail=f"Could not update your website: {e}")
     await db.articles.update_one({"id": article_id}, {"$set": {"status": "draft", "updated_at": now_iso()}, "$unset": {"live_url": ""}})
@@ -246,13 +250,26 @@ async def restore(article_id: str):
 @admin.get("/settings")
 async def read_settings():
     return {**await get_settings(), "targets": publisher.targets(), "sftp_configured": publisher.sftp_configured(),
-            "alert_email": os.environ["ADMIN_ALERT_EMAIL"], "site_url": os.environ["SITE_URL"]}
+            "site_url": os.environ["SITE_URL"]}
 
 
 @admin.put("/settings")
 async def write_settings(data: SettingsInput):
-    await db.settings.update_one({"key": "blog"}, {"$set": data.model_dump()}, upsert=True)
+    updates = data.model_dump(exclude_none=True)
+    if "alert_email" in updates:
+        updates["alert_email"] = updates["alert_email"].strip().lower()
+        if not EMAIL_RE.match(updates["alert_email"]):
+            raise HTTPException(status_code=400, detail="Please enter a valid email address")
+    await db.settings.update_one({"key": "blog"}, {"$set": updates}, upsert=True)
     return await read_settings()
+
+
+@admin.post("/settings/test-email")
+async def test_email():
+    to = (await get_settings())["alert_email"]
+    sample = {"id": "test", "title": "Test alert from your Travel Guide Studio", "excerpt": "If you can read this, draft alerts will reach this inbox."}
+    email_id, err = await send_draft_ready_alert(sample, to)
+    return {"ok": bool(email_id), "message": f"Test email sent to {to}" if email_id else f"Could not deliver to {to}: {err}"}
 
 
 @admin.post("/site/test")

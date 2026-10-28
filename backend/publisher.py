@@ -57,7 +57,8 @@ def article_payload(a: dict) -> dict:
 
 def index_payload(articles: list[dict]) -> dict:
     keys = ("slug", "href", "title", "excerpt", "category", "categoryLabel", "readTime", "date", "dateISO", "author", "image", "imageAlt")
-    items = sorted((article_payload(a) for a in articles), key=lambda x: x["dateISO"], reverse=True)
+    ordered = sorted(articles, key=lambda a: a["published_at"], reverse=True)
+    items = [article_payload(a) for a in ordered]
     return {"articles": [{k: i[k] for k in keys} for i in items], "generatedAt": datetime.now(timezone.utc).isoformat()}
 
 

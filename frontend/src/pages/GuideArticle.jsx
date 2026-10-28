@@ -11,11 +11,11 @@ const WHATSAPP_URL = `https://wa.me/48537482798?text=${encodeURIComponent('Hello
 
 const ArticleHero = ({ a }) => (
   <header className="relative overflow-hidden" data-testid="guide-article-hero">
-    <div className="relative h-[460px] md:h-[560px] lg:h-[620px] w-full">
+    <div className="relative min-h-[480px] md:min-h-[560px] lg:min-h-[620px] w-full flex items-end">
       <img src={a.image} alt={a.imageAlt} title={a.title} width="1600" height="1000" loading="eager" fetchPriority="high" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
       <div className="absolute inset-0 bg-gradient-to-b from-[#0a3a35]/55 via-[#0a3a35]/35 to-[#0a3a35]/85" aria-hidden="true" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#0a3a35]/55 via-transparent to-transparent" aria-hidden="true" />
-      <div className="absolute inset-0 flex items-end pb-14 md:pb-20">
+      <div className="relative z-10 w-full pt-32 pb-14 md:pb-20">
         <div className="container mx-auto px-5 md:px-6 lg:px-8 w-full">
           <div className="max-w-3xl text-white">
             <Link to="/travel-guide" data-testid="back-to-travel-guide" className="inline-flex items-center gap-2 text-[12px] tracking-[0.2em] uppercase text-white/85 hover:text-[#4dd4ac] transition-colors">

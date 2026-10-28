@@ -37,6 +37,15 @@ Build a pixel-perfect replica of `https://greencontinenttours.com` — preserve 
   - Homepage title set to user-specified: "Green Continent Tours – Travel Agency & Tour Operator in Krakow, Poland"
   - Verified runtime: all 10 pages show exactly 1 of each meta tag, 10/10 unique canonicals + titles + descriptions
 
+- **2026-06 (this session)**: Automated Travel Guide pipeline ("Travel Guide Studio")
+  - Backend (FastAPI + Mongo): `auth.py` (single admin, bcrypt, JWT Bearer 12h, 5-try lockout), `blog_routes.py` (admin CRUD, generate, cover upload, publish/unpublish/reject/restore, settings, site test/resync, cron), `generator.py` (Claude Sonnet 5.5 `claude-sonnet-5-5` / GPT 6 Luna `gpt-6-luna` via Emergent LLM key, JSON article + markdown→HTML + TOC), `publisher.py` (writes `blog-data/index.json`, `blog-data/articles/{slug}.json`, `images/blog/{slug}.webp`, regenerated `sitemap.xml` from `base_sitemap.xml`; targets = one.com SFTP (paramiko) when SFTP_* set + local dir PUBLISH_LOCAL_DIR for preview), `storage.py` (Emergent object storage for cover photos, converted to WebP ≤1600px), `email_service.py` (Emergent managed email draft-ready alert).
+  - Cron: `.emergent/crons.yml` `biweekly-article` 08:00 UTC on 1st & 15th → POST /api/cron/generate-article (WEBHOOK_CRON_SECRET, idempotent by run id, respects auto_generate setting).
+  - Frontend: `/admin` (login, dashboard with tabs, generate card, settings card: auto drafts toggle, scheduled writer, alert email + test alert, website connection test/resync), `/admin/articles/:id` editor (SEO fields w/ counters, markdown edit/preview, cover upload required to publish). Public `/travel-guide/:slug` (GuideArticle.jsx) reads static JSON; TravelGuide.jsx merges `/blog-data/index.json` with the 4 static articles. robots.txt disallows /admin. WhatsApp button hidden on /admin. craco devServer static watch disabled (no preview reload on publish).
+  - Tested: iteration_1 (26 backend tests, frontend flows) + fixes verified.
+  - Known: info@greencontinenttours.com is rejected by the email provider as "undeliverable" → user must set a working alert email in admin settings. SFTP credentials pending from user. ADMIN_PANEL_URL currently = preview URL (update to deployed URL after deploy).
+
+- **2026-06**: Google tag (GA4 G-N32XZMRBL1) added to public/index.html head; verified page_view hits on load + SPA navigation. Note: craco static watch is off → restart frontend after editing public/index.html in preview.
+
 ## Files of Reference
 - `/app/frontend/public/.htaccess` — minimal React Router fallback for one.com Apache
 - `/app/frontend/public/_redirects` — Netlify fallback
@@ -55,6 +64,11 @@ Build a pixel-perfect replica of `https://greencontinenttours.com` — preserve 
 ### P0 — Active / Blocked on user
 - Confirm minimal `.htaccess` (4 lines) works on one.com Apache; if still 500, switch to `FallbackResource /index.html` or `ErrorDocument 404`.
 
+### P0 — Travel Guide Studio go-live
+- User adds one.com SFTP details (SFTP_HOST, SFTP_PORT, SFTP_USERNAME, SFTP_PASSWORD, SFTP_REMOTE_ROOT) → test connection → resync.
+- Deploy backend on Emergent (cron + admin must run 24/7); set ADMIN_PANEL_URL to deployed URL; rebuild ZIP with REACT_APP_BACKEND_URL = deployed URL and upload once to one.com.
+- Set a deliverable alert email in admin settings.
+
 ### P1 — Next
 - Wire Contact Form → FastAPI `/api/contact` → MongoDB + Resend email to `info@greencontinenttours.com`. Requires user Resend API key.
 - Migrate the 13 remaining CDN image refs to local resized versions if user supplies them.
@@ -71,4 +85,4 @@ Build a pixel-perfect replica of `https://greencontinenttours.com` — preserve 
 - Tests: none yet.
 
 ## Credentials
-None. No auth implemented.
+See /app/memory/test_credentials.md (admin info@greencontinenttours.com).

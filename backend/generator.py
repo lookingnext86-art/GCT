@@ -74,7 +74,8 @@ def slugify(text: str) -> str:
 
 def render_markdown(md_text: str) -> tuple[str, list[dict]]:
     md = markdown.Markdown(extensions=["extra", "sane_lists", "toc"], extension_configs={"toc": {"toc_depth": "2"}})
-    html = md.convert(md_text.replace("<", "&lt;"))
+    safe = re.sub(r"<(https?://[^\s>]+)>", r"[\1](\1)", md_text).replace("<", "&lt;")
+    html = md.convert(safe)
     toc = [{"id": t["id"], "title": t["name"]} for t in md.toc_tokens if t["level"] == 2]
     return html, toc
 

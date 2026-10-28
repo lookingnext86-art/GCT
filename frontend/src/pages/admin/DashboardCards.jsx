@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { toast } from 'sonner';
 import { Sparkles, RefreshCw, PlugZap, CalendarClock, Mail } from 'lucide-react';
 import { Switch } from '../../components/ui/switch';
@@ -11,6 +11,7 @@ export const GenerateCard = ({ defaultModel, onCreated }) => {
   const [topic, setTopic] = useState('');
   const [model, setModel] = useState(defaultModel || 'claude');
   const [busy, setBusy] = useState(false);
+  useEffect(() => setModel(defaultModel || 'claude'), [defaultModel]);
 
   const generate = async () => {
     setBusy(true);
@@ -48,6 +49,7 @@ export const GenerateCard = ({ defaultModel, onCreated }) => {
 
 export const SettingsCard = ({ settings, onChange }) => {
   const [busy, setBusy] = useState('');
+  const [email, setEmail] = useState(settings.alert_email);
 
   const save = async (patch) => {
     try {
@@ -85,12 +87,21 @@ export const SettingsCard = ({ settings, onChange }) => {
         </div>
         <p className="text-[13px] text-gray-500 mt-1.5">A new draft is written on the 1st and 15th of every month. Nothing goes live until you approve it.</p>
         <select value={settings.default_model} onChange={(e) => save({ default_model: e.target.value })} className={`${selectCls} mt-3 w-full`} data-testid="default-model-select">
-          {MODEL_OPTIONS.map((m) => <option key={m.id} value={m.id}>Scheduled writer: {m.label}</option>)}
+          {MODEL_OPTIONS.map((m) => <option key={m.id} value={m.id}>{`Scheduled writer: ${m.label}`}</option>)}
         </select>
       </div>
-      <div className="flex items-start gap-2 text-[13px] text-gray-500 border-t border-gray-100 pt-4">
-        <Mail className="w-4 h-4 text-[#4dd4ac] mt-0.5 shrink-0" />
-        <span>Email alerts go to <strong className="text-[#0f4f47]" data-testid="alert-email">{settings.alert_email}</strong></span>
+      <div className="border-t border-gray-100 pt-4">
+        <div className="flex items-center gap-2 mb-2">
+          <Mail className="w-4 h-4 text-[#4dd4ac]" />
+          <h3 className="text-sm font-bold text-[#0f4f47]">Draft alert email</h3>
+        </div>
+        <div className="flex gap-2">
+          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className={`${selectCls} flex-1 min-w-0`} data-testid="alert-email-input" />
+          <button type="button" disabled={email === settings.alert_email} onClick={() => save({ alert_email: email })} data-testid="alert-email-save-btn" className="rounded-full bg-[#0f4f47] text-white px-4 text-xs font-bold disabled:opacity-40">Save</button>
+        </div>
+        <button type="button" disabled={!!busy} onClick={() => run('email', '/admin/settings/test-email', () => 'Sent')} data-testid="test-email-btn" className="mt-2 text-xs font-semibold text-[#0f4f47] underline decoration-[#4dd4ac] underline-offset-2 disabled:opacity-60">
+          {busy === 'email' ? 'Sending…' : 'Send a test alert'}
+        </button>
       </div>
       <div className="border-t border-gray-100 pt-4">
         <div className="flex items-center gap-2 mb-1.5">

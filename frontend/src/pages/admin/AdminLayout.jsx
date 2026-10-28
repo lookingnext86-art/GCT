@@ -14,8 +14,8 @@ const AdminLayout = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!getToken()) return setUser(false);
-    api.get('/auth/me').then((r) => setUser(r.data)).catch(() => setUser(false));
+    if (!getToken()) setUser(false);
+    else api.get('/auth/me').then((r) => setUser(r.data)).catch(() => setUser(false));
     const onLogout = () => setUser(false);
     window.addEventListener('gct-admin-logout', onLogout);
     return () => window.removeEventListener('gct-admin-logout', onLogout);

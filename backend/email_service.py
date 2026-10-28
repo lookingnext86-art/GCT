@@ -85,7 +85,7 @@ def _assert_safe_email(subject: str, html: str) -> None:
                 raise ValueError(f"Anchor text {m.group(1)!r} != real link host {real!r} (G3)")
 
 
-async def send_email(*, to: str, subject: str, html: str) -> str | None:
+async def send_email(*, to: str, subject: str, html: str) -> tuple[str | None, str | None]:
     _assert_safe_email(subject, html)
     payload = {"to": [to], "subject": subject, "html": html, "from_name": os.environ["EMAIL_FROM_NAME"]}
     if os.environ.get("EMAIL_REPLY_TO"):
@@ -98,11 +98,14 @@ async def send_email(*, to: str, subject: str, html: str) -> str | None:
         )
     if resp.status_code >= 400:
         logger.warning(f"Email send failed: {resp.status_code} {resp.text}")
-        return None
-    return resp.json().get("id")
+        try:
+            return None, resp.json().get("error") or resp.text[:200]
+        except ValueError:
+            return None, resp.text[:200]
+    return resp.json().get("id"), None
 
 
-async def send_draft_ready_alert(article: dict) -> str | None:
+async def send_draft_ready_alert(article: dict, to: str) -> tuple[str | None, str | None]:
     brand = os.environ["EMAIL_FROM_NAME"]
     link = f"{os.environ['ADMIN_PANEL_URL'].rstrip('/')}/articles/{article['id']}"
     subject = f"New travel guide draft ready for review: {article['title']}"
@@ -121,4 +124,4 @@ async def send_draft_ready_alert(article: dict) -> str | None:
         f'<tr><td style="padding:16px 28px;color:#94a3b8;font-size:12px;border-top:1px solid #eef2f1">Sent by {escape(brand)} admin. Nothing is published without your approval.</td></tr>'
         '</table></td></tr></table>'
     )
-    return await send_email(to=os.environ["ADMIN_ALERT_EMAIL"], subject=subject, html=html)
+    return await send_email(to=to, subject=subject, html=html)
