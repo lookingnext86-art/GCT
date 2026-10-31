@@ -25,6 +25,19 @@ const categories = [
 
 const staticArticles = [
   {
+    slug: '3-days-in-krakow-itinerary',
+    href: '/travel-guide/3-days-in-krakow-itinerary',
+    title: '3 Days in Kraków: The Perfect Itinerary, Must-See Attractions & Local Tips',
+    excerpt: 'A day-by-day plan through the Old Town, Wawel, Kazimierz and Podgórze — with food, tickets and insider advice.',
+    image: '/images/articles/3-days-in-krakow-itinerary/krakow-old-town-3-day-itinerary.webp',
+    imageAlt: 'Historic Kraków Old Town building seen through a medieval brick window — 3 days in Kraków itinerary',
+    category: 'krakow',
+    categoryLabel: 'Krakow',
+    readTime: '13 min read',
+    date: 'June 20, 2026',
+    author: 'Green Continent Tours',
+  },
+  {
     slug: 'halal-tourism',
     href: '/travel-guide/halal-tourism',
     title: 'Discover the Best Halal Food in Krakow',

@@ -21,6 +21,7 @@ const FamilySummerItinerary = lazy(() =>
   import('./pages/articles/FamilySummerItinerary')
 );
 const GuideArticle = lazy(() => import('./pages/GuideArticle'));
+const ThreeDaysInKrakow = lazy(() => import('./pages/articles/ThreeDaysInKrakow'));
 const AdminLayout = lazy(() => import('./pages/admin/AdminLayout'));
 const AdminDashboard = lazy(() => import('./pages/admin/AdminDashboard'));
 const ArticleEditor = lazy(() => import('./pages/admin/ArticleEditor'));
@@ -59,6 +60,7 @@ function App() {
               path="/travel-guide/family-summer-poland-itinerary"
               element={<FamilySummerItinerary />}
             />
+            <Route path="/travel-guide/3-days-in-krakow-itinerary" element={<ThreeDaysInKrakow />} />
             <Route path="/travel-guide/:slug" element={<GuideArticle />} />
             <Route path="/admin" element={<AdminLayout />}>
               <Route index element={<AdminDashboard />} />

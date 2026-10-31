@@ -24,6 +24,7 @@ STATIC_ARTICLES = [
     ("hidden-gems", "Hidden Gems in Poland: 15 Secret Places Tourists Miss"),
     ("avoid-mistakes", "What to Avoid in Poland: 10 Common Tourist Mistakes & Scams"),
     ("family-summer-poland-itinerary", "Family Summer in Poland: A Relaxed 10-Day Travel Itinerary"),
+    ("3-days-in-krakow-itinerary", "3 Days in Kraków: The Perfect Itinerary, Must-See Attractions & Local Tips"),
 ]
 
 SYSTEM_PROMPT = """You are the senior travel writer for Green Continent Tours, a destination management company (DMC) and tour operator based in Krakow, Poland. The company designs private tours, group trips, airport transfers, family holidays, halal-friendly travel and multi-country itineraries across Poland and Central Europe.
@@ -58,7 +59,7 @@ Body requirements:
 - 1,400 to 2,000 words. Start with a 2-3 sentence intro paragraph (no heading). Do NOT include an H1.
 - Use ## for main sections (5-8 of them) and ### for sub-points. Use short paragraphs, bullet lists and at least one numbered list where helpful.
 - Include a "## Frequently Asked Questions" section with 4-5 questions as ### headings, each followed by a concise answer.
-- Naturally include 2-3 internal Markdown links chosen from: [our Poland tours](/services), [contact our Krakow team](/contact), [hidden gems in Poland](/travel-guide/hidden-gems), [mistakes to avoid in Poland](/travel-guide/avoid-mistakes), [family summer itinerary](/travel-guide/family-summer-poland-itinerary), [halal food in Krakow](/travel-guide/halal-tourism).
+- Naturally include 2-3 internal Markdown links chosen from: [our Poland tours](/services), [contact our Krakow team](/contact), [hidden gems in Poland](/travel-guide/hidden-gems), [mistakes to avoid in Poland](/travel-guide/avoid-mistakes), [family summer itinerary](/travel-guide/family-summer-poland-itinerary), [halal food in Krakow](/travel-guide/halal-tourism), [3 days in Kraków itinerary](/travel-guide/3-days-in-krakow-itinerary).
 - End with a short closing section inviting readers to plan their trip with Green Continent Tours' Krakow team.
 - No raw HTML, no images, no tables."""
 

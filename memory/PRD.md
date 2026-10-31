@@ -57,6 +57,8 @@ Build a pixel-perfect replica of `https://greencontinenttours.com` — preserve 
 
 - **2026-06 Enquiry tracking + bar contrast**: src/lib/analytics.js (trackEvent -> gtag event w/ beacon + dataLayer push for GTM). whatsapp_click (param link_location) via global capture listener for wa.me links (installed in App.js) + WhatsAppButton floating/mobile bar. generate_lead (form_name=contact_form) on successful web3forms submit in Contact.jsx. Verified GA collect hits in preview (test hits went to real GA property). Mobile WhatsApp bar #25D366 -> #15803D (hover #166534), contrast 5.0:1. User must mark whatsapp_click + generate_lead as Key events in GA4 Admin. Known pre-existing: floating WhatsApp button overlaps the mobile bar text.
 
+- **2026-06 New article**: /travel-guide/3-days-in-krakow-itinerary (pages/articles/ThreeDaysInKrakow.jsx) from user-supplied text, same layout as other static articles (hero, overview bar, day timeline w/ stops, local-tip callouts, practical tips, where to stay, private tour CTA, FAQ, continue reading, sticky TOC, WhatsApp CTA, Article + FAQPage JSON-LD). Image: user photo cropped 16:10 -> /images/articles/3-days-in-krakow-itinerary/krakow-old-town-3-day-itinerary.webp (1333x833, 223KB). Added to App.js route, TravelGuide staticArticles (first), sitemap.xml, backend STATIC_ARTICLES + generator internal links. Date June 20, 2026. Duplicate AI draft "3 Days in Krakow" still in admin drafts -> should be rejected.
+
 ## Files of Reference
 - `/app/frontend/public/.htaccess` — minimal React Router fallback for one.com Apache
 - `/app/frontend/public/_redirects` — Netlify fallback
