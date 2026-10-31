@@ -106,3 +106,5 @@ Build a pixel-perfect replica of `https://greencontinenttours.com` — preserve 
 
 ## Credentials
 See /app/memory/test_credentials.md (admin info@greencontinenttours.com).
+
+- **2026-06 Halal page trim**: Removed "Who our private halal tours suit, and how to book" section (+TOC link) from HalalTourism.jsx; added "Enquire now" (/contact) button next to bottom WhatsApp button. Title tag shortened to 53 chars ("Private Halal Tours of Krakow | Green Continent Tours"), read time 7 min. FAQ JSON-LD, single H1, sitemap entry intact. ZIP rebuilt.

@@ -180,11 +180,8 @@ const toc = [
   { id: 'whats-included', title: 'What is included' },
   { id: 'halal-food-and-prayer', title: 'Halal food and prayer' },
   { id: 'halal-restaurants', title: 'Halal restaurants we use' },
-  { id: 'how-to-book', title: 'Who it suits & how to book' },
   { id: 'faq', title: 'FAQ' },
 ];
-
-const inlineLink = 'text-[#0f4f47] font-semibold underline decoration-[#4dd4ac] underline-offset-4';
 
 const ContactButton = ({ testId }) => (
   <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" data-testid={testId}
@@ -288,31 +285,16 @@ const FoodAndPrayer = ({ groups }) => (
   </section>
 );
 
-const HowToBook = () => (
-  <section id="how-to-book" className="mt-16 lg:mt-20 scroll-mt-28">
-    <h2 className={h2}>Who our private halal tours suit, and how to book</h2>
-    <p className="text-[15.5px] md:text-base text-gray-600 leading-[1.85] font-light">Our Muslim-friendly tours work well for families travelling with children, couples, groups of friends, visitors from the Gulf, the Middle East, North Africa and Southeast Asia, and tour operators who need a reliable local partner in Poland.</p>
-    <h3 className={`${h3} mt-8`}>To book your private halal tour of Krakow</h3>
-    <ol className="space-y-3 my-5">
-      {['Send us your dates, group size and the places you want to see.', 'Tell us your halal, prayer and accommodation requirements.', 'We send a custom itinerary and price.', 'We confirm guides, transport, tickets and meals.'].map((step, i) => (
-        <li key={step} className="flex items-start gap-3 text-[15px] text-gray-600 font-light leading-relaxed">
-          <span className="w-6 h-6 rounded-full bg-[#4dd4ac]/20 text-[#0f4f47] text-xs font-bold flex items-center justify-center shrink-0">{i + 1}</span>
-          <span>{step}</span>
-        </li>
-      ))}
-    </ol>
-    <div className="mt-6 bg-[#f4f7f6] rounded-2xl p-6 text-[15px] text-[#0f4f47] space-y-2">
-      <p><span className="font-semibold">Phone / WhatsApp:</span> <a href="tel:+48537482798" className={inlineLink} data-testid="halal-phone-link">+48 537 482 798</a></p>
-      <p><span className="font-semibold">Email:</span> <a href="mailto:info@greencontinenttours.com" className={inlineLink} data-testid="halal-email-link">info@greencontinenttours.com</a></p>
-      <p><span className="font-semibold">Office:</span> <span className="font-light text-gray-600">Nowohucka 46, Kraków 31-580, Poland</span></p>
-      <p className="pt-2 font-light text-gray-600">See all our <Link to="/services" className={inlineLink}>private tours and services</Link> or <Link to="/contact" className={inlineLink}>send us an enquiry</Link>.</p>
-    </div>
-  </section>
+const EnquireButton = () => (
+  <Link to="/contact" data-testid="halal-enquire-now-btn"
+    className="inline-flex items-center gap-2 border-2 border-[#0f4f47] text-[#0f4f47] hover:bg-[#0f4f47] hover:text-white text-sm font-semibold px-6 py-3 rounded-full transition-colors">
+    Enquire now
+  </Link>
 );
 
 const HalalTourism = () => (
   <div className="min-h-screen bg-white">
-    <SEO path={PATH} image={`${SITE}${HERO_IMAGE}`} title="Private Halal & Muslim-Friendly Tours of Krakow | Green Continent Tours" description={DESCRIPTION} />
+    <SEO path={PATH} image={`${SITE}${HERO_IMAGE}`} title="Private Halal Tours of Krakow | Green Continent Tours" description={DESCRIPTION} />
     <Header />
     <main>
       <article>
@@ -328,7 +310,7 @@ const HalalTourism = () => (
           subtitle="Licensed English-speaking guides, confirmed halal meals, prayer breaks and private transport — a private halal tour of Krakow built around your family."
           dateISO={MODIFIED}
           dateLabel="Updated June 25, 2026"
-          readTime="8 min read"
+          readTime="7 min read"
         />
         <OverviewBar items={overviewItems} />
         <section className="bg-white py-16 lg:py-20" aria-label="Article content">
@@ -342,9 +324,8 @@ const HalalTourism = () => (
                   ['Pakistani & Indian', pakistaniIndian],
                   ['Halal meat shops', meatShops],
                 ]} />
-                <HowToBook />
                 <FaqList title="Frequently asked questions" faqs={faqs} />
-                <div className="mt-10"><ContactButton testId="halal-contact-bottom" /></div>
+                <div className="mt-10 flex flex-wrap gap-4"><ContactButton testId="halal-contact-bottom" /><EnquireButton /></div>
                 <ContinueReading links={[
                   ['/travel-guide/3-days-in-krakow-itinerary', '3 days in Kraków: the perfect itinerary'],
                   ['/travel-guide/avoid-mistakes', 'Tourist mistakes & scams to avoid in Poland'],
