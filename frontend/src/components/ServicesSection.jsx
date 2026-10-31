@@ -116,7 +116,8 @@ const ServicesSection = ({ useH1 = false }) => {
 
         <div className="relative h-full flex flex-col items-center justify-center text-center px-6">
           <p className="inline-block text-[11px] font-semibold tracking-[0.3em] uppercase text-[#4dd4ac] mb-5 border border-[#4dd4ac]/40 bg-[#0f4f47]/30 backdrop-blur-sm px-3.5 py-1.5 rounded-full">
-            Our Services · Krakow Tour Operator
+            <span className="whitespace-nowrap">Our Services ·</span>{' '}
+            <span className="whitespace-nowrap">Krakow Tour Operator</span>
           </p>
           <HeadingTag
             id="services-heading"

@@ -190,7 +190,11 @@ const ContactButton = ({ testId }) => (
   <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" data-testid={testId}
     className="inline-flex items-center gap-2.5 bg-[#0f4f47] hover:bg-[#1a6b5f] text-white text-sm font-semibold px-6 py-3 rounded-full shadow-[0_12px_30px_-12px_rgba(15,79,71,0.5)] transition-colors">
     <MessageCircle className="w-4 h-4 text-[#4dd4ac]" aria-hidden="true" />
-    Contact us on WhatsApp · +48 537 482 798
+    <span className="leading-snug">
+      Contact us on WhatsApp<span className="hidden sm:inline"> · </span>
+      <br className="sm:hidden" />
+      <span className="whitespace-nowrap">+48 537 482 798</span>
+    </span>
   </a>
 );
 

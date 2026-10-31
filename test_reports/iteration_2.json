@@ -1,0 +1,27 @@
+{
+  "summary": "Frontend-only SEO/content verification of the halal page rewrite plus the home/Services wording, using Playwright at 1920 and 390 widths. Every requested check passed. Halal page: title, meta description (exactly one), canonical, og:image and og:title are correct. There is one H1 and the 6 H2s are in the required order. The tours table has 4 header columns and 6 rows; on mobile it scrolls inside its box (box 348px wide, content 640px, page scrollWidth 390, no page-level overflow). The H3 'Halal restaurants we use on our tours' is present, and all 11 restaurant/meat-shop items have 'Visit website' links. The top and bottom WhatsApp buttons are visible, link to wa.me/48537482798?text=..., and show the number. The top button is inside #your-private-halal-tour and the bottom one comes after #faq. tel/mailto links are correct. JSON-LD includes Article (correct headline) and FaqPage (7 questions). All 7 TOC anchors resolve and land about 112px from the top (below the sticky header). Travel Guide card title and link are correct. Home H1, eyebrow and paragraph are correct. Services H1, eyebrow, subtitle and document.title are correct. No horizontal overflow at either width. Christmas-markets and 3-days-in-krakow articles still render. No console errors.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "Halal page mobile 390", "issues": ["WhatsApp contact button text wraps and leaves '798' alone on the second line ('...+48 537 482 / 798'). Consider whitespace-nowrap on the phone number or a shorter label on mobile."]},
+      {"screen": "Home + Services hero eyebrow, mobile 390", "issues": ["Eyebrow pill wraps to 2 lines with the '·' left at the end of line 1 ('KRAKOW TOUR OPERATOR · / TRUSTED WORLDWIDE', 'OUR SERVICES · KRAKOW TOUR / OPERATOR'). Cosmetic only."]}
+    ]
+  },
+  "test_report_links": [],
+  "action_items": [
+    "Optional: keep the phone number on one line in the halal WhatsApp ContactButton on mobile",
+    "Optional: the /travel-guide index meta description still says 'halal food in Krakow'. Consider 'private halal tours of Krakow' to match the new positioning"
+  ],
+  "critical_code_review_comments": [
+    "HalalTourism.jsx renders the JSON-LD as a body <script> child (not through Helmet). It parses fine on the client, but crawlers only see it after JS runs. This matches the existing article pattern.",
+    "An extra ItemList JSON-LD (plus global TravelAgency/Organization/WebSite) is also on the page. Harmless."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A", "frontend": "100%"},
+  "seed_data_creation": "none",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Iteration 2 verified the halal page SEO rewrite, the home/Services tour-operator wording and the Travel Guide card rename. The contact form was not submitted. The admin/article system was covered in iteration_1."
+}

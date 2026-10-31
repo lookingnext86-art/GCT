@@ -65,6 +65,8 @@ Build a pixel-perfect replica of `https://greencontinenttours.com` — preserve 
 
 - **2026-06 Agentic browsing**: Added public/llms.txt (H1, summary, markdown links to all pages/articles) and public/.well-known/ai-catalog.json (specVersion 1.0, one text/markdown entry -> llms.txt) — previously SPA fallback returned index.html for these, failing Lighthouse 13 Agentic Browsing. Removed 7-day four-cities itinerary from Christmas article. At 14:19 container time the LIVE site showed the one.com placeholder (all files 404) — user was told to re-upload full ZIP. Cache-lifetime audit needs .htaccess mod_headers (user declined).
 
+- **2026-06 Halal page -> sales page + tour-operator wording**: /travel-guide/halal-tourism rewritten (user text) as "Private Halal & Muslim-Friendly Tours of Krakow" using ArticleParts: 1 H1, 6 H2s, tours table, included list, food & prayer section keeping all 8 restaurants + 3 meat shops under H3 "Halal restaurants we use on our tours" (H4 groups, H5 names), how-to-book steps, 7-question FAQ + FAQPage JSON-LD, WhatsApp buttons top (halal-contact-top) and bottom (halal-contact-bottom). Old file backup /app/memory/HalalTourism.backup.jsx. Travel Guide card renamed. Home WhyUs eyebrow/H1/para now say Krakow tour operator & travel agency; Services eyebrow + subtitle + SEO title "Krakow Tour Operator: Private Tours & Travel in Poland". Sitemap lastmod /, /services, halal = 2026-06-25; llms.txt updated. Tested iteration_2 (100%).
+
 ## Files of Reference
 - `/app/frontend/public/.htaccess` — minimal React Router fallback for one.com Apache
 - `/app/frontend/public/_redirects` — Netlify fallback

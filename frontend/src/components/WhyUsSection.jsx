@@ -64,7 +64,8 @@ const WhyUsSection = () => {
               className="inline-block text-[11px] font-semibold tracking-[0.32em] uppercase text-[#4dd4ac] mb-7 border border-[#4dd4ac]/40 px-3.5 py-1.5 rounded-full"
               data-testid="why-us-eyebrow"
             >
-              Krakow Tour Operator · Trusted Worldwide
+              <span className="whitespace-nowrap">Krakow Tour Operator ·</span>{' '}
+              <span className="whitespace-nowrap">Trusted Worldwide</span>
             </p>
 
             <h1
