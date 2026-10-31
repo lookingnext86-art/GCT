@@ -116,7 +116,7 @@ const ServicesSection = ({ useH1 = false }) => {
 
         <div className="relative h-full flex flex-col items-center justify-center text-center px-6">
           <p className="inline-block text-[11px] font-semibold tracking-[0.3em] uppercase text-[#4dd4ac] mb-5 border border-[#4dd4ac]/40 bg-[#0f4f47]/30 backdrop-blur-sm px-3.5 py-1.5 rounded-full">
-            Our Services
+            Our Services · Krakow Tour Operator
           </p>
           <HeadingTag
             id="services-heading"
@@ -127,8 +127,8 @@ const ServicesSection = ({ useH1 = false }) => {
             for Groups, Families and Corporate Clients.
           </HeadingTag>
           <p className="text-base md:text-[17px] text-white/95 font-light italic leading-relaxed max-w-3xl mx-auto drop-shadow">
-            From first arrival to final departure, we handle every detail with
-            care, precision and local expertise.
+            From first arrival to final departure, our Krakow-based tour operator
+            and travel agency team handles every detail with care, precision and local expertise.
           </p>
 
           <div className="flex items-center gap-2 mt-7" aria-hidden="true">

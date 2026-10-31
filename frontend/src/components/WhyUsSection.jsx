@@ -64,7 +64,7 @@ const WhyUsSection = () => {
               className="inline-block text-[11px] font-semibold tracking-[0.32em] uppercase text-[#4dd4ac] mb-7 border border-[#4dd4ac]/40 px-3.5 py-1.5 rounded-full"
               data-testid="why-us-eyebrow"
             >
-              Based in Krakow · Trusted Worldwide
+              Krakow Tour Operator · Trusted Worldwide
             </p>
 
             <h1
@@ -72,12 +72,13 @@ const WhyUsSection = () => {
               className="font-bold leading-[1.06] tracking-[-0.02em] mb-7 text-[2.4rem] sm:text-5xl lg:text-[3.4rem] xl:text-[3.6rem]"
             >
               Private, Group &amp; Family Tours{' '}
-              <span className="text-[#4dd4ac] block sm:inline">Across Poland</span>
+              <span className="text-[#4dd4ac] block sm:inline">from Krakow Across Poland</span>
             </h1>
 
             <p className="text-base md:text-lg leading-[1.75] text-gray-100/95 mb-5 font-light max-w-lg">
-              Discover Poland through carefully designed journeys for families,
-              private travelers, and organized groups. From Krakow and Zakopane to
+              Green Continent Tours is a Krakow-based tour operator and travel
+              agency designing carefully planned journeys for families, private
+              travelers and organized groups. From Krakow and Zakopane to
               Warsaw and beyond, we craft comfortable travel experiences with
               local knowledge, premium transport, and flexible planning.
             </p>

@@ -9,8 +9,8 @@ const Services = () => {
     <div className="min-h-screen">
       <SEO
         path="/services"
-        title="Travel Services in Poland & Europe – Green Continent Tours Krakow"
-        description="Private group tours, airport transfers, school trips, MICE & corporate travel, hotel reservations and custom itineraries across Poland and Europe."
+        title="Krakow Tour Operator: Private Tours & Travel in Poland"
+        description="Krakow-based tour operator and travel agency: private and group tours, airport transfers, school trips, MICE and custom itineraries across Poland and Europe."
       />
       <Header />
       <main className="pt-20">

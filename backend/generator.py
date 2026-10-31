@@ -20,7 +20,7 @@ CATEGORIES = {
 }
 
 STATIC_ARTICLES = [
-    ("halal-tourism", "Discover the Best Halal Food in Krakow"),
+    ("halal-tourism", "Private Halal & Muslim-Friendly Tours of Krakow"),
     ("hidden-gems", "Hidden Gems in Poland: 15 Secret Places Tourists Miss"),
     ("avoid-mistakes", "What to Avoid in Poland: 10 Common Tourist Mistakes & Scams"),
     ("family-summer-poland-itinerary", "Family Summer in Poland: A Relaxed 10-Day Travel Itinerary"),
