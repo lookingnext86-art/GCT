@@ -198,10 +198,6 @@ const Planning = () => (
             ['Day 5', 'gnome hunt, Ostrów Tumski and the Racławice Panorama before departure.'],
           ]} />
         </div>
-        <div>
-          <h3 className={h3}>7 days: four cities</h3>
-          <P>Kraków (3 nights), Wrocław (1), Warsaw (2) and Gdańsk (1), using Poland’s fast train network between cities.</P>
-        </div>
       </div>
     </section>
     <section id="practical-tips" className="mt-16 lg:mt-20 scroll-mt-28">
