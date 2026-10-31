@@ -49,6 +49,8 @@ Build a pixel-perfect replica of `https://greencontinenttours.com` — preserve 
 - **2026-06**: one.com plan has no SFTP → switched to LIVE LOADING. Removed SFTP/local publishing (paramiko uninstalled, craco watch tweak reverted, public/blog-data removed, sitemap.xml restored). Publish = status change only. Public API (no auth, CORS *): GET /api/public/articles, /api/public/articles/{slug}, /api/public/images/{slug}.webp (from object storage), /api/public/sitemap-articles.xml. TravelGuide.jsx + GuideArticle.jsx fetch from REACT_APP_BACKEND_URL. ADMIN_PANEL_URL = https://www.greencontinenttours.com/admin.
   - TODO at final ZIP build: build with REACT_APP_BACKEND_URL = deployed Emergent URL and add `Sitemap: <deployed>/api/public/sitemap-articles.xml` to public/robots.txt; submit it in Search Console.
 
+- **2026-06 Live-site sync audit**: Compared live greencontinenttours.com (index.html, sitemap.xml, robots.txt, manifest.json, main.js + 9 lazy chunks, main.css, 40 images) against local source. Result: page code, text, SEO meta, JSON-LD, CSS and images all identical. Only diff: live sitemap had absolute URL for family-summer image (synced locally). Fixed broken sitemap image path /images/xml/wawel-castle-sunrise.webp → /images/travel-guide/wawel-castle-sunrise.webp. .htaccess not downloadable (403) — local copy assumed current. Local robots.txt adds `Disallow: /admin` (intentional, not yet live).
+
 ## Files of Reference
 - `/app/frontend/public/.htaccess` — minimal React Router fallback for one.com Apache
 - `/app/frontend/public/_redirects` — Netlify fallback

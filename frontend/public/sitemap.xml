@@ -41,7 +41,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://www.greencontinenttours.com/images/xml/wawel-castle-sunrise.webp</image:loc>
+      <image:loc>https://www.greencontinenttours.com/images/travel-guide/wawel-castle-sunrise.webp</image:loc>
       <image:title>Krakow Wawel Castle at sunrise — Travel Guide</image:title>
       <image:caption>Local travel insights for Poland and beyond</image:caption>
     </image:image>
@@ -79,7 +79,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>/images/articles/family-summer-poland-itinerary/family-summer-vacation-krakow-poland.webp</image:loc>
+      <image:loc>https://www.greencontinenttours.com/images/articles/family-summer-poland-itinerary/family-summer-vacation-krakow-poland.webp</image:loc>
       <image:title>Family Summer in Poland — Wawel Castle Sunset</image:title>
       <image:caption>Relaxed 10-day family itinerary through Krakow, Zakopane and Warsaw</image:caption>
     </image:image>
