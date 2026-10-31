@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { MessageCircle, X } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
+import { trackWhatsAppClick } from '../lib/analytics';
 
 const WhatsAppButton = () => {
   const [showTooltip, setShowTooltip] = useState(true);
@@ -8,7 +9,8 @@ const WhatsAppButton = () => {
   const phoneNumber = '48537482798'; // Your WhatsApp number
   const message = 'Hello! I would like to inquire about Krakow tours and Poland travel packages.';
   
-  const handleClick = () => {
+  const handleClick = (location) => {
+    trackWhatsAppClick(location);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -38,7 +40,8 @@ const WhatsAppButton = () => {
         
         {/* Main Button */}
         <button
-          onClick={handleClick}
+          onClick={() => handleClick('floating_button')}
+          data-testid="whatsapp-floating-button"
           className="group relative bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-full p-4 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 animate-pulse hover:animate-none"
         >
           <span className="sr-only">Contact us on WhatsApp</span>
@@ -64,10 +67,11 @@ const WhatsAppButton = () => {
       </div>
 
       {/* Mobile Version - Bottom Bar */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#25D366] text-white shadow-2xl">
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#15803D] text-white shadow-2xl">
         <button
-          onClick={handleClick}
-          className="w-full py-4 px-6 flex items-center justify-center gap-3 hover:bg-[#20BA5A] transition-colors"
+          onClick={() => handleClick('mobile_bottom_bar')}
+          data-testid="whatsapp-mobile-bar"
+          className="w-full py-4 px-6 flex items-center justify-center gap-3 hover:bg-[#166534] transition-colors"
         >
           <svg 
             className="w-6 h-6" 

@@ -3,6 +3,7 @@ import { Mail, Phone, MapPin, Send, MessageCircle } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import SEO from '../components/SEO';
+import { trackEvent } from '../lib/analytics';
 
 const HERO_IMAGE = '/images/gallery/hero/malbork-castle.webp';
 const WHATSAPP_URL =
@@ -45,6 +46,7 @@ const Contact = () => {
         const data = await response.json();
 
         if (data.success) {
+          trackEvent('generate_lead', { form_name: 'contact_form', lead_source: 'contact_page' });
           setIsSuccess(true);
           setStatusMessage('Thank you! Your message has been sent successfully to our team.');
           // Reset the inputs smoothly

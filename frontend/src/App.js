@@ -1,6 +1,7 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useEffect } from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { installWhatsAppLinkTracking } from './lib/analytics';
 import Home from './pages/Home';
 import WhatsAppButton from './components/WhatsAppButton';
 import ScrollToTop from './components/ScrollToTop';
@@ -38,6 +39,7 @@ const RouteLoader = () => (
 );
 
 function App() {
+  useEffect(() => installWhatsAppLinkTracking(), []);
   return (
     <div className="App">
       <BrowserRouter>
