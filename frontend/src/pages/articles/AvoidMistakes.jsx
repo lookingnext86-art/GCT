@@ -141,6 +141,7 @@ const AvoidMistakes = () => {
     <div className="min-h-screen bg-white">
       <SEO
         path="/travel-guide/avoid-mistakes"
+        image={`https://www.greencontinenttours.com${HERO_IMAGE}`}
         title="What to Avoid in Poland – 10 Tourist Mistakes & Scams to Skip"
         description="Avoid the 10 most common tourist mistakes and scams in Poland — currency exchange traps, taxi tricks, and how to travel Krakow safely with confidence."
       />
@@ -505,7 +506,7 @@ const AvoidMistakes = () => {
             'What to Avoid in Poland: 10 Common Tourist Mistakes & Scams',
           description:
             'Avoid common tourist mistakes and scams in Poland — taxi traps, money exchange tips, pickpocketing, and smart travel advice for Krakow, Warsaw, and Zakopane.',
-          image: HERO_IMAGE,
+          image: `https://www.greencontinenttours.com${HERO_IMAGE}`,
           datePublished: '2026-05-10',
           author: {
             '@type': 'Organization',

@@ -14,7 +14,7 @@ const Home = () => {
     <div className="min-h-screen">
       <SEO
         path="/"
-        title="Green Continent Tours – Travel Agency & Tour Operator in Krakow, Poland"
+        title="Krakow Travel Agency & Tour Operator | Green Continent Tours"
         description="Krakow-based travel agency and tour operator offering private tours, family trips, group travel, airport transfers, and custom Poland & Europe itineraries."
       />
       <Header />

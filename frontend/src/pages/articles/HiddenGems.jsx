@@ -158,6 +158,7 @@ const HiddenGems = () => {
     <div className="min-h-screen bg-white">
       <SEO
         path="/travel-guide/hidden-gems"
+        image={`https://www.greencontinenttours.com${HERO_IMAGE}`}
         title="Hidden Gems in Poland – 15 Secret Places Tourists Often Miss"
         description="A local's list of 15 hidden gems in Poland — castles, lakes, small towns and off-the-beaten-path spots most international tourists never see."
       />
@@ -533,7 +534,7 @@ const HiddenGems = () => {
           headline: 'Hidden Gems in Poland: 15 Secret Places Tourists Miss',
           description:
             'Discover 15 hidden gems in Poland — secret castles, painted villages, mysterious forests, and off-the-beaten-path destinations far from Kraków and Warsaw.',
-          image: HERO_IMAGE,
+          image: `https://www.greencontinenttours.com${HERO_IMAGE}`,
           datePublished: '2026-05-15',
           author: { '@type': 'Organization', name: 'Green Continent Tours' },
           publisher: {

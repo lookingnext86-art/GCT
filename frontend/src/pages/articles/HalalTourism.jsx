@@ -208,6 +208,7 @@ const HalalTourism = () => {
     <div className="min-h-screen bg-white">
       <SEO
         path="/travel-guide/halal-tourism"
+        image={`https://www.greencontinenttours.com${HERO_IMAGE}`}
         title="Halal Food in Krakow – Muslim-Friendly Travel Guide to Poland"
         description="Discover the best halal restaurants in Krakow and Muslim-friendly travel tips for Poland — prayer spots, family dining, and trusted local recommendations."
       />
@@ -650,7 +651,7 @@ const HalalTourism = () => {
           headline: 'Discover the Best Halal Food in Krakow',
           description:
             'A complete Muslim-friendly food guide to Krakow — best halal restaurants (Turkish, Syrian, Pakistani, Indian), halal meat shops, and travel tips for visitors to Poland.',
-          image: HERO_IMAGE,
+          image: `https://www.greencontinenttours.com${HERO_IMAGE}`,
           datePublished: '2026-05-18',
           author: { '@type': 'Organization', name: 'Green Continent Tours' },
           publisher: {

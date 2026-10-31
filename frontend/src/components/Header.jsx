@@ -13,11 +13,15 @@ const Header = () => {
             <img 
               src="/GCT-asset/logo.svg" 
               alt="Green Continent Tours" 
+              width="48"
+              height="48"
               className="h-12 w-12"
             />
             <img 
               src="/GCT-asset/logoText.svg" 
               alt="Your unique travel partner" 
+              width="274"
+              height="32"
               className="h-8 hidden sm:block"
             />
           </Link>

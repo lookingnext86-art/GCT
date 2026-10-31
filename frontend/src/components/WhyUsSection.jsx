@@ -131,6 +131,8 @@ const WhyUsSection = () => {
                   <img
                     src={slot.src}
                     alt={slot.alt}
+                    width="800"
+                    height="640"
                     loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.06]"
                     style={{ filter: heroImageFilter }}

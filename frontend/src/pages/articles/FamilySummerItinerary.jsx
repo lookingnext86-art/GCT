@@ -89,6 +89,7 @@ const FamilySummerItinerary = () => {
     <div className="min-h-screen bg-white">
       <SEO
         path="/travel-guide/family-summer-poland-itinerary"
+        image={`https://www.greencontinenttours.com${HERO_IMAGE}`}
         title="Family Summer in Poland – Relaxed 10-Day Travel Itinerary"
         description="A relaxed 10-day family summer itinerary through Krakow, Zakopane and Warsaw — family hotels, easy pace, kid-friendly stops and practical tips."
       />
@@ -427,7 +428,7 @@ const FamilySummerItinerary = () => {
             'Family Summer in Poland: A Relaxed 10-Day Travel Itinerary',
           description:
             'Discover a relaxed 10-day family itinerary through Poland including Krakow, Zakopane, Warsaw, and the Tatra Mountains with Green Continent Tours.',
-          image: HERO_IMAGE,
+          image: `https://www.greencontinenttours.com${HERO_IMAGE}`,
           datePublished: '2026-05-22',
           author: {
             '@type': 'Organization',

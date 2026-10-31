@@ -90,14 +90,6 @@ const cities = [
   },
 ];
 
-const bestFor = [
-  ['First visit to Poland', 'Kraków'],
-  ['Families with children', 'Wrocław'],
-  ['Short city break by the sea', 'Gdańsk'],
-  ['History and museums with a festive touch', 'Warsaw'],
-  ['Large groups', 'Kraków or Wrocław, with the widest choice of hotels and group-friendly restaurants'],
-];
-
 const dayTrips = [
   ['Wieliczka Salt Mine', 'a UNESCO site deep underground, so the weather doesn’t matter — one of the best winter activities in Poland.'],
   ['Auschwitz-Birkenau Memorial and Museum', 'open all year, but visits must be booked in advance; dress very warmly for the outdoor sections.'],
@@ -123,7 +115,6 @@ const faqs = [
 const toc = [
   { id: 'at-a-glance', title: 'Markets at a glance' },
   ...cities.map((c) => ({ id: c.id, title: c.title.replace(/^\d\. /, '') })),
-  { id: 'which-market', title: 'Which market is best?' },
   { id: 'day-trips', title: 'Winter day trips' },
   { id: 'itineraries', title: 'Sample itineraries' },
   { id: 'practical-tips', title: 'Winter travel tips' },
@@ -182,10 +173,6 @@ const CitySection = ({ city }) => (
 
 const Planning = () => (
   <>
-    <section id="which-market" className="mt-16 lg:mt-20 scroll-mt-28">
-      <h2 className={h2}>Which Market Is Best for You?</h2>
-      <TermList items={bestFor} />
-    </section>
     <section id="day-trips" className="mt-16 lg:mt-20 scroll-mt-28">
       <h2 className={h2}>Winter Day Trips from Kraków</h2>
       <P>Kraków is the best base for combining the markets with other highlights — and winter is a quieter time to visit the region’s most important sites.</P>
