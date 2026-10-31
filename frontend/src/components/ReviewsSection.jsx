@@ -117,7 +117,7 @@ const ReviewsSection = () => {
                 className="bg-white border border-gray-100 rounded-2xl p-7 lg:p-8 shadow-[0_10px_30px_-15px_rgba(15,79,71,0.15)] hover:shadow-[0_20px_40px_-15px_rgba(15,79,71,0.22)] hover:-translate-y-1 transition-all duration-500 flex flex-col"
               >
                 {/* Stars */}
-                <div className="flex gap-1 mb-5" aria-label="5 out of 5 stars">
+                <div className="flex gap-1 mb-5" role="img" aria-label="5 out of 5 stars">
                   {[...Array(5)].map((_, i) => (
                     <Star
                       key={i}
@@ -187,7 +187,7 @@ const ReviewsSection = () => {
               target="_blank"
               rel="noopener noreferrer"
               data-testid="reviews-google-link"
-              aria-label="Read all Green Continent Tours reviews on our Google Business Profile"
+              aria-label="Read all reviews on Google – Green Continent Tours Business Profile"
               className="inline-flex items-center gap-1.5 text-xs text-[#0f4f47] hover:text-[#1a6b5f] font-semibold tracking-wide transition-colors"
             >
               <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" aria-hidden="true">

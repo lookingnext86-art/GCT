@@ -143,10 +143,10 @@ const Footer = () => {
           </div>
 
           {/* SEO keyword zone — three clean inline rows, premium magazine style */}
-          <div className="mt-10 pt-6 border-t border-white/10 space-y-3 text-[11.5px] text-white/55 leading-[1.75]">
+          <div className="mt-10 pt-6 border-t border-white/10 space-y-3 text-[11.5px] text-white/70 leading-[1.75]">
             <p>
               <span className="text-[#4dd4ac] font-semibold tracking-[0.18em] uppercase mr-2">Popular Destinations:</span>
-              <span className="text-white/55 hover:[&_a]:text-[#4dd4ac]">
+              <span className="text-white/70 hover:[&_a]:text-[#4dd4ac]">
                 <a href="/services" className="hover:text-[#4dd4ac] transition-colors">Krakow Tours</a>
                 {' · '}
                 <a href="/services" className="hover:text-[#4dd4ac] transition-colors">Warsaw Tours</a>
@@ -201,7 +201,7 @@ const Footer = () => {
           </div>
 
           {/* Bottom strip */}
-          <div className="mt-6 pt-5 border-t border-white/10 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-[12px] text-white/55">
+          <div className="mt-6 pt-5 border-t border-white/10 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-[12px] text-white/70">
             <p>
               © {year} Green Continent Tours · Premier tour operator &amp; travel agency in Kraków, Poland · NIP 6793123024 · All rights reserved
             </p>

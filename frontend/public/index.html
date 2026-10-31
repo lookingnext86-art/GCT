@@ -5,30 +5,56 @@
     <link rel="icon" href="https://www.greencontinenttours.com/GCT-asset/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#0f4f47" />
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PM3XV4TV');</script>
-    <!-- End Google Tag Manager -->
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N32XZMRBL1"></script>
+    <!-- Google Tag Manager + Google Analytics (loaded right after the page has rendered) -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-N32XZMRBL1');
+      dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+      (function () {
+        var loaded = false;
+        function loadTags() {
+          if (loaded) return;
+          loaded = true;
+          ['https://www.googletagmanager.com/gtm.js?id=GTM-PM3XV4TV',
+           'https://www.googletagmanager.com/gtag/js?id=G-N32XZMRBL1'].forEach(function (src) {
+            var s = document.createElement('script');
+            s.async = true;
+            s.src = src;
+            document.head.appendChild(s);
+          });
+        }
+        window.addEventListener('load', function () { setTimeout(loadTags, 1500); });
+        ['scroll', 'click', 'keydown', 'touchstart'].forEach(function (e) {
+          window.addEventListener(e, loadTags, { once: true, passive: true });
+        });
+      })();
+    </script>
+    <!-- End Google Tag Manager + Google Analytics -->
+
+    <!-- Home page: start downloading the 3 hero photos immediately -->
+    <script>
+      if (location.pathname === '/') {
+        var gctMobile = window.matchMedia('(max-width: 767px)').matches;
+        [gctMobile ? '/images/hero/krakow-market-mobile.webp' : '/images/hero/krakow-market.webp',
+         gctMobile ? '/images/hero/zakopane-mobile.webp' : '/images/hero/zakopane.jpg',
+         '/images/hero/warsaw-old-town.webp'].forEach(function (href) {
+          var l = document.createElement('link');
+          l.rel = 'preload';
+          l.as = 'image';
+          l.href = href;
+          l.setAttribute('fetchpriority', 'high');
+          document.head.appendChild(l);
+        });
+      }
     </script>
 
-    <!-- Preconnect to image & font CDNs for faster LCP -->
-    <link rel="preconnect" href="https://www.greencontinenttours.com" crossorigin />
-    <link rel="dns-prefetch" href="https://www.greencontinenttours.com" />
-    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" /></noscript>
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow" />
     <meta name="author" content="Green Continent Tours" />
@@ -62,10 +88,6 @@
     <!-- Canonical / og:url / twitter:url are set per page by react-helmet-async (SEO.jsx) -->
 
 
-    <!-- DNS Prefetch / Preconnect -->
-    <link rel="preconnect" href="https://customer-assets.emergentagent.com" crossorigin />
-    <link rel="dns-prefetch" href="https://customer-assets.emergentagent.com" />
-    <link rel="dns-prefetch" href="https://www.greencontinenttours.com" />
 
     <!-- Structured Data: TravelAgency / LocalBusiness -->
     <script type="application/ld+json">

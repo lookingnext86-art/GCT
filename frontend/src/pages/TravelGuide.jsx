@@ -409,7 +409,7 @@ const TravelGuide = () => {
           <div className="relative h-[400px] md:h-[460px] lg:h-[500px] w-full">
             {/* Background photo */}
             <img
-              src="https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/68ghmgtc_morskie-oko-tatra-mountains-poland-hero.jpg"
+              src="/images/travel-guide/morskie-oko-tatra-mountains-poland-hero.jpg"
               alt="Morskie Oko lake in the Tatra Mountains during sunrise"
               title="Morskie Oko, Tatra Mountains — Plan your Polish journey with Green Continent Tours"
               width="2400"

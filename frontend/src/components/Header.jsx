@@ -11,12 +11,12 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
             <img 
-              src="https://greencontinenttours.com/GCT-asset/logo.svg" 
+              src="/GCT-asset/logo.svg" 
               alt="Green Continent Tours" 
               className="h-12 w-12"
             />
             <img 
-              src="https://greencontinenttours.com/GCT-asset/logoText.svg" 
+              src="/GCT-asset/logoText.svg" 
               alt="Your unique travel partner" 
               className="h-8 hidden sm:block"
             />
@@ -51,6 +51,8 @@ const Header = () => {
           <button 
             className="lg:hidden text-white"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={mobileMenuOpen}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {mobileMenuOpen ? (

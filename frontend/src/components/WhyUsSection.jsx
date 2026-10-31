@@ -83,7 +83,7 @@ const WhyUsSection = () => {
             </p>
 
             <p
-              className="text-sm md:text-[15px] text-[#4dd4ac]/90 italic mb-10 font-light tracking-wide max-w-md"
+              className="text-sm md:text-[15px] text-[#4dd4ac] italic mb-10 font-light tracking-wide max-w-md"
               data-testid="why-us-support-line"
             >
               Custom itineraries, trusted local support, and smooth travel across Poland.

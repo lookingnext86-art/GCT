@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Facebook, Instagram } from 'lucide-react';
 
 /**
@@ -16,6 +16,7 @@ const HERO_PANELS = [
       'Krakow Main Market Square with St. Mary’s Basilica and horse carriages — historic Old Town Poland tours by Green Continent Tours',
     title: 'Krakow Old Town — Main Market Square',
     objectPosition: 'center 35%',
+    mobileSrc: '/images/hero/krakow-market-mobile.webp',
   },
   {
     src: '/images/hero/zakopane.jpg',
@@ -23,6 +24,7 @@ const HERO_PANELS = [
       'Tatra Mountains landscape near Zakopane Poland — hiking trails and rocky peaks for premium mountain tours by Green Continent Tours',
     title: 'Tatra Mountains — Zakopane, Poland',
     objectPosition: 'center 45%',
+    mobileSrc: '/images/hero/zakopane-mobile.webp',
   },
   {
     src: '/images/hero/warsaw-old-town.webp',
@@ -33,7 +35,21 @@ const HERO_PANELS = [
   },
 ];
 
+const MOBILE_QUERY = '(max-width: 767px)';
+
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(() => window.matchMedia(MOBILE_QUERY).matches);
+  useEffect(() => {
+    const mq = window.matchMedia(MOBILE_QUERY);
+    const onChange = (e) => setIsMobile(e.matches);
+    mq.addEventListener('change', onChange);
+    return () => mq.removeEventListener('change', onChange);
+  }, []);
+  return isMobile;
+};
+
 const HeroSlider = () => {
+  const isMobile = useIsMobile();
   return (
     <div
       className="relative w-full overflow-hidden mt-20 h-[calc(92vh-5rem)] min-h-[560px] max-h-[820px]"
@@ -81,7 +97,7 @@ const HeroSlider = () => {
             data-testid={`hero-panel-${idx + 1}`}
           >
             <img
-              src={panel.src}
+              src={isMobile && panel.mobileSrc ? panel.mobileSrc : panel.src}
               alt={panel.alt}
               title={panel.title}
               width="1280"
@@ -92,8 +108,8 @@ const HeroSlider = () => {
                 filter:
                   'saturate(1.18) contrast(1.18) brightness(0.92)',
               }}
-              loading={idx === 0 ? 'eager' : 'lazy'}
-              fetchPriority={idx === 0 ? 'high' : 'auto'}
+              loading="eager"
+              fetchPriority="high"
               decoding="async"
             />
             {/* Cinematic vignette — dark top + bottom for that premium magazine feel */}

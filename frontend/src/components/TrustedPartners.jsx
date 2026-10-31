@@ -8,18 +8,18 @@ import React from 'react';
  *   { name: 'Hotelbeds', src: '<url-to-transparent-png>' }
  */
 const partners = [
-  { name: 'Hotelbeds', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/u31s7bch_Hotelbed%20logo.png', blend: true },
-  { name: 'GIATA', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/y3nhl8vt_Screenshot%202026-05-25%20145138.png' },
-  { name: 'Accor', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/bsyy37r8_Screenshot%202026-05-25%20145200.png' },
-  { name: 'Didatravel', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/4x8vagw4_Screenshot%202026-05-25%20145212.png' },
-  { name: 'Paximum', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/uefde1ay_Paximum.jpeg', blend: true },
-  { name: 'TBO.com', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/fxfmoi5j_Screenshot%202026-05-25%20145020.png' },
-  { name: 'Travco', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/c85ugs83_Screenshot%202026-05-25%20145032.png' },
-  { name: 'Viator', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/xf6hyquf_Screenshot%202026-05-25%20145041.png' },
-  { name: 'Restel', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/1asnpbab_Screenshot%202026-05-25%20145055.png' },
-  { name: 'RezLive', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/c7fimiuy_Screenshot%202026-05-25%20145100.png' },
-  { name: 'GCT Booking', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/2yw9a58m_Screenshot%202026-05-25%20171458.png' },
-  { name: 'RateHawk', src: 'https://customer-assets.emergentagent.com/job_site-rebuild-54/artifacts/nesly3hw_Screenshot%202026-05-25%20171529.png' },
+  { name: 'Hotelbeds', src: '/images/partners/hotelbeds-travel-partner-logo.png', w: 436, h: 160, blend: true },
+  { name: 'GIATA', src: '/images/partners/giata-travel-partner-logo.png', w: 202, h: 104 },
+  { name: 'Accor', src: '/images/partners/accor-travel-partner-logo.png', w: 170, h: 118 },
+  { name: 'Didatravel', src: '/images/partners/didatravel-travel-partner-logo.png', w: 168, h: 97 },
+  { name: 'Paximum', src: '/images/partners/paximum-travel-partner-logo.jpg', w: 280, h: 160, blend: true },
+  { name: 'TBO.com', src: '/images/partners/tbo-com-travel-partner-logo.png', w: 190, h: 94 },
+  { name: 'Travco', src: '/images/partners/travco-travel-partner-logo.png', w: 165, h: 113 },
+  { name: 'Viator', src: '/images/partners/viator-travel-partner-logo.png', w: 228, h: 141 },
+  { name: 'Restel', src: '/images/partners/restel-travel-partner-logo.png', w: 163, h: 113 },
+  { name: 'RezLive', src: '/images/partners/rezlive-travel-partner-logo.png', w: 144, h: 103 },
+  { name: 'GCT Booking', src: '/images/partners/gct-booking-travel-partner-logo.png', w: 150, h: 67 },
+  { name: 'RateHawk', src: '/images/partners/ratehawk-travel-partner-logo.png', w: 216, h: 160 },
 ];
 
 const TrustedPartners = () => {
@@ -66,6 +66,8 @@ const TrustedPartners = () => {
                     src={p.src}
                     alt={`${p.name} — official travel partner of Green Continent Tours, Krakow Poland`}
                     title={`${p.name} – Green Continent Tours Partner`}
+                    width={p.w}
+                    height={p.h}
                     className="h-full w-auto max-h-16 md:max-h-20 object-contain"
                     style={p.blend ? { mixBlendMode: 'multiply' } : undefined}
                     loading="lazy"

@@ -658,7 +658,7 @@ const HalalTourism = () => {
             name: 'Green Continent Tours',
             logo: {
               '@type': 'ImageObject',
-              url: 'https://greencontinenttours.com/GCT-asset/logo.svg',
+              url: 'https://www.greencontinenttours.com/GCT-asset/logo.svg',
             },
           },
         })}

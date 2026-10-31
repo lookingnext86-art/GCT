@@ -29,6 +29,7 @@ const WhatsAppButton = () => {
             <button
               onClick={() => setShowTooltip(false)}
               className="text-gray-400 hover:text-gray-600"
+              aria-label="Close WhatsApp message"
             >
               <X className="w-4 h-4" />
             </button>
@@ -39,8 +40,8 @@ const WhatsAppButton = () => {
         <button
           onClick={handleClick}
           className="group relative bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-full p-4 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 animate-pulse hover:animate-none"
-          aria-label="Contact us on WhatsApp"
         >
+          <span className="sr-only">Contact us on WhatsApp</span>
           {/* Ripple Effect */}
           <span className="absolute inset-0 rounded-full bg-[#25D366] opacity-75 animate-ping"></span>
           
@@ -56,7 +57,7 @@ const WhatsAppButton = () => {
           </div>
           
           {/* Badge */}
-          <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center">
+          <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center" aria-hidden="true">
             1
           </span>
         </button>
