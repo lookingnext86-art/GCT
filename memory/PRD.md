@@ -51,6 +51,8 @@ Build a pixel-perfect replica of `https://greencontinenttours.com` — preserve 
 
 - **2026-06 Live-site sync audit**: Compared live greencontinenttours.com (index.html, sitemap.xml, robots.txt, manifest.json, main.js + 9 lazy chunks, main.css, 40 images) against local source. Result: page code, text, SEO meta, JSON-LD, CSS and images all identical. Only diff: live sitemap had absolute URL for family-summer image (synced locally). Fixed broken sitemap image path /images/xml/wawel-castle-sunrise.webp → /images/travel-guide/wawel-castle-sunrise.webp. .htaccess not downloadable (403) — local copy assumed current. Local robots.txt adds `Disallow: /admin` (intentional, not yet live).
 
+- **2026-06 Tracking + ZIP**: Added Google Tag Manager GTM-PM3XV4TV (official head snippet + body noscript) alongside direct GA4 gtag G-N32XZMRBL1 (GTM container currently has no GA4 tag; if user adds GA4 inside GTM, remove direct gtag to avoid double counting). Built production ZIP with REACT_APP_BACKEND_URL="" (no preview URL in bundle; Travel Guide falls back to static articles; /admin non-functional on one.com until backend deployed) → /app/frontend/public/greencontinenttours-build.zip. Download: <preview>/greencontinenttours-build.zip. Build cmd: `REACT_APP_BACKEND_URL="" GENERATE_SOURCEMAP=false yarn build` (remove old zip from public first). Dev server needs frontend restart after public/index.html edits.
+
 ## Files of Reference
 - `/app/frontend/public/.htaccess` — minimal React Router fallback for one.com Apache
 - `/app/frontend/public/_redirects` — Netlify fallback
