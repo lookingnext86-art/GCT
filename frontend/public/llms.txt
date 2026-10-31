@@ -1,0 +1,27 @@
+# Green Continent Tours
+
+> Krakow-based travel agency, tour operator and destination management company (DMC) organising private tours, group trips, family holidays, halal-friendly travel, airport transfers and tailor-made itineraries across Poland and Central Europe. Tours in English, Polish, Arabic, Spanish and German.
+
+Contact: +48 537 482 798 (phone / WhatsApp) · info@greencontinenttours.com · Nowohucka 46, 31-580 Kraków, Poland
+
+## Main pages
+
+- [Home](https://www.greencontinenttours.com/): Premium private and group tours of Poland from Krakow
+- [About us](https://www.greencontinenttours.com/about): Who we are, our team and how we work
+- [Services & tours](https://www.greencontinenttours.com/services): Private tours, group trips, transfers, family and halal-friendly travel
+- [Gallery](https://www.greencontinenttours.com/gallery): Photos from our trips across Poland
+- [Travel guide](https://www.greencontinenttours.com/travel-guide): Articles and tips for travelling in Poland
+- [Contact](https://www.greencontinenttours.com/contact): Ask for a custom itinerary or quote
+
+## Travel guide articles
+
+- [Christmas Markets in Poland 2026](https://www.greencontinenttours.com/travel-guide/christmas-markets-poland): Kraków, Wrocław, Gdańsk and Warsaw markets, dates, food and winter day trips
+- [3 Days in Kraków](https://www.greencontinenttours.com/travel-guide/3-days-in-krakow-itinerary): Day-by-day itinerary, must-see attractions and local tips
+- [Family Summer in Poland](https://www.greencontinenttours.com/travel-guide/family-summer-poland-itinerary): A relaxed 10-day family itinerary
+- [Hidden Gems in Poland](https://www.greencontinenttours.com/travel-guide/hidden-gems): Secret places most tourists miss
+- [What to Avoid in Poland](https://www.greencontinenttours.com/travel-guide/avoid-mistakes): Common tourist mistakes and scams
+- [Halal Food in Krakow](https://www.greencontinenttours.com/travel-guide/halal-tourism): Muslim-friendly travel guide to Krakow
+
+## Optional
+
+- [Sitemap](https://www.greencontinenttours.com/sitemap.xml)

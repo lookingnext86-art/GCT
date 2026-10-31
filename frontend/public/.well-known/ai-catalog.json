@@ -1,0 +1,24 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Green Continent Tours",
+    "identifier": "www.greencontinenttours.com",
+    "documentationUrl": "https://www.greencontinenttours.com/llms.txt"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:greencontinenttours.com:website:travel-guide",
+      "displayName": "Green Continent Tours – Poland travel information",
+      "type": "text/markdown",
+      "url": "https://www.greencontinenttours.com/llms.txt",
+      "description": "Overview of Green Continent Tours, a Krakow-based tour operator, with links to its services and Poland travel guide articles.",
+      "representativeQueries": [
+        "private tours in Krakow Poland",
+        "Poland travel agency for groups and families",
+        "Christmas markets in Poland 2026",
+        "3 day Krakow itinerary"
+      ],
+      "updatedAt": "2026-06-24T00:00:00Z"
+    }
+  ]
+}
