@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { ExternalLink, MessageCircle, Clock, Utensils, Users, Car, Languages, Moon } from 'lucide-react';
+import { ExternalLink, Clock, Utensils, Users, Car, Languages, Moon } from 'lucide-react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import SEO from '../../components/SEO';
@@ -183,18 +182,6 @@ const toc = [
   { id: 'faq', title: 'FAQ' },
 ];
 
-const ContactButton = ({ testId }) => (
-  <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" data-testid={testId}
-    className="inline-flex items-center gap-2.5 bg-[#0f4f47] hover:bg-[#1a6b5f] text-white text-sm font-semibold px-6 py-3 rounded-full shadow-[0_12px_30px_-12px_rgba(15,79,71,0.5)] transition-colors">
-    <MessageCircle className="w-4 h-4 text-[#4dd4ac]" aria-hidden="true" />
-    <span className="leading-snug">
-      Contact us on WhatsApp<span className="hidden sm:inline"> · </span>
-      <br className="sm:hidden" />
-      <span className="whitespace-nowrap">+48 537 482 798</span>
-    </span>
-  </a>
-);
-
 const Place = ({ item }) => (
   <li id={item.id} className="relative pl-7" data-testid={`halal-${item.id}`}>
     <span className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-[#4dd4ac] ring-4 ring-white shadow-sm" aria-hidden="true" />
@@ -250,7 +237,6 @@ const Intro = () => (
     </div>
     <h3 className={`${h3} mt-10`}>Why book a private halal tour instead of searching for halal food yourself?</h3>
     <TermList items={whyPrivate} />
-    <div className="mt-8"><ContactButton testId="halal-contact-top" /></div>
   </section>
 );
 
@@ -283,13 +269,6 @@ const FoodAndPrayer = ({ groups }) => (
     </div>
     <p className="mt-10 text-[15.5px] md:text-base text-gray-600 leading-[1.85] font-light">For prayer, your guide will agree the timing with you at the start of the day and plan stops accordingly. We can adjust the order of sights so that prayer times fall at natural breaks, and we can plan indoor stops in colder months.</p>
   </section>
-);
-
-const EnquireButton = () => (
-  <Link to="/contact" data-testid="halal-enquire-now-btn"
-    className="inline-flex items-center gap-2 border-2 border-[#0f4f47] text-[#0f4f47] hover:bg-[#0f4f47] hover:text-white text-sm font-semibold px-6 py-3 rounded-full transition-colors">
-    Enquire now
-  </Link>
 );
 
 const HalalTourism = () => (
@@ -325,7 +304,6 @@ const HalalTourism = () => (
                   ['Halal meat shops', meatShops],
                 ]} />
                 <FaqList title="Frequently asked questions" faqs={faqs} />
-                <div className="mt-10 flex flex-wrap gap-4"><ContactButton testId="halal-contact-bottom" /><EnquireButton /></div>
                 <ContinueReading links={[
                   ['/travel-guide/3-days-in-krakow-itinerary', '3 days in Kraków: the perfect itinerary'],
                   ['/travel-guide/avoid-mistakes', 'Tourist mistakes & scams to avoid in Poland'],

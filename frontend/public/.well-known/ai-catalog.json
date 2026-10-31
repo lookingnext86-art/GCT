@@ -2,23 +2,33 @@
   "specVersion": "1.0",
   "host": {
     "displayName": "Green Continent Tours",
-    "identifier": "www.greencontinenttours.com",
-    "documentationUrl": "https://www.greencontinenttours.com/llms.txt"
+    "identifier": "did:web:www.greencontinenttours.com",
+    "documentationUrl": "https://www.greencontinenttours.com/llms.txt",
+    "logoUrl": "https://www.greencontinenttours.com/GCT-asset/logo.svg"
   },
   "entries": [
     {
       "identifier": "urn:air:greencontinenttours.com:website:travel-guide",
-      "displayName": "Green Continent Tours – Poland travel information",
-      "type": "text/markdown",
+      "displayName": "Green Continent Tours – Krakow tour operator and Poland travel guide",
+      "type": "text/plain",
       "url": "https://www.greencontinenttours.com/llms.txt",
-      "description": "Overview of Green Continent Tours, a Krakow-based tour operator, with links to its services and Poland travel guide articles.",
+      "description": "Overview of Green Continent Tours, a Krakow-based tour operator and DMC offering private tours, group travel and custom itineraries across Poland and Central Europe, with links to its services and travel guide articles.",
+      "tags": ["tour-operator", "dmc", "krakow", "poland", "travel-guide"],
       "representativeQueries": [
-        "private tours in Krakow Poland",
-        "Poland travel agency for groups and families",
-        "Christmas markets in Poland 2026",
+        "tour operator in Krakow Poland",
+        "private tours in Krakow and Poland",
+        "Poland DMC for groups and families",
+        "private halal tour of Krakow",
         "3 day Krakow itinerary"
       ],
-      "updatedAt": "2026-06-24T00:00:00Z"
+      "metadata": {
+        "schemaOrgType": "TravelAgency",
+        "address": "Nowohucka 46, Kraków 31-580, PL",
+        "telephone": "+48-537-482-798",
+        "email": "info@greencontinenttours.com",
+        "areaServed": "Krakow; Poland; Central Europe"
+      },
+      "updatedAt": "2026-06-25T00:00:00Z"
     }
   ]
 }
