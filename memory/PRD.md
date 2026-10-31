@@ -59,6 +59,8 @@ Build a pixel-perfect replica of `https://greencontinenttours.com` — preserve 
 
 - **2026-06 New article**: /travel-guide/3-days-in-krakow-itinerary (pages/articles/ThreeDaysInKrakow.jsx) from user-supplied text, same layout as other static articles (hero, overview bar, day timeline w/ stops, local-tip callouts, practical tips, where to stay, private tour CTA, FAQ, continue reading, sticky TOC, WhatsApp CTA, Article + FAQPage JSON-LD). Image: user photo cropped 16:10 -> /images/articles/3-days-in-krakow-itinerary/krakow-old-town-3-day-itinerary.webp (1333x833, 223KB). Added to App.js route, TravelGuide staticArticles (first), sitemap.xml, backend STATIC_ARTICLES + generator internal links. Date June 20, 2026. Duplicate AI draft "3 Days in Krakow" still in admin drafts -> should be rejected.
 
+- **2026-06 Article #6**: /travel-guide/christmas-markets-poland (pages/articles/ChristmasMarketsPoland.jsx), user text, category Winter Travel, date June 24 2026. New shared components/article/ArticleParts.jsx (ArticleHero, OverviewBar, TermList, Callout, FaqList, ContinueReading, TocAside, WhatsAppCta, articleJsonLd) — use for future static articles. Image cropped 16:10 to remove a "The Forum Shopping" sign (photo is not from Poland) -> /images/articles/christmas-markets-poland/christmas-market-poland-festive-stall.webp (1600x1000, 293KB). Route, TravelGuide card (first), sitemap, backend STATIC_ARTICLES updated.
+
 ## Files of Reference
 - `/app/frontend/public/.htaccess` — minimal React Router fallback for one.com Apache
 - `/app/frontend/public/_redirects` — Netlify fallback

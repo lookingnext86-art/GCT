@@ -25,6 +25,7 @@ STATIC_ARTICLES = [
     ("avoid-mistakes", "What to Avoid in Poland: 10 Common Tourist Mistakes & Scams"),
     ("family-summer-poland-itinerary", "Family Summer in Poland: A Relaxed 10-Day Travel Itinerary"),
     ("3-days-in-krakow-itinerary", "3 Days in Kraków: The Perfect Itinerary, Must-See Attractions & Local Tips"),
+    ("christmas-markets-poland", "Christmas Markets in Poland 2026 — Kraków, Wrocław, Gdańsk & Warsaw Guide"),
 ]
 
 SYSTEM_PROMPT = """You are the senior travel writer for Green Continent Tours, a destination management company (DMC) and tour operator based in Krakow, Poland. The company designs private tours, group trips, airport transfers, family holidays, halal-friendly travel and multi-country itineraries across Poland and Central Europe.

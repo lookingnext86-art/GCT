@@ -25,6 +25,19 @@ const categories = [
 
 const staticArticles = [
   {
+    slug: 'christmas-markets-poland',
+    href: '/travel-guide/christmas-markets-poland',
+    title: 'Christmas Markets in Poland 2026 — Kraków, Wrocław, Gdańsk & Warsaw Guide',
+    excerpt: '2026 market dates, festive food, sample itineraries and the best winter day trips from Kraków.',
+    image: '/images/articles/christmas-markets-poland/christmas-market-poland-festive-stall.webp',
+    imageAlt: 'Wooden Christmas market stall with fairy lights and handmade ornaments — Christmas markets in Poland 2026',
+    category: 'winter-travel',
+    categoryLabel: 'Winter Travel',
+    readTime: '11 min read',
+    date: 'June 24, 2026',
+    author: 'Green Continent Tours',
+  },
+  {
     slug: '3-days-in-krakow-itinerary',
     href: '/travel-guide/3-days-in-krakow-itinerary',
     title: '3 Days in Kraków: The Perfect Itinerary, Must-See Attractions & Local Tips',
