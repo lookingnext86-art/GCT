@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
+  ArrowRight,
   Users,
   Car,
   GraduationCap,
@@ -51,8 +53,19 @@ const services = [
   },
 ];
 
+const POPULAR = [
+  ['/travel-guide/halal-tourism', 'Private halal tours of Kraków'],
+  ['/travel-guide/3-days-in-krakow-itinerary', '3 days in Kraków'],
+  ['/travel-guide/christmas-markets-poland', 'Christmas markets in Poland'],
+  ['/travel-guide/hidden-gems', 'Hidden gems in Poland'],
+  ['/gallery', 'Tour photo gallery'],
+];
+
 const ServicesSection = ({ useH1 = false }) => {
   const HeadingTag = useH1 ? 'h1' : 'h2';
+  const heading = useH1
+    ? ['Travel Services in Kraków', 'and Across Poland']
+    : ['Tailored Travel Across Poland and Europe', 'for Groups, Families and Corporate Clients.'];
   return (
     <section
       className="relative overflow-hidden bg-white"
@@ -123,12 +136,12 @@ const ServicesSection = ({ useH1 = false }) => {
             id="services-heading"
             className="text-3xl md:text-[2.2rem] lg:text-[2.7rem] font-bold text-white mb-5 tracking-tight leading-[1.15] drop-shadow-lg max-w-[1200px]"
           >
-            Tailored Travel Across Poland and Europe{' '}
+            {heading[0]}{' '}
             <br className="hidden md:block" />
-            for Groups, Families and Corporate Clients.
+            {heading[1]}
           </HeadingTag>
           <p className="text-base md:text-[17px] text-white/95 font-light italic leading-relaxed max-w-3xl mx-auto drop-shadow">
-            From first arrival to final departure, our Krakow-based tour operator
+            {useH1 && 'Tailored travel for groups, families and corporate clients. '}From first arrival to final departure, our Krakow-based tour operator
             and travel agency team handles every detail with care, precision and local expertise.
           </p>
 
@@ -224,6 +237,23 @@ const ServicesSection = ({ useH1 = false }) => {
               );
             })}
           </div>
+          {!useH1 && (
+            <div className="mt-12 text-center" data-testid="home-services-links">
+              <Link to="/services" data-testid="home-view-services-link"
+                className="inline-flex items-center gap-2 border-2 border-[#0f4f47] text-[#0f4f47] hover:bg-[#0f4f47] hover:text-white font-semibold text-sm px-7 py-3 rounded-full transition-colors">
+                View all our travel services <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              </Link>
+              <p className="mt-7 text-[14.5px] text-gray-600 font-light leading-relaxed max-w-3xl mx-auto">
+                Popular guides:{' '}
+                {POPULAR.map(([to, label], i) => (
+                  <React.Fragment key={to}>
+                    {i > 0 && ' · '}
+                    <Link to={to} className="text-[#0f4f47] font-semibold hover:text-[#1a6b5f] underline decoration-[#4dd4ac] underline-offset-4">{label}</Link>
+                  </React.Fragment>
+                ))}
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </section>

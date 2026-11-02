@@ -5,7 +5,7 @@
     <link rel="icon" href="https://www.greencontinenttours.com/GCT-asset/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#0f4f47" />
-    <!-- Google Tag Manager + Google Analytics (loaded right after the page has rendered) -->
+    <!-- Google Tag Manager + Google Analytics (loaded on first interaction or 4s after page load) -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -25,8 +25,8 @@
             document.head.appendChild(s);
           });
         }
-        window.addEventListener('load', function () { setTimeout(loadTags, 1500); });
-        ['scroll', 'click', 'keydown', 'touchstart'].forEach(function (e) {
+        window.addEventListener('load', function () { setTimeout(loadTags, 4000); });
+        ['scroll', 'click', 'keydown', 'touchstart', 'mousemove'].forEach(function (e) {
           window.addEventListener(e, loadTags, { once: true, passive: true });
         });
       })();
@@ -37,13 +37,16 @@
     <script>
       if (location.pathname === '/') {
         var gctMobile = window.matchMedia('(max-width: 767px)').matches;
-        [gctMobile ? '/images/hero/krakow-market-mobile.webp' : '/images/hero/krakow-market.webp',
-         gctMobile ? '/images/hero/zakopane-mobile.webp' : '/images/hero/zakopane.jpg',
-         '/images/hero/warsaw-old-town.webp'].forEach(function (href) {
+        [['krakow-market', 'webp'], ['zakopane', 'jpg'], ['warsaw-old-town', 'webp']].forEach(function (p) {
           var l = document.createElement('link');
           l.rel = 'preload';
           l.as = 'image';
-          l.href = href;
+          if (gctMobile) {
+            l.href = '/images/hero/' + p[0] + '-m.webp';
+          } else {
+            l.setAttribute('imagesrcset', '/images/hero/' + p[0] + '-960.webp 960w, /images/hero/' + p[0] + '.' + p[1] + ' 1800w');
+            l.setAttribute('imagesizes', '33vw');
+          }
           l.setAttribute('fetchpriority', 'high');
           document.head.appendChild(l);
         });
@@ -85,98 +88,68 @@
 
 
 
-    <!-- Structured Data: TravelAgency / LocalBusiness -->
+    <!-- Structured Data: one business entity + website -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "TravelAgency",
-      "name": "Green Continent Tours",
-      "alternateName": "GCT",
-      "description": "Premium Poland travel agency offering private tours, small-group journeys, family travel, and custom itineraries across Krakow, Zakopane, Warsaw, and beyond.",
-      "image": "https://www.greencontinenttours.com/GCT-asset/logo.svg",
-      "logo": "https://www.greencontinenttours.com/GCT-asset/logo.svg",
-      "@id": "https://www.greencontinenttours.com",
-      "url": "https://www.greencontinenttours.com",
-      "telephone": "+48537482798",
-      "email": "info@greencontinenttours.com",
-      "hasMap": "https://share.google/eIMbn0PH99lK7K6qi",
-      "priceRange": "$$-$$$",
-      "currenciesAccepted": "PLN, EUR, USD",
-      "paymentAccepted": "Cash, Credit Card, Bank Transfer",
-      "areaServed": ["Poland", "Czech Republic", "Austria", "Hungary", "Europe"],
-      "knowsLanguage": ["en", "pl", "ar", "es", "de"],
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Nowohucka 46",
-        "addressLocality": "Kraków",
-        "addressRegion": "Lesser Poland Voivodeship",
-        "postalCode": "31-580",
-        "addressCountry": "PL"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 50.0602,
-        "longitude": 20.0021
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "18:00"
-      },
-      "sameAs": [
-        "https://www.facebook.com/GreenContinentTours",
-        "https://www.instagram.com/green_continent_tours"
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Travel Services",
-        "itemListElement": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Luxury Airport Transfers" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Conferences & MICE Services" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "City Tours in Krakow, Warsaw & Gdansk" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Professional Multilingual Tour Guides" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "School & University Educational Tours" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Transportation Tickets & Hotel Booking" } }
-        ]
-      }
-    }
-    </script>
-
-    <!-- Structured Data: Organization -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Green Continent Tours",
-      "url": "https://www.greencontinenttours.com",
-      "logo": "https://www.greencontinenttours.com/GCT-asset/logo.svg",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+48537482798",
-        "contactType": "Customer Service",
-        "areaServed": "Worldwide",
-        "availableLanguage": ["English", "Polish", "Arabic", "Spanish", "German"]
-      },
-      "sameAs": [
-        "https://www.facebook.com/GreenContinentTours",
-        "https://www.instagram.com/green_continent_tours"
+      "@graph": [
+        {
+          "@type": "TravelAgency",
+          "@id": "https://www.greencontinenttours.com/#organization",
+          "name": "Green Continent Tours",
+          "alternateName": "GCT",
+          "description": "Kraków-based tour operator and destination management company offering private tours, group travel, family trips, airport transfers, MICE and custom itineraries across Poland and Central Europe.",
+          "url": "https://www.greencontinenttours.com/",
+          "logo": { "@type": "ImageObject", "url": "https://www.greencontinenttours.com/GCT-asset/logo-512.png", "width": 512, "height": 512 },
+          "image": "https://www.greencontinenttours.com/images/hero/krakow-market.webp",
+          "telephone": "+48537482798",
+          "email": "info@greencontinenttours.com",
+          "hasMap": "https://share.google/eIMbn0PH99lK7K6qi",
+          "priceRange": "$$-$$$",
+          "currenciesAccepted": "PLN, EUR, USD",
+          "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+          "areaServed": ["Poland", "Czech Republic", "Austria", "Hungary", "Europe"],
+          "knowsLanguage": ["en", "pl", "ar", "es", "de"],
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Nowohucka 46",
+            "addressLocality": "Kraków",
+            "addressRegion": "Lesser Poland Voivodeship",
+            "postalCode": "31-580",
+            "addressCountry": "PL"
+          },
+          "geo": { "@type": "GeoCoordinates", "latitude": 50.0602, "longitude": 20.0021 },
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+48537482798",
+            "email": "info@greencontinenttours.com",
+            "contactType": "customer service",
+            "availableLanguage": ["English", "Polish", "Arabic", "Spanish", "German"]
+          },
+          "sameAs": [
+            "https://www.facebook.com/GreenContinentTours",
+            "https://www.instagram.com/green_continent_tours"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.greencontinenttours.com/#website",
+          "name": "Green Continent Tours",
+          "url": "https://www.greencontinenttours.com/",
+          "inLanguage": "en",
+          "publisher": { "@id": "https://www.greencontinenttours.com/#organization" }
+        }
       ]
     }
     </script>
 
-    <!-- Structured Data: WebSite + SearchAction -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Green Continent Tours",
-      "url": "https://www.greencontinenttours.com",
-      "inLanguage": "en"
-    }
-    </script>
-
-    <link rel="apple-touch-icon" href="https://www.greencontinenttours.com/GCT-asset/logo.svg" />
+    <link rel="apple-touch-icon" href="https://www.greencontinenttours.com/GCT-asset/logo-512.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
   </head>
   <body>
@@ -309,20 +282,5 @@
     </div>
 
     <!-- Structured data: BreadcrumbList & SiteNavigationElement -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "name": "Green Continent Tours — Site Navigation",
-      "itemListElement": [
-        { "@type": "SiteNavigationElement", "position": 1, "name": "Home", "url": "https://www.greencontinenttours.com/" },
-        { "@type": "SiteNavigationElement", "position": 2, "name": "About Us", "url": "https://www.greencontinenttours.com/about" },
-        { "@type": "SiteNavigationElement", "position": 3, "name": "Gallery", "url": "https://www.greencontinenttours.com/gallery" },
-        { "@type": "SiteNavigationElement", "position": 4, "name": "Travel Guide", "url": "https://www.greencontinenttours.com/travel-guide" },
-        { "@type": "SiteNavigationElement", "position": 5, "name": "Services", "url": "https://www.greencontinenttours.com/services" },
-        { "@type": "SiteNavigationElement", "position": 6, "name": "Contact Us", "url": "https://www.greencontinenttours.com/contact" }
-      ]
-    }
-    </script>
   </body>
 </html>

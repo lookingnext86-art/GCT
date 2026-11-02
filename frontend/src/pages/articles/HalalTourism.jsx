@@ -2,6 +2,7 @@ import React from 'react';
 import { ExternalLink, Clock, Utensils, Users, Car, Languages, Moon } from 'lucide-react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import { RelatedGuides } from '../../components/article/ArticleParts';
 import SEO from '../../components/SEO';
 import {
   h2, h3, body, TermList, ArticleHero, OverviewBar, FaqList, ContinueReading, TocAside, WhatsAppCta, articleJsonLd,
@@ -261,7 +262,7 @@ const FoodAndPrayer = ({ groups }) => (
       <p>Halal dining is part of every private tour we run, not a separate search you have to do yourself. Before you arrive, tell us your preferences: halal only, vegetarian or seafood options, allergies, and any dietary needs for children. We then choose meal stops that fit your route, so you do not lose time travelling across the city for lunch.</p>
     </div>
     <figure className="my-10 rounded-2xl overflow-hidden">
-      <img src={MID_IMAGE} alt="Muslim-friendly halal dining in Krakow arranged on a private halal tour by Green Continent Tours" width="1536" height="1024" loading="lazy" decoding="async" className="w-full h-[300px] md:h-[420px] object-cover" />
+      <img src={MID_IMAGE} srcSet={`${MID_IMAGE.replace('.webp', '-768.webp')} 768w, ${MID_IMAGE} 1536w`} sizes="(max-width: 1023px) 100vw, 768px" alt="Muslim-friendly halal dining in Krakow arranged on a private halal tour by Green Continent Tours" width="1536" height="1024" loading="lazy" decoding="async" className="w-full h-[300px] md:h-[420px] object-cover" />
     </figure>
     <div id="halal-restaurants" className="scroll-mt-28">
       <h3 className={h3}>Halal restaurants we use on our tours</h3>
@@ -279,6 +280,7 @@ const HalalTourism = () => (
       <article>
         <ArticleHero
           image={HERO_IMAGE}
+          srcSet={`${HERO_IMAGE.replace('.webp', '-1280.webp')} 1280w, ${HERO_IMAGE} 2560w`}
           alt="Private halal and Muslim-friendly tour of Krakow with halal dining arranged by Green Continent Tours"
           imageTitle="Private Halal Tours of Krakow"
           width="2560"
@@ -318,6 +320,7 @@ const HalalTourism = () => (
       </article>
       <WhatsAppCta url={WHATSAPP_URL} />
     </main>
+    <RelatedGuides />
     <Footer />
     <script type="application/ld+json">
       {JSON.stringify([

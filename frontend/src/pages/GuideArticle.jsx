@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Link, Navigate, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import NotFound from './NotFound';
 import { ArrowLeft, ArrowRight, Calendar, Clock, User } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { RelatedGuides } from '../components/article/ArticleParts';
 import SEO from '../components/SEO';
 import '../styles/guide-prose.css';
 
@@ -64,7 +66,7 @@ const GuideArticle = () => {
       .catch(() => setA(false));
   }, [slug]);
 
-  if (a === false) return <Navigate to="/travel-guide" replace />;
+  if (a === false) return <NotFound />;
   if (!a) return <div className="min-h-screen bg-white" data-testid="guide-article-loading" />;
 
   return (
@@ -94,6 +96,7 @@ const GuideArticle = () => {
           </section>
         </article>
       </main>
+      <RelatedGuides />
       <Footer />
       <script type="application/ld+json">
         {JSON.stringify({
@@ -107,7 +110,7 @@ const GuideArticle = () => {
           keywords: (a.keywords || []).join(', '),
           mainEntityOfPage: `${SITE}${a.href}`,
           author: { '@type': 'Organization', name: 'Green Continent Tours' },
-          publisher: { '@type': 'Organization', name: 'Green Continent Tours', logo: { '@type': 'ImageObject', url: `${SITE}/GCT-asset/logo.svg` } },
+          publisher: { '@type': 'Organization', name: 'Green Continent Tours', logo: { '@type': 'ImageObject', url: `${SITE}/GCT-asset/logo-512.png` } },
         })}
       </script>
     </div>

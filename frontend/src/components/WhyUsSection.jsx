@@ -131,7 +131,9 @@ const WhyUsSection = () => {
                   className="group relative overflow-hidden rounded-[18px] aspect-square shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] ring-1 ring-white/10 transition-all duration-500 hover:-translate-y-1.5 hover:ring-[#4dd4ac]/40"
                 >
                   <img
-                    src={slot.src}
+                    src={slot.src.replace('.webp', '-400.webp')}
+                    srcSet={`${slot.src.replace('.webp', '-400.webp')} 400w, ${slot.src} 800w`}
+                    sizes="(max-width: 1023px) 45vw, 301px"
                     alt={slot.alt}
                     width="800"
                     height="640"

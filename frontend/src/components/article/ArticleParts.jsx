@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Calendar, Clock, User, Lightbulb } from 'lucide-react';
 
 export const h2 = 'text-2xl md:text-3xl font-bold text-[#0f4f47] tracking-tight mb-6 scroll-mt-28';
@@ -26,10 +26,10 @@ export const Callout = ({ label = 'Local tip', children }) => (
   </aside>
 );
 
-export const ArticleHero = ({ image, alt, imageTitle, width, height, objectPosition, category, title, subtitle, dateISO, dateLabel, readTime }) => (
+export const ArticleHero = ({ image, srcSet, alt, imageTitle, width, height, objectPosition, category, title, subtitle, dateISO, dateLabel, readTime }) => (
   <header className="relative overflow-hidden" data-testid="article-hero" aria-labelledby="article-heading">
     <div className="relative min-h-[520px] md:min-h-[580px] lg:min-h-[640px] w-full flex items-end">
-      <img src={image} alt={alt} title={imageTitle} width={width} height={height} className="absolute inset-0 w-full h-full object-cover"
+      <img src={image} srcSet={srcSet} sizes={srcSet ? '100vw' : undefined} alt={alt} title={imageTitle} width={width} height={height} className="absolute inset-0 w-full h-full object-cover"
         style={{ objectPosition }} loading="eager" fetchPriority="high" decoding="async" />
       <div className="absolute inset-0 bg-gradient-to-b from-[#0a3a35]/55 via-[#0a3a35]/35 to-[#0a3a35]/85" aria-hidden="true" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#0a3a35]/55 via-transparent to-transparent" aria-hidden="true" />
@@ -66,7 +66,7 @@ export const OverviewBar = ({ items }) => (
               <div className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#4dd4ac]/10 mb-2 md:mb-3">
                 <Icon className="w-4 h-4 text-[#0f4f47]" strokeWidth={1.7} aria-hidden="true" />
               </div>
-              <p className="text-[10.5px] font-semibold tracking-[0.18em] uppercase text-gray-400 mb-0.5">{label}</p>
+              <p className="text-[10.5px] font-semibold tracking-[0.18em] uppercase text-gray-500 mb-0.5">{label}</p>
               <p className="text-sm md:text-[15px] font-bold text-[#0f4f47] leading-tight">{value}</p>
             </div>
           ))}
@@ -105,6 +105,44 @@ export const ContinueReading = ({ links }) => (
   </div>
 );
 
+const GUIDES = [
+  ['/travel-guide/halal-tourism', 'Private Halal Tours of Kraków', 'Halal meals, prayer breaks and private guides'],
+  ['/travel-guide/3-days-in-krakow-itinerary', '3 Days in Kraków Itinerary', 'Old Town, Kazimierz, Wawel and Wieliczka'],
+  ['/travel-guide/christmas-markets-poland', 'Christmas Markets in Poland', 'Kraków, Wrocław, Gdańsk and Warsaw in winter'],
+  ['/travel-guide/hidden-gems', 'Hidden Gems in Poland', '15 places most tourists miss'],
+  ['/travel-guide/avoid-mistakes', 'Mistakes to Avoid in Poland', 'Common tourist traps and scams'],
+  ['/travel-guide/family-summer-poland-itinerary', 'Family Summer in Poland', 'A relaxed 10-day family itinerary'],
+  ['/gallery', 'Our Tour Photo Gallery', 'Real moments from our trips across Poland'],
+];
+
+export const RelatedGuides = ({ title = 'More Poland travel guides' }) => {
+  const { pathname } = useLocation();
+  const picks = GUIDES.filter(([to]) => to !== pathname).slice(0, 4);
+  return (
+    <section className="bg-white pb-14 lg:pb-16" aria-labelledby="related-guides-heading" data-testid="related-guides">
+      <div className="container mx-auto px-5 md:px-6 lg:px-8 max-w-6xl">
+        <div className="border-t border-gray-100 pt-10">
+          <h2 id="related-guides-heading" className="text-xl md:text-2xl font-bold text-[#0f4f47] tracking-tight mb-6">{title}</h2>
+          <ul className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {picks.map(([to, label, sub]) => (
+              <li key={to}>
+                <Link to={to} data-testid={`related-guide-${to.split('/').pop()}`}
+                  className="group block h-full bg-white border border-gray-100 rounded-2xl p-5 hover:border-[#4dd4ac]/50 hover:-translate-y-0.5 transition-[transform,border-color] duration-300">
+                  <span className="font-semibold text-[#0f4f47] inline-flex items-center gap-1.5">{label} <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" /></span>
+                  <span className="block text-[13.5px] text-gray-500 font-light mt-1">{sub}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6 text-[14.5px] text-gray-600 font-light">
+            Planning a trip? See our <Link to="/services" className="text-[#0f4f47] font-semibold underline decoration-[#4dd4ac] underline-offset-4">private tours and travel services in Kraków and Poland</Link> or browse the full <Link to="/travel-guide" className="text-[#0f4f47] font-semibold underline decoration-[#4dd4ac] underline-offset-4">Poland travel guide</Link>.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 export const TocAside = ({ items }) => (
   <aside className="hidden lg:block self-start sticky top-28" aria-label="Table of contents" data-testid="article-toc">
     <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-[0_4px_20px_-10px_rgba(15,79,71,0.08)]">
@@ -135,6 +173,13 @@ export const WhatsAppCta = ({ url }) => (
   </section>
 );
 
+export const PUBLISHER = {
+  '@type': 'Organization',
+  '@id': 'https://www.greencontinenttours.com/#organization',
+  name: 'Green Continent Tours',
+  logo: { '@type': 'ImageObject', url: 'https://www.greencontinenttours.com/GCT-asset/logo-512.png' },
+};
+
 export const articleJsonLd = ({ title, description, image, date, url, faqs }) => [
   {
     '@context': 'https://schema.org',
@@ -145,12 +190,8 @@ export const articleJsonLd = ({ title, description, image, date, url, faqs }) =>
     datePublished: date,
     dateModified: date,
     mainEntityOfPage: url,
-    author: { '@type': 'Organization', name: 'Green Continent Tours' },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Green Continent Tours',
-      logo: { '@type': 'ImageObject', url: 'https://www.greencontinenttours.com/GCT-asset/logo.svg' },
-    },
+    author: { '@type': 'Organization', name: 'Green Continent Tours', url: 'https://www.greencontinenttours.com/' },
+    publisher: PUBLISHER,
   },
   {
     '@context': 'https://schema.org',

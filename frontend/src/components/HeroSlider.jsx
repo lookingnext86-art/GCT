@@ -12,22 +12,23 @@ import { Facebook, Instagram } from 'lucide-react';
 const HERO_PANELS = [
   {
     src: '/images/hero/krakow-market.webp',
+    slug: 'krakow-market',
     alt:
       'Krakow Main Market Square with St. Mary’s Basilica and horse carriages — historic Old Town Poland tours by Green Continent Tours',
     title: 'Krakow Old Town — Main Market Square',
     objectPosition: 'center 35%',
-    mobileSrc: '/images/hero/krakow-market-mobile.webp',
   },
   {
     src: '/images/hero/zakopane.jpg',
+    slug: 'zakopane',
     alt:
       'Tatra Mountains landscape near Zakopane Poland — hiking trails and rocky peaks for premium mountain tours by Green Continent Tours',
     title: 'Tatra Mountains — Zakopane, Poland',
     objectPosition: 'center 45%',
-    mobileSrc: '/images/hero/zakopane-mobile.webp',
   },
   {
     src: '/images/hero/warsaw-old-town.webp',
+    slug: 'warsaw-old-town',
     alt:
       'Warsaw Old Town Castle Square with colorful tenement houses and dramatic sky — historic Poland capital city tours by Green Continent Tours',
     title: 'Warsaw Old Town — Castle Square',
@@ -97,7 +98,9 @@ const HeroSlider = () => {
             data-testid={`hero-panel-${idx + 1}`}
           >
             <img
-              src={isMobile && panel.mobileSrc ? panel.mobileSrc : panel.src}
+              src={isMobile ? `/images/hero/${panel.slug}-m.webp` : `/images/hero/${panel.slug}-960.webp`}
+              srcSet={isMobile ? undefined : `/images/hero/${panel.slug}-960.webp 960w, ${panel.src} 1800w`}
+              sizes={isMobile ? undefined : '33vw'}
               alt={panel.alt}
               title={panel.title}
               width="1280"

@@ -150,7 +150,9 @@ const OurGoalsSection = () => {
             >
               <div className="relative rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 group-hover:-translate-y-0.5 w-full max-w-4xl mx-auto">
                 <img
-                  src="/images/krakow-travel-hero.webp"
+                  src="/images/krakow-travel-hero-760.webp"
+                  srcSet="/images/krakow-travel-hero-760.webp 760w, /images/krakow-travel-hero.webp 1504w"
+                  sizes="(max-width: 960px) 90vw, 896px"
                   width="1504"
                   height="441"
                   alt="GCT Booking Made Simple — Sign up for B2B Online Hotel Reservation Portal — partner with Green Continent Tours"

@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import { RelatedGuides } from '../../components/article/ArticleParts';
 import SEO from '../../components/SEO';
 
 const WHATSAPP_NUMBER = '48537482798';
@@ -417,6 +418,7 @@ const FamilySummerItinerary = () => {
         </section>
       </main>
 
+      <RelatedGuides />
       <Footer />
 
       {/* Article JSON-LD */}
@@ -439,7 +441,7 @@ const FamilySummerItinerary = () => {
             name: 'Green Continent Tours',
             logo: {
               '@type': 'ImageObject',
-              url: 'https://www.greencontinenttours.com/GCT-asset/logo.svg',
+              url: 'https://www.greencontinenttours.com/GCT-asset/logo-512.png',
             },
           },
         })}

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowUpRight, Camera } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { RelatedGuides } from '../components/article/ArticleParts';
 import SEO from '../components/SEO';
 
 // ===================================================================
@@ -228,6 +229,7 @@ const Gallery = () => {
         </section>
       </main>
 
+      <RelatedGuides />
       <Footer />
     </div>
   );

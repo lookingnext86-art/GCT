@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { CalendarDays, MapPin, Ticket, Users, Home, Coffee, Phone, Mail, Building2 } from 'lucide-react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import { RelatedGuides } from '../../components/article/ArticleParts';
 import SEO from '../../components/SEO';
 import {
   h2, h3, body, TermList, Callout, ArticleHero, OverviewBar, FaqList, ContinueReading, TocAside, WhatsAppCta, articleJsonLd,
@@ -275,6 +276,7 @@ const ChristmasMarketsPoland = () => (
       </article>
       <WhatsAppCta url={WHATSAPP_URL} />
     </main>
+    <RelatedGuides />
     <Footer />
     <script type="application/ld+json">
       {JSON.stringify(articleJsonLd({ title: TITLE, description: DESCRIPTION, image: `${SITE}${HERO_IMAGE}`, date: DATE, url: `${SITE}/travel-guide/${SLUG}`, faqs }))}

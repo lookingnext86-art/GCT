@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { RelatedGuides } from '../components/article/ArticleParts';
 import SEO from '../components/SEO';
 
 const HERO_IMAGE =
@@ -28,7 +29,7 @@ const About = () => {
     <div className="min-h-screen bg-white">
       <SEO
         path="/about"
-        title="About Green Continent Tours – Krakow Travel Agency in Poland"
+        title="About Us – Our Kraków Team | Green Continent Tours"
         description="Learn about Green Continent Tours — a Krakow travel agency with 12+ years designing private, family and group tours across Poland and Europe."
       />
       <Header />
@@ -286,6 +287,7 @@ const About = () => {
         </section>
       </main>
 
+      <RelatedGuides />
       <Footer />
     </div>
   );

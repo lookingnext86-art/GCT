@@ -110,12 +110,12 @@ const ReviewsSection = () => {
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-semibold text-[#0f4f47] truncate">
                       {review.authorUrl ? (
-                        <a href={review.authorUrl} target="_blank" rel="noopener noreferrer">{review.author}</a>
+                        <a href={review.authorUrl} target="_blank" rel="noopener noreferrer" className="inline-block py-1.5">{review.author}</a>
                       ) : review.author}
                     </p>
                     <p className="text-xs text-gray-500 flex items-center gap-1.5 mt-0.5">
                       {review.url ? (
-                        <a href={review.url} target="_blank" rel="noopener noreferrer" className="hover:text-[#0f4f47]" data-testid={`review-google-link-${index}`}>
+                        <a href={review.url} target="_blank" rel="noopener noreferrer" className="inline-block py-1.5 hover:text-[#0f4f47]" data-testid={`review-google-link-${index}`}>
                           Google review
                         </a>
                       ) : (
@@ -160,7 +160,6 @@ const ReviewsSection = () => {
               target="_blank"
               rel="noopener noreferrer"
               data-testid="reviews-google-link"
-              aria-label="Read all reviews on Google – Green Continent Tours Business Profile"
               className="inline-flex items-center gap-1.5 text-xs text-[#0f4f47] hover:text-[#1a6b5f] font-semibold tracking-wide transition-colors"
             >
               <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" aria-hidden="true">

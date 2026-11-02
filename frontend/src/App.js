@@ -26,6 +26,7 @@ const ChristmasMarketsPoland = lazy(() => import('./pages/articles/ChristmasMark
 const AdminLayout = lazy(() => import('./pages/admin/AdminLayout'));
 const AdminDashboard = lazy(() => import('./pages/admin/AdminDashboard'));
 const ArticleEditor = lazy(() => import('./pages/admin/ArticleEditor'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 // Minimal full-screen loader — keeps brand feel during chunk fetch (≤200ms)
 const RouteLoader = () => (
@@ -73,8 +74,8 @@ function App() {
               path="/travel-guide/group-tours"
               element={<Navigate to="/services" replace />}
             />
-            {/* Catch-all: redirect any unknown URL home */}
-            <Route path="*" element={<Navigate to="/" replace />} />
+            {/* Catch-all: proper "page not found" (noindex) */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
         {/* WhatsApp button visible on all pages */}

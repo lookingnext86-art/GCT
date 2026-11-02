@@ -10,7 +10,20 @@ const SITE = 'https://www.greencontinenttours.com';
  * Pass `path` WITHOUT a trailing slash for sub-pages, or '/' for home.
  * Example: <SEO title="..." description="..." path="/about" />
  */
-const SEO = ({ title, description, path = '/', image }) => {
+const CRUMBS = { '/about': 'About Us', '/services': 'Services', '/gallery': 'Gallery', '/travel-guide': 'Travel Guide', '/contact': 'Contact Us' };
+
+const breadcrumbJsonLd = (path, title) => {
+  const items = [['Home', '/']];
+  if (path.startsWith('/travel-guide/')) items.push(['Travel Guide', '/travel-guide']);
+  items.push([CRUMBS[path] || title.split(/ [|–] /)[0], path]);
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map(([name, p], i) => ({ '@type': 'ListItem', position: i + 1, name, item: `${SITE}${p}` })),
+  };
+};
+
+const SEO = ({ title, description, path = '/', image, crumb, noindex }) => {
   const url = path === '/' ? `${SITE}/` : `${SITE}${path}`;
   const ogImage =
     image ||
@@ -20,7 +33,11 @@ const SEO = ({ title, description, path = '/', image }) => {
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
-      <link rel="canonical" href={url} />
+      {noindex && <meta name="robots" content="noindex, follow" />}
+      {!noindex && <link rel="canonical" href={url} />}
+      {!noindex && path !== '/' && (
+        <script type="application/ld+json">{JSON.stringify(breadcrumbJsonLd(path, crumb || title))}</script>
+      )}
 
       {/* Open Graph */}
       <meta property="og:url" content={url} />
