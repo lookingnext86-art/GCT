@@ -1,50 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Star, User } from 'lucide-react';
-
-const fallbackReviews = [
-  {
-    title: 'Smoother than expected!',
-    text: 'Private 9-day trip — hotels were comfortable, Zakopane was beautiful, and communication before arrival was very professional.',
-    author: 'Nour A.',
-    country: 'United Arab Emirates',
-    flag: '🇦🇪',
-  },
-  {
-    title: 'Perfect family pace',
-    text: 'Itinerary was planned really well — relaxed pace, family-friendly hotels, and we never felt rushed.',
-    author: 'Emma & Chris',
-    country: 'Ireland',
-    flag: '🇮🇪',
-  },
-  {
-    title: 'Very reliable service',
-    text: 'Clean car, good hotels, and easy communication throughout the trip. Couldn\u2019t ask for more.',
-    author: 'Reza K.',
-    country: 'Iran',
-    flag: '🇮🇷',
-  },
-  {
-    title: 'More personal than a tour company',
-    text: 'Visited Krakow, Auschwitz, Zakopane and Warsaw — transport was clean, recommendations excellent.',
-    author: 'Lucas T.',
-    country: 'Netherlands',
-    flag: '🇳🇱',
-  },
-  {
-    title: 'Culture, nature and comfort',
-    text: 'Mountain views in Zakopane and the Old Town atmosphere in Krakow were unforgettable. Exactly what we wanted.',
-    author: 'Sofia R.',
-    country: 'Spain',
-    flag: '🇪🇸',
-  },
-  {
-    title: 'Effortless from start to finish',
-    text: 'A truly seamless experience — every detail was handled. We will absolutely book again.',
-    author: 'Daniel M.',
-    country: 'Germany',
-    flag: '🇩🇪',
-  },
-];
+import google from '../data/googleReviews.json';
 
 const GOOGLE_REVIEWS_URL = 'https://share.google/eIMbn0PH99lK7K6qi';
 
@@ -53,20 +9,6 @@ const chunk = (arr, size) =>
   Array.from({ length: Math.ceil(arr.length / size) }, (_, i) =>
     arr.slice(i * size, i * size + size)
   );
-
-const API = process.env.REACT_APP_BACKEND_URL;
-
-const useGoogleReviews = () => {
-  const [data, setData] = useState(null);
-  useEffect(() => {
-    if (!API) return;
-    fetch(`${API}/api/public/google-reviews`)
-      .then((r) => (r.ok ? r.json() : null))
-      .then((d) => d?.reviews?.length && setData(d))
-      .catch(() => {});
-  }, []);
-  return data;
-};
 
 const Stars = ({ rating }) => (
   <div className="flex gap-1 mb-5" role="img" aria-label={`${rating} out of 5 stars`}>
@@ -87,9 +29,8 @@ const Avatar = ({ photo }) => (
 );
 
 const ReviewsSection = () => {
-  const google = useGoogleReviews();
-  const reviews = google ? google.reviews : fallbackReviews;
-  const reviewsUrl = google?.mapsUrl || GOOGLE_REVIEWS_URL;
+  const { reviews } = google;
+  const reviewsUrl = google.mapsUrl || GOOGLE_REVIEWS_URL;
   const slides = chunk(reviews, 3);
   const [current, setCurrent] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -143,13 +84,13 @@ const ReviewsSection = () => {
         >
           <div
             key={current}
-            className="grid md:grid-cols-3 gap-6 lg:gap-8 animate-review-fade"
+            className="flex flex-col md:flex-row md:justify-center gap-6 lg:gap-8 animate-review-fade"
           >
             {slides[current % slides.length].map((review, index) => (
               <article
                 key={index}
                 data-testid={`review-card-${current}-${index}`}
-                className="bg-white border border-gray-100 rounded-2xl p-7 lg:p-8 shadow-[0_10px_30px_-15px_rgba(15,79,71,0.15)] hover:shadow-[0_20px_40px_-15px_rgba(15,79,71,0.22)] hover:-translate-y-1 transition-all duration-500 flex flex-col"
+                className="md:flex-1 md:max-w-[calc((100%-4rem)/3)] bg-white border border-gray-100 rounded-2xl p-7 lg:p-8 shadow-[0_10px_30px_-15px_rgba(15,79,71,0.15)] hover:shadow-[0_20px_40px_-15px_rgba(15,79,71,0.22)] hover:-translate-y-1 transition-all duration-500 flex flex-col"
               >
                 <Stars rating={review.rating || 5} />
 
@@ -175,7 +116,7 @@ const ReviewsSection = () => {
                     <p className="text-xs text-gray-500 flex items-center gap-1.5 mt-0.5">
                       {review.url ? (
                         <a href={review.url} target="_blank" rel="noopener noreferrer" className="hover:text-[#0f4f47]" data-testid={`review-google-link-${index}`}>
-                          {review.when} · Google review
+                          Google review
                         </a>
                       ) : (
                         <>
@@ -228,7 +169,7 @@ const ReviewsSection = () => {
                 <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
                 <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
               </svg>
-              {google?.rating ? `Rated ${google.rating.toFixed(1)} on Google · Read all ${google.count} reviews` : 'Read all reviews on Google'}
+              {google.rating ? `Rated ${google.rating.toFixed(1)} on Google · Read all ${google.count} reviews` : 'Read all reviews on Google'}
             </a>
           </div>
         </div>
