@@ -17,7 +17,7 @@ export default function NotFound() {
           This page may have moved or no longer exists. Start from our homepage, browse our travel services, or read our Poland travel guides.
         </p>
         <div className="flex flex-wrap gap-4">
-          <Link to="/" data-testid="not-found-home-link" className="bg-[#0f4f47] text-white px-6 py-3 rounded-full font-semibold text-sm hover:bg-[#1a6b5f] transition-colors">Go to homepage</Link>
+          <Link to="/" data-testid="not-found-home-link" className="bg-[#0f4f47] border-2 border-[#0f4f47] text-white px-6 py-3 rounded-full font-semibold text-sm hover:bg-[#1a6b5f] transition-colors">Go to homepage</Link>
           <Link to="/services" data-testid="not-found-services-link" className="border-2 border-[#0f4f47] text-[#0f4f47] px-6 py-3 rounded-full font-semibold text-sm hover:bg-[#0f4f47] hover:text-white transition-colors">Our services</Link>
         </div>
       </main>

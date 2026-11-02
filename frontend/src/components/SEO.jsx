@@ -33,7 +33,7 @@ const SEO = ({ title, description, path = '/', image, crumb, noindex }) => {
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
-      {noindex && <meta name="robots" content="noindex, follow" />}
+      <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'} />
       {!noindex && <link rel="canonical" href={url} />}
       {!noindex && path !== '/' && (
         <script type="application/ld+json">{JSON.stringify(breadcrumbJsonLd(path, crumb || title))}</script>
