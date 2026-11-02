@@ -102,7 +102,7 @@ const Gallery = () => {
     <div className="min-h-screen bg-[#0a3a35]" data-testid="gallery-page">
       <SEO
         path="/gallery"
-        title="Gallery – Poland Tours & Travel Moments | Green Continent Tours"
+        title="Poland Tour Photo Gallery | Green Continent Tours"
         description="Editorial photo gallery of our Poland tours — Krakow Old Town, Wawel Castle, Zakopane mountains and family travel moments captured across Poland."
       />
       <Header />

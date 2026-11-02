@@ -71,7 +71,7 @@ const Contact = () => {
     <div className="min-h-screen bg-white" data-testid="contact-page">
       <SEO
         path="/contact"
-        title="Contact Green Continent Tours – Plan Your Krakow & Poland Trip"
+        title="Contact Green Continent Tours – Krakow Tour Operator"
         description="Contact Green Continent Tours in Krakow — call, WhatsApp or email to plan your Poland trip. Private tours, transfers, group travel and custom itineraries."
       />
       <Header />

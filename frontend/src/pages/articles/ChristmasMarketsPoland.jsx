@@ -230,7 +230,7 @@ const ChristmasMarketsPoland = () => (
   <div className="min-h-screen bg-white">
     <SEO
       path={`/travel-guide/${SLUG}`}
-      title="Christmas Markets in Poland 2026: Kraków, Wrocław, Gdańsk & Warsaw"
+      title="Christmas Markets in Poland 2026: Kraków, Gdańsk & More"
       description={DESCRIPTION}
       image={`${SITE}${HERO_IMAGE}`}
     />

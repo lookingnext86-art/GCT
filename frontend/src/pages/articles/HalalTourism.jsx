@@ -11,7 +11,7 @@ const SITE = 'https://www.greencontinenttours.com';
 const PATH = '/travel-guide/halal-tourism';
 const TITLE = 'Private Halal & Muslim-Friendly Tours of Krakow';
 const DESCRIPTION =
-  'Book a private halal tour of Krakow: licensed English-speaking guides, halal meals, prayer breaks, private transport. Custom itineraries for families and groups.';
+  'Book a private halal tour of Krakow: English-speaking guides, halal meals, prayer breaks, private transport. Custom itineraries for families and groups.';
 const WHATSAPP_URL = `https://wa.me/48537482798?text=${encodeURIComponent(
   'Hello, I would like to book a private halal tour of Krakow.'
 )}`;

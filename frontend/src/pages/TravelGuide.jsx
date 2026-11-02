@@ -134,7 +134,7 @@ const TravelGuide = () => {
     <div className="min-h-screen bg-white">
       <SEO
         path="/travel-guide"
-        title="Travel Guide – Poland Travel Tips & Stories | Green Continent Tours"
+        title="Poland Travel Guide: Tips & Stories | Green Continent Tours"
         description="Insider travel guide to Poland — hidden gems, family itineraries, halal food in Krakow, and practical tips to plan a smooth, memorable Polish journey."
       />
       <Header />
