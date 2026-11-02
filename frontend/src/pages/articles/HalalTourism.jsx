@@ -18,7 +18,7 @@ const WHATSAPP_URL = `https://wa.me/48537482798?text=${encodeURIComponent(
 const HERO_IMAGE = '/images/articles/halal-food/halal-food-krakow-restaurant.webp';
 const MID_IMAGE = '/images/articles/halal-food/muslim-friendly-dining-krakow.webp';
 const DATE = '2026-05-18';
-const MODIFIED = '2026-06-25';
+const MODIFIED = '2026-11-02';
 
 const overviewItems = [
   { label: 'Tour Type', value: 'Private Only', icon: Users },
@@ -288,7 +288,7 @@ const HalalTourism = () => (
           title={TITLE}
           subtitle="Licensed English-speaking guides, confirmed halal meals, prayer breaks and private transport — a private halal tour of Krakow built around your family."
           dateISO={MODIFIED}
-          dateLabel="Updated June 25, 2026"
+          dateLabel="Updated November 2, 2026"
           readTime="7 min read"
         />
         <OverviewBar items={overviewItems} />

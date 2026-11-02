@@ -8,6 +8,7 @@ from db import client
 from auth import router as auth_router, seed_admin
 from blog_routes import admin, cron, public, mark_interrupted
 import storage
+from google_reviews import router as google_reviews_router
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -26,6 +27,7 @@ app.include_router(auth_router)
 app.include_router(admin)
 app.include_router(cron)
 app.include_router(public)
+app.include_router(google_reviews_router)
 
 app.add_middleware(
     CORSMiddleware,
