@@ -50,11 +50,11 @@ export const ProgramButton = ({ testId }) => (
   </Link>
 );
 
-export const STATS = [['Since 2015', 'Local expertise'], ['120+', 'Groups served'], ['2,400+', 'Travelers'], ['5.0', 'Rated on Google']];
+export const STATS = [['Since 2015', 'Local expertise'], ['160+', 'Groups served'], ['2,400+', 'Travelers'], ['5.0', 'Rated on Google']];
 
 export const WHY_PARTNER = [
   [Award, 'Local Expertise Since 2015', 'Kraków-based specialists with in-depth knowledge of Poland and Europe.'],
-  [Users, 'Trusted by Travel Professionals', '120+ groups and 2,400+ travelers served.'],
+  [Users, 'Trusted by Travel Professionals', '160+ groups and 2,400+ travelers served.'],
   [Languages, 'Multilingual Licensed Guides', 'Multilingual licensed guides and professional support throughout your clients’ journey.'],
 ];
 

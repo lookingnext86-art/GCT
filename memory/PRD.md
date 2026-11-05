@@ -119,3 +119,4 @@ See /app/memory/test_credentials.md (admin info@greencontinenttours.com).
 - **2026-11-05**: /for-travel-agencies portal card replaced with the same yellow GCT B2B banner as home (links to AGENCY_PORTAL_URL agent_registration.php, new tab). ZIP rebuilt.
 - **2026-11-05**: Agency banner centered; removed "Every program includes..." line. Reviews refreshed from Google (15 reviews, 5 shown: Ramin, Wik, Feri Abadi, Khawaja Ali, mohamad keshavarz; source /app/memory/rv_latest.json). Tripadvisor + Google Business Profile icons (components/SocialIcons.jsx, URLs in lib/links.js) added to footer + home hero; added to schema sameAs. ZIP rebuilt.
 - **2026-11-05**: About "12+ years" -> "since 2015" (meta desc + stat "Since 2015 / Local Expertise"); llms.txt adds /for-travel-agencies; deleted scripts/generate-static-routes.js (prerender.py is the only build step). ZIP rebuilt.
+- **2026-11-05**: Groups served unified to 160+ (agency page stats + Why Partner card). ZIP rebuilt.
