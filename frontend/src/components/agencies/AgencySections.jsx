@@ -5,6 +5,7 @@ import {
   STATS, WHY_PARTNER, THOUGHTFUL, HANDLES, WHY_POLAND, SEASONS, PROGRAMS, STEPS,
 } from './AgencyParts';
 import { PartnerInquiryForm } from '../PartnerInquiryForm';
+import { AGENCY_PORTAL_URL } from '../../lib/links';
 
 const HERO_IMAGE = '/images/hero/krakow-market-960.webp';
 
@@ -43,14 +44,17 @@ export const Stats = () => (
 );
 
 export const Portal = () => (
-  <Section id="booking-portal" label="For registered agencies" title="Agency Booking Portal">
-    <div className="bg-[#0f4f47] text-white rounded-3xl p-8 md:p-10 lg:p-12 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-      <div className="max-w-2xl">
-        <p className="text-lg md:text-xl font-medium leading-relaxed mb-3">Registered travel agencies can book hotels online through our B2B booking portal.</p>
-        <p className="text-white/80 font-light">The portal is for travel agencies only.</p>
+  <Section id="booking-portal" label="For registered agencies" title="Agency Booking Portal"
+    intro="Registered travel agencies can book hotels online through our B2B booking portal. The portal is for travel agencies only.">
+    <a href={AGENCY_PORTAL_URL} target="_blank" rel="noopener" aria-label="Agency Login / Register – GCT B2B online hotel booking portal for travel agencies"
+      className="group block max-w-4xl" data-testid="agencies-portal-button">
+      <div className="relative rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-[box-shadow,transform] duration-300 group-hover:-translate-y-0.5">
+        <img src="/images/krakow-travel-hero-760.webp" srcSet="/images/krakow-travel-hero-760.webp 760w, /images/krakow-travel-hero.webp 1504w"
+          sizes="(max-width: 960px) 90vw, 896px" width="1504" height="441" loading="lazy"
+          alt="GCT Booking Made Simple – sign up for the B2B online hotel reservation portal for travel agencies"
+          className="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.02]" />
       </div>
-      <div className="shrink-0"><PortalButton testId="agencies-portal-button" /></div>
-    </div>
+    </a>
   </Section>
 );
 
