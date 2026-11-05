@@ -92,7 +92,7 @@
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "TravelAgency",
+          "@type": ["Organization", "TravelAgency"],
           "@id": "https://www.greencontinenttours.com/#organization",
           "name": "Green Continent Tours",
           "alternateName": "GCT",
@@ -103,11 +103,7 @@
           "telephone": "+48537482798",
           "email": "info@greencontinenttours.com",
           "hasMap": "https://share.google/eIMbn0PH99lK7K6qi",
-          "priceRange": "$$-$$$",
-          "currenciesAccepted": "PLN, EUR, USD",
-          "paymentAccepted": "Cash, Credit Card, Bank Transfer",
-          "areaServed": ["Poland", "Czech Republic", "Austria", "Hungary", "Europe"],
-          "knowsLanguage": ["en", "pl", "ar", "es", "de"],
+          "areaServed": ["Kraków", "Poland", "Central Europe"],
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "Nowohucka 46",
@@ -117,18 +113,11 @@
             "addressCountry": "PL"
           },
           "geo": { "@type": "GeoCoordinates", "latitude": 50.0602, "longitude": 20.0021 },
-          "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            "opens": "09:00",
-            "closes": "18:00"
-          },
           "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+48537482798",
             "email": "info@greencontinenttours.com",
-            "contactType": "customer service",
-            "availableLanguage": ["English", "Polish", "Arabic", "Spanish", "German"]
+            "contactType": "customer service"
           },
           "sameAs": [
             "https://www.facebook.com/GreenContinentTours",

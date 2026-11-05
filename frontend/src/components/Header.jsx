@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AGENCY_PORTAL_URL } from '../lib/links';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -27,7 +28,7 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-10">
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-10">
             <Link to="/" className="text-white/90 hover:text-[#4dd4ac] transition-colors text-[13px] font-medium tracking-wide">
               Home
             </Link>
@@ -43,12 +44,15 @@ const Header = () => {
             <Link to="/services" className="text-white/90 hover:text-[#4dd4ac] transition-colors text-[13px] font-medium tracking-wide">
               Services
             </Link>
+            <Link to="/for-travel-agencies" data-testid="nav-for-travel-agencies" className="text-white/90 hover:text-[#4dd4ac] transition-colors text-[13px] font-medium tracking-wide">
+              For Travel Agencies
+            </Link>
             <Link to="/contact" className="text-white/90 hover:text-[#4dd4ac] transition-colors text-[13px] font-medium tracking-wide">
               Contact Us
             </Link>
-            <button className="ml-2 bg-[#4dd4ac] text-[#0f4f47] px-6 py-2.5 rounded-full text-[13px] font-bold tracking-wide hover:bg-white transition-all duration-300 shadow-md hover:shadow-lg">
-              Register
-            </button>
+            <a href={AGENCY_PORTAL_URL} target="_blank" rel="noopener" data-testid="nav-agency-login" className="ml-2 bg-[#4dd4ac] text-[#0f4f47] px-6 py-2.5 rounded-full text-[13px] font-bold tracking-wide hover:bg-white transition-all duration-300 shadow-md hover:shadow-lg whitespace-nowrap">
+              Agency Login
+            </a>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -86,12 +90,15 @@ const Header = () => {
             <Link to="/services" className="text-white hover:text-[#ffd700] transition-colors text-sm font-medium">
               Services
             </Link>
+            <Link to="/for-travel-agencies" data-testid="mobile-nav-for-travel-agencies" className="text-white hover:text-[#ffd700] transition-colors text-sm font-medium">
+              For Travel Agencies
+            </Link>
             <Link to="/contact" className="text-white hover:text-[#ffd700] transition-colors text-sm font-medium">
               Contact Us
             </Link>
-            <button className="bg-white text-[#0f4f47] px-6 py-2 rounded-full font-semibold w-fit">
-              Register
-            </button>
+            <a href={AGENCY_PORTAL_URL} target="_blank" rel="noopener" data-testid="mobile-nav-agency-login" className="bg-white text-[#0f4f47] px-6 py-2 rounded-full font-semibold w-fit">
+              Agency Login
+            </a>
           </nav>
         )}
       </div>

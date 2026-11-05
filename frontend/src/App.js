@@ -27,6 +27,7 @@ const AdminLayout = lazy(() => import('./pages/admin/AdminLayout'));
 const AdminDashboard = lazy(() => import('./pages/admin/AdminDashboard'));
 const ArticleEditor = lazy(() => import('./pages/admin/ArticleEditor'));
 const NotFound = lazy(() => import('./pages/NotFound'));
+const ForTravelAgencies = lazy(() => import('./pages/ForTravelAgencies'));
 
 // Minimal full-screen loader — keeps brand feel during chunk fetch (≤200ms)
 const RouteLoader = () => (
@@ -52,6 +53,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/for-travel-agencies" element={<ForTravelAgencies />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
             <Route path="/travel-guide" element={<TravelGuide />} />

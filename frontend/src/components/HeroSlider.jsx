@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Facebook, Instagram } from 'lucide-react';
 
 /**
@@ -38,19 +38,7 @@ const HERO_PANELS = [
 
 const MOBILE_QUERY = '(max-width: 767px)';
 
-const useIsMobile = () => {
-  const [isMobile, setIsMobile] = useState(() => window.matchMedia(MOBILE_QUERY).matches);
-  useEffect(() => {
-    const mq = window.matchMedia(MOBILE_QUERY);
-    const onChange = (e) => setIsMobile(e.matches);
-    mq.addEventListener('change', onChange);
-    return () => mq.removeEventListener('change', onChange);
-  }, []);
-  return isMobile;
-};
-
 const HeroSlider = () => {
-  const isMobile = useIsMobile();
   return (
     <div
       className="relative w-full overflow-hidden mt-20 h-[calc(92vh-5rem)] min-h-[560px] max-h-[820px]"
@@ -97,24 +85,27 @@ const HeroSlider = () => {
             className="relative overflow-hidden"
             data-testid={`hero-panel-${idx + 1}`}
           >
-            <img
-              src={isMobile ? `/images/hero/${panel.slug}-m.webp` : `/images/hero/${panel.slug}-960.webp`}
-              srcSet={isMobile ? undefined : `/images/hero/${panel.slug}-960.webp 960w, ${panel.src} 1800w`}
-              sizes={isMobile ? undefined : '33vw'}
-              alt={panel.alt}
-              title={panel.title}
-              width="1280"
-              height="1600"
-              className="absolute inset-0 w-full h-full object-cover"
-              style={{
-                objectPosition: panel.objectPosition,
-                filter:
-                  'saturate(1.18) contrast(1.18) brightness(0.92)',
-              }}
-              loading="eager"
-              fetchPriority="high"
-              decoding="async"
-            />
+            <picture>
+              <source media={MOBILE_QUERY} srcSet={`/images/hero/${panel.slug}-m.webp`} />
+              <img
+                src={`/images/hero/${panel.slug}-960.webp`}
+                srcSet={`/images/hero/${panel.slug}-960.webp 960w, ${panel.src} 1800w`}
+                sizes="33vw"
+                alt={panel.alt}
+                title={panel.title}
+                width="1280"
+                height="1600"
+                className="absolute inset-0 w-full h-full object-cover"
+                style={{
+                  objectPosition: panel.objectPosition,
+                  filter:
+                    'saturate(1.18) contrast(1.18) brightness(0.92)',
+                }}
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+              />
+            </picture>
             {/* Cinematic vignette — dark top + bottom for that premium magazine feel */}
             <div
               className="absolute inset-0 pointer-events-none"

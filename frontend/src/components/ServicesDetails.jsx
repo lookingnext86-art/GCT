@@ -31,11 +31,6 @@ const BLOCKS = [
     body: 'Complete programmes for private groups, schools and universities: transport, guides, entrance tickets, meals and accommodation arranged by one local team.',
   },
   {
-    id: 'b2b-dmc',
-    title: 'B2B services for tour operators and travel agencies',
-    body: 'As a Kraków-based destination management company (DMC), we act as the local ground partner for agencies and tour operators: hotels, coaches, guides, tickets and full itineraries across Poland and Central Europe.',
-  },
-  {
     id: 'mice',
     title: 'Corporate travel, MICE and events',
     body: 'Meetings, incentives, conferences and company events in Kraków and Poland, with venue sourcing, group logistics and airport transfers.',
@@ -50,7 +45,7 @@ const BLOCKS = [
 export const ServicesDetails = () => (
   <section className="bg-white pb-20 lg:pb-24" aria-labelledby="services-details-heading" data-testid="services-details">
     <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
-      <p className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#4dd4ac] mb-4">How we help</p>
+      <p className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#1a6b5f] mb-4">How we help</p>
       <h2 id="services-details-heading" className="text-3xl md:text-4xl font-bold text-[#0f4f47] tracking-tight mb-12">
         What our Kraków team can organise for you
       </h2>
@@ -62,7 +57,10 @@ export const ServicesDetails = () => (
           </div>
         ))}
       </div>
-      <p className="mt-14 text-[15.5px] text-gray-600 font-light">
+      <p className="mt-10 text-[15.5px] text-gray-600 font-light" data-testid="services-agencies-line">
+        Travel agency or tour operator? <Link to="/for-travel-agencies" className={link} data-testid="services-agencies-link">See our partner services for agencies.</Link>
+      </p>
+      <p className="mt-6 text-[15.5px] text-gray-600 font-light">
         Tell us your dates and group size on our <Link to="/contact" className={link} data-testid="services-contact-link">contact page</Link> and
         we will send a custom itinerary and price.
       </p>

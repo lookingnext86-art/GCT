@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ExternalLink, Clock, Utensils, Users, Car, Languages, Moon } from 'lucide-react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -215,7 +216,7 @@ const ToursTable = () => (
       <tbody className="divide-y divide-gray-100">
         {tours.map(([tour, dur, see, halal], i) => (
           <tr key={tour} className="bg-white even:bg-[#f4f7f6]">
-            <th scope="row" className="px-4 py-4 font-bold text-[#0f4f47] align-top"><span className="text-[#4dd4ac] mr-1.5">{i + 1}.</span>{tour}</th>
+            <th scope="row" className="px-4 py-4 font-bold text-[#0f4f47] align-top"><span className="text-[#1a6b5f] mr-1.5">{i + 1}.</span>{tour}</th>
             <td className="px-4 py-4 text-gray-600 font-light align-top whitespace-nowrap">{dur}</td>
             <td className="px-4 py-4 text-gray-600 font-light align-top">{see}</td>
             <td className="px-4 py-4 text-gray-600 font-light align-top">{halal}</td>
@@ -272,6 +273,16 @@ const FoodAndPrayer = ({ groups }) => (
   </section>
 );
 
+const HalalCta = ({ id }) => (
+  <aside className="my-12 bg-[#f6faf9] border border-[#4dd4ac]/30 rounded-2xl p-6 md:p-7 flex flex-col sm:flex-row sm:items-center gap-4 sm:justify-between" data-testid={`halal-cta-${id}`}>
+    <p className="text-[17px] font-semibold text-[#0f4f47] leading-snug">Planning a Muslim-friendly trip to Poland?</p>
+    <div className="flex flex-wrap items-center gap-4">
+      <Link to="/contact" data-testid={`halal-cta-${id}-quote`} className="inline-flex bg-[#0f4f47] text-white px-6 py-3 rounded-full font-semibold text-sm hover:bg-[#1a6b5f] transition-colors">Request a quote</Link>
+      <Link to="/services" data-testid={`halal-cta-${id}-services`} className="text-[#0f4f47] font-semibold text-sm underline decoration-[#4dd4ac] underline-offset-4">See our services</Link>
+    </div>
+  </aside>
+);
+
 const HalalTourism = () => (
   <div className="min-h-screen bg-white">
     <SEO path={PATH} image={`${SITE}${HERO_IMAGE}`} title="Private Halal Tours of Krakow | Green Continent Tours" description={DESCRIPTION} />
@@ -299,6 +310,7 @@ const HalalTourism = () => (
             <div className="grid lg:grid-cols-[1fr_240px] gap-10 lg:gap-16 max-w-6xl mx-auto">
               <div className="max-w-3xl min-w-0">
                 <Intro />
+                <HalalCta id="top" />
                 <Offer />
                 <FoodAndPrayer groups={[
                   ['Turkish & Middle Eastern', turkishMiddleEastern],
@@ -306,6 +318,7 @@ const HalalTourism = () => (
                   ['Halal meat shops', meatShops],
                 ]} />
                 <FaqList title="Frequently asked questions" faqs={faqs} />
+                <HalalCta id="bottom" />
                 <ContinueReading links={[
                   ['/travel-guide/3-days-in-krakow-itinerary', '3 days in Kraków: the perfect itinerary'],
                   ['/travel-guide/avoid-mistakes', 'Tourist mistakes & scams to avoid in Poland'],

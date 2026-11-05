@@ -1,119 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.greencontinenttours.com/</loc>
     <lastmod>2026-11-02</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://www.greencontinenttours.com/images/gallery/hero/malbork-castle.webp</image:loc>
-      <image:title>Malbork Castle Poland — Green Continent Tours</image:title>
-      <image:caption>Premium Poland travel agency in Krakow</image:caption>
-    </image:image>
   </url>
-
   <url>
     <loc>https://www.greencontinenttours.com/about</loc>
     <lastmod>2026-11-02</lastmod>
-    <changefreq>yearly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
   <url>
     <loc>https://www.greencontinenttours.com/services</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
+  <url>
+    <loc>https://www.greencontinenttours.com/for-travel-agencies</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
     <loc>https://www.greencontinenttours.com/gallery</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-
   <url>
     <loc>https://www.greencontinenttours.com/travel-guide</loc>
     <lastmod>2026-06-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://www.greencontinenttours.com/images/travel-guide/wawel-castle-sunrise.webp</image:loc>
-      <image:title>Krakow Wawel Castle at sunrise — Travel Guide</image:title>
-      <image:caption>Local travel insights for Poland and beyond</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.greencontinenttours.com/images/xml/morskie-oko-sunrise.webp</image:loc>
-      <image:title>Morskie Oko lake in the Tatra Mountains during sunrise</image:title>
-      <image:caption>Plan your Polish journey — Tatra National Park</image:caption>
-    </image:image>
   </url>
-
+  <url>
+    <loc>https://www.greencontinenttours.com/contact</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://www.greencontinenttours.com/travel-guide/halal-tourism</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
+  <url>
+    <loc>https://www.greencontinenttours.com/travel-guide/3-days-in-krakow-itinerary</loc>
+    <lastmod>2026-06-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.greencontinenttours.com/travel-guide/christmas-markets-poland</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://www.greencontinenttours.com/travel-guide/hidden-gems</loc>
     <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
   <url>
     <loc>https://www.greencontinenttours.com/travel-guide/avoid-mistakes</loc>
     <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
   <url>
     <loc>https://www.greencontinenttours.com/travel-guide/family-summer-poland-itinerary</loc>
     <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://www.greencontinenttours.com/images/articles/family-summer-poland-itinerary/family-summer-vacation-krakow-poland.webp</image:loc>
-      <image:title>Family Summer in Poland — Wawel Castle Sunset</image:title>
-      <image:caption>Relaxed 10-day family itinerary through Krakow, Zakopane and Warsaw</image:caption>
-    </image:image>
+    <priority>0.7</priority>
   </url>
-
-  <url>
-    <loc>https://www.greencontinenttours.com/travel-guide/3-days-in-krakow-itinerary</loc>
-    <lastmod>2026-06-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://www.greencontinenttours.com/images/articles/3-days-in-krakow-itinerary/krakow-old-town-3-day-itinerary.webp</image:loc>
-      <image:title>3 Days in Kraków — Old Town Through the Medieval Walls</image:title>
-      <image:caption>Day-by-day Kraków itinerary: Old Town, Wawel Castle, Kazimierz, Podgórze and Wieliczka</image:caption>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://www.greencontinenttours.com/travel-guide/christmas-markets-poland</loc>
-    <lastmod>2026-06-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://www.greencontinenttours.com/images/articles/christmas-markets-poland/christmas-market-poland-festive-stall.webp</image:loc>
-      <image:title>Christmas Markets in Poland 2026</image:title>
-      <image:caption>Kraków, Wrocław, Gdańsk and Warsaw Christmas markets — dates, food, itineraries and winter day trips</image:caption>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://www.greencontinenttours.com/contact</loc>
-    <lastmod>2026-05-31</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
 </urlset>

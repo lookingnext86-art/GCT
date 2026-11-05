@@ -10,7 +10,6 @@ const SERVICES = [
   'Private tours in Kraków and across Poland',
   'Private halal and Muslim-friendly tours',
   'Group tours, school trips and educational travel',
-  'B2B destination management services for tour operators',
   'Corporate travel, MICE and events',
   'Airport transfers, hotel reservations and ticketing',
 ];

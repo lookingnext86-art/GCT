@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Facebook, Instagram } from 'lucide-react';
+import { AGENCY_PORTAL_URL } from '../lib/links';
 
 const Footer = () => {
   const address = 'Nowohucka 46, Kraków 31-580, Poland';
@@ -110,6 +111,8 @@ const Footer = () => {
                 <li><Link to="/gallery" className="hover:text-[#4dd4ac] transition-colors">Gallery</Link></li>
                 <li><Link to="/about" className="hover:text-[#4dd4ac] transition-colors">About Us</Link></li>
                 <li><Link to="/contact" className="hover:text-[#4dd4ac] transition-colors">Contact</Link></li>
+                <li><Link to="/for-travel-agencies" data-testid="footer-for-travel-agencies" className="hover:text-[#4dd4ac] transition-colors">For Travel Agencies</Link></li>
+                <li><a href={AGENCY_PORTAL_URL} target="_blank" rel="noopener" data-testid="footer-agency-login" className="hover:text-[#4dd4ac] transition-colors">Agency Login (B2B portal)</a></li>
               </ul>
             </div>
 

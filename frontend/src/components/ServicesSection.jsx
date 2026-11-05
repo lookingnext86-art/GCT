@@ -18,7 +18,7 @@ const services = [
   {
     title: 'Group Tours in Poland & Europe',
     description:
-      'Complete travel programs for families, private groups, tour operators and international visitors.',
+      'Complete travel programs for families, private groups and international visitors.',
     icon: Users,
   },
   {
@@ -63,6 +63,7 @@ const POPULAR = [
 
 const ServicesSection = ({ useH1 = false }) => {
   const HeadingTag = useH1 ? 'h1' : 'h2';
+  const CardHeading = useH1 ? 'h2' : 'h3';
   const heading = useH1
     ? ['Travel Services in Kraków', 'and Across Poland']
     : ['Tailored Travel Across Poland and Europe', 'for Groups, Families and Corporate Clients.'];
@@ -81,8 +82,8 @@ const ServicesSection = ({ useH1 = false }) => {
           width="2400"
           height="1300"
           className="absolute inset-0 w-full h-full object-cover object-[70%_center] md:object-center"
-          loading="eager"
-          fetchPriority="high"
+          loading={useH1 ? 'eager' : 'lazy'}
+          fetchPriority={useH1 ? 'high' : 'auto'}
           decoding="async"
           style={{
             filter:
@@ -220,9 +221,9 @@ const ServicesSection = ({ useH1 = false }) => {
 
                   {/* Card body */}
                   <div className="p-7 lg:p-8 flex flex-col flex-grow">
-                    <h3 className="text-xl md:text-[22px] font-bold text-[#0f4f47] mb-3 tracking-tight leading-snug">
+                    <CardHeading className="text-xl md:text-[22px] font-bold text-[#0f4f47] mb-3 tracking-tight leading-snug">
                       {service.title}
-                    </h3>
+                    </CardHeading>
 
                     <span
                       className="w-8 h-px bg-[#4dd4ac]/60 mb-4 group-hover:w-14 transition-all duration-500"
@@ -251,6 +252,12 @@ const ServicesSection = ({ useH1 = false }) => {
                     <Link to={to} className="text-[#0f4f47] font-semibold hover:text-[#1a6b5f] underline decoration-[#4dd4ac] underline-offset-4">{label}</Link>
                   </React.Fragment>
                 ))}
+                {' · '}
+                <Link to="/contact" data-testid="home-contact-link" className="text-[#0f4f47] font-semibold hover:text-[#1a6b5f] underline decoration-[#4dd4ac] underline-offset-4">Contact our Kraków team</Link>
+              </p>
+              <p className="mt-3 text-[14px] text-gray-500 font-light">
+                Working with travel agencies?{' '}
+                <Link to="/for-travel-agencies" data-testid="home-agencies-link" className="text-[#0f4f47] font-semibold hover:text-[#1a6b5f] underline decoration-[#4dd4ac] underline-offset-4">See our partner services</Link>
               </p>
             </div>
           )}

@@ -423,6 +423,9 @@ const TravelGuide = () => {
                 </div>
               </aside>
             </div>
+            <p className="max-w-6xl mx-auto mt-12 text-[14.5px] text-gray-600 font-light" data-testid="travel-guide-service-links">
+              Ready to travel? See our <Link to="/services" className="text-[#0f4f47] font-semibold underline decoration-[#4dd4ac] underline-offset-4">travel services in Kraków and Poland</Link> or, for travel agencies, our <Link to="/for-travel-agencies" className="text-[#0f4f47] font-semibold underline decoration-[#4dd4ac] underline-offset-4">partner services for agencies</Link>.
+            </p>
           </div>
         </section>
 

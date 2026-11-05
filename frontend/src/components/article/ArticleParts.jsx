@@ -135,7 +135,7 @@ export const RelatedGuides = ({ title = 'More Poland travel guides' }) => {
             ))}
           </ul>
           <p className="mt-6 text-[14.5px] text-gray-600 font-light">
-            Planning a trip? See our <Link to="/services" className="text-[#0f4f47] font-semibold underline decoration-[#4dd4ac] underline-offset-4">private tours and travel services in Kraków and Poland</Link> or browse the full <Link to="/travel-guide" className="text-[#0f4f47] font-semibold underline decoration-[#4dd4ac] underline-offset-4">Poland travel guide</Link>.
+            Planning a trip? See our <Link to="/services" className="text-[#0f4f47] font-semibold underline decoration-[#4dd4ac] underline-offset-4">private tours and travel services in Kraków and Poland</Link>, browse the full <Link to="/travel-guide" className="text-[#0f4f47] font-semibold underline decoration-[#4dd4ac] underline-offset-4">Poland travel guide</Link>, or, if you are a travel agency, see our <Link to="/for-travel-agencies" className="text-[#0f4f47] font-semibold underline decoration-[#4dd4ac] underline-offset-4">partner services for agencies</Link>.
           </p>
         </div>
       </div>
