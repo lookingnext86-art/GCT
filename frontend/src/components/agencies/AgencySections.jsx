@@ -47,7 +47,7 @@ export const Portal = () => (
   <Section id="booking-portal" label="For registered agencies" title="Agency Booking Portal"
     intro="Registered travel agencies can book hotels online through our B2B booking portal. The portal is for travel agencies only.">
     <a href={AGENCY_PORTAL_URL} target="_blank" rel="noopener" aria-label="Agency Login / Register – GCT B2B online hotel booking portal for travel agencies"
-      className="group block max-w-4xl" data-testid="agencies-portal-button">
+      className="group block max-w-4xl mx-auto" data-testid="agencies-portal-button">
       <div className="relative rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-[box-shadow,transform] duration-300 group-hover:-translate-y-0.5">
         <img src="/images/krakow-travel-hero-760.webp" srcSet="/images/krakow-travel-hero-760.webp 760w, /images/krakow-travel-hero.webp 1504w"
           sizes="(max-width: 960px) 90vw, 896px" width="1504" height="441" loading="lazy"
@@ -112,8 +112,7 @@ export const Programs = () => (
         </li>
       ))}
     </ul>
-    <p className={`${p} mt-8`}>Every program includes 4/5 star hotels with breakfast, private airport transfers, intercity transport, guided city tours and VAT.</p>
-    <p className="mt-4 text-[15px] text-[#0f4f47] font-medium bg-[#f6faf9] border-l-4 border-[#4dd4ac] rounded-r-xl px-5 py-4" data-testid="agencies-tailor-made-note">
+    <p className="mt-8 text-[15px] text-[#0f4f47] font-medium bg-[#f6faf9] border-l-4 border-[#4dd4ac] rounded-r-xl px-5 py-4" data-testid="agencies-tailor-made-note">
       These are sample programs for inspiration. Every program is tailor-made and priced individually for each request. We do not publish fixed rates.
     </p>
     <Featured />

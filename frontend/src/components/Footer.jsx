@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Facebook, Instagram } from 'lucide-react';
-import { AGENCY_PORTAL_URL } from '../lib/links';
+import { AGENCY_PORTAL_URL, TRIPADVISOR_URL, GOOGLE_PROFILE_URL } from '../lib/links';
+import { TripadvisorIcon, GoogleIcon } from './SocialIcons';
 
 const Footer = () => {
   const address = 'Nowohucka 46, Kraków 31-580, Poland';
@@ -45,6 +46,26 @@ const Footer = () => {
                   data-testid="footer-instagram"
                 >
                   <Instagram className="w-4 h-4" />
+                </a>
+                <a
+                  href={TRIPADVISOR_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Read our reviews on Tripadvisor"
+                  className="w-9 h-9 inline-flex items-center justify-center rounded-full bg-white/10 hover:bg-[#4dd4ac] hover:text-[#0f4f47] transition-colors"
+                  data-testid="footer-tripadvisor"
+                >
+                  <TripadvisorIcon className="w-4 h-4" />
+                </a>
+                <a
+                  href={GOOGLE_PROFILE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="See our Google Business Profile and reviews"
+                  className="w-9 h-9 inline-flex items-center justify-center rounded-full bg-white/10 hover:bg-[#4dd4ac] hover:text-[#0f4f47] transition-colors"
+                  data-testid="footer-google"
+                >
+                  <GoogleIcon className="w-4 h-4" />
                 </a>
                 <a
                   href="https://wa.me/48537482798"

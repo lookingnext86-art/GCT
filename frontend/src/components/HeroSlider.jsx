@@ -1,5 +1,7 @@
 import React from 'react';
 import { Facebook, Instagram } from 'lucide-react';
+import { TRIPADVISOR_URL, GOOGLE_PROFILE_URL } from '../lib/links';
+import { TripadvisorIcon, GoogleIcon } from './SocialIcons';
 
 /**
  * Hero triptych — 3 real photos:
@@ -74,6 +76,26 @@ const HeroSlider = () => {
           className="bg-white/85 backdrop-blur-sm p-3 rounded-full hover:bg-white transition-all duration-300 hover:scale-110 shadow-md"
         >
           <Instagram className="w-5 h-5 text-[#0f4f47]" />
+        </a>
+        <a
+          href={TRIPADVISOR_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Read our reviews on Tripadvisor"
+          data-testid="hero-tripadvisor"
+          className="bg-white/85 backdrop-blur-sm p-3 rounded-full hover:bg-white transition-all duration-300 hover:scale-110 shadow-md"
+        >
+          <TripadvisorIcon className="w-5 h-5 text-[#0f4f47]" />
+        </a>
+        <a
+          href={GOOGLE_PROFILE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="See our Google Business Profile and reviews"
+          data-testid="hero-google"
+          className="bg-white/85 backdrop-blur-sm p-3 rounded-full hover:bg-white transition-all duration-300 hover:scale-110 shadow-md"
+        >
+          <GoogleIcon className="w-5 h-5 text-[#0f4f47]" />
         </a>
       </div>
 

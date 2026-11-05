@@ -1,6 +1,6 @@
 {
   "rating": 5,
-  "count": 12,
+  "count": 15,
   "mapsUrl": "https://maps.google.com/?cid=14172627286675632794",
   "reviews": [
     {
@@ -10,6 +10,14 @@
       "rating": 5,
       "text": "I am very pleased with this company. I highly recommend it! Great arrangement, service and information. Thank you so much!",
       "url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnTURvdEpQR1lREAE!2m1!1s0x47165b0dc27f0bbf:0xc4af496d6c4f329a"
+    },
+    {
+      "author": "Wik",
+      "authorUrl": "https://www.google.com/maps/contrib/102767879054049455007/reviews",
+      "photo": "/images/reviews/wik.jpg",
+      "rating": 5,
+      "text": "I very much enjoyed the city trip in Kraków as well as the Polish mountains :) Would highly recommend this travel agency.",
+      "url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUNxX3JmZVFBEAE!2m1!1s0x47165b0dc27f0bbf:0xc4af496d6c4f329a"
     },
     {
       "author": "Feri Abadi",
@@ -28,20 +36,12 @@
       "url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xkTmIyeDJlbmRWY21KaFZrdDVNbUV6WkZCV1pGRRAB!2m1!1s0x47165b0dc27f0bbf:0xc4af496d6c4f329a"
     },
     {
-      "author": "Saeed Paseban",
-      "authorUrl": "https://www.google.com/maps/contrib/105469982788481428965/reviews",
-      "photo": "/images/reviews/saeed-paseban.jpg",
+      "author": "mohamad keshavarz",
+      "authorUrl": "https://www.google.com/maps/contrib/106003393109240776360/reviews",
+      "photo": "/images/reviews/mohamad-keshavarz.jpg",
       "rating": 5,
-      "text": "We’ve been using Green Continent Tours’ services for many years and have always appreciated Mr. Jafari’s wonderful support. His attentive service and willingness to help have made working with the team a pleasure. Thank you, Mr. Jafari and the Green Continent Tours team. Highly recommended! ⭐⭐⭐⭐⭐",
-      "url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xaeFZtcDRRVkJFZFZKR2VFOUpSRk5CZFRSZlVYYxAB!2m1!1s0x47165b0dc27f0bbf:0xc4af496d6c4f329a"
-    },
-    {
-      "author": "Kh Rahnama",
-      "authorUrl": "https://www.google.com/maps/contrib/104320387396612688559/reviews",
-      "photo": "/images/reviews/kh-rahnama.jpg",
-      "rating": 5,
-      "text": "I have been working with this company and Mr. Jafari for many years; they are truly a professional, committed, and diligent team. I highly recommend them.",
-      "url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2toWWVERnNabU5CVDBsamNITkNNMjlYWDFKWmJtYxAB!2m1!1s0x47165b0dc27f0bbf:0xc4af496d6c4f329a"
+      "text": "I'm glad I got ti know your group.",
+      "url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21Wek5IQllYekEyUkd0Uk5HVkRiVE5PVkVGRWJXYxAB!2m1!1s0x47165b0dc27f0bbf:0xc4af496d6c4f329a"
     }
   ]
 }
