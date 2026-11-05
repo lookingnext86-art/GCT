@@ -29,10 +29,11 @@ RewriteRule ^ /%1 [R=301,L]
 # 6. Serve the pre-rendered page for each URL
 {{PRERENDER_RULES}}
 
-# 7. Anything else that is not a real file -> "page not found" page
+# 7. Anything else that is not a real file -> real 404 status, showing the "page not found" page
+ErrorDocument 404 /404.html
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ 404.html [L]
+RewriteRule ^ - [R=404,L]
 
 # 8. Browser caching (skipped automatically if mod_expires is not available)
 <IfModule mod_expires.c>
