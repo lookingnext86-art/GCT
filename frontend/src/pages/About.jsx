@@ -17,7 +17,7 @@ const HERO_IMAGE =
   '/images/about-us/wawel-castle.webp';
 
 const stats = [
-  { value: '12+', label: 'Years of Experience', icon: Award },
+  { value: 'Since 2015', label: 'Local Expertise', icon: Award },
   { value: '50+', label: 'Destinations', icon: MapPin },
   { value: '160+', label: 'Groups Served', icon: Users },
   { value: '50+', label: 'Trusted Partners', icon: Handshake },
@@ -30,7 +30,7 @@ const About = () => {
       <SEO
         path="/about"
         title="About Us – Our Kraków Team | Green Continent Tours"
-        description="Learn about Green Continent Tours — a Krakow travel agency with 12+ years designing private, family and group tours across Poland and Europe."
+        description="Learn about Green Continent Tours — a Krakow travel agency designing private, family and group tours across Poland and Europe since 2015."
       />
       <Header />
 
