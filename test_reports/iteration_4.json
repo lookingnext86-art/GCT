@@ -1,0 +1,31 @@
+{
+  "summary": "Frontend-only test of the SEO brief, run against the production build served by Apache at :8088 (/tmp/site has the same files as /app/frontend/build, which is newer than the source). Checks covered: raw HTML for 13 URLs, redirects, 404 page, sitemap/robots, hydration on all 14 routes, header/footer/mobile menu, the /for-travel-agencies sections, FAQ and form, /services, Home, the halal CTAs, guide cross-links and forbidden words. Everything passes except one item: between 1024px and about 1279px the desktop nav wraps onto 2 lines and 'Home' touches the logo.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [
+      {"component": "Header desktop nav (Header.jsx line 31)", "issue": "The nav is 'hidden lg:flex gap-6 xl:gap-10', so it appears from 1024px. Between 1024px and about 1279px the 7 links plus the Agency Login button do not fit. 'About Us', 'Travel Guide', 'For Travel Agencies' and 'Contact Us' wrap onto 2 lines. 'Home' starts at the logo's right edge with 0px gap and visually overlaps the 'TOURS' logo text at 1024. The layout is clean at 1280px and above. Fix: add whitespace-nowrap to the nav links, and switch the desktop nav to xl:flex (and the hamburger and mobile nav to xl:hidden). Alternatively, reduce the gap/font at lg.", "selector": "header nav.hidden.lg\\:flex", "priority": "MEDIUM"}
+    ],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "Header", "issues": ["The hamburger button has no data-testid (only aria-label 'Open menu'/'Close menu')."]}
+    ]
+  },
+  "test_report_links": ["/app/tests/test_seo_static.py", "/app/test_reports/pytest/seo_static.xml"],
+  "action_items": [
+    "Fix the desktop nav wrapping between 1024 and 1279px (whitespace-nowrap plus an xl breakpoint for the desktop nav, or tighter spacing at lg). Then rebuild with prerender.",
+    "Optional: add 'AddDefaultCharset UTF-8' to htaccess.template. Apache sends 'Content-Type: text/html' with no charset. Browsers fall back to <meta charset=utf-8>, but non-browser clients (e.g. python requests) decode as latin-1 and show 'KrakÃ³w'.",
+    "Optional: unknown URLs return the 404 page with HTTP 200 (soft 404), which the noindex mitigates. To get a real 404 status, use 'ErrorDocument 404 /404.html' plus 'RewriteRule ^ - [R=404,L]' instead of the 'RewriteRule ^ 404.html [L]' rewrite.",
+    "Optional: add a data-testid to the hamburger button."
+  ],
+  "critical_code_review_comments": [
+    "prerender.py snapshot() relies on string indices ('<div class=\"App\">' and the exact floating-button class string) to insert Suspense markers. If those class names change, the build breaks with a ValueError. This is acceptable, but fragile.",
+    "The Web3Forms access_key is duplicated: it is hardcoded in both Contact.jsx and PartnerInquiryForm.jsx. Consider moving it into lib/links.js (as done with AGENCY_PORTAL_URL) to avoid drift. The values are currently identical.",
+    "The partner form fields all have required attributes and email type validation. An empty submit is blocked by the browser and no request is sent. The botcheck honeypot is present."
+  ],
+  "updated_files": ["/app/tests/test_seo_static.py"],
+  "success_rate": {"backend": "N/A (not requested)", "frontend": "~97% (26/26 static pytest checks pass; all browser checks pass except nav wrapping between 1024 and 1279px)"},
+  "seed_data_creation": "none. Partner/contact forms were not submitted.",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Run 'cd /app/tests && python -m pytest test_seo_static.py -q -p no:cacheprovider' against Apache :8088 (decode with r.content.decode('utf-8'), since Apache sends no charset). Static results: 13 URLs each have 1 title (all 60 or fewer; agencies has 82), 1 description (155 or fewer; contact and christmas are exactly 154/155), the correct canonical, og:title, twitter:title and 1 H1, plus body text; JSON-LD parses. Redirects: /Home, /home, /Contact-us, /contact-us, /About, /about/, /Travel-Guide/Halal-Tourism, /index.html, /contact.html, /SERVICES and /For-Travel-Agencies/ all 301 to the canonical in one hop. /old-page serves 404.html (HTTP 200) with noindex and links to /, /services and /contact. The sitemap has the 13 canonical URLs; robots.txt references it. Browser: 0 pageerror/console errors (no #418) on all 14 routes; exactly 1 title, description, canonical and H1 after hydration; no duplicate og/twitter tags; client-side navigation updates the tags. Header items and the Agency Login href/target/rel are correct on desktop and mobile; no 'Register' text except 'Agency Login / Register'. Agencies page: all 9 sections in order, 4 steps, 5 FAQ questions (first is the fixed packages one), FAQPage and BreadcrumbList, main has 848 words, form fields required, access_key matches Contact. Services: agency line, no old B2B paragraph, exact Group Tours text, cards are H2. Home: agencies/services/contact links plus 4 guide links. Halal: CTA top at 18% and bottom at 81%, both with /contact and /services links; FAQ plus FAQPage (7 questions). All 6 guides and /travel-guide have body links to /services and /for-travel-agencies. No forbidden words in raw HTML or visible text."
+}

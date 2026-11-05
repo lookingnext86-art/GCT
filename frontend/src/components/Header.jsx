@@ -28,7 +28,7 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-6 xl:gap-10">
+          <nav className="hidden xl:flex items-center gap-8 2xl:gap-10 whitespace-nowrap">
             <Link to="/" className="text-white/90 hover:text-[#4dd4ac] transition-colors text-[13px] font-medium tracking-wide">
               Home
             </Link>
@@ -57,7 +57,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button 
-            className="lg:hidden text-white"
+            className="xl:hidden text-white" data-testid="mobile-menu-toggle"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileMenuOpen}
@@ -74,7 +74,7 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <nav className="lg:hidden mt-4 pb-4 flex flex-col gap-4">
+          <nav className="xl:hidden mt-4 pb-4 flex flex-col gap-4">
             <Link to="/" className="text-white hover:text-[#ffd700] transition-colors text-sm font-medium">
               Home
             </Link>
