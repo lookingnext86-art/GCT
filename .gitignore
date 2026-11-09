@@ -87,3 +87,4 @@ credentials.json
 *.key
 .credentials
 website_files.zip
+frontend/node_modules/.cache/default-development/0.pack
